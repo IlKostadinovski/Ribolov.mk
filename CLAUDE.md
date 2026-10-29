@@ -183,10 +183,12 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   `research/text/<name>.ocr.txt`, and for small scanned documents (≤ 12 pages) also commits
   the page images to `research/pages/` so tables can be checked by eye. The sandbox can't
   download most of these sites itself. hrcak.srce.hr blocks the Action's downloads.
-- Done (Oct 2026): Ohrid, Prespa, Dojran, Sateska, Zajaska Reka, Crna Reka, Tikveš,
-  Mladost, Streževo, Vardar, Bregalnica, Pčinja. Next: the remaining fishing areas from the
-  gazette plans (Treska/Kozjak/Matka, Crn Drim/Debar/Globočica/Špilje, Mavrovo, Strumica,
-  Kalimanci, Berovo, Mantovo, Turija, Vodoča, Gratče, Lipkovo, Glažnja, Mavrovica).
+- Done (Oct 2026): 28 waters (see `waters.json`); all gazette plans read. Gazette OCR is
+  merged per page in `research/text/Ribolovni-osnovi_Sl-vesnik-RM-{222,33}.ocr.txt`.
+  Not covered yet: Matka, Globočica, Sveta Petka, Prilep/Kruševo and other small
+  reservoirs (no plan of their own or not on the map), Konče (not on the map), smaller
+  rivers. Possible next sources: Georgiev 2003 (Mavrovo, 1991–1995 data), papers on
+  single rivers.
 
 ## Testing
 

@@ -148,7 +148,7 @@
       "en": "The largest tributary in the Lake Ohrid catchment. It rises in the mountains of Debarca; its middle and lower course run through the Ohrid–Struga plain. In 1961 the river was diverted from the Crn Drim into Lake Ohrid: it is 26 km long from its springs to the regulating dam near Volino, and the canal to the lake is about 6 km."
     },
     "fish": [
-      { "latin": "Salmo farioides", "mk": "Речна пастрмка" },
+      { "latin": "Salmo farioides", "mk": "Радичка пастрмка" },
       { "latin": "Barbus rebeli", "mk": "Црна мрена", "en": "Western Balkan barbel" },
       { "latin": "Alburnoides ohridanus", "mk": "Вардарка", "en": "Ohrid spirlin" },
       { "latin": "Barbatula sturanyi", "mk": "Охридска вретенушка", "en": "Ohrid stone loach" },
@@ -183,10 +183,11 @@
 
   "crna-reka": {
     "description": {
-      "mk": "Најголемата десна притока на Вардар. Извира кај селото Железнец, на 760 m надморска височина, долга е 222 km, а нејзиниот слив зафаќа 5.887 km². Тече низ Демирхисарскиот крај и Пелагонија, потоа низ клисурата Скочивир и Мариово, каде е брза планинска река, и се влева во акумулацијата Тиквеш.",
-      "en": "The largest right-hand tributary of the Vardar. It rises near the village of Železnec at 760 m above sea level, is 222 km long and drains 5,887 km². It flows through the Demir Hisar area and the Pelagonia plain, then through the Skočivir gorge and Mariovo, where it is a fast mountain river, and into the Tikveš reservoir."
+      "mk": "Најголемата десна притока на Вардар. Извира од врелото Црна Дупка над селото Железнец (Демир Хисар), на 760 m надморска височина. Тече низ Пелагонија, потоа низ Скочивирската Клисура и Мариово, каде е брза планинска река, и низ акумулацијата Тиквеш, а во Вардар се влива кај Стоби. Сливот зафаќа околу 5.890 km², од кои 5.130 km² во Северна Македонија.",
+      "en": "The largest right-hand tributary of the Vardar. It rises from the Crna Dupka spring above the village of Železnec (Demir Hisar), at 760 m above sea level. It flows through the Pelagonia plain, then through the Skočivir gorge and Mariovo, where it is a fast mountain river, and through the Tikveš reservoir, and joins the Vardar near Stobi. Its basin covers about 5,890 km², of which 5,130 km² is in North Macedonia."
     },
     "fish": [
+      { "latin": "Salmo pelagonicus", "mk": "Пелагониска пастрмка" },
       { "latin": "Alburnoides bipunctatus", "mk": "Вардарка" },
       { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
       { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
@@ -212,8 +213,8 @@
       { "latin": "Lepomis gibbosus", "mk": "Сончарка", "en": "Pumpkinseed", "introduced": true }
     ],
     "fishNote": {
-      "mk": "Видови уловени во самата река (11 мерни места од изворот до вливот во Вардар, без акумулацијата Тиквеш) при научното истражување во август–октомври 2006 година. Пастрмката (во изворишниот дел) и плашицата не се наведени бидејќи не се определени до вид. Македонските имиња се според риболовните основи.",
-      "en": "Species caught in the river itself (11 sampling sites from the source to the Vardar, not counting the Tikveš reservoir) in a scientific survey in August–October 2006. The trout (in the headwaters) and the bleak are not listed because they were not identified to species. Macedonian names follow the fishery management plans."
+      "mk": "Видови уловени во самата река (11 мерни места од изворот до вливот во Вардар, без акумулацијата Тиквеш) при научното истражување во август–октомври 2006 година; сите ги има и во листата на официјалната риболовна основа (2024). Пастрмката во изворишниот дел истражувањето не ја определило до вид; наведена е како пелагониска пастрмка според основата. Плашицата не е наведена бидејќи не е определена до вид.",
+      "en": "Species caught in the river itself (11 sampling sites from the source to the Vardar, not counting the Tikveš reservoir) in a scientific survey in August–October 2006; all are also in the species list of the official fishery management plan (2024). The survey did not identify the trout in the headwaters to species; it is given as Pelagonian trout following the plan. The bleak is not listed because it was not identified to species."
     },
     "notes": [
       {
@@ -222,7 +223,8 @@
       }
     ],
     "sources": [
-      { "title": "Kostov, Ristovska, Prelić & Slavevska-Stamenković (2011): Assessment of the ecological status of the Crna River based on the fish fauna. Macedonian Journal of Animal Science 1(1): 261–270", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf" }
+      { "title": "Kostov, Ristovska, Prelić & Slavevska-Stamenković (2011): Assessment of the ecological status of the Crna River based on the fish fauna. Macedonian Journal of Animal Science 1(1): 261–270", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf" },
+      { "title": "Риболовна основа „Црна Река“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -305,7 +307,8 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Акумулација Младост“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
+      { "title": "Риболовна основа „Акумулација Младост“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" },
+      { "title": "Риболовна основа „Младост“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -342,7 +345,8 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Акумулација Стрежево“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf" }
+      { "title": "Риболовна основа „Акумулација Стрежево“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf" },
+      { "title": "Риболовна основа „Стрежево“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -365,15 +369,23 @@
       { "latin": "Pachychilon macedonicum", "mk": "Мергур" },
       { "latin": "Phoxinus phoxinus", "mk": "Пиор" },
       { "latin": "Barbatula barbatula", "mk": "Вретенушка" },
-      { "latin": "Cobitis vardarensis", "mk": "Вардарска штипалка" }
+      { "latin": "Cobitis vardarensis", "mk": "Вардарска штипалка" },
+      { "latin": "Rhodeus meridionalis", "mk": "Платиче" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Carassius carassius", "mk": "Златен карас", "en": "Crucian carp" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Pseudorasbora parva", "mk": "Амурче", "en": "Topmouth gudgeon", "introduced": true }
     ],
     "fishNote": {
-      "mk": "Видови кои ги потврдуваат два извора: официјалната риболовна основа за горниот тек (листата на видови и истражувањата на Институтот за сточарство 1996–2015) и научното истражување по целиот тек низ земјата во 1996–1999 година (таму под постари латински имиња, на пр. Leuciscus cephalus за кленот). Листата не е целосна: основите за средниот и долниот тек сè уште се проверуваат.",
-      "en": "Species confirmed by two sources: the official fishery management plan for the upper course (its species list and the Institute of Animal Science surveys of 1996–2015) and a scientific survey along the whole river in the country in 1996–1999 (there under older Latin names, e.g. Leuciscus cephalus for the chub). The list is not complete: the plans for the middle and lower course are still being checked."
+      "mk": "Видови кои ги потврдуваат два извора: официјалните риболовни основи за горниот, средниот и долниот тек на Вардар (листите на видови, позначајните видови и истражувањата на Институтот за сточарство 1996–2015) и научното истражување по целиот тек низ земјата во 1996–1999 година (таму под постари латински имиња, на пр. Leuciscus cephalus за кленот). Видовите кои тоа истражување не ги нашло (на пр. црвеноперка, лињак, јагула) не се наведени.",
+      "en": "Species confirmed by two sources: the official fishery management plans for the upper, middle and lower Vardar (their species lists, main species and the Institute of Animal Science surveys of 1996–2015) and a scientific survey along the whole river in the country in 1996–1999 (there under older Latin names, e.g. Leuciscus cephalus for the chub). Species that survey did not find (e.g. roach, tench, eel) are not listed."
     },
     "sources": [
       { "title": "Риболовна основа „Слив на река Вардар – горно течение“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/24.%20%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D1%80%20%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%202023%20-%202028.pdf" },
-      { "title": "Georgiev, S. (2000): Stanje ihtiofaune rijeke Vardara u razdoblju od 1996. do 1999. (State of the Vardar River ichthyofauna 1996–1999). Ribarstvo 58(3): 85–100", "url": "https://hrcak.srce.hr/file/7019" }
+      { "title": "Georgiev, S. (2000): Stanje ihtiofaune rijeke Vardara u razdoblju od 1996. do 1999. (State of the Vardar River ichthyofauna 1996–1999). Ribarstvo 58(3): 85–100", "url": "https://hrcak.srce.hr/file/7019" },
+      { "title": "Риболовна основа „Вардар – средно течение“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" },
+      { "title": "Риболовна основа „Вардар – долно течение“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -404,7 +416,8 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" }
+      { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" },
+      { "title": "Риболовна основа „Брегалница“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -419,16 +432,381 @@
       { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
       { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
       { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Vimba melanops", "mk": "Попадика" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа за сливот на Пчиња (2023–2028) ги наведува посебно за овие води. Пастрмката е македонска пастрмка, единствената пастрмка во основата. Крапот и сомот исто така се меѓу позначајните видови, но не се наведени бидејќи подрачјето ги опфаќа и езерцата кај Бадар и акумулацијата Отошница.",
+      "en": "The main species that the official fishery management plan for the Pčinja basin (2023–2028) names specifically for these waters. The trout is the Macedonian trout, the only trout in the plan. Carp and wels catfish are also among the main species but are not listed, because the fishing area also includes the ponds at Badar and the Otošnica reservoir."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" },
+      { "title": "Риболовна основа „Пчиња“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+    ]
+  },
+
+  "treska": {
+    "description": {
+      "mk": "Трета по должина притока на Вардар; во Кичевската Котлина е позната како Голема Река. Извира од карстен извор во селото Извор (Копачка), под врвот Киска на планината Бистра, на 740 m надморска височина, а во Вардар се влива кај Сарај, во Скопската Котлина (260 m). Сливот зафаќа 2.068 km². На неа се акумулациите Козјак, Света Петка и Матка.",
+      "en": "The third longest tributary of the Vardar; in the Kičevo basin it is called Golema Reka. It rises from a karst spring in the village of Izvor (Kopačka), below the peak Kiska on Bistra mountain, at 740 m above sea level, and joins the Vardar at Saraj in the Skopje basin (260 m). Its basin covers 2,068 km². The Kozjak, Sveta Petka and Matka reservoirs lie on it."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
       { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2024) ги наведува за риболовното подрачје „Треска“ (Треска од изворот до вливот на Тажевска Река, со притоките и акумулацијата Осломеј), а кои се и во нејзината листа на видови. Основата наведува вкупно 21 видови.",
+      "en": "The main species that the official fishery management plan (2024) gives for the fishing area “Treska” (the Treska from its source to the Tažewska Reka, with its tributaries and the Oslomej reservoir), which are also in its species list. The plan lists 21 species in total."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Треска“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+    ]
+  },
+
+  "ezero-kozjak": {
+    "description": {
+      "mk": "Акумулација на реката Треска, завршена во 2004 година, 16,5 km возводно од акумулацијата Матка. Браната е камено-земјена, со глинено јадро. Вкупниот волумен е околу 550 милиони m³. Наменета е за задржување на поплавните води, производство на струја и, во иднина, за водоснабдување.",
+      "en": "Reservoir on the Treska river, completed in 2004, 16.5 km upstream of the Matka reservoir. The dam is a rock-and-earth dam with a clay core. Its total volume is about 550 million m³. It is meant for holding back floods, producing electricity and, in future, for water supply."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2025) ги наведува за акумулацијата Козјак, а кои се и во нејзината листа на видови (вкупно 22), и штуката, која е во листата и која според риболовните основи ја внеле рекреативни риболовци.",
+      "en": "The main species that the official fishery management plan (2025) gives for the Kozjak reservoir, which are also in its species list (22 in total), plus pike, which is in the list and which, according to the plans, was brought in by recreational anglers."
+    },
+    "notes": [
+      {
+        "mk": "Штуката ја внеле рекреативни риболовци на своја рака.",
+        "en": "Pike were brought in by recreational anglers on their own."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Козјак“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
+      { "title": "Риболовна основа „Акумулација Младост“ 2023–2028, опис на штуката (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
+    ]
+  },
+
+  "crn-drim": {
+    "description": {
+      "mk": "Истекува од Охридското Езеро во Струга и тече низ Струшкото Поле до селото Ташмаруништа, каде почнува акумулацијата Глобочица. Припаѓа на Јадранскиот слив. Неговиот слив во Северна Македонија, заедно со Охридското и Преспанското Езеро, зафаќа 3.350 km² и е втор по големина во земјата.",
+      "en": "It flows out of Lake Ohrid at Struga and runs through the Struga plain to the village of Tašmaruništa, where the Globočica reservoir begins. It belongs to the Adriatic basin. Its basin in North Macedonia, including Lakes Ohrid and Prespa, covers 3,350 km² and is the second largest in the country."
+    },
+    "fish": [
+      { "latin": "Squalius squalus", "mk": "Клен" },
+      { "latin": "Chondrostoma ohridanus", "mk": "Скобуст" },
+      { "latin": "Barbus rebeli", "mk": "Црна мрена", "en": "Western Balkan barbel" },
+      { "latin": "Anguilla anguilla", "mk": "Јагула", "en": "European eel" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2024) ги наведува за риболовното подрачје „Црн Дрим“ (реката од Охридското Езеро до Глобочица, со притоките и акумулацијата Глобочица), а кои се и во нејзината листа на видови (вкупно 21), и јагулата, за која основата определува зона за стопански риболов во Струга. Не се наведени пастрмката (не е јасно кој вид), ниту крапот и писата, бидејќи подрачјето ја опфаќа и акумулацијата.",
+      "en": "The main species that the official fishery management plan (2024) gives for the fishing area “Crn Drim” (the river from Lake Ohrid to Globočica, with its tributaries and the Globočica reservoir), which are also in its species list (21 in total), plus the eel, for which the plan sets a commercial fishing zone in Struga. Not listed: the trout (the species is not clear), and carp and rudd, because the area also includes the reservoir."
+    },
+    "notes": [
+      {
+        "mk": "Во Струга, на местото Дивлак, е риболовната зона „Далјан“, каде е дозволен стопански риболов на јагула.",
+        "en": "In Struga, at the place called Divlak, is the “Daljan” fishing zone, where commercial eel fishing is allowed."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Црн Дрим“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+    ]
+  },
+
+  "radika": {
+    "description": {
+      "mk": "Десна притока на Црн Дрим. Извира на северозападната страна на Шар Планина, на 2.260 m надморска височина, а се влива во Дебарското Езеро (акумулацијата Шпилје) кај селото Косоврасти, на 487 m. Долга е 64,7 km.",
+      "en": "A right-hand tributary of the Crn Drim. It rises on the north-west side of Šar Planina at 2,260 m above sea level and flows into Debar Lake (the Špilje reservoir) near the village of Kosovrasti, at 487 m. It is 64.7 km long."
+    },
+    "fish": [
+      { "latin": "Salmo farioides", "mk": "Радичка пастрмка" },
+      { "latin": "Salmo letnica", "mk": "Охридска пастрмка", "en": "Ohrid trout" },
+      { "latin": "Squalius squalus", "mk": "Клен" },
+      { "latin": "Chondrostoma ohridanus", "mk": "Скобуст" },
+      { "latin": "Barbus rebeli", "mk": "Црна мрена", "en": "Western Balkan barbel" },
+      { "latin": "Alburnus scoranza", "mk": "Плашица" }
+    ],
+    "fishNote": {
+      "mk": "Видови кои официјалната риболовна основа (2025) ги наведува во листата за рекреативната зона „Радика“ (Радика со притоките во Националниот парк Маврово, до вливот на Гарска Река), а кои се и меѓу позначајните видови на подрачјето.",
+      "en": "Species that the official fishery management plan (2025) lists for the recreational zone “Radika” (the Radika with its tributaries in Mavrovo National Park, down to the Garska Reka), which are also among the main species of the area."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "mavrovsko-ezero": {
+    "description": {
+      "mk": "Акумулација во Националниот парк Маврово, на 1.230 m надморска височина, меѓу планините Бистра и Шар Планина, на местото на некогашното Мавровско Поле. Полнењето започнало во 1952 година. При највисоко ниво (1.233 m) зафаќа 1.370 ha; долга е 10,5 km и широка до 3 km. Најголемата длабочина е 50 m, а просечната 26 m.",
+      "en": "Reservoir in Mavrovo National Park, at 1,230 m above sea level, between the Bistra and Šar mountains, where the Mavrovo field used to be. Filling began in 1952. At its highest level (1,233 m) it covers 1,370 ha; it is 10.5 km long and up to 3 km wide. It is up to 50 m deep, 26 m on average."
+    },
+    "fish": [
+      { "latin": "Salmo letnica", "mk": "Охридска пастрмка", "en": "Ohrid trout" },
+      { "latin": "Salmo farioides", "mk": "Радичка пастрмка" },
+      { "latin": "Squalius squalus", "mk": "Клен" },
+      { "latin": "Pachychilon pictum", "mk": "Моранец", "en": "Albanian roach" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" }
+    ],
+    "fishNote": {
+      "mk": "Видови кои официјалната риболовна основа (2025) ги наведува во листата за рекреативната зона „Мавровско Езеро“, а кои се и меѓу позначајните видови на подрачјето Национален парк Маврово.",
+      "en": "Species that the official fishery management plan (2025) lists for the recreational zone “Mavrovo Lake”, which are also among the main species of the Mavrovo National Park fishing area."
+    },
+    "notes": [
+      {
+        "mk": "Во зимските месеци, особено во јануари, езерото може целосно да замрзне.",
+        "en": "In winter, especially in January, the lake can freeze over completely."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "ezero-mavrovica": {
+    "description": {
+      "mk": "Акумулација на реката Мавровица, 6,5 km возводно од Свети Николе. Браната е земјена, висока 26 m. Езерото е долго 1,3 km, широко до 470 m и зафаќа 0,32 km². Водата се користи за наводнување на дел од полето околу Свети Николе.",
+      "en": "Reservoir on the Mavrovica river, 6.5 km upstream of Sveti Nikole. The earth dam is 26 m high. The lake is 1.3 km long, up to 470 m wide and covers 0.32 km². Its water irrigates part of the plain around Sveti Nikole."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Scardinius erythrophthalmus", "mk": "Писа", "en": "Rudd" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" },
+      { "latin": "Carassius carassius", "mk": "Златен карас", "en": "Crucian carp" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2024) ги наведува за акумулацијата Мавровица, а кои се и во нејзината листа на видови. Основата наведува вкупно 16 видови.",
+      "en": "The main species that the official fishery management plan (2024) gives for the Mavrovica reservoir, which are also in its species list. The plan lists 16 species in total."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Мавровица“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+    ]
+  },
+
+  "mantovo": {
+    "description": {
+      "mk": "Долгнавеста акумулација на реката Крива Лакавица, меѓу селата Долна Враштица, Габревци, Долни Радеш и Гарван, каде е браната. Собира 47,5 милиони m³ вода, а најголемата длабочина е 40 m. Водата се користи за наводнување и водоснабдување, меѓу другото и за рудникот Бучим.",
+      "en": "Long, narrow reservoir on the Kriva Lakavica river, between the villages of Dolna Vraštica, Gabrevci, Dolni Radeš and Garvan, where the dam is. It holds 47.5 million m³ of water and is up to 40 m deep. Its water is used for irrigation and water supply, including for the Bučim mine."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Scardinius erythrophthalmus", "mk": "Писа", "en": "Rudd" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2025) ги наведува за акумулацијата Мантово, а кои се и во нејзината листа на видови. Основата наведува вкупно 14 видови.",
+      "en": "The main species that the official fishery management plan (2025) gives for the Mantovo reservoir, which are also in its species list. The plan lists 14 species in total."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Мантово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "turija": {
+    "description": {
+      "mk": "Акумулација на реката Турија, 4 km возводно од селото Добрашинци и 16 km северно од Струмица. Изградена е од 1968 до 1971 година, а се користи од 1973 година. Зафаќа 180 ha, најголемата длабочина е 54 m, а собира околу 50 милиони m³ вода. Служи за водоснабдување на Струмица и индустријата и за наводнување на 10.050 ha од Струмичкото Поле.",
+      "en": "Reservoir on the Turija river, 4 km upstream of the village of Dobrašinci and 16 km north of Strumica. Built from 1968 to 1971 and in use since 1973. It covers 180 ha, is up to 54 m deep and holds about 50 million m³ of water. It supplies water to Strumica and its industry and irrigates 10,050 ha of the Strumica plain."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Squalius orpheus", "mk": "Клен" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2025) ги наведува за акумулацијата Турија, а кои се и во нејзината листа на видови (вкупно 8). Белата мрена не е наведена бидејќи основите за соседните води во сливот на Струмица ја водат под различни латински имиња.",
+      "en": "The main species that the official fishery management plan (2025) gives for the Turija reservoir, which are also in its species list (8 in total). The white barbel is not listed, because the plans for neighbouring waters in the Strumica basin give it different Latin names."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Турија“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "vodochko-ezero": {
+    "description": {
+      "mk": "Акумулација на реката Водочница, кај селото Попчево, 4,5 km возводно од селото Водоча и 14 km западно од Струмица. Зафаќа 190 ha, најголемата длабочина е 42 m, а собира 27 милиони m³ вода. Служи за наводнување на 3.100 ha од Струмичкото Поле и како резерва за водоснабдување на Струмица.",
+      "en": "Reservoir on the Vodočnica river near the village of Popčevo, 4.5 km upstream of the village of Vodoča and 14 km west of Strumica. It covers 190 ha, is up to 42 m deep and holds 27 million m³ of water. It irrigates 3,100 ha of the Strumica plain and is a reserve water supply for Strumica."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Squalius orpheus", "mk": "Клен" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2025) ги наведува за акумулацијата Водоча, а кои се и во нејзината листа на видови (вкупно 11). Не се наведени плашицата (не е определена до вид) и белата мрена (основите за сливот на Струмица ја водат под различни латински имиња).",
+      "en": "The main species that the official fishery management plan (2025) gives for the Vodoča reservoir, which are also in its species list (11 in total). Not listed: the bleak (not identified to species) and the white barbel (the plans for the Strumica basin give it different Latin names)."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Водоча“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "strumica": {
+    "description": {
+      "mk": "Река во југоисточниот дел на земјата, притока на Струма. Се смета дека извира како Радовишка Река на Плачковица, на 1.540 m надморска височина; во Радовишкото Поле се спојува со Ораовичка Река и се вика Стара Река, а во Струмичката Котлина – Струмица. Под Ново Село тече низ клисура меѓу Огражден и Беласица, на 186 m ја преминува границата со Бугарија и се влева во Струма. Во Северна Македонија е долга 75,1 km, а сливот зафаќа 1.520 km².",
+      "en": "River in the south-east of the country, a tributary of the Struma. Its source is taken to be the Radoviška Reka on Plačkovica, at 1,540 m above sea level; in the Radoviš plain it joins the Oraovička Reka and is called Stara Reka, and in the Strumica basin, Strumica. Below Novo Selo it runs through a gorge between Ogražden and Belasica, crosses into Bulgaria at 186 m and flows into the Struma. In North Macedonia it is 75.1 km long, with a basin of 1,520 km²."
+    },
+    "fish": [
+      { "latin": "Squalius orpheus", "mk": "Клен" },
+      { "latin": "Barbus strumicae", "mk": "Црна мрена" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" }
+    ],
+    "fishNote": {
+      "mk": "Позначајни видови кои официјалната риболовна основа (2025) ги наведува за риболовното подрачје „Струмица“, а кои се и во нејзината листа на видови. Подрачјето ги опфаќа и Моноспитовското Блато и неколку акумулации, па не се наведени видовите кои можеби ги има само таму (крап, костреш, сом). Штуката природно живее во сливот на Струмица и е ловена во самата река.",
+      "en": "Main species that the official fishery management plan (2025) gives for the fishing area “Strumica”, which are also in its species list. The area also includes the Monospitovo marsh and several reservoirs, so species that may live only there (carp, perch, wels catfish) are not listed. Pike lives naturally in the Strumica basin and has been caught in the river itself."
+    },
+    "notes": [
+      {
+        "mk": "Според риболовните основи, штуката природно живее во Моноспитовското Блато и сливот на Струмица, а од реката Струмица има податоци за уловени штуки долги над 60 cm.",
+        "en": "According to the fishery management plans, pike lives naturally in the Monospitovo marsh and the Strumica basin, and pike over 60 cm long have been caught in the Strumica river."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Струмица“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
+      { "title": "Риболовна основа „Акумулација Младост“ 2023–2028, опис на штуката (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
+    ]
+  },
+
+  "ezero-glazhnja-glazhnjansko-ezero": {
+    "description": {
+      "mk": "Акумулација на Липковска Река, под селото Глажња, 3 km возводно од браната Липково и 16 km од Куманово, на 590 m надморска височина. Браната е бетонска лачна, висока 74 m. Езерото е долго 3,1 km. Заедно со акумулацијата Липково дава вода за Куманово и индустријата, за наводнување и за производство на струја.",
+      "en": "Reservoir on the Lipkovska Reka below the village of Glažnja, 3 km upstream of the Lipkovo dam and 16 km from Kumanovo, at 590 m above sea level. The concrete arch dam is 74 m high. The lake is 3.1 km long. Together with the Lipkovo reservoir it supplies water to Kumanovo and its industry, for irrigation and for electricity."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа (2025) ги наведува за акумулацијата Глажња, а кои се и во нејзината листа на видови. Основата наведува вкупно 7 видови.",
+      "en": "The main species that the official fishery management plan (2025) gives for the Glažnja reservoir, which are also in its species list. The plan lists 7 species in total."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Глажња“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "ezero-kalimanci": {
+    "description": {
+      "mk": "Акумулација на Брегалница во Истибањската Клисура, изградена во 1969 година за наводнување и производство на струја. Од неа се наводнуваат околу 28.000 ha во Кочанско и Овче Поле. При највисоко ниво (519,5 m) собира 127 милиони m³ вода, а најголемата длабочина е 80 m. Нивото на водата многу се менува во текот на годината.",
+      "en": "Reservoir on the Bregalnica in the Istibanja gorge, built in 1969 for irrigation and electricity. It irrigates about 28,000 ha in the Kočani and Ovče Pole plains. At its highest level (519.5 m) it holds 127 million m³ of water and is up to 80 m deep. The water level changes a lot during the year."
+    },
+    "fish": [
       { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
       { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" }
     ],
     "fishNote": {
-      "mk": "Позначајните видови кои официјалната риболовна основа за сливот на Пчиња (2023–2028) ги наведува посебно за овие води. Основата наведува повеќе видови за целиот слив. Пастрмката е македонска пастрмка, единствената пастрмка во основата.",
-      "en": "The main species that the official fishery management plan for the Pčinja basin (2023–2028) names specifically for these waters. The plan lists more species for the whole basin. The trout is the Macedonian trout, the only trout in the plan."
+      "mk": "Риболовната основа за Брегалница наведува дека во самото езеро и пред него се ловат поголеми количини крап и сом.",
+      "en": "The fishery management plan for the Bregalnica says that carp and wels catfish are caught in larger numbers in the lake itself and above it."
     },
+    "notes": [
+      {
+        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Калиманци“ (езерото и Брегалница од Митрашинци до езерото, со Каменичка Река) се и македонската пастрмка, скобустот, кленот, црвеноперката и лињакот; основата не наведува кои од нив живеат во самото езеро.",
+        "en": "According to the official fishery management plan (2025), other main species of the “Kalimanci” fishing area (the lake and the Bregalnica from Mitrašinci to the lake, with the Kamenička Reka) are Macedonian trout, nase, chub, roach and tench; the plan does not say which of them live in the lake itself."
+      }
+    ],
     "sources": [
-      { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" }
+      { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" },
+      { "title": "Риболовна основа „Калиманци“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "berovsko-ezero": {
+    "description": {
+      "mk": "Акумулацијата Ратево, 6 km југоисточно од Берово, на Ратевска Река (лева притока на Брегалница), 12,5 km пред нејзиниот влив. Изградена е од 1969 до 1975 година; браната е бетонска лачна, висока 53 m. Езерото е долго 2,5 km, зафаќа 0,57 km², најголемата длабочина е 50 m, а просечната 17,5 m. Водата се користи за наводнување на Малешевското Поле и за вода за пиење на Берово.",
+      "en": "The Ratevo reservoir, 6 km south-east of Berovo, on the Ratevska Reka (a left-hand tributary of the Bregalnica), 12.5 km before it joins the Bregalnica. Built from 1969 to 1975; the concrete arch dam is 53 m high. The lake is 2.5 km long, covers 0.57 km² and is up to 50 m deep, 17.5 m on average. Its water irrigates the Maleševo plain and supplies drinking water to Berovo."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" }
+    ],
+    "fishNote": {
+      "mk": "Македонската пастрмка е потврдена за самото езеро: во 2003 година тука е уловен примерок долг 79 cm и тежок 9,8 kg (според риболовните основи).",
+      "en": "Macedonian trout is confirmed for the lake itself: in 2003 a fish 79 cm long and weighing 9.8 kg was caught here (according to the fishery management plans)."
+    },
+    "notes": [
+      {
+        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Ратево – Беровско Езеро“ (езерото и Брегалница од изворите до Митрашинци, со притоките) се и скобустот, златниот карас, кленот, крапот, црната мрена и лињакот; основата не наведува кои од нив живеат во самото езеро.",
+        "en": "According to the official fishery management plan (2025), other main species of the “Ratevo – Berovo Lake” fishing area (the lake and the Bregalnica from its springs to Mitrašinci, with tributaries) are nase, crucian carp, chub, carp, Balkan barbel and tench; the plan does not say which of them live in the lake itself."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028, опис на македонската пастрмка (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" },
+      { "title": "Риболовна основа „Ратево – Беровско Езеро“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "debarsko-ezero-ezero-shpilje": {
+    "description": {
+      "mk": "Акумулацијата Шпилје, во Дебарската Котлина, каде Радика се влева во Црн Дрим, околу 5 km од Дебар, на 490 m надморска височина. Браната е висока 101 m. Езерото е долго 22 km, длабоко до 94 m и зафаќа 1.320 ha. Се полни од Црн Дрим и Радика.",
+      "en": "The Špilje reservoir, in the Debar basin where the Radika flows into the Crn Drim, about 5 km from Debar, at 490 m above sea level. The dam is 101 m high. The lake is 22 km long, up to 94 m deep and covers 1,320 ha. It is fed by the Crn Drim and the Radika."
+    },
+    "notes": [
+      {
+        "mk": "Според официјалната риболовна основа (2024), позначајни видови во риболовното подрачје „Шпилје“ (езерото, Црн Дрим под браната Глобочица и долниот тек на Радика) се охридската и радичката пастрмка, крапот, кленот, црната мрена, плашицата, скобустот, грунецот и моранецот. Основата не наведува кои од нив живеат во самото езеро, па засега не се ставени во листата на риби.",
+        "en": "According to the official fishery management plan (2024), the main species of the “Špilje” fishing area (the lake, the Crn Drim below the Globočica dam and the lower Radika) are Ohrid and Radika trout, carp, chub, barbel, bleak, nase, Ohrid roach and Albanian roach. The plan does not say which of them live in the lake itself, so they are not in the fish list for now."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Шпилје“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+    ]
+  },
+
+  "lipkovsko-ezero": {
+    "description": {
+      "mk": "Акумулација на Липковска Река (притока на Кумановска Река), под акумулацијата Глажња. Езерото е долго 1,5 km, широко до 180 m и зафаќа 0,40 km². Заедно со Глажња дава вода за Куманово и индустријата, за наводнување и за производство на струја.",
+      "en": "Reservoir on the Lipkovska Reka (a tributary of the Kumanovska Reka), below the Glažnja reservoir. The lake is 1.5 km long, up to 180 m wide and covers 0.40 km². Together with Glažnja it supplies water to Kumanovo and its industry, for irrigation and for electricity."
+    },
+    "notes": [
+      {
+        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Липково“ (езерото и Липковска Река меѓу браните Глажња и Липково) се македонската пастрмка, скобустот, попадиката, кленот, писата, црвеноперката, крапот, црната мрена и лињакот. Основата не ги дели меѓу езерото и реката, па засега не се ставени во листата на риби.",
+        "en": "According to the official fishery management plan (2025), the main species of the “Lipkovo” fishing area (the lake and the Lipkovska Reka between the Glažnja and Lipkovo dams) are Macedonian trout, nase, vimba, chub, rudd, roach, carp, Balkan barbel and tench. The plan does not separate the lake from the river, so they are not in the fish list for now."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Липково“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+    ]
+  },
+
+  "brana-gratche": {
+    "description": {
+      "mk": "Акумулацијата Градче, изградена во 1959 година кај селото Долно Градче, 6 km северно од Кочани, каде Мала и Велика Река ја формираат Кочанска Река. Браната е армирано-бетонска, висока 32 m. Езерото е долго 3,5 km, длабоко до 29 m и зафаќа 0,19 km². Водата се користи за водоснабдување на Кочани и за наводнување на околу 576 ha во Кочанско Поле.",
+      "en": "The Gradče reservoir, built in 1959 at the village of Dolno Gradče, 6 km north of Kočani, where the Mala and Velika Reka form the Kočanska Reka. The reinforced-concrete dam is 32 m high. The lake is 3.5 km long, up to 29 m deep and covers 0.19 km². Its water supplies Kočani and irrigates about 576 ha of the Kočani plain."
+    },
+    "notes": [
+      {
+        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Градче“ (езерото, Кочанска Река и дел од Брегалница) се македонската пастрмка, сомот, кленот, крапот и црната мрена. Основата не наведува кои од нив живеат во самото езеро, па засега не се ставени во листата на риби.",
+        "en": "According to the official fishery management plan (2025), the main species of the “Gradče” fishing area (the lake, the Kočanska Reka and part of the Bregalnica) are Macedonian trout, wels catfish, chub, carp and Balkan barbel. The plan does not say which of them live in the lake itself, so they are not in the fish list for now."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Градче“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   }
 }

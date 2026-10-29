@@ -35,6 +35,19 @@ from memory or from unverified websites (forums, fishing blogs, AI-written pages
    only the river sampling sites, for the Tikveš reservoir only the reservoir site.
 10. The plans call carp (Cyprinus carpio) introduced, but the scientific sources used here
     do not, so carp has no tag.
+11. **Waters with only a gazette plan** (see "Official Gazette" below): a species is listed
+    only if it is both in the plan's species table and in the plan's table of main species
+    for that fishing area ("позначајни видови"). Where the plan has a separate species
+    table for a zone (Mavrovo Lake, Radika), that zone table is used.
+12. A fishing area often covers more than one water. A **reservoir** gets a fish list only
+    if the area is just the reservoir, or if the plan names the species for the reservoir
+    itself; otherwise the area's main species are given in a note, clearly saying they are
+    for the whole area. A **river** whose area also includes reservoirs, ponds or marshes
+    gets only species that are not likely to live only in those still waters (so carp,
+    perch, rudd and similar are left out there unless a source puts them in the river).
+13. Facts on which two sources disagree are left out (e.g. the length of the Crna Reka:
+    222 km in one source, 207 km in the official plan; the length of the Treska: 138 km in the Treska plan as read by OCR vs
+    128 km in the middle Vardar plan; the height of the Kozjak dam: 126.1 m vs 114 m in the same plan).
 
 ## Sources
 
@@ -200,12 +213,70 @@ Macedonian folk name, followed by a description of each species that inhabits th
   https://ramsar.org/fr/news/fyr-macedonia-designates-second-ramsar-site
   Used for: Macedonian part of Lake Prespa designated in 1995.
 
-## Still being checked
+### Official Gazette: the adopted fishery management plans (2024 and 2025)
 
-The fishery management plans for the other fishing areas (Vardar, Treska, Crn Drim, Crna
-Reka, Bregalnica, Pčinja, Strumica and the other reservoirs) were published in the Official
-Gazette (Службен весник, no. 222 of 31 October 2024 and no. 33 of 14 February 2025):
-- https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf
-- https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf
-These are scanned, so their text is being read with OCR and checked against the
-2023–2028 plan documents before anything is added to the site.
+The plans as adopted by the Minister of Agriculture, Forestry and Water Economy under the
+new Law on Fisheries and Aquaculture (Сл. весник 64/24), published in the Official Gazette
+(Службен весник на РСМ). Each one has: basic data on the fishing area, the species table
+(section 2.1), daily catch limits, the spawning table of "the more important species" of
+the area (section 4), stocking, guards and protected zones. The PDFs are scans; their text
+was read with OCR (in the `research` branch, `research/text/…ocr.txt`) and every species
+and number used here was checked by hand against the OCR text.
+
+- **Issue no. 222 of 31 October 2024** –
+  https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf
+  (Ohrid, Špilje, Mavrovica, Vardar upper/middle/lower, Treska, Crn Drim, Crna Reka,
+  Bregalnica, Pčinja)
+- **Issue no. 33 of 14 February 2025** –
+  https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf
+  (Mantovo, Ratevo–Berovo Lake, Prespa, Gradče, Konče, Mladost, Dojran, Turija, Vodoča,
+  Mavrovo National Park, Kozjak, Strumica, Glažnja, Streževo, Lipkovo, Kalimanci)
+
+Used for (per water):
+- **Vardar** (middle and lower course): species tables and main species; matched with
+  Georgiev (2000), so carp, wels catfish, perch, crucian carp, bitterling and topmouth
+  gudgeon were added. Roach, rudd and tench (main species in the plans) were **not**
+  added, because Georgiev did not find them in 1996–1999.
+- **Crna Reka**: river facts (source Crna Dupka above Železnec at 760 m, mouth near Stobi,
+  basin 5,890 km² of which 5,130 km² in the country); Pelagonian trout (species table and
+  catch table); all 2006 survey species are also in the plan's table.
+- **Treska**: river facts (third longest Vardar tributary, called Golema Reka in the Kičevo
+  basin, karst spring at Izvor/Kopačka below Kiska on Bistra at 740 m, mouth at Saraj at
+  260 m, basin 2,068 km², reservoirs Kozjak, Sveta Petka, Matka) and main species.
+- **Kozjak**: reservoir facts (completed 2004, 16.5 km above Matka, rock-and-earth dam with
+  clay core, ~550 million m³, purposes) and main species. Pike: in the species table, and
+  the 2023–2028 plans say anglers stocked Kozjak with pike.
+- **Crn Drim**: facts (outflow at Struga, through the Struga plain to Tašmaruništa, Adriatic
+  basin of 3,350 km², second largest), main species, the "Daljan" commercial eel zone.
+  Left out: "trout" (species not given), carp and rudd (the area includes Globočica).
+- **Radika** and **Mavrovo Lake** (plan "Национален парк Маврово"): the plan's separate
+  species tables for the zones "Радика" and "Мавровско Езеро", matched with the area's main
+  species; Radika facts (source on Šar Planina at 2,260 m, mouth in Debar Lake near
+  Kosovrasti at 487 m, 64.7 km); Mavrovo facts (1,230 m, filling began 1952, 1,370 ha at
+  1,233 m, 10.5 km × 3 km, depth 50 m / 26 m, can freeze over in January). Left out: the
+  Radika basin area (87.9 km² in the plan, which looks wrong).
+- **Mavrovica**: facts and main species. Note: the plan's main-species table is wrongly
+  headed "Шпилје", but its species match the Mavrovica species table, so it was used.
+- **Mantovo**, **Turija**, **Vodoča**, **Glažnja**: facts and main species. In the Strumica
+  basin plans the white barbel is given as Barbus macedonicus (Turija) and Barbus barbus
+  (Vodoča, Strumica), so it was left out; the bleak at Vodoča is "Alburnus sp.". Glažnja:
+  the area (0.96 km² vs 107 ha) and depth (90 m with a 74 m dam) were left out.
+- **Strumica**: facts (source as Radoviška Reka on Plačkovica at 1,540 m, Stara Reka,
+  gorge below Novo Selo, border at 186 m, 75.1 km and 1,520 km² in the country) and chub,
+  Barbus strumicae and pike. The plan's main-species table includes roach, rudd and tench,
+  which are not in its own species table, so it was used with care; nase and white barbel
+  were left out (names doubtful); carp, perch and catfish were left out (the area also has
+  the Monospitovo marsh and reservoirs).
+- **Kalimanci**: facts (1969, irrigation and electricity, 127 million m³ at 519.5 m, max
+  depth 80 m, changing level). Fish only carp and wels catfish, from the Bregalnica plan's
+  sentence about the lake; the rest of the area's main species are in a note.
+- **Berovo Lake (Ratevo)**: facts (6 km SE of Berovo on the Ratevska Reka, 12.5 km above
+  the Bregalnica, built 1969–1975, arch dam 53 m, 2.5 km, 0.57 km², depth 50 m / 17.5 m,
+  irrigation of the Maleševo plain and drinking water). Fish only Macedonian trout: the
+  2023–2028 plans' description of the species records a 79 cm, 9.8 kg trout caught in the
+  Ratevo reservoir in 2003. The area's other main species are in a note.
+- **Debar Lake (Špilje)**, **Lipkovo**, **Gradče**: facts; the areas also include rivers,
+  so the main species are only in a note (rule 12).
+- **Pčinja**: carp and wels catfish were removed from the fish list (the area also includes
+  the Badar ponds and the Otošnica reservoir).
+- Not used: **Konče** (the reservoirs are not on the map).
