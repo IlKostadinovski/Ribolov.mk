@@ -61,7 +61,7 @@ jobs:
               echo "::notice::$base: OCR on $(echo $scanned | wc -w) scanned pages"
               mkdir -p "ocr/$base"
               echo $scanned | tr ' ' '\n' | xargs -P 4 -I{} sh -c \
-                'pdftoppm -f {} -l {} -r 300 -gray -png "$0" "ocr/$1/p{}" && tesseract "ocr/$1/p{}"*.png "ocr/$1/page-$(printf %04d {})" -l mkd+eng --psm 4 >/dev/null 2>&1' "$f" "$base"
+                'pdftoppm -f {} -l {} -r 300 -gray -png -singlefile "$0" "ocr/$1/p{}" && tesseract "ocr/$1/p{}.png" "ocr/$1/page-$(printf %04d {})" -l mkd+eng --psm 4 >/dev/null 2>&1' "$f" "$base"
               for t in $(ls ocr/"$base"/page-*.txt | sort); do
                 echo "===== PAGE $(basename "$t" .txt | sed 's/page-0*//') ====="; cat "$t"
               done > "research/text/$base.ocr.txt"
