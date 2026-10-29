@@ -1,0 +1,519 @@
+                                                            Macedonian Journal of Animal Science, Vol. 1, No. 1, pp. 261–270 (2011)
+047                                                                                                               ISSN 1857 – 7709
+Received: June 12, 2009                                                                                     UDC: 597.2/.5(497.714
+Accepted: November 10, 2009
+                                                                                                                 Original scientific paper
+
+
+
+
+        ASSEMENT OF THE ECOLOGICAL STATUS OF THE CRNA RIVER BASED
+          ON THE FISH FAUNA – CONTRIBUTION TO THE ESTABLISHEMENT
+            OF THE MONITORING SYSTEM OF RIVERS IN R. MACEDONIA
+
+             Vasil Kostov1, Milica Ristovska2. Dana Prelić2, Valentina Slavevska-Stamenković2
+    1
+     “Ss. Cyril and Methodius“ University in Skopje, Institute of Animal Science, Fisheries Department,
+                           Bul. Ilinden 92a, 1000 Skopje, Republic of Macedonia
+                     2
+                       Faculty of Natural Science and Mathematics, Institute of Biology,
+                                  P.O. Box 162, 1000 Skopje, R. Macedonia
+                                           vasilkostov@yahoo.com
+
+               The purpose of this study is to assess the longitudinal variation of species composition and the community
+        structure of ichthyofauna from the Crna River, as well as the assessment of the ecological status of the river based on
+        the fish fauna. The investigation is made on 12 sampling points on the river during August, September and October
+        2006 including the reservoir Tikveš. Twenty nine species belonging to 9 families have been recorded. Among them
+        21 are autochthonous (native) species and 8 are allochthonous ones. The structure of fish community is evaluated by
+        using structural indices of species richness – d, diversity H’, homogeneity – J(e) and similarity (S). Reduction of fish
+        diversity could be noticed along the river course. It seems that changes in the habitat condition mainly associated
+        with human activities are the main factors which alter the structure of fish community. EFI values indicate a healthy,
+        natural or nearly natural water ecosystem or good ecological status along the river course from the source region to
+        the sampling point T3. After the inflow of the River Blato, at the profile “Trojkrsti” (T4), the ecological status deterio-
+        rates. The remaining downstream parts of the river has a moderate ecological status, except the profile below the
+        town of Bitola, which according to the EFI has a bad ecological status. Below the “Skočivir” profile, the water qual-
+        ity improves toward moderate status. The use of selected parameters of the community is found to be the effective ba-
+        sis for further development of the system of the ecological status assessment based on the fish fauna.
+
+        Keywords: fish community structure; structural indicies; EFI; Crna River; Rpublic of Macedonia
+
+
+                    ПРОЦЕНА НА ЕКОЛОШКИОТ СТАТУС НА ЦРНА РЕКА ВРЗ ОСНОВА
+                      НА РИБНАТА ФАУНА – ПРИДОНЕС ВО ВОСПОСТАВУВАЊЕТО
+                      НА МОНИТОРИНГ СИСТЕМ НА РЕКИТЕ ВО Р. МАКЕДОНИЈА
+              Целта на оваа студија беше да се изврши процена на лонгитудиналното варирање на видовиот состав и
+        структурата на заедницата на ихтиофауната во Црна Река, како и процена на еколошкиот статус на реката врз
+        основа на рибната фауна. Истражувањата беа извршени на 12 мерни места на реката, вклучувајќи ја и аку-
+        мулацијата Тиквеш, во текот на август, септември и октомври 2006 год. Регистрирани беа 29 вида кои припа-
+        ѓаат на 9 фамилии риби. Од нив 21 вид е автохтон и 8 видови се алохтони. Структурата на рибната заедница
+        беше проценета со помош на структурни индекси на видово богатство – d, диверзитет – H’, хомогенитет –
+        J(e), и сличност – S. По течението на реката беше забележана редукција на диверзитетот на рибите.
+        Најверојатно измените на условите во стаништата и антропогеното влијание се главните фактори коишто
+        влијаат на структурата на рибната заедница. Вредностите EFI индицираат добар квалитет на вода, односно
+        добар еколошки статус по течението на реката од изворот до мерното место Т3. По вливот на реката Блато кај
+        профилот “Тројкрсти” (Т4) еколошкиот статус се влошува. Долнот тек на реката се карактеризира со
+        прифатлива еколошка состојба, освен профилот под градот Битола, којшто според EFI има лош еколошки
+        статус. Под профилот „Скочивир“ квалитетот на водата се подобрува и се категоризира како водно тело со
+        прифатлив статус. Примената на горенаведените параметри за анализа на структурата на рибната фауна може
+        да послужи како основа за воспоставување иден мониторинг систем за процена на еколошкиот статус на
+        реките.
+
+        Клучни зборови: структура на рибната фауна; структурни индекси; EFI; Црна Река; Република Македонија.
+262                             V. Kostov, M. Ristovska. D. Prelic.,V. Slavevska-Stamenković
+
+
+                INTRODUCTION                                            On the other hand in the R. of Macedonia
+                                                                  there is still a lack of data about the fish
+      The primary goal of freshwater biomonitoring                community structure of many rivers. Most of these
+is to determine the relative impacts of pollution on              investigations concern the River Vardar and its
+the living communities in surface waters. The use                 major tributaries, as well as, the three natural lakes
+of living organisms has several advantages over                   while the fish fauna of small aquatic systems has
+traditional chemical and microbial water quality                  been poorly investigated (Kostov et al., 2010). Al-
+analyses. Freshwater organisms live almost con-                   though the River Crna is one of the biggest rivers
+tinuously in the water and respond to all environ-                in Macedonia, its fish fauna is steel partially inves-
+mental stressors, including synergistic combina-                  tigated (Kostov et al., 1998; Kostov, 2008). The
+tions of pollutants (acting together with a greater               Crna River is a good model system for testing the
+total effect than the sum of their individual ef-                 assessment methodology, since different segment
+fects). That is why the European Union’s Water                    types are available and the different levels of pres-
+Framework Directive – WFD (EC, 2000), under-                      sure are in force along the watercourse. This river
+lined the central role of biological indicators to                is a good example of the strong human induced
+assess the ecological status of rivers.                           influences potentially affecting native fish com-
+      For aquatic ecosystems, biological indicators               munities, therefore in this study we focused on it.
+can be chosen from a variety of animal or plant                   The purpose of this study was to reveal species
+assemblages, but fish are of a particular interest                composition and community structure of ichthyo-
+because (1) they are present in many water bodies,                fauna from the Crna River, as well as assessment
+(2) their taxonomy, ecological requirements and                   of the ecological status of the river based on the
+life history are generally better known than for                  fish fauna. As the European Water Framework
+other assemblages, (3) they occupy a variety of                   Directive (EC, 2000) proposes the use of abun-
+trophic levels and habitats, and (4) they have both               dance data, as well as presence–absence of fish
+economic and aesthetic values, and thus help raise                species, the results of this study could be a solid
+awareness about the necessity of conserving                       basis for future bioassessment programs.
+aquatic habitats (Oberdorff et al., 2001). Despite
+the European trend of fast development of biologi-
+cal assessment methodology for waters, biological                                        STUDY AREA
+methods, including metrics based on analyses of
+fish community are neglected in the Republic of                         The Crna River is the biggest tributary of the
+Macedonia. As a candidate country for the Euro-                   Vardar River. The spring is near the village
+pean Union, the Republic of Macedonia is obli-                    Železnec at 760 m.a.s in the area named “Crna
+gated to harmonize the national legislation with                  Dupka”. The river length is 222 km, while the
+the European Directive (EC, 2000), which includes                 river basin is 5.887 km2 (Gashevski, 1979). From
+the harmonization of the national monitoring sys-                 the spring to the village Bučin, the Crna Reka
+tem of waters. Natural perturbations and recent                   flows through the Demirhisar area and from there
+increased anthropogenic influences (such as water                 to the village Skočivir through the biggest Mace-
+abstraction, canalization, damming, introductions                 donian basin Pelagonija. Near Brod the river turns
+of exotic species, and agricultural, industrial, and              in the southeast direction. From the village Sko-
+municipal waste inputs) on freshwater resources                   čivir it goes through the canyon Skočivir (it is the
+have become more intense over the past 40 years,                  longest canyon in Macedonia) and the highest area
+resulting in elimination and degradation of surface               Mariovo. Through Mariovo, the Crna River has
+water resources and aquatic habitats in the R. of                 characteristics of a mountain river. It is fast, with a
+Macedonia. These alterations have resulted in                     short river bed and high banks. At the end of the
+fragmented, polluted freshwater fish habitats and                 canyon the Tikveš Reservoir is built. This reser-
+communities that have led to extirpation of some                  voir (35 km long, with an area of 14 km2, and a
+native species (Kostov et al., 2010). As the streams              capacity of 475 millions m3 water) is one of the
+disturbance becomes increasingly recognized, the                  oldest reservoirs in Macedonia built in 1968. The
+interest to use fishes as ecological indicators to                reservoir is used for irrigation and electricity pro-
+assess and evaluate the level of degradation and                  duction. From the dam to the village Vozarci
+health of rivers in the R. of Macedonia has grown.                where the Crna River flows into the River Vardar,
+                                                                  the Crna River has characteristics of a field river.
+
+
+                                                                                               Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+                                  Assement of the ecological status of the Crna River based on the fish fauna…                        263
+
+The biggest tributaries of the River Crna are: the                          composition, the temperature of the water, oxygen
+Blato, the Dragor, the Jeleska Reka and the Blašica                         and pH were measured.
+(Gaševski, 1979).                                                                 The fishes were caught by electro fishing
+                                                                            (Samus 725G) according to the FAME (2002,
+                                                                            2004) methodology and relevant standards (EN
+                                                                            14011 – CEN 2003). Gill nets with a different
+                                                                            mesh size were used for collecting material from
+                                                                            the lake. The netting procedure was done accor-
+                                                                            ding to the European standard protocols (EN
+                                                                            14757 – CEN 2005). All specimens were identi-
+                                                                            fied to species level by external morphological
+                                                                            characters and the total number of individuals per
+                                                                            species was recorded on the field protocol data
+                                                                            sheet. After processing and measurement of the
+                                                                            basic characteristics the fish was photographed
+                                                                            and returned into the water at the same place
+                                                                            where they were caught. Fish determination was
+                                                                            made with standard keys (Vukovic, 1971; Geor-
+                                                                            giev, 1998; Kottelat, 1997; Kottelat and Freyhof,
+          Fig. 1. Map of the investigated area                              2007), while the taxonomic classification of the
+                                                                            fish species is based on Kottelat and Freyhof
+                                                                            (2007).
+             MATERIAL AND METHODS                                                 The structure of fish community was evalu-
+                                                                            ated by using structural indices of species richness
+      The investigation was made on 12 sampling                             – d, diversity H’, homogeneity – J(e) and similar-
+points on the River Crna and the reservoir Tikveš                           ity (S).
+during August, September and October 2006. The
+                                                                                  – Index of species richness (d) according to
+sampling sites T1–T9 are located above the Tikveš
+                                                                            the Margalef (1958) formula:
+Reservoir while T11–T12 below the dam. The first
+sampling site T1 – “Železnec” is after the part                                                                  S −1
+where the small rivers the Ilinska and the Cerska                                                        d=
+                                                                                                                 ln N
+River go together and form the Crna River. This is
+the part where the Crna River has characteristics                           where S is the number of species, N is the total
+of a typical mountain river with a relative slope of                        number of specimens.
+4 ‰. These characteristics are identical for the                                – Index of diversity (H’) according to the
+second sampling point T2 – “Sopotnica”. After the                           Schaennon – Wiener (Glowacinsky, 1975) for-
+sampling site T3 – “Bučin” until the sampling site                          mula:
+T7 – “Skočivir” the Crna River goes through the                                                    s
+                                                                                                                                 ni
+Pelagonia basin. At the sampling sites T4 –
+“Trojkrsti”, T5 – “Topolčani”, T6 – “Novaci” the
+                                                                                           H’=   ∑ pi ln pi
+                                                                                                  i =1
+                                                                                                                          pi =
+                                                                                                                                 N
+Crna River has the characteristics of a slow flow-
+                                                                            where ni is the number of specimens of i – species,
+ing field river. The sampling sites T7 – “Skočivir”,
+                                                                            while N is total the number of specimens.
+T8 – “Makovo” and T9 – “Vliv” are localities
+where the river is fast, with a short river bed and                              – Index of homogenity (J(e)) according to the
+high banks, with characteristics of a typical moun-                         Pielou (1966) formula:
+tain river. The sampling site T10 presents the Tik-                                                                 H'
+veš Reservoir. The sampling point T11 – “Vozarci”                                                        J (e) =
+                                                                                                                   ln S
+was defined after the dam while T12 – “Stobi” was
+chosen as the last sampling point where the River                                – Index of dominance (D%) according to the
+Crna inflows in the River Vardar. During the                                Karr (1971) formula:
+investigation period for each of the following                                                            Y1 + Y 2
+localities assessment of the geographical coordi-                                                DI =              * 100
+                                                                                                             Y
+nates (GPS), the determination of substrate type
+
+Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+264                             V. Kostov, M. Ristovska. D. Prelic.,V. Slavevska-Stamenković
+
+
+where Y1 is density of the first dominant species,                Fish Index (EFI), produced by the FAME 2002,
+Y2 is density of the second dominant species, while               2004.
+Y is the total density of community.
+      – Index of similarity (S) according to the
+Marczewski and Steinhaus (1959) formula:                                                        RESULTS
+
+                       W                                                During the investigation of the fish fauna
+               S=            * 100
+                    a + b −W                                      from the Crna River and the Tikves Reservoir,
+                                                                  5442 specimens were collected and measured
+where W is the number of common species, a is
+                                                                  (Tab. 1). Twenty nine species belonging to 9 fami-
+the total number of species from one sampling site,
+                                                                  lies (Tab. 2) were recorded. Among them 21 are
+b is the total number of species from the other
+                                                                  autochthonous (native) species and 8 are aloch-
+sampling site.
+                                                                  thones.
+      The classification of the ecological status of
+the Crna River was done by using the European
+
+Table 1
+                                 Fish Species Abundance in the Crna River
+
+
+
+
+                                                                                               Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+                                  Assement of the ecological status of the Crna River based on the fish fauna…   265
+
+Table 2
+   Number of registered fish species on the sampling place, the number or caught fish specimens on the
+ sampling place and the total fish catch duringthe investigation in the Crna River and the Reservoir Tikveš
+
+
+
+
+Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+266                                V. Kostov, M. Ristovska. D. Prelic.,V. Slavevska-Stamenković
+
+
+      Twenty five fish species (86 % of the total                         Even S. vardarense has lower contribution
+number of species) belonging to seven families                       (4,32%) to the fish community; it was the most
+were registered in the river ecosystem, while 20                     frequent species (75% or 9 sampling sites), follow-
+species (69 % of the total number of species) be-                    ed by the dominant Alburnoides bipuncaatus and
+longing to 7 families (Cyprinidae, Percidae, Aci-                    Barbus balcanicus registered on the T8 and T7
+enseridae, Esocidae, Siluridae, Ictaluridae and                      sampling sites, respectively.
+Centrarhidae) inhabit the reservoir “Tikveš“. The                         The results showed that the structure of fish
+presence of Acipenser gueldenstaedtii and Acipen-                    community changed along the longitudinal gradi-
+ser ruthenus was evident in the reservoir which                      ent (Tab. 2). Namely, the sampling T1 and T2
+presents the first record in the R. Macedonia. It is                 belong to the salmonid region and it is characteri-
+not known how these species have been introduced                     zed with a lower number of species (Salmo sp. and
+in the Tikveš Reservoir. Analyses of the fish fauna                  Barbus balcanicus) and lower community density.
+show moderately high species similarity (55 % or                     Additionally, the lowest values of species richness,
+16 taxa) between the river and the reservoir eco-                    diversity and homogeneity, accompanied with the
+systems.                                                             highest values of the dominance (100%) were
+      Cyprinidae (18 fish species) were the domi-                    measured at the same part of the river (Figs. 2–3).
+nant family in both, the river and the reservoir eco-                Longitudinally, from the salmonid region till the
+systems. Cobitidae, Percidae and Acypenseridae                       mouth of the Crna River to the reservoir (T3-T9)
+were represented with two, while the other fa-                       species richness and diversity increased, with the
+milies such as Salmonidae, Centrarhidae, Siluri-                     exception at the T4 (H, – 0,68; d – 0,5) and
+dae, Ictuliriae and Esocidae were represented with                   especially at T7, where the indices dropped to zero.
+only one species.                                                    At the sampling site “Skočivir” (T7) only one
+      In general, Alburnoides bipuncatatus and                       species, the introduced C. gibelio was recorded
+Barbus balcanicus present dominant species con-                      (Tab. 2 and Fig. 3), which caused the highest
+tributed with 20,5% and 18,1% in the fish comm-                      degree of dominance (100%) and the lowest homo-
+nity. Ameiurus nebulosus, Alburnus sp., Rutilus                      geneity (0%).
+rutilis and Lepomis gibbosus (group II) were also
+found in considerable numbers.
+
+
+
+
+            Fig. 2. Longitudinal changes (T1–T12) of richness (d) and diversity (H’) indices across the Crna River.
+
+
+
+
+          Fig, 3. Longitudinal changes (T1–T12) of dominance (D) and homogeneity (J(e)) indices across theCrna River
+
+
+                                                                                                  Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+                                  Assement of the ecological status of the Crna River based on the fish fauna…               267
+
+     Concerning the Tikveš Reservoir (sampling                              since the former reflect changes in the relative
+point T10) the most dominant species was Ameiur-                            abundance of species in common and large tempo-
+uss nebulosus (521 specimens). Rutilus rutilus,                             ral changes in a community structure may occur
+Gimnocephalus cernua, Lepomis gibbosus and                                  without changing the value of its diversity index.
+Alburnus sp. were also found in higher number.                              In that context the index of similarity (S) has been
+Species richness, diversity and homogeneity at this                         shown as an extremely useful tool for determining
+sampling point showed high values (H' – 2,03; d –                           the similarity of species composition of
+2,5; J(e) – 0,88), while the dominance significantly                        ichtyofauna along the riverbed and the Tikveš
+decreased (Figs. 2–3).                                                      Lake. The Table 3 presented similarity between
+     Below the dam, at the sampling point T11,                              the fish community in all investigated sites (T1–
+only 4 species were caught. Barbus balcanicus                               T12). It could be noticed high species similarity (50
+was the most abundant species (365 specimens).                              %) the between first sampling sites (T1–T2).
+Species richness, diversity and homogeneity (H, –                           Lower similarity between T3 and T4, as well as,
+0,43; d – 0,5; J(e) – 0,31) were low again, while the                       higher similarity between T3 and T5 were recorded.
+dominance significantly increased (97,57%). The                             Further, the highest similarity between T5 and T6
+last sampling point T12 was characterized with                              with T12 was evident. Analyses of the fish
+high species richness, diversity and homogeneity                            community, between T9 (the mouth of the Crna
+(H' – 2,14; d – 2; J(e) – 0,86), while the dominance                        River in the Reservoir) and T10 (the Reservoir)
+(47,61%) was low again.                                                     show similarity of 45.5%.
+     Similarity indices may be better indicators of
+the fish community change than diversity indices
+
+Table 3
+                                    Similarity (%) of fish community along the Crna River
+
+
+
+
+      In the Table 4 the biological assessment of                           “Trojkrsti” (T4), the ecological status deteriorates.
+the status of the Crna River based on the EFI index                         The remaining downstream parts of the river have
+is presented. The EFI values indicaterly a healthy,                         a moderate ecological status, except the profile
+natural or by near natural water ecosystem and a                            below the town of Bitola, which according to the
+good ecological status along the river course the                           EFI had a has ecological status. Below the “Sko-
+from source region to the sampling point T3. After                          čivir” profile, the water quality improves toward
+the inflow of the River Blato, at the profile                               moderate status.
+
+
+Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+268                            V. Kostov, M. Ristovska. D. Prelic.,V. Slavevska-Stamenković
+
+
+Table 4                                                          Morin and Naiman, 1990; Zakaria-Ismail, 1994).
+                                                                 According to Schlosser (1982) the number of spe-
+  Categorization of the water quality across the
+                                                                 cies in lower reaches is related to the increased
+       Crna River based on the EFI index
+                                                                 habitat diversity.
+Localit Latitude Longitud Altitud EFI Ecologica                        The results of the current study show that
+  y                 e        e         l status                  habitat complexity of the Crna River is not the
+                                                                 main factor influencing the taxonomic composition
+  T1    41o18′42 21o05′28     760     0.6      Good
+                                                                 and abundance of fish community. Opposite of T1
+                                       3
+                                                                 and T2, where low diversity presents a natural
+  T2    41o17′09 21o09′33     700     0.6      Good              phenomenon (salmonid region), the significant
+                                       4                         reduction of species richness registered along the
+                                                                 river course (T4, T7 and T11), indicate that the other
+  T3    41o15′29 21o12′10     650     0.6      Good
+                                                                 factors affect the fish community. It is well known
+                                       0
+                                                                 that human modifications of the stream channel
+  T4    41o12′32 21o25′54     620     0.4 Moderate               may alter any of the fish-habitat relationships and
+                                       1                         thus may have substantial effects on the fish fauna
+  T5    41o12′53 21o25′38     580     0.3 Moderate               (Swales, 1988). Variations in the fish fauna across
+                                       9                         the river bed (longitudinal direction) become more
+                                                                 remarkable in streams facing the problem with di-
+  T6    41o02′24 21o26′23     550     0.2 Moderate               rect discharge from untreated industrial and mu-
+                                       8                         nicipal effluents (Huet, 1959; Angermeier and
+  T7    41o58′17 21o39′20     520     0.0       Bad              Karr, 1983; Balon and Stewart, 1983; Przybylski,
+                                       9                         1993).
+                                                                       In the case of the Crna River it seems that
+  T8    41o12′23 21o40′05     490     0.4 Moderate
+                                                                 changes in the habitat condition mainly associated
+                                       3
+                                                                 with human activities are the main factors which
+  T9    41o05′52 21o52′48     450     0.3 Moderate               alter the structure of the fish community. Thus, at
+                                       4                         the sampling points “Trojkrsti” (T4) which is near
+                                                                 the inflow of the River Blato, the scarce fish com-
+ T10    41o05′42 21o05′28     760     0.6      Good
+                                                                 munity (four species) with high abundance of tol-
+                                       3
+                                                                 erant Alburnoides bipunctatus and Alburnus sp.
+ T11    41o25′02 21o53′47     105     0.3 Moderate               was evident. Probably, the waste waters from the
+                                       1                         town Prilep discharged in this part of the river
+ T12    41o33′02 21o58′13      95     0.4 Moderate               caused community changes. Lower similarity
+                                       4                         between T3 and T4 as well as lower EFI values
+                                                                 show moderate water quality of the sector.
+                                                                       Concerning the “Skočivir” (T7), the presence
+                  DISCUSSION                                     of only few specimens of the tolerant Prusssian
+                                                                 carp (Carassius gibelio) has been noticed (Tab. 2).
+      Fish community structure in streams may dif-               The analyses of structural indices clearly show that
+fer on the longitudinal gradient according to vari-              the fish community is strongly degraded. Ex-
+ous biological aspects such as species diversity,                tremely low similarity between fish communities
+stress tolerance, habitat preferences, feeding be-               from T7 and the other sampling points (Tab. 3) and
+haviors and the origin of species (Balon et al.,                 the lowest EFI values (Tab. 4), indicate an in-
+1986, Holcík, 1989, Penczak and Mann, 1990;                      creased level of the ecosystem stress and bad a
+Belliard et. al., 1997). Usually, upstream sections              ecological status. It is obvious that the inflow of
+are less degraded with relatively less changed                   the “fifth canal”, which brings all sewage waters
+physical, chemical and biological conditions of                  from the town Bitola and the waste waters from
+habitats. In most of the cases, from upstream to                 industry, has an extremely negative influence on
+downstream, not only species composition of the                  the fish biota. According to the National Hydrome-
+community changes, but also their numbers in-                    teorological Service (UHMR http://www.meteo.
+crease (Fausch et al., 1984; Beecher et al. 1988,                gov.mk) these sampling points are characterized
+
+
+                                                                                              Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+                                  Assement of the ecological status of the Crna River based on the fish fauna…                        269
+
+with extremely high values of COD (chemical                                 fragmentation of the stream habitat affect the river
+oxigen demand) and toxic ammonia which indicate                             fish communities. Unstable conditions (dry and
+presence of huge contents of organic matter de-                             flow periods) below the dam strongly change the
+posit on the bottom as well as anaerobic condition.                         fish community, with high dominance of only one
+      Comparing to the “Skočivir”, recovery of the                          species (Barbus balcanicus).
+fish fauna at the sampling points T8–T9 (upstream                                 The last sampling point T12 was characterized
+of the dam) has been detected. The river flows                              with high species richness, diversity and homo-
+through the Skočivir canyon showing impressive                              geneity, as well as, lower dominance. The high
+self-purification ability. The increased values of                          similarity of the fish fauna between the T12 with
+the diversity, richness and homogeneity, confirm                            T5–T6 pointed out that stable environmental
+this statement and indicated improved enviro-                               conditions were established again. It should be
+nmental conditions. The EFI values point out a                              stressed that the high species richness at this sam-
+moderate level of distortion from the natural, un-                          pling point could be due to the River Vardar itself,
+disturbed condition or moderate ecological status.                          and fish migration probably occurred in two direc-
+      Regarding the sampling point T10 – the Res-                           tions. Similar situation was registered in the mouth
+ervoir Tikveš, a high diversity (20 species) of ich-                        of other rivers in the R. Macedonia (Kostov et al.,
+thyofauna has been recorded. Moderately high                                2010).
+species similarity between thr reservoir and the                                  Apart from the lower similarity between T11
+upstream sector (T11) indicates that the river itself                       and T12, the values of the EFI showed moderate
+presents the main colonizing source. Compared to                            ecological status at the both sampling stations in-
+the results of the previous investigation (Kostov et                        dicating that the dam influence is the only stress
+al., 1989), the findings of the current study indi-                         factor at this part of the river ecosystem. However,
+cate a dramatic change of the fish fauna in the                             further comprehensive investigations should be
+Tikveš Reservoir. A significant population incre-                           continued in order to fully understand the dynamic
+ase of some new introduced fish species (North                              nature of the reservoir and its influence on the
+American catfish species Ameurus nebulosus and                              river ecosystem.
+non-native European species Gimnocephalus cer-                                    As the fish fauna presents a relevant biologi-
+nua) has been observed. Usually, the eutrophica-                            cal quality element according to the Water Frame-
+tion favoured „trash" fish (Marković and Veljović,                          work Directive (EU, 2000) a regular monitoring of
+2005) in the reservoirs and their dominance indi-                           the Crna River watershed should be established. In
+cate a higher trophic state. Although, Rutilus ruti-                        order to prevent further water quality deterioration,
+lus is in considerable numbers, compared with the                           water quality of the tributaries Dragor and Blato
+previous investigation its populations show a de-                           should be improved and to establish treatment of
+creasing trend. At the same time, decline in the                            the waste waters from the “fifth canal”. In addi-
+number of the other commercially valued species                             tion, certain measures of protection and conserva-
+such as Cyprinus carpio, Tinca tinca and Vimba                              tion of the Crna River watershed should be under-
+malanops has been observed. The same situation                              taken.
+noticed in Medguvršje Reservoir, the Marković
+and Veljović (2005) explain with deterioration of
+the environmental conditions in the reservoir. It                                                   REFERENCES
+couldn’t be avoided the fact that, the excessive
+catch during the spawn and other periods had addi-                          Angermeier, P.L. & Karr, J.R. (1983): Fish communities
+tional negative effects on the population of com-                               along environmental gradients in a system of tropical
+mercial fishes.                                                                 streams. Env. Biol. Fish. 9: 117–135.
+                                                                            Balon, E.K. & Stewart, D.J. (1983): Fish assemblages in a
+      Below the dam, at the sampling point T11,
+                                                                                river with unusual gradient (Luongo, Africa-Zaire sys-
+species richness, diversity and homogeneity were                                tem), reflections on river zonation, and description of an-
+low again. In comparation with upstream sections                                other new species. Env. Biol. Fish. 9: 225–252.
+and the dam itself, low species similarity was                              Balon, E.K., Crawford, S.S. & Lelek, A. (1986): Fish
+noticed. A similar condition was detected in the                                communitiesof the upper Danube River (Germany,
+Bregalnica River (Kostov et al., 2010) where the                                Austria) prior to thenew Rhein-Main-Donau connection.
+                                                                                Env. Biol. Fish. 15: 243–271.
+fish community bellow the dam Kalimanci was
+also caracterised with a low diversity. Probably the
+
+
+Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+270                                    V. Kostov, M. Ristovska. D. Prelic.,V. Slavevska-Stamenković
+
+
+Beecher, H. C., Dott, E. R. and Fernau, R. F. (1988): Fish                    donia, I Symposium for protection of natural lakes in Re-
+     species richness and stream order in Washington State                    public of Macedonia, Ohrid 2007, Proceedings, Suple-
+     streams. Environmental Biology of Fishes, 22:193–209                     ment, 2008. pp. 210–216.
+Belliard, J., Böet, P. & Tales, E. (1997): Regional and longi-           Kostov, V., Georgiev S., Nastova-Gorgjioska R., Naumovski
+     tudinal patterns of fish community structure in the Seine                M. (1998): First record of species Gymnocephalus cernua
+     River basin, France. Env. Biol. Fish. 50: 133–147.                       Linnaeus, 1758, in to the waters of R. Macedonia, Proc.
+European Community (EC) (2000): Directive 2000/60/EC of                       Pap. Dedic. Kiril Apostolski. Inst. Anim. Sci. Univ.
+     the European parliament and of the council of 23 October                 Skopje: pp. 167–172.
+     2000 establishing a framework for community action in               Kostov, V., Rebok, K., Slavevska-Stamenković, V. &
+     the field of water policy. Official Journal of the European              Ristovska, M. (2010): Fish Fauna of River Bregalnica (R.
+     Communities, L327, pp. 1–72.                                             Macedonia) – Composition, Abundance and Longitudinal
+European Standard EN 14011 – CEN, (2003): Water Analysis                      Distribution. Conference on water observation and in-
+     – Fishing with Electricity for wadable and non-wadable                   formation system for decision support, 2010. Ohrid. Pro-
+     rivers, European Committee for Standardization, 2003                     ceeding available online http://www.balwois or on the
+                                                                              CD publicized by Ministry of Education and Sciences
+European Standard EN 14757 - CEN (2005): Water Quality –                      from Republic of Macedonia.
+     Sampling of fish with Multi-Mesh Gillnets, European
+     Committee for Standardization, 2005                                 Kottelat, M. (1997): European freshwater fishes. An heuristic
+                                                                              checklist of the freshwater fishes of Europe (exclusive of
+FAME (2002): Development, Evaluation and Implementation                       former USSR), with an introduction for non – systematics
+     of a Standardised Fish-based Assessment Method for the                   and comments on nomenclature and conservation”,
+     Ecological Status of European Rivers – A Contribution to                 Biologia, Bratislava 52/Suppl. 5,
+     the Water Framework Directive (FAME). Development
+     of a river-type classification system (D1); Compilation             Kottelat, M., Freyhof J. (2007): Handbook of European fresh-
+     and harmonisation of fish species classification (D2). FI-               water fishes, Kottelat, Cornol, Switzerland and Freyhof,
+     NAL REPORT Richard Noble and Ian Cowx (Eds.) Uni-                        Berlin, Germany.
+     versity of Hull, UK A project under the 5th Framework               Marczewski, E. & Steinhaus, H. 1959. O odległości systema-
+     Programme Energy, Environment and Sustainable Man-                       tycznej biotopów. Zast. Mat. 4: 195–203.
+     agement. Key Action 1: Sustainable Management and                   Margalef, R. (1958): Information theory in ecology. Gen.syst.,
+     Quality of Water Contract n°: EVK1 -CT-2001-00094.                       3, 36–51.
+     http://fame.boku.ac.at
+                                                                         Markovič, G. S. & Veljanovič, P. S. (2005): Biotic Indeces to
+FAME (2004): Development, Evaluation & Implementation of                      beused for aassessment of ichthyofauna structure of the
+     a Standardised Fish-based Assessment Method for the                      Zapadna Morava River (West Serbia, the Dunabe Basin).
+     Ecological Status of European Rivers - A Contribution to                 Proc. Nat. Sci, Matica Srpska Novi Sad, 109, 29–37.
+     the Water Framework Directive (FAME). Final Report
+                                                                         Morin, R. & Naiman, R. J. (1990): The relation of stream
+     Scientific achievements Sections 5 & 6. Reporting Period
+                                                                              order to fish community dynamics in boreal forest water-
+     01/01/2002 – 31/10/2004. A project under the 5th
+                                                                              sheds. Poi. Arch. Hydrobiol. 37: 135–150.
+     Framework Programme Energy, Environment and Sus-
+     tainable Management. Key Action 1: Sustainable Man-                 Oberdorff, T. & Hughes, R. M. (1992): Modification of an
+     agement and Quality of Water Contract n°: EVK1 -CT-                      index of biotic integrity based on fish assemblages to
+     2001-00094. http://fame.boku.ac.at                                       characterize rivers of the Seine Basin, France. Hydrobi-
+                                                                              ologia, 228: 117–130.
+Fausch, K. D., Karr, J. R. & Yant, P. R. (1984): Regional
+     application of an index of biotic integrity based on stream         Penczak, T. & Mann, R.H.K. (1990): The impact of stream
+     fish communities. Trans. am. Fish. Soc. 113: 39–55.                      order on fish populations in the Pilica drainage basin,
+                                                                              Poland. Pol. Arch. Hydrobiol. 37: 243–261.
+Gashevski, M. (1979): Osnovni hidrografski osobenosti na
+     glavnite pritoki na Vardar vo SR Makedonija, Sojuz na               Pielou, E.C. (1966): The measurement of diversity in different
+     geografskite zdruzenija na SR Makedonija, 17. 33–53. (In                 types of biological collections. J. Theoret. Biol., 10, 370–
+     Macedonian)                                                              373.
+Georgiev, S. (1998): Kluc za odreduvanje na ribite (Osteicht-            Przybylski, M. (1993): Longitudinal pattern in fish assem-
+     hyes) i zmiorkite (Cephalaspidomorpha) od R. Make-                       blages in the upper Warta River, Poland. Arch. Hydro-
+     donija. Inst. Stoc., Skopje, 178.                                        biol. 126: 499–512.
+Glowacinsky, Z. (1975): Succesion of bird communitites in                Schlosser, I. J. (1982): Fish community structure and function
+     the Niepolomice forest (Southern Poland). Ekol. Pol., 23,                along two habitat gradients in a headwater stream. Eco-
+     2, 231–265.                                                              logical Monographs, 52:395-414.
+Holčík, J. (1989): Fishes and their environment. pp. 64–87. In:          Swales, S. (1988): Fish populations of a small lowland chan-
+     J.Holčík (ed.) The Freshwater Fishes of Europe, Volume                   nelized river in England subject to long-term river main-
+     1/II, General Introduction to Fishes, Acipenseriformes,                  tenance and management works. Regulated Rivers: Re-
+     AULA Verlag, Wiesbaden.                                                  search and Management, 2, 493–506.
+Karr, J. R. (1971): Structure of avian communities in selected           Vukovic, T. & Ivanovic, B. (1971): Slatkovodne ribe Jugosla-
+     Panama and Illinois habitats. Ecological Monographs,                     vije, Svijetlost, Sarajevo.
+     41, 207–233.                                                        Zakaria-Ismail, M. (1994): Zoogeography and biodiversity of
+Kostov, V. (2008): First record of species Acipenser ruthenus                 the freshwater fishes of Southeast Asia. Hydrobiologia
+     Linnaeus, 1758 in to the waters of Republic of Mace-                     285: 41–48.
+
+
+
+                                                                                                      Maced. J. Anim. Sci., 1 (1) 261–270 (2011)
+
