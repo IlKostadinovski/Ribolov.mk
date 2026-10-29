@@ -53,6 +53,8 @@ const JOIN_GAP_METRES = 7000;
 const SIMPLIFY_METRES = 20;
 // Coordinate precision in degrees (0.00001° is about 1 metre).
 const PRECISION = 0.00001;
+// Municipality lines and city areas need less detail (0.0001° is about 10 metres).
+const PRECISION_LIGHT = 0.0001;
 
 // In OpenStreetMap, the municipalities (општини) of North Macedonia use this admin_level.
 const MUNICIPALITY_LEVEL = '7';
@@ -97,6 +99,7 @@ const QUERIES = {
 // Downloads one query (or, with --cached, reads the last download of it).
 async function load(name, query, useCache) {
   const file = path.join(CACHE_DIR, `${name}.json`);
+  const started = Date.now();
   let data;
   if (useCache) {
     data = JSON.parse(await fs.readFile(file, 'utf8'));
@@ -104,7 +107,10 @@ async function load(name, query, useCache) {
     data = await downloadOverpass(name, query);
     await fs.writeFile(file, JSON.stringify(data));
   }
-  console.log(`${name}: ${data.elements.length} OSM elements`);
+  const seconds = Math.round((Date.now() - started) / 1000);
+  // On GitHub, "::notice::" lines also show up as notes on the run's page.
+  const prefix = process.env.GITHUB_ACTIONS ? '::notice::' : '';
+  console.log(`${prefix}${name}: ${data.elements.length} OSM elements in ${seconds} s`);
   return data;
 }
 
@@ -390,7 +396,8 @@ const URBAN_NEAR_METRES = 400;
 // If a place has no built-up area in OpenStreetMap, it gets a circle this big (metres).
 const CIRCLE_RADIUS = { city: 1200, town: 600, village: 250 };
 
-// Finds the biggest place (city > town > village, then population) in each municipality.
+// Finds the main place of each municipality: its biggest city or town
+// (city > town, then population), or for rural municipalities its seat village.
 function findSeats(osm, municipalities, border) {
   const places = osm.elements
     .filter((el) => el.type === 'node' && el.tags && macedonianName(el.tags))
@@ -400,6 +407,7 @@ function findSeats(osm, municipalities, border) {
       place: el.tags.place,
       population: parseInt(String(el.tags.population || '').replace(/\D/g, ''), 10) || null,
       coordinates: [el.lon, el.lat],
+      osmId: el.id,
     }))
     .filter((p) => pointInGeometry(p.coordinates, border.geometry));
 
@@ -408,8 +416,12 @@ function findSeats(osm, municipalities, border) {
     const box = geometryBbox(m.geometry);
     const inside = places.filter((p) => inBbox(p.coordinates, box) && pointInGeometry(p.coordinates, m.geometry));
     if (!inside.length) continue;
+    // A city or town if there is one; otherwise the municipality's official seat
+    // (village populations are often missing in OpenStreetMap); otherwise the biggest village.
     inside.sort(byPlaceSize);
-    seats.push({ ...inside[0], municipality: m.properties.name });
+    const seat = inside[0].place !== 'village' ? inside[0]
+      : inside.find((p) => p.osmId === m.properties.seat) || inside[0];
+    seats.push({ ...seat, municipality: m.properties.name });
   }
   return seats.sort(byPlaceSize);
 }
@@ -417,12 +429,16 @@ function findSeats(osm, municipalities, border) {
 const byPlaceSize = (a, b) => PLACE_RANK[a.place] - PLACE_RANK[b.place]
   || (b.population || 0) - (a.population || 0);
 
-// Overpass query for the residential/commercial/retail land around each seat.
+// Overpass query for the residential/commercial/retail land in a square around
+// each seat (squares are much faster for Overpass than circles).
 function urbanQuery(seats) {
   const landuse = '["landuse"~"^(residential|commercial|retail)$"]';
   const parts = seats.flatMap(({ place, coordinates: [lon, lat] }) => {
-    const around = `(around:${URBAN_SEARCH_RADIUS[place]},${lat},${lon})`;
-    return [`  way${landuse}${around};`, `  relation${landuse}${around};`];
+    const r = URBAN_SEARCH_RADIUS[place];
+    const dLat = r / 110540;
+    const dLon = r / (111320 * Math.cos((lat * Math.PI) / 180));
+    const box = [lat - dLat, lon - dLon, lat + dLat, lon + dLon].map((v) => v.toFixed(5)).join(',');
+    return [`  way${landuse}(${box});`, `  relation${landuse}(${box});`];
   });
   return `[out:json][timeout:300];\n(\n${parts.join('\n')}\n);\nout body; >; out skel qt;`;
 }
@@ -536,12 +552,19 @@ function pointInRing([x, y], ring) {
 // ---------------------------------------------------------------------------
 
 function buildMunicipalities(osm) {
+  // The seat of each municipality is the relation member with role "admin_centre".
+  const seatOf = new Map();
+  for (const el of osm.elements) {
+    if (el.type !== 'relation') continue;
+    const seat = el.members?.find((m) => m.type === 'node' && m.role === 'admin_centre');
+    if (seat) seatOf.set(`relation/${el.id}`, seat.ref);
+  }
   return osmtogeojson(osm).features
     .filter((f) => f.properties.id?.startsWith('relation/') && isPolygon(f)
       && f.properties.admin_level === MUNICIPALITY_LEVEL)
     .map((f) => ({
       type: 'Feature',
-      properties: { name: macedonianName(f.properties) },
+      properties: { name: macedonianName(f.properties), seat: seatOf.get(f.properties.id) || null },
       geometry: f.geometry,
     }));
 }
@@ -595,6 +618,7 @@ function slugify(text) {
 async function runMapshaper() {
   const tmp = (name) => `"${path.join(TMP_DIR, name)}"`;
   const layers = ['border', 'rivers', 'lakes', 'municipalities', 'cities'];
+  const asGeoJSON = 'format=geojson geojson-type=FeatureCollection extension=geojson';
   await mapshaper.runCommands([
     '-quiet',
     `-i ${layers.map((name) => tmp(`${name}.geojson`)).join(' ')} combine-files`,
@@ -608,7 +632,8 @@ async function runMapshaper() {
     // between neighbouring municipalities (the outer edge is the country border).
     `-o ${tmp('municipality-areas.geojson')} format=geojson target=municipalities`,
     '-innerlines target=municipalities name=municipalities',
-    `-o "${OUT_DIR}/" format=geojson geojson-type=FeatureCollection extension=geojson precision=${PRECISION} target=${layers.join(',')}`,
+    `-o "${OUT_DIR}/" ${asGeoJSON} precision=${PRECISION} target=border,rivers,lakes`,
+    `-o "${OUT_DIR}/" ${asGeoJSON} precision=${PRECISION_LIGHT} target=municipalities,cities`,
   ].join(' '));
 }
 

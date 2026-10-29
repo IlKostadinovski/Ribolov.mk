@@ -46,8 +46,10 @@
   // Tap/click areas, in screen pixels. Every river also gets an invisible line
   // RIVER_TAP_WIDTH wide, so thin rivers are easy to hit with a finger.
   // TAP_TOLERANCE is a small extra margin around every shape.
-  const RIVER_TAP_WIDTH = L.Browser.touch ? 18 : 8;
-  const TAP_TOLERANCE = L.Browser.touch ? 6 : 3;
+  // (A "coarse" pointer is a finger; a mouse or pen is "fine".)
+  const FINGER = window.matchMedia('(pointer: coarse)').matches;
+  const RIVER_TAP_WIDTH = FINGER ? 18 : 8;
+  const TAP_TOLERANCE = FINGER ? 6 : 3;
 
   // Show names next to the mouse (only on devices that can hover).
   const CAN_HOVER = window.matchMedia('(hover: hover)').matches;
@@ -62,7 +64,7 @@
   let messageKey = null;        // error message currently shown, if any
   let selectedId = null;
   let hoveredId = null;
-  let openCity = null;          // city whose name is showing after a tap (phones)
+  let cityLabel = null;         // city name shown after a tap (phones)
   const layersById = new Map(); // water id -> visible map layer
   const groups = {};            // filter name -> map layer group
   const visible = Object.fromEntries(FILTERS.map((key) => [key, true]));
@@ -189,26 +191,27 @@
     }
   }
 
-  // Cities show their name on hover, or on a tap on phones.
+  // Cities show their name on hover, or after a tap on phones (until the next tap).
+  const CITY_LABEL = { direction: 'top', offset: [0, -6], className: 'map-tooltip map-tooltip--city' };
+
   function setUpCity(feature, layer) {
-    layer.bindTooltip(() => displayName(feature.properties), {
-      sticky: CAN_HOVER,
-      direction: 'top',
-      offset: [0, -6],
-      className: 'map-tooltip map-tooltip--city',
-    });
+    if (CAN_HOVER) {
+      layer.bindTooltip(() => displayName(feature.properties), { ...CITY_LABEL, sticky: true });
+    }
     layer.on('click', (e) => {
       L.DomEvent.stopPropagation(e);
       if (CAN_HOVER) return;
       closeCityName();
-      openCity = layer;
-      layer.openTooltip(e.latlng);
+      cityLabel = L.tooltip(CITY_LABEL)
+        .setLatLng(e.latlng)
+        .setContent(displayName(feature.properties))
+        .addTo(map);
     });
   }
 
   function closeCityName() {
-    if (openCity) openCity.closeTooltip();
-    openCity = null;
+    if (cityLabel) map.removeLayer(cityLabel);
+    cityLabel = null;
   }
 
   // ---------------------------------------------------------------------------
