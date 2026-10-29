@@ -344,5 +344,91 @@
     "sources": [
       { "title": "Риболовна основа „Акумулација Стрежево“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf" }
     ]
+  },
+
+  "vardar": {
+    "description": {
+      "mk": "Најголемата и најзначајната река во земјата. Извира од карстен извор кај селото Вруток, во подножјето на Шар Планина, на 683 m надморска височина. Земјата ја напушта кај Гевгелија (43 m), а потоа низ Грција се влева во Егејското Море. Долга е 388 km, од кои 301 km во Северна Македонија. Сливот зафаќа 28.588 km², од кои 20.535 km² во Северна Македонија. Низ земјата тече низ пет котлини и четири клисури.",
+      "en": "The largest and most important river in the country. It rises from a karst spring at the village of Vrutok, at the foot of Šar Planina, at 683 m above sea level. It leaves the country at Gevgelija (43 m) and flows through Greece into the Aegean Sea. It is 388 km long, 301 km of it in North Macedonia. Its basin covers 28,588 km², of which 20,535 km² is in North Macedonia. In the country it runs through five basins and four gorges."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Gobio bulgaricus", "mk": "Кркушка" },
+      { "latin": "Romanogobio elimeius", "mk": "Тенкоопашеста кркушка" },
+      { "latin": "Alburnoides bipunctatus", "mk": "Вардарка" },
+      { "latin": "Alburnus thessalicus", "mk": "Белвица" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Pachychilon macedonicum", "mk": "Мергур" },
+      { "latin": "Phoxinus phoxinus", "mk": "Пиор" },
+      { "latin": "Barbatula barbatula", "mk": "Вретенушка" },
+      { "latin": "Cobitis vardarensis", "mk": "Вардарска штипалка" }
+    ],
+    "fishNote": {
+      "mk": "Видови кои ги потврдуваат два извора: официјалната риболовна основа за горниот тек (листата на видови и истражувањата на Институтот за сточарство 1996–2015) и научното истражување по целиот тек низ земјата во 1996–1999 година (таму под постари латински имиња, на пр. Leuciscus cephalus за кленот). Листата не е целосна: основите за средниот и долниот тек сè уште се проверуваат.",
+      "en": "Species confirmed by two sources: the official fishery management plan for the upper course (its species list and the Institute of Animal Science surveys of 1996–2015) and a scientific survey along the whole river in the country in 1996–1999 (there under older Latin names, e.g. Leuciscus cephalus for the chub). The list is not complete: the plans for the middle and lower course are still being checked."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Слив на река Вардар – горно течение“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/24.%20%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D1%80%20%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%202023%20-%202028.pdf" },
+      { "title": "Georgiev, S. (2000): Stanje ihtiofaune rijeke Vardara u razdoblju od 1996. do 1999. (State of the Vardar River ichthyofauna 1996–1999). Ribarstvo 58(3): 85–100", "url": "https://hrcak.srce.hr/file/7019" }
+    ]
+  },
+
+  "bregalnica": {
+    "description": {
+      "mk": "По должина најголемата притока на Вардар: долга е 225 km, а сливот зафаќа 4.307 km². Извира под врвот Ченгино Кале на Малешевските Планини, на 1.720 m надморска височина. Тече низ Беровската Котлина, Разловската Клисура, Делчевско Поле и Кочанската Котлина и се влева во Вардар меѓу селата Ногаевци и Уљанци (137 m). Во Истибањската Клисура на неа е езерото Калиманци.",
+      "en": "The longest tributary of the Vardar: 225 km long, with a basin of 4,307 km². It rises below the peak Čengino Kale in the Maleševo mountains, at 1,720 m above sea level. It flows through the Berovo basin, the Razlovci gorge, the Delčevo plain and the Kočani basin, and joins the Vardar between the villages of Nogaevci and Uljanci (137 m). Lake Kalimanci lies on it, in the Istibanja gorge."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Gobio bulgaricus", "mk": "Кркушка" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" }
+    ],
+    "fishNote": {
+      "mk": "Видови кои официјалната риболовна основа за сливот на Брегалница (2023–2028) ги наведува посебно за овие води: позначајните и најбројните видови. Основата наведува повеќе видови за целиот слив. Пастрмката е македонска пастрмка, единствената домашна пастрмка во основата.",
+      "en": "Species that the official fishery management plan for the Bregalnica basin (2023–2028) names specifically for these waters: the main and the most numerous species. The plan lists more species for the whole basin. The trout is the Macedonian trout, the only native trout in the plan."
+    },
+    "notes": [
+      {
+        "mk": "Најбројни и најзначајни за рекреативниот риболов се кленот, скобустот, црната мрена и кркушката. Пред езерото Калиманци и во самото езеро се ловат поголеми количини крап и сом.",
+        "en": "The most numerous species and the most important for anglers are chub, nase, Balkan barbel and gudgeon. Above Lake Kalimanci and in the lake itself, carp and wels catfish are caught in larger numbers."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" }
+    ]
+  },
+
+  "pchinja": {
+    "description": {
+      "mk": "По должина втора лева притока на Вардар. Извира во Србија, под врвот Бела Вода на планината Дукат (1.664 m), а во Вардар се влива во Таорската Клисура (191 m). Долга е 135 km, од кои 76 km во Северна Македонија. Сливот зафаќа 2.840 km², од кои 2.317 km² во Северна Македонија. Главни притоки се Крива Река и Кумановска Река.",
+      "en": "The second longest left-hand tributary of the Vardar. It rises in Serbia, below the peak Bela Voda on Dukat mountain (1,664 m), and joins the Vardar in the Taor gorge (191 m). It is 135 km long, 76 km of it in North Macedonia. Its basin covers 2,840 km², of which 2,317 km² is in North Macedonia. Its main tributaries are the Kriva Reka and the Kumanovska Reka."
+    },
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" }
+    ],
+    "fishNote": {
+      "mk": "Позначајните видови кои официјалната риболовна основа за сливот на Пчиња (2023–2028) ги наведува посебно за овие води. Основата наведува повеќе видови за целиот слив. Пастрмката е македонска пастрмка, единствената пастрмка во основата.",
+      "en": "The main species that the official fishery management plan for the Pčinja basin (2023–2028) names specifically for these waters. The plan lists more species for the whole basin. The trout is the Macedonian trout, the only trout in the plan."
+    },
+    "sources": [
+      { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" }
+    ]
   }
 }

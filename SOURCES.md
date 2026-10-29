@@ -84,7 +84,49 @@ Macedonian folk name, followed by a description of each species that inhabits th
   breed naturally in the country. The table lists 16 species; those named only in the table
   (bleak, Prussian carp, pumpkinseed, brown bullhead) are not shown.
 
+- **Слив на река Вардар – горно течение** (plan no. 24) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/24.%20%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D1%80%20%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%202023%20-%202028.pdf
+  Used for: Vardar facts (spring at Vrutok at 683 m, leaves the country at Gevgelija at
+  43 m, 388 km of which 301 km in the country, basin 28,588 km² of which 20,535 km² in the
+  country, five basins and four gorges); the species table and the survey results along the
+  upper course (Institute of Animal Science, 1996–2015); the table of Latin synonyms used to
+  match the older names in Georgiev (2000).
+  A Vardar species is listed only if **both** this plan and Georgiev (2000) have it.
+  Left out: brook char (the plan says none was caught in 1996–1999), rainbow trout
+  (Georgiev: fish escaped from a fish farm, not part of the river's fish community),
+  Eudontomyzon mariae, eel and golden loach (not found in 1996–1999 by Georgiev), Salmo
+  farioides (table only).
+- **Слив на река Брегалница** (plan no. 27) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf
+  Used for: river facts (longest tributary of the Vardar, 225 km, basin 4,307 km², source
+  below Čengino Kale at 1,720 m, mouth between Nogaevci and Uljanci at 137 m, course, Lake
+  Kalimanci in the Istibanja gorge); the main species of the basin (spawning table of "the
+  more important species") and the most numerous species (chub, nase, Balkan barbel,
+  gudgeon; carp and catfish above and in Lake Kalimanci). "Trout" in the plan's tables is
+  given as Salmo macedonicus: it is the only native trout in the plan, the species text
+  says it lives in "Брегалница со притоките", and the trout in the table spawns in winter
+  (rainbow trout spawns in spring). The plan's full table (26 species) is not used.
+- **Слив на река Пчиња** (plan no. 23) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf
+  Used for: river facts (second longest left tributary of the Vardar, source in Serbia below
+  Bela Voda on Dukat at 1,664 m, mouth in the Taor gorge at 191 m, 135 km of which 76 km in
+  the country, basin 2,840 km² of which 2,317 km² in the country, main tributaries Kriva
+  Reka and Kumanovska Reka); the main species of the basin (spawning table). "Trout" =
+  Salmo macedonicus, the only trout in the plan. Note: the plan's section 5.1 wrongly says
+  "upper Vardar" (copied from another plan), so its full table (23 species) is not used.
+
 ### Scientific papers and studies
+
+- **Georgiev, S. (2000).** Stanje ihtiofaune rijeke Vardara u razdoblju od 1996. do 1999.
+  [State of the Vardar River ichthyofauna between 1996 and 1999]. *Ribarstvo* 58(3):
+  85–100. https://hrcak.srce.hr/file/7019
+  Used for: species caught along the Vardar at 12 sites from Vrutok to Gevgelija in
+  1996–1999 (24 species, 19 native). Older names matched to the current ones with the
+  synonym table of the Vardar plan: Barbus peloponnesius → B. balcanicus, Leuciscus
+  cephalus → Squalius vardarensis, Gobio gobio → G. bulgaricus, Chondrostoma nasus →
+  C. vardarense, Vimba vimba → V. melanops, Alburnus alburnus → A. thessalicus, Barbus
+  barbus → B. macedonicus, Rutilus macedonicus → Pachychilon macedonicum, Gobio
+  uranoscopus / G. kessleri → Romanogobio elimeius, Cobitis taenia → C. vardarensis,
+  Othrias barbatulus → Barbatula barbatula, Salmo trutta → Salmo macedonicus.
+  Note: this paper could not be downloaded into the research folder (the site blocks
+  automatic downloads); it was read through the web page reader. Worth a manual look.
 
 - **Kostov, V., Ristovska, M., Prelić, D. & Slavevska-Stamenković, V. (2011).** Assessment
   of the ecological status of the Crna River based on the fish fauna – contribution to the
