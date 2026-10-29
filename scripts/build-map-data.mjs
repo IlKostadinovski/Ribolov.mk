@@ -40,6 +40,11 @@ const OVERPASS_SERVERS = [
 ];
 const USER_AGENT = 'RibolovMK map data builder (https://github.com/IlKostadinovski/Ribolov.mk)';
 
+// River pieces with the same name are joined if they touch, or if the gap
+// between them is at most this many metres (OpenStreetMap often has small gaps,
+// e.g. where a river passes a dam or crosses the border and back).
+const JOIN_GAP_METRES = 7000;
+
 // How much to simplify: remove details smaller than this many metres.
 const SIMPLIFY_METRES = 20;
 // Coordinate precision in degrees (0.00001° is about 1 metre).
@@ -93,7 +98,7 @@ async function main() {
 
   // 2. Build features
   const border = buildBorder(raw.border);
-  const rivers = buildRivers(raw.rivers);
+  const { rivers, joins } = buildRivers(raw.rivers);
   const lakes = buildLakes(raw.lakes);
   assignIds([...lakes, ...rivers]);
 
@@ -110,7 +115,7 @@ async function main() {
     rivers: await readFeatures(path.join(OUT_DIR, 'rivers.geojson')),
     lakes: await readFeatures(path.join(OUT_DIR, 'lakes.geojson')),
   };
-  const report = makeReport({ osmDate, rivers, lakes, final });
+  const report = makeReport({ osmDate, rivers, lakes, final, joins });
   await fs.writeFile(path.join(OUT_DIR, 'report.md'), report);
   console.log('\n' + report);
 }
@@ -186,20 +191,23 @@ function buildRivers(osm) {
     byName.get(name).push(el);
   }
 
-  // Within each name, join ways that share at least one node.
   const rivers = [];
+  const joins = []; // pieces joined across a gap, listed in the report
   for (const [name, ways] of byName) {
-    for (const group of connectedGroups(ways)) {
-      const lines = group
-        .map((way) => way.nodes.map((n) => coords.get(n)).filter(Boolean))
-        .filter((line) => line.length >= 2);
-      if (!lines.length) continue;
+    // 1. Ways that share a node form one piece.
+    const pieces = connectedGroups(ways)
+      .map((group) => makePiece(group, coords))
+      .filter((piece) => piece.lines.length);
+    // 2. Pieces with only a small gap between them form one river.
+    for (const { members, gaps } of joinNearbyPieces(pieces)) {
+      if (gaps.length) joins.push({ name, pieces: members.length, gaps });
+      const lines = members.flatMap((p) => p.lines);
       rivers.push({
         type: 'Feature',
         properties: {
           id: null, // set later by assignIds()
           name,
-          'name:en': mostCommon(group.map((w) => w.tags['name:en'])),
+          'name:en': mostCommon(members.flatMap((p) => p.ways).map((w) => w.tags['name:en'])),
           type: 'river',
         },
         geometry: { type: 'MultiLineString', coordinates: lines },
@@ -207,7 +215,78 @@ function buildRivers(osm) {
       });
     }
   }
-  return rivers;
+  return { rivers, joins };
+}
+
+// A piece = some connected ways, with their coordinates, end points and bounding box.
+function makePiece(ways, coords) {
+  const lines = ways
+    .map((way) => way.nodes.map((n) => coords.get(n)).filter(Boolean))
+    .filter((line) => line.length >= 2);
+  const bbox = [Infinity, Infinity, -Infinity, -Infinity];
+  for (const [lon, lat] of lines.flat()) {
+    bbox[0] = Math.min(bbox[0], lon); bbox[1] = Math.min(bbox[1], lat);
+    bbox[2] = Math.max(bbox[2], lon); bbox[3] = Math.max(bbox[3], lat);
+  }
+  return {
+    ways,
+    lines,
+    ends: lines.flatMap((line) => [line[0], line[line.length - 1]]),
+    bbox,
+  };
+}
+
+// Groups pieces whose gap is at most JOIN_GAP_METRES. Returns
+// [{ members: [piece, …], gaps: [metres, …] }, …].
+function joinNearbyPieces(pieces) {
+  const parent = pieces.map((_, i) => i);
+  const find = (i) => (parent[i] === i ? i : (parent[i] = find(parent[i])));
+  const gapsByRoot = new Map();
+  const usedGaps = [];
+  for (let i = 0; i < pieces.length; i++) {
+    for (let j = i + 1; j < pieces.length; j++) {
+      if (find(i) === find(j)) continue;
+      const gap = pieceGap(pieces[i], pieces[j]);
+      if (gap <= JOIN_GAP_METRES) {
+        parent[find(j)] = find(i);
+        usedGaps.push({ i, gap });
+      }
+    }
+  }
+  for (const { i, gap } of usedGaps) {
+    const root = find(i);
+    if (!gapsByRoot.has(root)) gapsByRoot.set(root, []);
+    gapsByRoot.get(root).push(Math.round(gap));
+  }
+  const groups = new Map();
+  pieces.forEach((piece, i) => {
+    const root = find(i);
+    if (!groups.has(root)) groups.set(root, { members: [], gaps: gapsByRoot.get(root) || [] });
+    groups.get(root).members.push(piece);
+  });
+  return [...groups.values()];
+}
+
+// Shortest distance (metres) from an end of one piece to any point of the other.
+function pieceGap(a, b) {
+  if (bboxDistance(a.bbox, b.bbox) > JOIN_GAP_METRES) return Infinity;
+  let best = Infinity;
+  for (const [ends, other] of [[a.ends, b.lines], [b.ends, a.lines]]) {
+    for (const end of ends) {
+      for (const line of other) {
+        for (const point of line) best = Math.min(best, distance(end, point));
+      }
+    }
+  }
+  return best;
+}
+
+// Approximate distance (metres) between two bounding boxes; 0 if they overlap.
+function bboxDistance(a, b) {
+  const dLon = Math.max(0, a[0] - b[2], b[0] - a[2]);
+  const dLat = Math.max(0, a[1] - b[3], b[1] - a[3]);
+  const lat = ((a[1] + a[3]) / 2) * (Math.PI / 180);
+  return Math.hypot(dLon * 111320 * Math.cos(lat), dLat * 110540);
 }
 
 // Splits ways into groups of ways that are connected through shared nodes.
@@ -320,7 +399,7 @@ async function runMapshaper() {
 // Report
 // ---------------------------------------------------------------------------
 
-function makeReport({ osmDate, rivers, lakes, final }) {
+function makeReport({ osmDate, rivers, lakes, final, joins }) {
   const lines = [];
   lines.push('# Map data report', '');
   lines.push('Generated by `scripts/build-map-data.mjs`. Do not edit by hand.', '');
@@ -341,6 +420,19 @@ function makeReport({ osmDate, rivers, lakes, final }) {
     lines.push('pieces do not touch in OpenStreetMap). Check that they really are different.', '');
     for (const [name, list] of dupeList) {
       lines.push(`- **${name}**: ${list.map((p) => `\`${p.id}\` (${p.type})`).join(', ')}`);
+    }
+  }
+  lines.push('');
+
+  // Rivers joined across a gap
+  lines.push('## Rivers joined across a gap', '');
+  if (!joins.length) lines.push('None.');
+  else {
+    lines.push(`Pieces with the same name and a gap of up to ${JOIN_GAP_METRES / 1000} km were joined`);
+    lines.push('into one river. Check that they really are the same river.', '');
+    for (const j of [...joins].sort((a, b) => a.name.localeCompare(b.name))) {
+      const gaps = j.gaps.map((g) => (g < 1000 ? `${g} m` : `${(g / 1000).toFixed(1)} km`));
+      lines.push(`- **${j.name}**: ${j.pieces} pieces, gaps ${gaps.join(', ')}`);
     }
   }
   lines.push('');
@@ -369,9 +461,15 @@ function makeReport({ osmDate, rivers, lakes, final }) {
 // Small helpers
 // ---------------------------------------------------------------------------
 
-// Prefer the explicit Macedonian name; fall back to the main name.
+// Prefer the explicit Macedonian name; fall back to the main name. If the main
+// name is in several languages ("Lepenc / Лепенец", "Дојранско Езеро / Λίμνη
+// Δοϊράνη") and exactly one part is Cyrillic, use that part.
 function macedonianName(tags) {
-  return (tags['name:mk'] || tags.name || '').trim();
+  if (tags['name:mk']?.trim()) return tags['name:mk'].trim();
+  const name = (tags.name || '').trim();
+  const parts = name.split('/').map((p) => p.trim()).filter(Boolean);
+  const cyrillic = parts.filter((p) => /[Ѐ-ӿ]/.test(p));
+  return parts.length > 1 && cyrillic.length === 1 ? cyrillic[0] : name;
 }
 
 function isPolygon(f) {
