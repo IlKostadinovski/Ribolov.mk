@@ -149,12 +149,44 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   - The map view is set before layers are added (Leaflet canvas didn't draw otherwise).
   - `maxBounds` = border bounds padded ×2 (smaller padding blocked panning on phones).
   - If `data/waters.json` fails to parse, the panel says so (helps the owner find typos).
+  - **Fish filter** (in the filter box, under the layer list, `buildSpeciesFilter()`): a
+    dropdown of every species in `waters.json` (by `latin`), sorted by name in the current
+    language. Choosing one fades the waters that don't have it (rivers opacity 0.18, lakes
+    0.25) and highlights the fish in the panel (`li.is-match`). Built after waters.json
+    loads; names re-filled on language switch.
+  - Fish names: `fishName()` = Macedonian (`mk`) or English (`en`) name, else the Latin
+    name (English never falls back to Cyrillic). Tags "endemic" / "introduced" per water.
+  - Panel order: name → description → fish (+ `fishNote`) → permits, closed seasons,
+    catch limits, minimum sizes, protected species, no-fishing zones (all empty for now)
+    → notes → sources.
 - Colours live in `css/style.css` (`--map-*` variables, read by app.js).
 - Design (owner's request): **black outside the country, gray country (`#44494e`), white
   country border, blue water, white cities**, municipality lines white at 40% opacity,
   dashed. Header and panels dark to match. Fishing-float red for the selection, Golos
   Text. Panel swatch mirrors the selected map symbol; filter rows show a mini legend.
 - `.nojekyll` makes GitHub Pages serve the files as they are.
+
+## Fishing content research (how waters.json was filled)
+
+- Rules and every source: `SOURCES.md` (keep it in sync with `waters.json`; the owner wants
+  to check the sources). In short: a species only if a reliable source names it for that
+  exact water; "sp."/"cf." left out; species a source calls absent/rare left out; tags only
+  if a source says so; for plans, only species the plan names *specifically* for that water
+  (the plans' species descriptions are generic text copied between plans, and some tables
+  have copy-paste errors, e.g. the Pčinja plan says "upper Vardar").
+- Main sources: the official fishery management plans 2023–2028 (Institute of Animal
+  Science, UKIM, istoc.ukim.edu.mk; also published in the Official Gazette no. 222/2024 and
+  33/2025, scanned) and peer-reviewed surveys (MJAS, Ribarstvo, Fishes, …).
+- **`research` branch** (not the website): `research/urls.txt` lists documents; the Action
+  `fetch-research.yml` downloads them, converts PDFs to text (`pdftotext`), OCRs scanned
+  pages (tesseract `mkd+eng`, 300 dpi, `===== PAGE n =====` markers) into
+  `research/text/<name>.ocr.txt`, and for small scanned documents (≤ 12 pages) also commits
+  the page images to `research/pages/` so tables can be checked by eye. The sandbox can't
+  download most of these sites itself. hrcak.srce.hr blocks the Action's downloads.
+- Done (Oct 2026): Ohrid, Prespa, Dojran, Sateska, Zajaska Reka, Crna Reka, Tikveš,
+  Mladost, Streževo, Vardar, Bregalnica, Pčinja. Next: the remaining fishing areas from the
+  gazette plans (Treska/Kozjak/Matka, Crn Drim/Debar/Globočica/Špilje, Mavrovo, Strumica,
+  Kalimanci, Berovo, Mantovo, Turija, Vodoča, Gratče, Lipkovo, Glažnja, Mavrovica).
 
 ## Testing
 
@@ -164,6 +196,10 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   and aborting the font request. Capture the map via an init script that wraps `L.map`.
 - Check: river click a few px off the line, lake centre on phone, language switch,
   panel close (×, Esc, tap on empty map), broken waters.json message, no console errors.
+- Test taps: zoom in to the spot first (at country zoom on a phone, tap areas of nearby
+  rivers overlap) and close the panel between taps (the phone sheet covers the lower half).
+  A lake's vertex average can fall outside long, winding reservoirs (Tikveš): pick a point
+  inside the polygon.
 
 ## File layout
 
@@ -190,9 +226,13 @@ First milestone: done.
 - [x] 1. CLAUDE.md + README.md
 - [x] 2. Map data downloaded, processed and committed (via GitHub Actions)
 - [x] 3. Working map: border, rivers, lakes, clickable, info panel
-- [x] 4. Placeholder content for Lake Ohrid (`ohridsko-ezero`), Lake Dojran
-      (`dojransko-ezero`), Vardar (`vardar`), all marked `"placeholder": true`
+- [x] 4. Placeholder content for Lake Ohrid, Lake Dojran, Vardar (since replaced by real,
+      sourced content; placeholders removed)
 - [x] 5. GitHub Pages instructions (README "Seeing your changes on the site")
+
+Second step (owner's request, Oct 2026): real fish species, short descriptions and key
+facts from reliable sources, a fish filter, and `SOURCES.md`. In progress, see "Fishing
+content research".
 
 Ideas to suggest later (not built, ask first): link to a selected water (`#vardar` in the
 URL), search by name, fishing spots, photos, seasons view, merging "Lepenc" into
