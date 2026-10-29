@@ -83,15 +83,21 @@ How it is built (implemented):
   name in OSM) is still separate from "Лепенец"; fix in OSM or add an alias rule later.
 - Some odd names come straight from OSM (a river named "4.", "X Канал",
   "Srebreno ezero 2.182 masl"); fixing them in OSM fixes them here on the next run.
+- Municipality lines and city areas are written with 10 m precision (`PRECISION_LIGHT`),
+  the rest with 1 m. Download times appear as `::notice::` annotations on the run (read
+  them with `gh api repos/IlKostadinovski/ribolov.mk/check-runs/<job id>/annotations`;
+  the sandbox can't download Action logs).
 - **Municipalities** (`municipalities.geojson`): `admin_level=7` relations (`MUNICIPALITY_LEVEL`),
   clipped, simplified with the border, then `-innerlines` → only the lines between
   neighbouring municipalities (no attributes). The build fails if the count isn't 60–100.
-- **Cities** (`cities.geojson`, owner's spec): only the biggest place in each municipality
-  (place city > town > village, then `population`), drawn as a white built-up area, no
-  labels; the name shows on hover (tap on phones). The area = OSM
-  `landuse=residential|commercial|retail` around the place (second Overpass query with one
-  `around` per place), grown 60 m, dissolved, shrunk 50 m, exploded; the piece containing
-  (or within 400 m of) the place is used. No land use → small circle. Several seats sharing
+- **Cities** (`cities.geojson`, owner's spec): only the main place of each municipality,
+  drawn as a white built-up area, no labels; the name shows on hover (tap on phones).
+  Main place = the biggest city/town (city > town, then `population`); if there is none,
+  the municipality's seat (`admin_centre` member) — village populations are often missing
+  in OSM; else the biggest village. The area = OSM `landuse=residential|commercial|retail`
+  in a square around the place (second Overpass query, one bbox per place; bboxes are much
+  faster than `around`, which took ~30 min), grown 60 m, dissolved, shrunk 50 m, exploded;
+  the piece containing (or within 400 m of) the place is used. No land use → small circle. Several seats sharing
   one area (Skopje's municipalities) → one feature, named after the biggest. Properties:
   `id`, `name`, `name:en`, `place`, `population`, `municipality`, `shape`.
 
@@ -122,7 +128,9 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   - One Leaflet **canvas** renderer for everything (fast on phones).
   - Draw order (`DRAW_ORDER`): border (fills the land colour) → cities → municipality
     lines → visible river lines (non-interactive) → invisible river tap lines
-    (`RIVER_TAP_WIDTH` 18 px touch / 8 px mouse, opacity 0) → lakes → reservoirs.
+    (`RIVER_TAP_WIDTH` 18 px for fingers / 8 px for a mouse, opacity 0) → lakes → reservoirs.
+    Finger vs mouse uses `matchMedia('(pointer: coarse)')`, NOT `L.Browser.touch` (that is
+    true on almost every desktop browser too).
     Lakes on top so a tap inside a lake picks the lake; cities at the bottom so water wins.
   - **Filter** (top left, `FILTERS`): rivers, lakes, reservoirs, cities, municipality
     borders, all on by default (not remembered). `applyFilters()` removes all groups and
@@ -130,7 +138,9 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
     selected water gets hidden, the panel closes. Zoom buttons are bottom right.
   - River width depends on length (computed in JS) and zoom.
   - States: normal / hover (darker blue) / selected (red, `--map-selected`).
-    Hover tooltips with the name only on devices that can hover.
+    Hover tooltips with the name only on devices that can hover. Cities: hover tooltip on
+    desktop; on phones a tap opens a standalone `L.tooltip` until the next tap (bound
+    tooltips opened and immediately closed on touch).
   - Info panel: right-hand card on desktop, bottom sheet (max 55% height) on phones.
     `keepVisible()` pans the map so the tapped spot isn't hidden behind the panel.
   - The map view is set before layers are added (Leaflet canvas didn't draw otherwise).

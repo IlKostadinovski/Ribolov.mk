@@ -38,7 +38,11 @@ If GitHub Pages is ever turned off: repository **Settings → Pages**, set **Sou
 | `scripts/` | The script that downloads the map data from OpenStreetMap |
 
 The site opens in Macedonian; the **EN / МК** button in the top right switches language
-and the site remembers the choice.
+and the site remembers the choice. The **Филтер** button in the top left shows or hides
+rivers, lakes, reservoirs, cities and municipality borders.
+
+The map shows the main city of each municipality as a white area; its name appears when
+you hover over it (or tap it on a phone).
 
 ## Editing the fishing information
 
