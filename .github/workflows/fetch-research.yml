@@ -17,12 +17,12 @@ permissions:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v6
 
       - name: Install pdftotext
-        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
+        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils tesseract-ocr tesseract-ocr-mkd
 
       - name: Download and convert
         run: |
@@ -49,7 +49,23 @@ jobs:
           done < research/urls.txt
           for f in pdf/*; do
             base=$(basename "$f"); base="${base%.*}"
-            pdftotext -layout "$f" "research/text/$base.txt" 2>/dev/null || echo "::warning::not a readable PDF: $f"
+            pdftotext -layout "$f" "research/text/$base.txt" 2>/dev/null || { echo "::warning::not a readable PDF: $f"; continue; }
+            # Scanned pages (almost no text) are read with OCR (Macedonian + English)
+            pages=$(pdfinfo "$f" | awk '/^Pages:/ {print $2}')
+            scanned=""
+            for p in $(seq 1 "$pages"); do
+              n=$(pdftotext -f "$p" -l "$p" "$f" - 2>/dev/null | tr -d '[:space:]' | wc -c)
+              [ "$n" -lt 400 ] && scanned="$scanned $p"
+            done
+            if [ -n "$scanned" ]; then
+              echo "::notice::$base: OCR on $(echo $scanned | wc -w) scanned pages"
+              mkdir -p "ocr/$base"
+              echo $scanned | tr ' ' '\n' | xargs -P 4 -I{} sh -c \
+                'pdftoppm -f {} -l {} -r 300 -gray -png "$0" "ocr/$1/p{}" && tesseract "ocr/$1/p{}"*.png "ocr/$1/page-$(printf %04d {})" -l mkd+eng --psm 4 >/dev/null 2>&1' "$f" "$base"
+              for t in $(ls ocr/"$base"/page-*.txt | sort); do
+                echo "===== PAGE $(basename "$t" .txt | sed 's/page-0*//') ====="; cat "$t"
+              done > "research/text/$base.ocr.txt"
+            fi
           done
           echo "::notice::single files ok=$ok failed=$failed; PDFs downloaded: $(ls pdf | wc -l); text files: $(ls research/text | wc -l)"
 
