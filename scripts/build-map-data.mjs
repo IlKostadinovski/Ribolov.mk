@@ -4,8 +4,9 @@
 //      - the border of North Macedonia
 //      - named rivers (waterway=river)
 //      - named lakes and reservoirs (natural=water + water=lake|reservoir)
-//      - cities and towns (place=city|town)
 //      - municipality borders (admin_level=7)
+//      - the biggest place in each municipality, and its built-up area
+//        (landuse=residential|commercial|retail around it)
 // 2. Merges river segments that have the same name AND touch each other,
 //    so one click selects the whole river.
 // 3. Gives every river and lake a readable, stable id (e.g. "vardar").
@@ -77,10 +78,10 @@ const QUERIES = {
       relation["natural"="water"]["water"~"^(lake|reservoir)$"]["name"](area.mk);
     );
     out body; >; out skel qt;`,
-  cities: `
-    [out:json][timeout:120];
+  places: `
+    [out:json][timeout:180];
     ${COUNTRY}; map_to_area->.mk;
-    node["place"~"^(city|town)$"]["name"](area.mk);
+    node["place"~"^(city|town|village)$"]["name"](area.mk);
     out body;`,
   municipalities: `
     [out:json][timeout:300];
@@ -93,6 +94,20 @@ const QUERIES = {
 // Main
 // ---------------------------------------------------------------------------
 
+// Downloads one query (or, with --cached, reads the last download of it).
+async function load(name, query, useCache) {
+  const file = path.join(CACHE_DIR, `${name}.json`);
+  let data;
+  if (useCache) {
+    data = JSON.parse(await fs.readFile(file, 'utf8'));
+  } else {
+    data = await downloadOverpass(name, query);
+    await fs.writeFile(file, JSON.stringify(data));
+  }
+  console.log(`${name}: ${data.elements.length} OSM elements`);
+  return data;
+}
+
 async function main() {
   const useCache = process.argv.includes('--cached');
   await fs.mkdir(TMP_DIR, { recursive: true });
@@ -100,16 +115,7 @@ async function main() {
 
   // 1. Download (or read the last download)
   const raw = {};
-  for (const name of Object.keys(QUERIES)) {
-    const file = path.join(CACHE_DIR, `${name}.json`);
-    if (useCache) {
-      raw[name] = JSON.parse(await fs.readFile(file, 'utf8'));
-    } else {
-      raw[name] = await downloadOverpass(name, QUERIES[name]);
-      await fs.writeFile(file, JSON.stringify(raw[name]));
-    }
-    console.log(`${name}: ${raw[name].elements.length} OSM elements`);
-  }
+  for (const name of Object.keys(QUERIES)) raw[name] = await load(name, QUERIES[name], useCache);
   const osmDate = raw.rivers.osm3s?.timestamp_osm_base || 'unknown';
 
   // 2. Build features
@@ -117,8 +123,12 @@ async function main() {
   const { rivers, joins } = buildRivers(raw.rivers);
   const lakes = buildLakes(raw.lakes);
   assignIds([...lakes, ...rivers]);
-  const cities = buildCities(raw.cities);
   const municipalities = buildMunicipalities(raw.municipalities);
+
+  // Cities: the biggest place in each municipality, drawn as its built-up area.
+  const seats = findSeats(raw.places, municipalities, border);
+  raw.urban = await load('urban', urbanQuery(seats), useCache);
+  const cities = await buildCityAreas(seats, raw.urban);
 
   await writeGeoJSON(path.join(TMP_DIR, 'border.geojson'), [border]);
   await writeGeoJSON(path.join(TMP_DIR, 'rivers.geojson'), rivers);
@@ -365,29 +375,161 @@ function buildLakes(osm) {
 }
 
 // ---------------------------------------------------------------------------
-// Cities and towns
+// Cities: the biggest place in each municipality, as a white built-up area
 // ---------------------------------------------------------------------------
 
-function buildCities(osm) {
-  return osm.elements
-    .filter((el) => el.type === 'node' && macedonianName(el.tags || {}))
+// "city" beats "town" beats "village"; within the same kind, bigger population wins.
+const PLACE_RANK = { city: 0, town: 1, village: 2 };
+
+// How far around a place to look for its built-up area (metres).
+const URBAN_SEARCH_RADIUS = { city: 7000, town: 3000, village: 1200 };
+// Built-up pieces closer than twice this are merged into one area (metres).
+const URBAN_MERGE_METRES = 60;
+// A built-up area counts as the place's own if it is this close to it (metres).
+const URBAN_NEAR_METRES = 400;
+// If a place has no built-up area in OpenStreetMap, it gets a circle this big (metres).
+const CIRCLE_RADIUS = { city: 1200, town: 600, village: 250 };
+
+// Finds the biggest place (city > town > village, then population) in each municipality.
+function findSeats(osm, municipalities, border) {
+  const places = osm.elements
+    .filter((el) => el.type === 'node' && el.tags && macedonianName(el.tags))
     .map((el) => ({
-      type: 'Feature',
-      properties: {
-        id: slugify(macedonianName(el.tags)),
-        name: macedonianName(el.tags),
-        'name:en': el.tags['name:en'] || null,
-        place: el.tags.place, // "city" or "town"
-        population: parseInt(String(el.tags.population || '').replace(/\D/g, ''), 10) || null,
-      },
-      geometry: { type: 'Point', coordinates: [el.lon, el.lat] },
+      name: macedonianName(el.tags),
+      nameEn: el.tags['name:en'] || null,
+      place: el.tags.place,
+      population: parseInt(String(el.tags.population || '').replace(/\D/g, ''), 10) || null,
+      coordinates: [el.lon, el.lat],
     }))
-    // Biggest first, so the map can give them label priority.
-    .sort((a, b) => placeRank(a) - placeRank(b)
-      || (b.properties.population || 0) - (a.properties.population || 0));
+    .filter((p) => pointInGeometry(p.coordinates, border.geometry));
+
+  const seats = [];
+  for (const m of municipalities) {
+    const box = geometryBbox(m.geometry);
+    const inside = places.filter((p) => inBbox(p.coordinates, box) && pointInGeometry(p.coordinates, m.geometry));
+    if (!inside.length) continue;
+    inside.sort(byPlaceSize);
+    seats.push({ ...inside[0], municipality: m.properties.name });
+  }
+  return seats.sort(byPlaceSize);
 }
 
-const placeRank = (f) => (f.properties.place === 'city' ? 0 : 1);
+const byPlaceSize = (a, b) => PLACE_RANK[a.place] - PLACE_RANK[b.place]
+  || (b.population || 0) - (a.population || 0);
+
+// Overpass query for the residential/commercial/retail land around each seat.
+function urbanQuery(seats) {
+  const landuse = '["landuse"~"^(residential|commercial|retail)$"]';
+  const parts = seats.flatMap(({ place, coordinates: [lon, lat] }) => {
+    const around = `(around:${URBAN_SEARCH_RADIUS[place]},${lat},${lon})`;
+    return [`  way${landuse}${around};`, `  relation${landuse}${around};`];
+  });
+  return `[out:json][timeout:300];\n(\n${parts.join('\n')}\n);\nout body; >; out skel qt;`;
+}
+
+// Merges the land-use pieces into built-up areas and gives each seat its area.
+async function buildCityAreas(seats, urbanOsm) {
+  const pieces = osmtogeojson(urbanOsm).features
+    .filter((f) => isPolygon(f) && /^(residential|commercial|retail)$/.test(f.properties.landuse || ''))
+    .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
+  await writeGeoJSON(path.join(TMP_DIR, 'urban-pieces.geojson'), pieces);
+
+  // Grow every piece a little, merge the ones that now touch, shrink back almost to
+  // the original size, then split into separate areas.
+  const piecesFile = `"${path.join(TMP_DIR, 'urban-pieces.geojson')}"`;
+  const areasFile = path.join(TMP_DIR, 'urban-areas.geojson');
+  await mapshaper.runCommands(`-quiet -i ${piecesFile} -buffer ${URBAN_MERGE_METRES} -dissolve `
+    + `-buffer radius=-${URBAN_MERGE_METRES - 10} -explode `
+    + `-o "${areasFile}" format=geojson geojson-type=FeatureCollection`);
+  const areas = (await readFeatures(areasFile)).map((f) => ({ ...f, box: geometryBbox(f.geometry) }));
+
+  const used = new Set();
+  const cities = [];
+  for (const seat of seats) { // biggest first, so a shared area gets the biggest name
+    const area = areas.find((a) => inBbox(seat.coordinates, a.box) && pointInGeometry(seat.coordinates, a.geometry))
+      || nearestArea(seat.coordinates, areas);
+    if (area && used.has(area)) continue; // e.g. several Skopje municipalities share one city
+    if (area) used.add(area);
+    cities.push({
+      type: 'Feature',
+      properties: {
+        id: slugify(seat.name),
+        name: seat.name,
+        'name:en': seat.nameEn,
+        place: seat.place,
+        population: seat.population,
+        municipality: seat.municipality,
+        shape: area ? 'built-up area' : 'circle',
+      },
+      geometry: area ? area.geometry : circle(seat.coordinates, CIRCLE_RADIUS[seat.place]),
+    });
+  }
+  return cities;
+}
+
+function nearestArea(point, areas) {
+  let best = null;
+  let bestDistance = URBAN_NEAR_METRES;
+  for (const area of areas) {
+    if (bboxDistance([...point, ...point], area.box) > bestDistance) continue;
+    for (const ring of polygonsOf(area.geometry).flat()) {
+      for (const vertex of ring) {
+        const d = distance(point, vertex);
+        if (d < bestDistance) { bestDistance = d; best = area; }
+      }
+    }
+  }
+  return best;
+}
+
+// A circle polygon around a point.
+function circle([lon, lat], metres, steps = 32) {
+  const dLat = metres / 110540;
+  const dLon = metres / (111320 * Math.cos((lat * Math.PI) / 180));
+  const ring = [];
+  for (let i = 0; i <= steps; i++) {
+    const a = (2 * Math.PI * (i % steps)) / steps;
+    ring.push([lon + dLon * Math.cos(a), lat + dLat * Math.sin(a)]);
+  }
+  return { type: 'Polygon', coordinates: [ring] };
+}
+
+// --- Small geometry helpers -------------------------------------------------
+
+function polygonsOf(geometry) {
+  return geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+}
+
+function geometryBbox(geometry) {
+  const box = [Infinity, Infinity, -Infinity, -Infinity];
+  for (const ring of polygonsOf(geometry).flat()) {
+    for (const [lon, lat] of ring) {
+      box[0] = Math.min(box[0], lon); box[1] = Math.min(box[1], lat);
+      box[2] = Math.max(box[2], lon); box[3] = Math.max(box[3], lat);
+    }
+  }
+  return box;
+}
+
+function inBbox([lon, lat], box) {
+  return lon >= box[0] && lon <= box[2] && lat >= box[1] && lat <= box[3];
+}
+
+// Is the point inside the (Multi)Polygon? Holes count as outside.
+function pointInGeometry(point, geometry) {
+  return polygonsOf(geometry).some((rings) =>
+    pointInRing(point, rings[0]) && !rings.slice(1).some((hole) => pointInRing(point, hole)));
+}
+
+function pointInRing([x, y], ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
 
 // ---------------------------------------------------------------------------
 // Municipalities (only their borders end up on the map)
@@ -481,7 +623,7 @@ function makeReport({ osmDate, rivers, lakes, final, joins }) {
   lines.push(`- OpenStreetMap data as of: ${osmDate}`);
   lines.push(`- Rivers: ${final.rivers.length}`);
   lines.push(`- Lakes and reservoirs: ${final.lakes.length}`);
-  lines.push(`- Cities and towns: ${final.cities.length}`);
+  lines.push(`- Cities (biggest place in each municipality): ${final.cities.length}`);
   lines.push(`- Municipalities: ${final.municipalities.length}`);
   lines.push('');
 
@@ -523,9 +665,14 @@ function makeReport({ osmDate, rivers, lakes, final, joins }) {
   }
 
   // Cities and municipalities
-  lines.push('## Cities and towns', '');
-  lines.push(final.cities.map((f) => `${f.properties.name}${f.properties.place === 'city' ? ' (city)' : ''}`)
-    .join(', '), '');
+  lines.push('## Cities', '');
+  lines.push('The biggest place in each municipality, drawn as its built-up area from');
+  lines.push('OpenStreetMap land use, or as a small circle where there is none.', '');
+  lines.push('| City | Municipality | Shape |', '|---|---|---|');
+  for (const { properties: p } of final.cities) {
+    lines.push(`| ${p.name} | ${p.municipality || '—'} | ${p.shape} |`);
+  }
+  lines.push('');
   lines.push('## Municipalities', '');
   lines.push(final.municipalities.map((f) => f.properties.name).sort((a, b) => a.localeCompare(b, 'mk'))
     .join(', '), '');
