@@ -1,0 +1,60 @@
+{
+  "ohridsko-ezero": {
+    "placeholder": true,
+    "fish": [
+      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" },
+      { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" },
+      { "mk": "Пример: вид риба 3", "en": "Example: fish species 3" }
+    ],
+    "permits": [
+      {
+        "issuer": { "mk": "Пример: риболовно друштво", "en": "Example: angling club" },
+        "contact": { "mk": "Пример: телефон, е-пошта или адреса", "en": "Example: phone, email or address" },
+        "price": { "mk": "Пример: цена за еден ден", "en": "Example: price for one day" }
+      },
+      {
+        "issuer": { "mk": "Пример: второ место за дозволи", "en": "Example: a second permit office" },
+        "price": { "mk": "Пример: цена за една година", "en": "Example: price for one year" }
+      }
+    ],
+    "closedSeasons": [
+      { "mk": "Пример: вид риба 1, од ДАТУМ до ДАТУМ", "en": "Example: fish species 1, from DATE to DATE" }
+    ],
+    "catchLimits": { "mk": "Пример: најмногу X риби на ден", "en": "Example: at most X fish per day" },
+    "minimumSizes": [
+      { "fish": { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" }, "size": "XX cm" },
+      { "fish": { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" }, "size": "XX cm" }
+    ],
+    "protectedSpecies": [
+      { "mk": "Пример: заштитен вид", "en": "Example: protected species" }
+    ],
+    "noFishingZones": [
+      { "mk": "Пример: опис на зоната", "en": "Example: description of the zone" }
+    ],
+    "notes": { "mk": "Пример: други корисни информации.", "en": "Example: other useful information." }
+  },
+
+  "dojransko-ezero": {
+    "placeholder": true,
+    "fish": [
+      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" },
+      { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" }
+    ],
+    "permits": [
+      {
+        "issuer": { "mk": "Пример: риболовно друштво", "en": "Example: angling club" },
+        "contact": { "mk": "Пример: телефон", "en": "Example: phone number" },
+        "price": { "mk": "Пример: цена", "en": "Example: price" }
+      }
+    ],
+    "notes": { "mk": "Пример: белешка за езерото.", "en": "Example: a note about the lake." }
+  },
+
+  "vardar": {
+    "placeholder": true,
+    "fish": [
+      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" }
+    ],
+    "notes": { "mk": "Пример: белешка за реката.", "en": "Example: a note about the river." }
+  }
+}

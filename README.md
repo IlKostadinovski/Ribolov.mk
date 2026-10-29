@@ -5,7 +5,40 @@ information for each one.
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) (ODbL).
 
-> **Status:** work in progress, the map is not built yet.
+**The site:** https://ilkostadinovski.github.io/Ribolov.mk/
+
+The fishing information for Lake Ohrid, Lake Dojran and the Vardar is only an example
+(marked "Пример" / "Example" on the site) until the real data is added.
+
+## Seeing your changes on the site
+
+The site is published with GitHub Pages from the `main` branch. Every change saved on
+`main` (by you on GitHub, or by Claude) appears on the site by itself:
+
+1. Save (commit) the change.
+2. Wait 1–2 minutes. You can watch the progress in the **Actions** tab: the run called
+   "pages build and deployment" turns green when the site is updated.
+3. Open the site and refresh the page. If you still see the old version, do a hard
+   refresh (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac), or on a phone close the tab
+   and open the link again.
+
+If GitHub Pages is ever turned off: repository **Settings → Pages**, set **Source** to
+"Deploy from a branch", **Branch** to `main` and the folder to `/ (root)`, then **Save**.
+
+## How the site is built
+
+| File | What it is |
+|---|---|
+| `index.html` | The page |
+| `css/style.css` | Colours and layout (map colours are the `--map-…` values at the top) |
+| `js/i18n.js` | All texts on the site, in Macedonian and English |
+| `js/app.js` | The map and the info panel |
+| `data/waters.json` | Fishing information (see below) |
+| `data/map/` | Rivers, lakes and border (generated, don't edit by hand) |
+| `scripts/` | The script that downloads the map data from OpenStreetMap |
+
+The site opens in Macedonian; the **EN / МК** button in the top right switches language
+and the site remembers the choice.
 
 ## Editing the fishing information
 

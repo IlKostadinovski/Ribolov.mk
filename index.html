@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="mk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>РиболовМК – мапа за риболов во Северна Македонија</title>
+  <meta name="description" content="Мапа за риболов во Северна Македонија: реки, езера и акумулации, со информации за риби и дозволи.">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap">
+
+  <!-- Leaflet 1.9.4 (map library), pinned version -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 id="site-title">РиболовМК</h1>
+      <p id="site-subtitle">Мапа за риболов во Северна Македонија</p>
+    </div>
+    <button id="lang-switch" class="lang-switch" type="button" aria-label="Switch to English">EN</button>
+  </header>
+
+  <main class="map-area">
+    <div id="map" role="region" aria-label="Мапа на реките и езерата во Северна Македонија"></div>
+    <p id="hint" class="hint">Изберете река или езеро</p>
+    <p id="message" class="message" role="alert" hidden></p>
+
+    <aside id="panel" class="panel" hidden aria-labelledby="panel-title">
+      <button id="panel-close" class="panel-close" type="button" aria-label="Затвори">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="panel-content"></div>
+    </aside>
+  </main>
+
+  <noscript>
+    <p class="message">Оваа мапа бара JavaScript. / This map needs JavaScript.</p>
+  </noscript>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
