@@ -44,7 +44,7 @@ jobs:
                 wget -q -nd -nc --restrict-file-names=nocontrol --timeout=120 -P pdf "$pdfurl" || echo "failed $pdfurl"
               done < "research/listings/$name.pdf-links.txt"
             else
-              if wget -q -nd -nc --restrict-file-names=nocontrol --timeout=120 -P pdf "$url"; then ok=$((ok+1)); else failed=$((failed+1)); echo "::warning::failed: $url"; fi
+              if wget -q -nd -nc --content-disposition --restrict-file-names=nocontrol --timeout=120 -P pdf "$url"; then ok=$((ok+1)); else failed=$((failed+1)); echo "::warning::failed: $url"; fi
             fi
           done < research/urls.txt
           for f in pdf/*; do
