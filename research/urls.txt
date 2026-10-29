@@ -1,5 +1,5 @@
 # One URL per line. "links:<page>" downloads every PDF linked from that page.
-# Crna Reka fish study (Kostov et al. 2011, MJAS 1(1): 47)
+# Crna Reka fish study (Kostov et al. 2011, MJAS 1(1): 47) - again, to keep the table page images
 https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf
 # Georgiev 2000, State of the Vardar River ichthyofauna 1996-1999 (Ribarstvo 58(3))
 https://hrcak.srce.hr/file/7019
