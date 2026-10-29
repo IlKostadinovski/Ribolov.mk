@@ -85,9 +85,13 @@ shows the other one.
 
 ### Finding the id of a river or lake
 
-Every river and lake has a short id such as `vardar` or `ohridsko-ezero`. The ids are
-in the map files `data/map/rivers.geojson` and `data/map/lakes.geojson` (the `id` field).
-The id in `waters.json` must match exactly.
+Every river and lake has a short id such as `vardar` or `ohridsko-ezero`. You can find
+all of them in **[`data/map/report.md`](data/map/report.md)**, in the "All waters" table
+(open the file on GitHub and use your browser's search, Ctrl+F / Cmd+F, to look for a
+name). The id in `waters.json` must match exactly.
+
+If two waters have the same name, the second one gets `-2`, the third `-3`, and so on
+(e.g. `mala-reka-2`). The report lists these too.
 
 ### Placeholders
 
@@ -102,3 +106,16 @@ They are **not** real fishing information. Replace them with real data and delet
   or an entry `{ }`.
 - If the info panel stops working after an edit, the file probably has a typo.
   Paste it into [jsonlint.com](https://jsonlint.com) to find the exact line.
+
+## Updating the map data
+
+The rivers, lakes and border come from OpenStreetMap. To download the latest version:
+
+1. Open the repository on GitHub and click the **Actions** tab.
+2. Click **Update map data** on the left.
+3. Click **Run workflow**, then the green **Run workflow** button.
+4. After a few minutes the new data is saved in `data/map/` automatically, and the
+   site updates shortly after.
+
+Check `data/map/report.md` afterwards: if a river or lake was renamed in OpenStreetMap,
+its id may have changed, and its entry in `waters.json` must be renamed to match.
