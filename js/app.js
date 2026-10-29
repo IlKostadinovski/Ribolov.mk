@@ -296,7 +296,7 @@
   function fillSpeciesOptions() {
     const select = document.getElementById('species-select');
     if (!select) return;
-    const nameOf = (entry) => (lang === 'en' ? entry.en : entry.mk) || entry.mk || entry.en || entry.latin;
+    const nameOf = (entry) => fishName(entry);
     select.replaceChildren();
     add(select, 'option', { text: t('allSpecies') }).value = '';
     const sorted = [...species.values()].sort((a, b) => nameOf(a).localeCompare(nameOf(b), lang));
@@ -461,10 +461,16 @@
 
   // One fish in the list: its name in the current language, the Latin name, and
   // tags such as "endemic" (only when waters.json says so).
+  // Fish name in the current language. English falls back to the Latin name
+  // (not to Cyrillic), Macedonian falls back to the Latin name too.
+  function fishName(fish) {
+    return (lang === 'en' ? fish.en : fish.mk) || fish.latin;
+  }
+
   function renderFish(list, item) {
     const li = add(list, 'li');
     if (item && typeof item === 'object' && item.latin) {
-      const name = (lang === 'en' ? item.en : item.mk) || item.mk || item.en || item.latin;
+      const name = fishName(item);
       add(li, 'span', { className: 'fish-name', text: name });
       if (name !== item.latin) add(li, 'i', { className: 'fish-latin', text: item.latin });
       if (item.endemic) add(li, 'span', { className: 'tag', text: t('endemic') });

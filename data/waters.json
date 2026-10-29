@@ -179,5 +179,170 @@
     "sources": [
       { "title": "Karadelev, Kostov & Manevska (2020): ESIA Kicevo–Bukojcani, Appendix 15.2 Fisheries Assessment", "url": "https://roads.org.mk/wp-content/uploads/2023/03/ESIA-Appendix-15_2-Fisheries-Assessment.pdf" }
     ]
+  },
+
+  "crna-reka": {
+    "description": {
+      "mk": "Најголемата десна притока на Вардар. Извира кај селото Железнец, на 760 m надморска височина, долга е 222 km, а нејзиниот слив зафаќа 5.887 km². Тече низ Демирхисарскиот крај и Пелагонија, потоа низ клисурата Скочивир и Мариово, каде е брза планинска река, и се влева во акумулацијата Тиквеш.",
+      "en": "The largest right-hand tributary of the Vardar. It rises near the village of Železnec at 760 m above sea level, is 222 km long and drains 5,887 km². It flows through the Demir Hisar area and the Pelagonia plain, then through the Skočivir gorge and Mariovo, where it is a fast mountain river, and into the Tikveš reservoir."
+    },
+    "fish": [
+      { "latin": "Alburnoides bipunctatus", "mk": "Вардарка" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Barbus macedonicus", "mk": "Бела мрена" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Gobio bulgaricus", "mk": "Кркушка" },
+      { "latin": "Romanogobio elimeius", "mk": "Тенкоопашеста кркушка" },
+      { "latin": "Pachychilon macedonicum", "mk": "Мергур" },
+      { "latin": "Rhodeus meridionalis", "mk": "Платиче" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Scardinius erythrophthalmus", "mk": "Писа", "en": "Rudd" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Carassius carassius", "mk": "Златен карас", "en": "Crucian carp" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" },
+      { "latin": "Cobitis vardarensis", "mk": "Вардарска штипалка" },
+      { "latin": "Sabanejewia balcanica", "mk": "Златна штипалка" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true },
+      { "latin": "Pseudorasbora parva", "mk": "Амурче", "en": "Topmouth gudgeon", "introduced": true },
+      { "latin": "Lepomis gibbosus", "mk": "Сончарка", "en": "Pumpkinseed", "introduced": true }
+    ],
+    "fishNote": {
+      "mk": "Видови уловени во самата река (11 мерни места од изворот до вливот во Вардар, без акумулацијата Тиквеш) при научното истражување во август–октомври 2006 година. Пастрмката (во изворишниот дел) и плашицата не се наведени бидејќи не се определени до вид. Македонските имиња се според риболовните основи.",
+      "en": "Species caught in the river itself (11 sampling sites from the source to the Vardar, not counting the Tikveš reservoir) in a scientific survey in August–October 2006. The trout (in the headwaters) and the bleak are not listed because they were not identified to species. Macedonian names follow the fishery management plans."
+    },
+    "notes": [
+      {
+        "mk": "Според истражувањето од 2006 година, состојбата на реката е добра од изворот до Бучин; по вливот на реката Блато (кај Тројкрсти) се влошува, а најлоша е под Битола.",
+        "en": "According to the 2006 study, the river is in good condition from its source to Bučin; it gets worse after the Blato flows in (at Trojkrsti) and is worst below Bitola."
+      }
+    ],
+    "sources": [
+      { "title": "Kostov, Ristovska, Prelić & Slavevska-Stamenković (2011): Assessment of the ecological status of the Crna River based on the fish fauna. Macedonian Journal of Animal Science 1(1): 261–270", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf" }
+    ]
+  },
+
+  "tikveshko-ezero": {
+    "description": {
+      "mk": "Акумулација на Црна Река, 12 km југозападно од Кавадарци, изградена во 1968 година – една од најстарите акумулации во земјата. Браната е висока 104 m, езерото зафаќа околу 14 km² и собира околу 475 милиони m³ вода. Се користи главно за производство на струја и за наводнување.",
+      "en": "Reservoir on the Crna Reka, 12 km south-west of Kavadarci, built in 1968 – one of the oldest reservoirs in the country. The dam is 104 m high; the lake covers about 14 km² and holds about 475 million m³ of water. It is used mainly for hydropower and irrigation."
+    },
+    "fish": [
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Alburnoides bipunctatus", "mk": "Вардарка" },
+      { "latin": "Scardinius erythrophthalmus", "mk": "Писа", "en": "Rudd" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Vimba melanops", "mk": "Попадика" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Rhodeus meridionalis", "mk": "Платиче" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" },
+      { "latin": "Ameiurus nebulosus", "mk": "Америчко сомче", "en": "Brown bullhead", "introduced": true },
+      { "latin": "Lepomis gibbosus", "mk": "Сончарка", "en": "Pumpkinseed", "introduced": true },
+      { "latin": "Gymnocephalus cernua", "en": "Ruffe", "introduced": true },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true },
+      { "latin": "Pseudorasbora parva", "mk": "Амурче", "en": "Topmouth gudgeon", "introduced": true },
+      { "latin": "Abramis brama", "mk": "Деверика", "en": "Common bream", "introduced": true }
+    ],
+    "fishNote": {
+      "mk": "Видови уловени во акумулацијата при научното истражување во 2006 година, и деверика, уловена за прв пат во октомври 2014 година (22 примероци). Ознаката „внесен вид“ е според истражувачите. Плашицата не е наведена бидејќи не е определена до вид.",
+      "en": "Species caught in the reservoir in a 2006 scientific survey, plus the common bream, first caught here in October 2014 (22 fish). The “introduced” tags follow the researchers. The bleak is not listed because it was not identified to species."
+    },
+    "notes": [
+      {
+        "mk": "Во 2006 година најбројна риба во акумулацијата било внесеното американско сомче, а бројни биле и Gymnocephalus cernua, црвеноперката, сончарката и плашицата.",
+        "en": "In 2006 the most numerous fish in the reservoir was the introduced brown bullhead; ruffe, roach, pumpkinseed and bleak were also numerous."
+      },
+      {
+        "mk": "Во 2006 година тука за прв пат во земјата се уловени два вида од фамилијата на јесетрите (Acipenser ruthenus и Acipenser gueldenstaedtii). Не е познато како стигнале во акумулацијата.",
+        "en": "In 2006 two sturgeon species (Acipenser ruthenus and Acipenser gueldenstaedtii) were caught here, the first records in the country. It is not known how they got into the reservoir."
+      }
+    ],
+    "sources": [
+      { "title": "Kostov, Ristovska, Prelić & Slavevska-Stamenković (2011): Assessment of the ecological status of the Crna River based on the fish fauna. Macedonian Journal of Animal Science 1(1): 261–270", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf" },
+      { "title": "Kostov et al. (2015): First record of common bream, Abramis brama, introduced to the Vardar River basin. Macedonian Journal of Animal Science 5(2): 113–118", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-05-2-_2015_-207-Kostov.pdf" }
+    ]
+  },
+
+  "ezero-mladost": {
+    "description": {
+      "mk": "Акумулација на реката Отовица, кај селото Отовица и патот Велес–Скопје, 2,5 km пред вливот на Отовица во Вардар. Браната е висока 27 m. Езерото е долго 1,5 km и широко до 500 m, зафаќа 0,52 km², а најголемата длабочина е 25 m. Водата се користи за наводнување на околу 1.350 ha, главно лозја, околу Велес и Отовица.",
+      "en": "Reservoir on the Otovica river, near the village of Otovica and the Veles–Skopje road, 2.5 km before the Otovica flows into the Vardar. The dam is 27 m high. The lake is 1.5 km long and up to 500 m wide, covers 0.52 km² and is up to 25 m deep. Its water irrigates about 1,350 ha, mostly vineyards, around Veles and Otovica."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" },
+      { "latin": "Carassius carassius", "mk": "Златен карас", "en": "Crucian carp" },
+      { "latin": "Sander lucioperca", "mk": "Смуѓ", "en": "Zander", "introduced": true },
+      { "latin": "Ctenopharyngodon idella", "mk": "Амур", "en": "Grass carp", "introduced": true },
+      { "latin": "Hypophthalmichthys molitrix", "mk": "Бел толстолобик", "en": "Silver carp", "introduced": true },
+      { "latin": "Hypophthalmichthys nobilis", "mk": "Сив толстолобик", "en": "Bighead carp", "introduced": true }
+    ],
+    "fishNote": {
+      "mk": "Видови кои официјалната риболовна основа (2023–2028) ги наведува посебно за оваа акумулација (позначајни видови и видови кои се дел од рибната населба на езерото). Основата наведува вкупно 16 видови. Белиот и сивиот толстолобик не се мрестат природно во нашите води.",
+      "en": "Species that the official fishery management plan (2023–2028) names specifically for this reservoir (main species and species that are part of the lake's fish community). The plan lists 16 species in total. Silver and bighead carp do not breed naturally in the country's waters."
+    },
+    "notes": [
+      {
+        "mk": "Смуѓот е внесуван во земјата повеќе пати во 1970-тите години, но се одомаќинил само во оваа акумулација. Според риболовната основа, денес во Северна Македонија се среќава само тука.",
+        "en": "Zander was brought into the country several times in the 1970s but settled only in this reservoir. According to the fishery management plan, today it is found only here in North Macedonia."
+      },
+      {
+        "mk": "Најчесто се ловат крап, црвеноперка и клен.",
+        "en": "The fish caught most often are carp, roach and chub."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Акумулација Младост“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
+    ]
+  },
+
+  "strezhevsko-ezero": {
+    "description": {
+      "mk": "Акумулација на реката Шемница, изградена во 1982 година, 1 km низводно од селото Стрежево и 24 km пред вливот на Шемница во Црна Река. Браната е висока 76 m. При нормално ниво (737,5 m надморска височина) езерото зафаќа околу 433 ha и е долго 6,25 km. Покрај од Шемница, се полни и преку канал долг 56 km кој ги собира водите на реките од Баба Планина. Нивото на водата многу се менува во текот на годината.",
+      "en": "Reservoir on the Šemnica river, built in 1982, 1 km downstream of the village of Streževo and 24 km before the Šemnica flows into the Crna Reka. The dam is 76 m high. At its normal level (737.5 m above sea level) the lake covers about 433 ha and is 6.25 km long. Besides the Šemnica, it is fed by a 56 km canal that collects the water of the streams on Baba mountain. The water level changes a lot during the year."
+    },
+    "fish": [
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Chondrostoma vardarense", "mk": "Скобуст" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Esox lucius", "mk": "Штука", "en": "Northern pike" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench" },
+      { "latin": "Carassius carassius", "mk": "Златен карас", "en": "Crucian carp" },
+      { "latin": "Hypophthalmichthys molitrix", "mk": "Бел толстолобик", "en": "Silver carp", "introduced": true }
+    ],
+    "fishNote": {
+      "mk": "Видови кои официјалната риболовна основа (2023–2028) ги наведува посебно за оваа акумулација (позначајни видови; белиот толстолобик е регистриран тука во 2000 година). Основата наведува вкупно 24 видови. Белиот толстолобик не се мрести природно во нашите води.",
+      "en": "Species that the official fishery management plan (2023–2028) names specifically for this reservoir (main species; silver carp was recorded here in 2000). The plan lists 24 species in total. Silver carp does not breed naturally in the country's waters."
+    },
+    "notes": [
+      {
+        "mk": "Акумулацијата е порибувана неколку пати со македонска и охридска пастрмка (од мрестилиштето во Струга) и со калифорниска пастрмка. Според риболовната основа, денес во неа живеат сите овие видови пастрмка или тие се измешале, па пастрмките не се наведени во листата.",
+        "en": "The reservoir has been stocked several times with Macedonian and Ohrid trout (from the hatchery in Struga) and with rainbow trout. According to the fishery management plan, all these trout species live there today or they have interbred, so the trout are not in the list."
+      },
+      {
+        "mk": "Штуката ја внеле рекреативни риболовци на своја рака.",
+        "en": "Pike were brought in by recreational anglers on their own."
+      }
+    ],
+    "sources": [
+      { "title": "Риболовна основа „Акумулација Стрежево“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf" }
+    ]
   }
 }

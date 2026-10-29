@@ -16,12 +16,25 @@ from memory or from unverified websites (forums, fishing blogs, AI-written pages
 4. Uncertain identifications (written "sp." or "cf." in a source) are left out.
 5. Tags: **"endemic"** only where a source calls the species endemic to that lake or its
    basin; **"introduced"** only where a source says so.
-6. Names: the scientific (Latin) name as written in the source; the Macedonian name from
-   the official plans (народно име); the English name only where a source gives one or it
-   is the standard common name of a widespread European species.
+6. Names: the scientific (Latin) name as written in the source (obvious misspellings
+   corrected, e.g. "Ctenopharingodon" → Ctenopharyngodon, "Gimnocephalus" → Gymnocephalus;
+   "Stizostedion lucioperca" is given under its current name Sander lucioperca, which the
+   plan lists as the synonym); the Macedonian name from the official plans (народно име);
+   the English name only where a source gives one or it is the standard common name of a
+   widespread European species. A fish without a name in the chosen language is shown with
+   its Latin name.
 7. Permits, prices, closed seasons, minimum sizes and catch limits were **not** added,
    even where plans contain them: they have legal consequences and should be checked with
    the fishing associations or the Ministry.
+8. **Reservoirs with only a management plan** (Mladost, Streževo): only species that the
+   plan names *specifically for that reservoir* in its own text (the reservoir's list of
+   main species, or a sentence about that reservoir) are listed, not every species in the
+   plan's table. The plans describe each species with general text copied between plans,
+   so the general text alone is not taken as proof for a specific water.
+9. **Surveys** count for the water where the fish were actually caught: for the Crna Reka
+   only the river sampling sites, for the Tikveš reservoir only the reservoir site.
+10. The plans call carp (Cyprinus carpio) introduced, but the scientific sources used here
+    do not, so carp has no tag.
 
 ## Sources
 
@@ -54,7 +67,46 @@ Macedonian folk name, followed by a description of each species that inhabits th
   gudgeon, chub, golden loach; river blenny not caught for over 40 years), "third largest
   natural lake", ~3/5 of the lake in North Macedonia, present area ~31 km².
 
+- **Акумулација Стрежево** (plan no. 4) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf
+  Used for: reservoir facts (dam on the Šemnica built 1982, 76 m, 1 km below Streževo,
+  24 km above the Crna Reka, 432.86 ha and 6.25 km at 737.5 m, 56 km feeder canal from Baba
+  mountain, varying level); the reservoir's main species (table 3, spawning periods of "the
+  more important species of the Streževo reservoir"); silver carp recorded in the reservoir
+  in 2000; trout stocking and the uncertainty about which trout live there; pike brought in
+  by anglers. The plan's table lists 24 species; those named only in the table (e.g. eel,
+  rudd, Prussian carp, pumpkinseed) are not shown.
+- **Акумулација Младост** (plan no. 5) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf
+  Used for: reservoir facts (arch dam on the Otovica 2.5 km above the Vardar, 27 m, 1.5 km
+  long, up to 500 m wide, 0.52 km², max depth 25 m, irrigation of ~1,350 ha); the
+  reservoir's main species (table 13, spawning periods), carp, grass carp and silver/bighead
+  carp as "part of the lake's fish community" (aquaculture section); carp, roach and chub
+  caught most often; zander settled only in this reservoir; silver and bighead carp do not
+  breed naturally in the country. The table lists 16 species; those named only in the table
+  (bleak, Prussian carp, pumpkinseed, brown bullhead) are not shown.
+
 ### Scientific papers and studies
+
+- **Kostov, V., Ristovska, M., Prelić, D. & Slavevska-Stamenković, V. (2011).** Assessment
+  of the ecological status of the Crna River based on the fish fauna – contribution to the
+  establishment of the monitoring system of rivers in R. Macedonia. *Macedonian Journal of
+  Animal Science* 1(1): 261–270.
+  https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf
+  Used for: Crna Reka and Tikveš species from the survey of August–October 2006 (table 2,
+  number of fish per sampling site T1–T12; T10 is the reservoir); river facts (largest
+  tributary of the Vardar, source near Železnec at 760 m, 222 km, basin 5,887 km², course
+  through Demir Hisar, Pelagonia, Skočivir, Mariovo); Tikveš built 1968, 14 km², 475 million
+  m³, irrigation and hydropower; brown bullhead most numerous in the reservoir; first records
+  of two sturgeon species; ecological status along the river.
+  Left out: "Salmo sp." and "Alburnus sp." (not identified to species); the two sturgeons
+  (only 3 fish, origin unknown, so not listed as living there).
+- **Kostov, V., Nastova, R., Gjorgjovska, N., Ušlinovska, I., Arsovska, J. & Ristovska, M.
+  (2015).** First record of common bream, *Abramis brama* (Linnaeus, 1758), introduced to
+  the Vardar River basin, Republic of Macedonia. *Macedonian Journal of Animal Science* 5(2):
+  113–118. https://mjas.ukim.edu.mk/mjas-old/files/MJAS-05-2-_2015_-207-Kostov.pdf
+  Used for: bream in the Tikveš reservoir (22 fish caught in October 2014); the seven
+  non-native species of the reservoir (Prussian carp, two sturgeons, pumpkinseed, brown
+  bullhead, ruffe, topmouth gudgeon); Tikveš 12 km SW of Kavadarci, dam 104 m, largest right
+  tributary of the Vardar. Left out: length and maximum depth (differ from the 2011 paper).
 
 - **Pietrock, M., Ritterbusch, D., Lewin, W.-C., Shumka, S., Spirkovski, Z., Ilik-Boeva, D.,
   Brämick, U. & Peveling, R. (2022).** The fish community of the ancient Prespa Lake
@@ -109,7 +161,7 @@ Macedonian folk name, followed by a description of each species that inhabits th
 ## Still being checked
 
 The fishery management plans for the other fishing areas (Vardar, Treska, Crn Drim, Crna
-Reka, Bregalnica, Pčinja, Strumica and the reservoirs) were published in the Official
+Reka, Bregalnica, Pčinja, Strumica and the other reservoirs) were published in the Official
 Gazette (Службен весник, no. 222 of 31 October 2024 and no. 33 of 14 February 2025):
 - https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf
 - https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf
