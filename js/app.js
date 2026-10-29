@@ -1,8 +1,8 @@
-// RibolovMK – the map and the info panel.
+// RibolovMK – the map, the filter and the info panel.
 //
 // Data it reads (all relative paths, so it works on GitHub Pages):
-//   data/map/border.geojson, rivers.geojson, lakes.geojson   generated, see scripts/
-//   data/waters.json                                        fishing info, edited by hand
+//   data/map/*.geojson   border, rivers, lakes, municipalities, cities (generated, see scripts/)
+//   data/waters.json     fishing info, edited by hand
 // All visible text comes from js/i18n.js. Colours come from css/style.css.
 
 (function () {
@@ -16,6 +16,8 @@
     border: 'data/map/border.geojson',
     rivers: 'data/map/rivers.geojson',
     lakes: 'data/map/lakes.geojson',
+    municipalities: 'data/map/municipalities.geojson',
+    cities: 'data/map/cities.geojson',
     waters: 'data/waters.json',
   };
 
@@ -25,12 +27,21 @@
   const COLORS = {
     land: cssVar('--map-land'),
     border: cssVar('--map-border'),
+    municipality: cssVar('--map-municipality'),
+    city: cssVar('--map-city'),
     water: cssVar('--map-water'),
     waterHover: cssVar('--map-water-hover'),
     lake: cssVar('--map-lake'),
+    reservoir: cssVar('--map-reservoir'),
     lakeHover: cssVar('--map-lake-hover'),
     selected: cssVar('--map-selected'),
   };
+
+  // What the filter can show or hide, in the order of the filter list.
+  const FILTERS = ['rivers', 'lakes', 'reservoirs', 'cities', 'municipalities'];
+  // The same layers in drawing order, bottom to top. Lakes and reservoirs are on
+  // top, so a tap inside a lake always picks the lake, not a river under it.
+  const DRAW_ORDER = ['cities', 'municipalities', 'rivers', 'lakes', 'reservoirs'];
 
   // Tap/click areas, in screen pixels. Every river also gets an invisible line
   // RIVER_TAP_WIDTH wide, so thin rivers are easy to hit with a finger.
@@ -38,7 +49,7 @@
   const RIVER_TAP_WIDTH = L.Browser.touch ? 18 : 8;
   const TAP_TOLERANCE = L.Browser.touch ? 6 : 3;
 
-  // Show the water's name next to the mouse (only on devices that can hover).
+  // Show names next to the mouse (only on devices that can hover).
   const CAN_HOVER = window.matchMedia('(hover: hover)').matches;
 
   // ---------------------------------------------------------------------------
@@ -51,13 +62,19 @@
   let messageKey = null;        // error message currently shown, if any
   let selectedId = null;
   let hoveredId = null;
+  let openCity = null;          // city whose name is showing after a tap (phones)
   const layersById = new Map(); // water id -> visible map layer
+  const groups = {};            // filter name -> map layer group
+  const visible = Object.fromEntries(FILTERS.map((key) => [key, true]));
 
   const el = {
     title: document.getElementById('site-title'),
     subtitle: document.getElementById('site-subtitle'),
     langSwitch: document.getElementById('lang-switch'),
     map: document.getElementById('map'),
+    filterToggle: document.getElementById('filter-toggle'),
+    filterLabel: document.getElementById('filter-label'),
+    filterList: document.getElementById('filter-list'),
     hint: document.getElementById('hint'),
     message: document.getElementById('message'),
     panel: document.getElementById('panel'),
@@ -71,19 +88,30 @@
 
   const map = L.map(el.map, {
     renderer: L.canvas({ tolerance: TAP_TOLERANCE, padding: 0.5 }),
+    zoomControl: false,
     zoomSnap: 0.25,
     zoomDelta: 0.5,
     wheelPxPerZoomLevel: 90,
   });
+  const zoomControl = L.control.zoom({ position: 'bottomright' }).addTo(map);
   map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
   map.attributionControl.addAttribution(
     '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   );
 
+  buildFilter();
   applyTexts();
 
-  Promise.all([getJSON(FILES.border), getJSON(FILES.lakes), getJSON(FILES.rivers)])
-    .then(([border, lakes, rivers]) => drawMap(border, lakes, rivers))
+  Promise.all([
+    getJSON(FILES.border),
+    getJSON(FILES.rivers),
+    getJSON(FILES.lakes),
+    getJSON(FILES.municipalities).catch(() => null), // optional layers: the map
+    getJSON(FILES.cities).catch(() => null),         // still works without them
+  ])
+    .then(([border, rivers, lakes, municipalities, cities]) => {
+      drawMap({ border, rivers, lakes, municipalities, cities });
+    })
     .catch((err) => {
       console.error(err);
       showMessage('mapLoadError');
@@ -97,17 +125,11 @@
     })
     .finally(() => { if (selectedId) renderPanel(); });
 
-  function drawMap(border, lakes, rivers) {
+  function drawMap(data) {
     // The border layer also fills the country with the land colour.
-    const borderLayer = L.geoJSON(border, {
+    const borderLayer = L.geoJSON(data.border, {
       interactive: false,
-      style: {
-        color: COLORS.border,
-        weight: 1.5,
-        dashArray: '12 4 2 4', // dash-dot, the usual map symbol for a state border
-        fillColor: COLORS.land,
-        fillOpacity: 1,
-      },
+      style: { color: COLORS.border, weight: 1.5, fillColor: COLORS.land, fillOpacity: 1 },
     });
 
     // Set the view before adding layers (Leaflet only draws on a map that has a view).
@@ -116,21 +138,34 @@
     map.setMinZoom(map.getZoom() - 1);
     map.setMaxBounds(bounds.pad(2)); // keeps the country in reach, with room for the panel
 
-    for (const f of rivers.features) f.properties.lengthKm = lengthKm(f.geometry);
-
-    // Drawing order, bottom to top: border, river lines, invisible river tap
-    // lines, lakes. Lakes are on top, so a tap inside a lake always picks the lake.
+    for (const f of data.rivers.features) f.properties.lengthKm = lengthKm(f.geometry);
     const remember = (f, layer) => layersById.set(f.properties.id, layer);
+
+    groups.rivers = L.layerGroup([
+      L.geoJSON(data.rivers, { style: waterStyle, interactive: false, onEachFeature: remember }),
+      L.geoJSON(data.rivers, {
+        style: { weight: RIVER_TAP_WIDTH, opacity: 0, lineCap: 'round', lineJoin: 'round' },
+        onEachFeature: listenForTaps,
+      }),
+    ]);
+    for (const [key, type] of [['lakes', 'lake'], ['reservoirs', 'reservoir']]) {
+      groups[key] = L.geoJSON(data.lakes, {
+        filter: (f) => (f.properties.type === 'reservoir') === (type === 'reservoir'),
+        style: waterStyle,
+        onEachFeature: (f, layer) => { remember(f, layer); listenForTaps(f, layer); },
+      });
+    }
+    groups.municipalities = L.geoJSON(data.municipalities, {
+      interactive: false,
+      style: { color: COLORS.municipality, weight: 0.8, opacity: 0.4, dashArray: '4 4' },
+    });
+    groups.cities = L.geoJSON(data.cities, {
+      style: { stroke: false, fillColor: COLORS.city, fillOpacity: 0.9 },
+      onEachFeature: setUpCity,
+    });
+
     borderLayer.addTo(map);
-    L.geoJSON(rivers, { style: waterStyle, interactive: false, onEachFeature: remember }).addTo(map);
-    L.geoJSON(rivers, {
-      style: { weight: RIVER_TAP_WIDTH, opacity: 0, lineCap: 'round', lineJoin: 'round' },
-      onEachFeature: listenForTaps,
-    }).addTo(map);
-    L.geoJSON(lakes, {
-      style: waterStyle,
-      onEachFeature: (f, layer) => { remember(f, layer); listenForTaps(f, layer); },
-    }).addTo(map);
+    applyFilters();
     map.on('zoomend', restyleAll);
   }
 
@@ -139,6 +174,7 @@
     const id = feature.properties.id;
     layer.on('click', (e) => {
       L.DomEvent.stopPropagation(e);
+      closeCityName();
       select(id, e.latlng);
     });
     layer.on('mouseover', () => setHovered(id));
@@ -148,9 +184,72 @@
         sticky: true,
         direction: 'top',
         offset: [0, -10],
-        className: 'water-tooltip',
+        className: 'map-tooltip',
       });
     }
+  }
+
+  // Cities show their name on hover, or on a tap on phones.
+  function setUpCity(feature, layer) {
+    layer.bindTooltip(() => displayName(feature.properties), {
+      sticky: CAN_HOVER,
+      direction: 'top',
+      offset: [0, -6],
+      className: 'map-tooltip map-tooltip--city',
+    });
+    layer.on('click', (e) => {
+      L.DomEvent.stopPropagation(e);
+      if (CAN_HOVER) return;
+      closeCityName();
+      openCity = layer;
+      layer.openTooltip(e.latlng);
+    });
+  }
+
+  function closeCityName() {
+    if (openCity) openCity.closeTooltip();
+    openCity = null;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Filter (top left)
+  // ---------------------------------------------------------------------------
+
+  function buildFilter() {
+    for (const key of FILTERS) {
+      const item = add(el.filterList, 'label', { className: 'filter-item' });
+      const box = add(item, 'input');
+      box.type = 'checkbox';
+      box.checked = visible[key];
+      box.addEventListener('change', () => {
+        visible[key] = box.checked;
+        applyFilters();
+      });
+      add(item, 'span', { className: `legend legend--${key}` });
+      add(item, 'span', { className: 'filter-text' }).dataset.text = key;
+    }
+    el.filterToggle.addEventListener('click', () => {
+      const open = el.filterList.hidden;
+      el.filterList.hidden = !open;
+      el.filterToggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // Shows the layers that are ticked in the filter. Layers are re-added in
+  // DRAW_ORDER every time, so the drawing order (and what a tap picks) never changes.
+  function applyFilters() {
+    hoveredId = null;
+    closeCityName();
+    for (const key of DRAW_ORDER) if (groups[key]) map.removeLayer(groups[key]);
+    for (const key of DRAW_ORDER) if (groups[key] && visible[key]) map.addLayer(groups[key]);
+
+    const selected = layersById.get(selectedId);
+    if (selected && !visible[groupOf(selected.feature)]) closePanel();
+    else if (selected) selected.bringToFront();
+  }
+
+  function groupOf(feature) {
+    return { river: 'rivers', lake: 'lakes', reservoir: 'reservoirs' }[feature.properties.type];
   }
 
   // ---------------------------------------------------------------------------
@@ -176,7 +275,7 @@
       color: lineColor,
       weight: state === 'normal' ? 1 : 2.5,
       opacity: 1,
-      fillColor: state === 'hover' ? COLORS.lakeHover : COLORS.lake,
+      fillColor: state === 'hover' ? COLORS.lakeHover : type === 'reservoir' ? COLORS.reservoir : COLORS.lake,
       fillOpacity: 1,
     };
   }
@@ -255,7 +354,10 @@
   }
 
   el.panelClose.addEventListener('click', closePanel);
-  map.on('click', closePanel);
+  map.on('click', () => {
+    closeCityName();
+    closePanel();
+  });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePanel();
   });
@@ -370,6 +472,7 @@
     lang = next;
     try { localStorage.setItem('lang', next); } catch (e) { /* ignore */ }
     applyTexts();
+    closeCityName();
     if (selectedId) renderPanel();
   }
 
@@ -386,6 +489,12 @@
     el.langSwitch.textContent = t('switchLanguage');
     el.langSwitch.setAttribute('aria-label', t('switchLanguageLabel'));
     el.map.setAttribute('aria-label', t('mapLabel'));
+    el.filterLabel.textContent = t('filter');
+    el.filterList.setAttribute('aria-label', t('filterLabel'));
+    for (const span of el.filterList.querySelectorAll('[data-text]')) span.textContent = t(span.dataset.text);
+    const zoom = zoomControl.getContainer();
+    zoom.querySelector('.leaflet-control-zoom-in').title = t('zoomIn');
+    zoom.querySelector('.leaflet-control-zoom-out').title = t('zoomOut');
     el.hint.textContent = t('hint');
     el.panelClose.setAttribute('aria-label', t('close'));
     if (messageKey) el.message.textContent = t(messageKey);

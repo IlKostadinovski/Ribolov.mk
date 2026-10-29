@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>РиболовМК – мапа за риболов во Северна Македонија</title>
   <meta name="description" content="Мапа за риболов во Северна Македонија: реки, езера и акумулации, со информации за риби и дозволи.">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#000000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,16 @@
 
   <main class="map-area">
     <div id="map" role="region" aria-label="Мапа на реките и езерата во Северна Македонија"></div>
+
+    <div class="filter">
+      <button id="filter-toggle" class="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-list">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M4 5h16l-6 7.5V19l-4-2v-4.5L4 5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span id="filter-label">Филтер</span>
+      </button>
+      <div id="filter-list" class="filter-list" role="group" aria-label="Прикажи на мапата" hidden></div>
+    </div>
     <p id="hint" class="hint">Изберете река или езеро</p>
     <p id="message" class="message" role="alert" hidden></p>
 

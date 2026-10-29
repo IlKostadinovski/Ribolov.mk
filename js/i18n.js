@@ -16,6 +16,16 @@ const TEXT = {
     hint: 'Изберете река или езеро',
     close: 'Затвори',
 
+    filter: 'Филтер',
+    filterLabel: 'Прикажи на мапата',
+    rivers: 'Реки',
+    lakes: 'Езера',
+    reservoirs: 'Акумулации',
+    cities: 'Градови',
+    municipalities: 'Граници на општини',
+    zoomIn: 'Зумирај',
+    zoomOut: 'Одзумирај',
+
     river: 'Река',
     lake: 'Езеро',
     reservoir: 'Акумулација',
@@ -47,6 +57,16 @@ const TEXT = {
     mapLabel: 'Map of the rivers and lakes of North Macedonia',
     hint: 'Select a river or lake',
     close: 'Close',
+
+    filter: 'Filter',
+    filterLabel: 'Show on the map',
+    rivers: 'Rivers',
+    lakes: 'Lakes',
+    reservoirs: 'Reservoirs',
+    cities: 'Cities',
+    municipalities: 'Municipality borders',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
 
     river: 'River',
     lake: 'Lake',
