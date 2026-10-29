@@ -1,0 +1,56 @@
+# Research helper (only on the "research" branch, not part of the website):
+# downloads the documents listed in research/urls.txt, converts PDFs to text and
+# commits the text to research/text/, so the sources can be read and checked.
+name: Fetch research sources
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research]
+    paths:
+      - 'research/urls.txt'
+      - '.github/workflows/fetch-research.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install pdftotext
+        run: sudo apt-get update -q && sudo apt-get install -y -q poppler-utils
+
+      - name: Download and convert
+        run: |
+          mkdir -p pdf research/text research/listings
+          ok=0; failed=0
+          while read -r url; do
+            case "$url" in ''|\#*) continue;; esac
+            if [[ "$url" == */ ]]; then
+              name=$(echo "$url" | md5sum | cut -c1-8)
+              curl -sSL --max-time 60 "$url" -o "research/listings/$name.html" || true
+              wget -q -r -l1 -nd -np -A pdf,PDF -e robots=off --restrict-file-names=nocontrol \
+                --timeout=60 -P pdf "$url" || echo "::warning::listing download problem: $url"
+            else
+              if wget -q -nd --restrict-file-names=nocontrol --timeout=120 -P pdf "$url"; then ok=$((ok+1)); else failed=$((failed+1)); echo "::warning::failed: $url"; fi
+            fi
+          done < research/urls.txt
+          for f in pdf/*; do
+            base=$(basename "$f"); base="${base%.*}"
+            pdftotext -layout "$f" "research/text/$base.txt" 2>/dev/null || echo "::warning::not a readable PDF: $f"
+          done
+          echo "::notice::single files ok=$ok failed=$failed; PDFs downloaded: $(ls pdf | wc -l); text files: $(ls research/text | wc -l)"
+
+      - name: Commit the text (not the PDFs)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/text research/listings
+          if git diff --staged --quiet; then echo "Nothing new."; else
+            git commit -q -m "Research sources: extracted text"
+            git pull -q --rebase && git push -q
+          fi
