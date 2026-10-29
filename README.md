@@ -7,8 +7,8 @@ Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright
 
 **The site:** https://ilkostadinovski.github.io/Ribolov.mk/
 
-The fishing information for Lake Ohrid, Lake Dojran and the Vardar is only an example
-(marked "Пример" / "Example" on the site) until the real data is added.
+The fishing information comes only from reliable sources (official fishery management
+plans, scientific papers, field surveys); see [`SOURCES.md`](SOURCES.md).
 
 ## Seeing your changes on the site
 
@@ -63,8 +63,12 @@ Each river or lake has its own entry, under its **id**:
 ```json
 {
   "ohridsko-ezero": {
-    "placeholder": true,
-    "fish": ["Fish species 1", "Fish species 2"],
+    "description": { "mk": "Кратко за езерото…", "en": "A short description…" },
+    "fish": [
+      { "latin": "Salmo letnica", "mk": "Охридска пастрмка", "en": "Ohrid trout", "endemic": true },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true }
+    ],
+    "fishNote": { "mk": "Од каде е списокот на риби…", "en": "Where the fish list comes from…" },
     "permits": [
       {
         "issuer": "Name of the fishing association or club",
@@ -79,11 +83,10 @@ Each river or lake has its own entry, under its **id**:
     ],
     "protectedSpecies": ["Fish species that must be released"],
     "noFishingZones": ["Description of the area where fishing is forbidden"],
-    "notes": "Anything else worth knowing"
-  },
-
-  "vardar": {
-    "fish": ["…"]
+    "notes": ["Important fact 1", "Important fact 2"],
+    "sources": [
+      { "title": "Name of the document", "url": "https://…" }
+    ]
   }
 }
 ```
@@ -93,15 +96,40 @@ what is filled in. A river or lake with no entry at all shows "No information ye
 
 | Field | What to write |
 |---|---|
-| `fish` | List of fish species living there |
+| `description` | A short description of the water |
+| `fish` | List of fish. Best as `latin` + `mk` + `en` names (see below) |
+| `fishNote` | Where the fish list comes from / what it covers |
 | `permits` | List of places that issue permits: `issuer`, `contact`, `price` |
 | `closedSeasons` | List of closed seasons |
 | `catchLimits` | Catch limits |
 | `minimumSizes` | List of `fish` + `size` pairs |
 | `protectedSpecies` | List of protected species |
 | `noFishingZones` | List of areas where fishing is not allowed |
-| `notes` | Free text |
+| `notes` | Important facts (one text, or a list) |
+| `sources` | Where the information comes from: `title` and `url` (shown as links) |
 | `placeholder` | `true` = example data only, shown with a warning on the site |
+
+### Fish and the fish filter
+
+Write each fish with its scientific (Latin) name:
+
+```json
+{ "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" }
+```
+
+- The **Latin name** connects the same fish across all waters. The "Риба / Fish" list in
+  the filter is built from these names, so write each species exactly the same way
+  everywhere (same spelling, same capital letter).
+- `mk` and `en` are the names shown on the site. If `en` is missing, English visitors see
+  the Latin name.
+- Optional tags: `"endemic": true` (lives only in this lake/region) and
+  `"introduced": true` (brought in by people). Only add them if a source says so.
+
+### Sources
+
+Every fact on the site should have a source. Add it to the water's `sources` list and to
+[`SOURCES.md`](SOURCES.md), which lists all sources and the rules used for adding
+information.
 
 ### Text in two languages
 
