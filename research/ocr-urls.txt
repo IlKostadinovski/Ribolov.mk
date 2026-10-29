@@ -1,0 +1,3 @@
+# Large scanned PDFs for the split OCR workflow (ocr-split.yml)
+https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf
+https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf
