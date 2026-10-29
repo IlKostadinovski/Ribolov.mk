@@ -34,7 +34,9 @@ jobs:
               # "links:" = download every PDF that this page links to
               page="${url#links:}"
               name=$(echo "$page" | md5sum | cut -c1-8)
-              curl -sSL --max-time 90 "$page" -o "research/listings/$name.html" || { echo "::warning::page failed: $page"; continue; }
+              final=$(curl -sSL --max-time 90 -w '%{url_effective}' "$page" -o "research/listings/$name.html") || { echo "::warning::page failed: $page"; continue; }
+              echo "$page -> $final" >> research/listings/redirects.txt
+              [ "$final" != "$page" ] && echo "::notice::$page -> $final"
               sed 's#\\/#/#g' "research/listings/$name.html" \
                 | grep -oiE 'https?://[^"'"'"' <>]+\.pdf' | sort -u > "research/listings/$name.pdf-links.txt" || true
               echo "::notice::$(wc -l < "research/listings/$name.pdf-links.txt") PDF links on $page"
