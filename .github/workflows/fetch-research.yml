@@ -30,13 +30,19 @@ jobs:
           ok=0; failed=0
           while read -r url; do
             case "$url" in ''|\#*) continue;; esac
-            if [[ "$url" == */ ]]; then
-              name=$(echo "$url" | md5sum | cut -c1-8)
-              curl -sSL --max-time 60 "$url" -o "research/listings/$name.html" || true
-              wget -q -r -l1 -nd -np -A pdf,PDF -e robots=off --restrict-file-names=nocontrol \
-                --timeout=60 -P pdf "$url" || echo "::warning::listing download problem: $url"
+            if [[ "$url" == links:* ]]; then
+              # "links:" = download every PDF that this page links to
+              page="${url#links:}"
+              name=$(echo "$page" | md5sum | cut -c1-8)
+              curl -sSL --max-time 90 "$page" -o "research/listings/$name.html" || { echo "::warning::page failed: $page"; continue; }
+              sed 's#\\/#/#g' "research/listings/$name.html" \
+                | grep -oiE 'https?://[^"'"'"' <>]+\.pdf' | sort -u > "research/listings/$name.pdf-links.txt" || true
+              echo "::notice::$(wc -l < "research/listings/$name.pdf-links.txt") PDF links on $page"
+              while read -r pdfurl; do
+                wget -q -nd -nc --restrict-file-names=nocontrol --timeout=120 -P pdf "$pdfurl" || echo "failed $pdfurl"
+              done < "research/listings/$name.pdf-links.txt"
             else
-              if wget -q -nd --restrict-file-names=nocontrol --timeout=120 -P pdf "$url"; then ok=$((ok+1)); else failed=$((failed+1)); echo "::warning::failed: $url"; fi
+              if wget -q -nd -nc --restrict-file-names=nocontrol --timeout=120 -P pdf "$url"; then ok=$((ok+1)); else failed=$((failed+1)); echo "::warning::failed: $url"; fi
             fi
           done < research/urls.txt
           for f in pdf/*; do

@@ -1,22 +1,13 @@
 # Sources to download for the fishing information research.
-# A line ending in "/" is a folder listing: every PDF it links to is downloaded.
+# "links:<page>" = download every PDF that the page links to.
 # The Action converts PDFs to text in research/text/ (the PDFs themselves are not saved).
 
-# Fishery management plans (Риболовни основи) 2023-2028, Institute of Animal Science (UKIM)
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/1.%20%D0%9E%D0%A5%D0%A0%D0%98%D0%94%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/2.%20%D0%9F%D0%A0%D0%95%D0%A1%D0%9F%D0%90%D0%9D%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028%20.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/3.%20%D0%94%D0%9E%D0%88%D0%A0%D0%90%D0%9D%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/24.%20%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D1%80%20%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%202023%20-%202028.pdf
-http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf
+# Institute of Animal Science (UKIM): pages and posts about fishery management plans
+links:http://istoc.ukim.edu.mk/wp-json/wp/v2/pages?search=%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2&per_page=50
+links:http://istoc.ukim.edu.mk/wp-json/wp/v2/posts?search=%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2&per_page=50
+links:http://istoc.ukim.edu.mk/wp-json/wp/v2/pages?search=%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B8&per_page=50
+links:http://istoc.ukim.edu.mk/
 
-# Older plans (2016-2021 / 2017-2022)
-http://istoc.ukim.edu.mk/wp-content/uploads/2015/10/pdf_za_istoc/
-https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2017-2022/
-
-# Scientific papers
-https://www.mdpi.com/2410-3888/10/6/272/pdf
-https://mjas.ukim.edu.mk/mjas-old/files/MJAS-05-2-_2015_-207-Kostov.pdf
+# Macedonian Fishing Federation (plans published in the Official Gazette, fishing bans)
+links:https://www.mrf1952.mk/
+links:https://mrf1952.mk/index.php/dokumenti
