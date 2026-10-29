@@ -1,13 +1,30 @@
 # Sources to download for the fishing information research.
 # "links:<page>" = download every PDF that the page links to.
-# The Action converts PDFs to text in research/text/ (the PDFs themselves are not saved).
 
-# Institute of Animal Science (UKIM): pages and posts about fishery management plans
-links:http://istoc.ukim.edu.mk/wp-json/wp/v2/pages?search=%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2&per_page=50
-links:http://istoc.ukim.edu.mk/wp-json/wp/v2/posts?search=%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2&per_page=50
-links:http://istoc.ukim.edu.mk/wp-json/wp/v2/pages?search=%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B8&per_page=50
-links:http://istoc.ukim.edu.mk/
+# Macedonian Fishing Federation: page with the fishery management plans
+links:https://www.mrf1952.mk/informacii/osnovi/%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B8-2024
 
-# Macedonian Fishing Federation (plans published in the Official Gazette, fishing bans)
-links:https://www.mrf1952.mk/
-links:https://mrf1952.mk/index.php/dokumenti
+# Institute of Animal Science (UKIM) pages
+links:http://istoc.ukim.edu.mk/?page_id=68&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=76&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=84&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=88&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=92&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=96&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=133&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=135&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=137&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=139&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=222&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=234&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=272&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=279&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=343&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=351&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=361&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=381&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=386&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=393&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=397&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=407&lang=mk
+links:http://istoc.ukim.edu.mk/?page_id=641&lang=mk
