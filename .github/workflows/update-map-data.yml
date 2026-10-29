@@ -1,0 +1,59 @@
+# Downloads rivers, lakes and the border of North Macedonia from OpenStreetMap,
+# processes them with scripts/build-map-data.mjs and saves the result in data/map/.
+#
+# It runs on GitHub's servers:
+#   - automatically, when the script in scripts/ (or this file) changes
+#   - by hand: GitHub → Actions → "Update map data" → Run workflow
+name: Update map data
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/update-map-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-map-data
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install tools
+        working-directory: scripts
+        run: npm ci
+
+      - name: Download and process the map data
+        working-directory: scripts
+        run: npm run build
+
+      - name: Show the report
+        run: cat data/map/report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save the new map data in the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/map
+          if git diff --staged --quiet; then
+            echo "Map data unchanged."
+          else
+            git commit -m "Update map data from OpenStreetMap"
+            git pull --rebase
+            git push
+          fi

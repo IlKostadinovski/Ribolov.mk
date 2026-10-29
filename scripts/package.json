@@ -1,0 +1,16 @@
+{
+  "name": "ribolovmk-map-data",
+  "private": true,
+  "description": "Downloads rivers, lakes and the border of North Macedonia from OpenStreetMap and turns them into simplified GeoJSON for the map.",
+  "type": "module",
+  "scripts": {
+    "build": "node build-map-data.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "mapshaper": "0.7.101",
+    "osmtogeojson": "3.0.0-beta.5"
+  }
+}
