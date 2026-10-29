@@ -65,6 +65,8 @@
   let selectedId = null;
   let hoveredId = null;
   let cityLabel = null;         // city name shown after a tap (phones)
+  let speciesFilter = null;     // Latin name of the fish chosen in the filter, or null
+  const species = new Map();    // Latin name -> { latin, mk, en, waters: Set of water ids }
   const layersById = new Map(); // water id -> visible map layer
   const groups = {};            // filter name -> map layer group
   const visible = Object.fromEntries(FILTERS.map((key) => [key, true]));
@@ -120,7 +122,10 @@
     });
 
   getJSON(FILES.waters)
-    .then((data) => { waters = data || {}; })
+    .then((data) => {
+      waters = data || {};
+      buildSpeciesFilter();
+    })
     .catch((err) => {
       console.error('data/waters.json:', err);
       watersError = true;
@@ -255,6 +260,63 @@
     return { river: 'rivers', lake: 'lakes', reservoir: 'reservoirs' }[feature.properties.type];
   }
 
+  // Fish filter: lists every species named in data/waters.json (by Latin name).
+  // Choosing one draws the waters without it faintly.
+  function buildSpeciesFilter() {
+    species.clear();
+    for (const [id, info] of Object.entries(waters)) {
+      for (const fish of asList(info?.fish)) {
+        if (!fish || typeof fish !== 'object' || !fish.latin) continue;
+        const entry = species.get(fish.latin) || { latin: fish.latin, waters: new Set() };
+        entry.mk = entry.mk || fish.mk;
+        entry.en = entry.en || fish.en;
+        entry.waters.add(id);
+        species.set(fish.latin, entry);
+      }
+    }
+    if (!species.size) return;
+
+    const box = add(el.filterList, 'div', { className: 'filter-species' });
+    const label = add(box, 'label', { className: 'filter-species-label' });
+    label.htmlFor = 'species-select';
+    label.dataset.text = 'fishFilter';
+    label.textContent = t('fishFilter');
+    const select = add(box, 'select', { id: 'species-select' });
+    add(box, 'p', { className: 'filter-hint', id: 'species-count' });
+    select.addEventListener('change', () => {
+      speciesFilter = select.value || null;
+      restyleAll();
+      updateSpeciesCount();
+      if (selectedId) renderPanel();
+    });
+    fillSpeciesOptions();
+  }
+
+  // (Re)writes the fish list in the current language, sorted by name.
+  function fillSpeciesOptions() {
+    const select = document.getElementById('species-select');
+    if (!select) return;
+    const nameOf = (entry) => (lang === 'en' ? entry.en : entry.mk) || entry.mk || entry.en || entry.latin;
+    select.replaceChildren();
+    add(select, 'option', { text: t('allSpecies') }).value = '';
+    const sorted = [...species.values()].sort((a, b) => nameOf(a).localeCompare(nameOf(b), lang));
+    for (const entry of sorted) {
+      const name = nameOf(entry);
+      const option = add(select, 'option', { text: name === entry.latin ? name : `${name} (${entry.latin})` });
+      option.value = entry.latin;
+    }
+    select.value = speciesFilter || '';
+    updateSpeciesCount();
+  }
+
+  function updateSpeciesCount() {
+    const count = document.getElementById('species-count');
+    if (!count) return;
+    const n = speciesFilter ? species.get(speciesFilter)?.waters.size || 0 : null;
+    count.textContent = n === null ? t('speciesHint')
+      : (n === 1 ? t('speciesCountOne') : t('speciesCount').replace('{n}', n));
+  }
+
   // ---------------------------------------------------------------------------
   // Styles: normal, hover and selected
   // ---------------------------------------------------------------------------
@@ -262,6 +324,8 @@
   function waterStyle(feature) {
     const { id, type } = feature.properties;
     const state = id === selectedId ? 'selected' : id === hoveredId ? 'hover' : 'normal';
+    // With a fish chosen in the filter, waters without it are drawn faintly.
+    const faint = state === 'normal' && speciesFilter && !species.get(speciesFilter)?.waters.has(id);
     const lineColor = { normal: COLORS.water, hover: COLORS.waterHover, selected: COLORS.selected }[state];
 
     if (type === 'river') {
@@ -269,7 +333,7 @@
       return {
         color: lineColor,
         weight: state === 'normal' ? width : width + 2,
-        opacity: 1,
+        opacity: faint ? 0.18 : 1,
         lineCap: 'round',
         lineJoin: 'round',
       };
@@ -277,9 +341,9 @@
     return {
       color: lineColor,
       weight: state === 'normal' ? 1 : 2.5,
-      opacity: 1,
+      opacity: faint ? 0.25 : 1,
       fillColor: state === 'hover' ? COLORS.lakeHover : type === 'reservoir' ? COLORS.reservoir : COLORS.lake,
-      fillOpacity: 1,
+      fillOpacity: faint ? 0.25 : 1,
     };
   }
 
@@ -387,10 +451,48 @@
       add(box, 'p', { className: 'note note--error', text: t('watersLoadError') });
       return;
     }
+    if (info?.description) add(box, 'p', { className: 'description', text: pick(info.description) });
     if (info?.placeholder) add(box, 'p', { className: 'note', text: t('placeholder') });
 
-    const shown = info ? renderInfo(box, info) : 0;
+    const shown = info ? renderInfo(box, info) + (info.description ? 1 : 0) : 0;
     if (!shown) add(box, 'p', { className: 'no-info', text: t('noInfo') });
+    if (info) renderSources(box, info);
+  }
+
+  // One fish in the list: its name in the current language, the Latin name, and
+  // tags such as "endemic" (only when waters.json says so).
+  function renderFish(list, item) {
+    const li = add(list, 'li');
+    if (item && typeof item === 'object' && item.latin) {
+      const name = (lang === 'en' ? item.en : item.mk) || item.mk || item.en || item.latin;
+      add(li, 'span', { className: 'fish-name', text: name });
+      if (name !== item.latin) add(li, 'i', { className: 'fish-latin', text: item.latin });
+      if (item.endemic) add(li, 'span', { className: 'tag', text: t('endemic') });
+      if (item.introduced) add(li, 'span', { className: 'tag tag--introduced', text: t('introduced') });
+      if (item.latin === speciesFilter) li.classList.add('is-match');
+    } else {
+      add(li, 'span', { className: 'fish-name', text: pick(item) });
+    }
+  }
+
+  function renderSources(box, info) {
+    const sources = asList(info.sources);
+    if (!sources.length) return;
+    const s = add(box, 'section', { className: 'info-section sources' });
+    add(s, 'h3', { text: t('sources') });
+    const ul = add(s, 'ul');
+    for (const source of sources) {
+      const li = add(ul, 'li');
+      const title = pick(source.title) || source.url;
+      if (source.url) {
+        const a = add(li, 'a', { text: title });
+        a.href = source.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+      } else {
+        li.textContent = title;
+      }
+    }
   }
 
   // Adds one section per filled-in field. Returns how many sections were added.
@@ -409,7 +511,11 @@
       if (!items.length) continue;
       const s = section(key);
 
-      if (key === 'permits') {
+      if (key === 'fish') {
+        const ul = add(s, 'ul', { className: 'fish-list' });
+        for (const item of items) renderFish(ul, item);
+        if (info.fishNote) add(s, 'p', { className: 'section-note', text: pick(info.fishNote) });
+      } else if (key === 'permits') {
         for (const permit of items) {
           const dl = add(s, 'dl', { className: 'permit' });
           for (const field of ['issuer', 'contact', 'price']) {
@@ -495,6 +601,7 @@
     el.filterLabel.textContent = t('filter');
     el.filterList.setAttribute('aria-label', t('filterLabel'));
     for (const span of el.filterList.querySelectorAll('[data-text]')) span.textContent = t(span.dataset.text);
+    fillSpeciesOptions();
     const zoom = zoomControl.getContainer();
     zoom.querySelector('.leaflet-control-zoom-in').title = t('zoomIn');
     zoom.querySelector('.leaflet-control-zoom-out').title = t('zoomOut');

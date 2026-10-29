@@ -329,6 +329,40 @@ button {
   border-top: 1.5px dashed rgba(255, 255, 255, 0.6);
 }
 
+.filter-species {
+  margin-top: 6px;
+  padding: 10px 10px 6px;
+  border-top: 1px solid var(--rule);
+}
+
+.filter-species-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.filter-species select {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface-hover);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+}
+
+.filter-hint {
+  max-width: 300px;
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
 /* ---------------------------------------------------------------- Info panel */
 
 .panel {
@@ -433,6 +467,65 @@ button {
   border-left-color: var(--error-edge);
   background: var(--error-bg);
   color: var(--ink);
+}
+
+.description {
+  margin: 14px 0 0;
+}
+
+.fish-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.fish-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 3px 0;
+}
+
+.fish-list li.is-match {
+  margin: 0 -8px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(74, 163, 245, 0.18);
+}
+
+.fish-latin {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.tag {
+  padding: 0 7px;
+  border: 1px solid var(--map-water);
+  border-radius: 10px;
+  color: var(--map-water-hover);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.tag--introduced {
+  border-color: var(--ink-soft);
+  color: var(--ink-soft);
+}
+
+.section-note {
+  margin: 8px 0 0 !important;
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.sources ul {
+  padding-left: 1.1em;
+  font-size: 0.875rem;
+}
+
+.sources a {
+  color: var(--map-water-hover);
+  overflow-wrap: anywhere;
 }
 
 .no-info {

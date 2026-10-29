@@ -25,6 +25,11 @@ const TEXT = {
     municipalities: 'Граници на општини',
     zoomIn: 'Зумирај',
     zoomOut: 'Одзумирај',
+    fishFilter: 'Риба',
+    allSpecies: 'Сите видови',
+    speciesCount: 'Ја има во {n} води',
+    speciesCountOne: 'Ја има во 1 вода',
+    speciesHint: 'Само води со проверени податоци за рибите.',
 
     river: 'Река',
     lake: 'Езеро',
@@ -41,6 +46,9 @@ const TEXT = {
     protectedSpecies: 'Заштитени видови',
     noFishingZones: 'Забрането за риболов',
     notes: 'Белешки',
+    sources: 'Извори',
+    endemic: 'ендемит',
+    introduced: 'внесен вид',
 
     noInfo: 'Сè уште нема информации за оваа вода.',
     placeholder: 'Пример: ова не се вистински податоци. Не користете ги за риболов.',
@@ -67,6 +75,11 @@ const TEXT = {
     municipalities: 'Municipality borders',
     zoomIn: 'Zoom in',
     zoomOut: 'Zoom out',
+    fishFilter: 'Fish',
+    allSpecies: 'All species',
+    speciesCount: 'Found in {n} waters',
+    speciesCountOne: 'Found in 1 water',
+    speciesHint: 'Only waters with checked fish data.',
 
     river: 'River',
     lake: 'Lake',
@@ -83,6 +96,9 @@ const TEXT = {
     protectedSpecies: 'Protected species',
     noFishingZones: 'No-fishing zones',
     notes: 'Notes',
+    sources: 'Sources',
+    endemic: 'endemic',
+    introduced: 'introduced',
 
     noInfo: 'No information yet for this water.',
     placeholder: 'Example only: this is not real information. Do not use it for fishing.',

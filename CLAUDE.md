@@ -26,8 +26,11 @@ code must stay simple, readable and easy to extend.
 ## Hard rules
 
 - **Never invent fish species, permit details, prices or rules.** They have legal and
-  practical consequences. The owner provides the real data. Until then only clearly
-  marked placeholder entries (Lake Ohrid, Lake Dojran, Vardar) are allowed.
+  practical consequences. The owner asked (Oct 2026) to fill in fish species, short
+  descriptions and important facts **only from reliable sources, 99.9% sure**. Every fact
+  in `data/waters.json` must come from a source listed in `SOURCES.md`, following the
+  rules at the top of that file. No permits/prices/closed seasons/sizes unless the owner
+  asks (plans contain them, but they have legal consequences).
 - Static site only: plain HTML/CSS/JavaScript, no backend, no build step needed to serve.
 - Hosted on GitHub Pages: relative paths only.
 - Libraries from a CDN, with pinned versions.

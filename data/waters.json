@@ -1,60 +1,183 @@
 {
   "ohridsko-ezero": {
-    "placeholder": true,
+    "description": {
+      "mk": "Природно езеро на 693 m надморска височина, со површина од 358 km², од кои околу две третини (239 km²) се во Северна Македонија, а една третина во Албанија. Најголемата длабочина е 288,7 m, а просечната 163 m. Езерото главно се полни од подводни извори; единствениот истек е реката Црн Дрим кај Струга.",
+      "en": "Natural lake at 693 m above sea level, 358 km² in area, of which about two thirds (239 km²) is in North Macedonia and one third in Albania. Its greatest depth is 288.7 m and its average depth 163 m. The lake is fed mainly by underwater springs; its only outflow is the Crn Drim river at Struga."
+    },
     "fish": [
-      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" },
-      { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" },
-      { "mk": "Пример: вид риба 3", "en": "Example: fish species 3" }
+      { "latin": "Salmo letnica", "mk": "Охридска пастрмка", "en": "Ohrid trout", "endemic": true },
+      { "latin": "Salmo ohridanus", "mk": "Охридска белвица", "en": "Ohrid belvica", "endemic": true },
+      { "latin": "Alburnoides ohridanus", "mk": "Вардарка", "en": "Ohrid spirlin" },
+      { "latin": "Alburnus scoranza", "mk": "Плашица" },
+      { "latin": "Barbus rebeli", "mk": "Црна мрена", "en": "Western Balkan barbel" },
+      { "latin": "Chondrostoma ohridanus", "mk": "Скобуст" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Gobio ohridanus", "mk": "Кркушка", "en": "Ohrid gudgeon" },
+      { "latin": "Pachychilon pictum", "mk": "Моранец", "en": "Albanian roach" },
+      { "latin": "Phoxinus lumaireul", "mk": "Пиор" },
+      { "latin": "Pelasgus minutus", "mk": "Грунче", "en": "Ohrid minnow" },
+      { "latin": "Rutilus ohridanus", "mk": "Грунец", "en": "Ohrid roach" },
+      { "latin": "Scardinius knezevici", "mk": "Писа" },
+      { "latin": "Squalius squalus", "mk": "Клен" },
+      { "latin": "Anguilla anguilla", "mk": "Јагула", "en": "European eel" },
+      { "latin": "Barbatula sturanyi", "mk": "Охридска вретенушка", "en": "Ohrid stone loach" },
+      { "latin": "Cobitis ohridana", "mk": "Охридска штипалка", "en": "Ohrid spined loach" },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true }
     ],
-    "permits": [
+    "fishNote": {
+      "mk": "Домашните видови се според официјалната риболовна основа за Охридско Езеро (2023–2028). Од внесените видови е наведен само сребрениот карас, кој е потврден и од друг извор (регистриран во 2013 година).",
+      "en": "Native species according to the official fishery management plan for Lake Ohrid (2023–2028). Of the introduced species, only the Prussian carp is listed, as it is confirmed by another source (recorded in 2013)."
+    },
+    "notes": [
       {
-        "issuer": { "mk": "Пример: риболовно друштво", "en": "Example: angling club" },
-        "contact": { "mk": "Пример: телефон, е-пошта или адреса", "en": "Example: phone, email or address" },
-        "price": { "mk": "Пример: цена за еден ден", "en": "Example: price for one day" }
+        "mk": "Дел од светското природно и културно наследство на УНЕСКО („Природно и културно наследство на Охридскиот регион“) од 1979 година; во 2019 година подрачјето е проширено на албанскиот дел од езерото.",
+        "en": "Part of the UNESCO World Heritage site “Natural and Cultural Heritage of the Ohrid region” since 1979; in 2019 the site was extended to the Albanian side of the lake."
       },
       {
-        "issuer": { "mk": "Пример: второ место за дозволи", "en": "Example: a second permit office" },
-        "price": { "mk": "Пример: цена за една година", "en": "Example: price for one year" }
+        "mk": "Според IUCN, во езерото живеат 17 домашни видови риби, од кои 10 се ендемични.",
+        "en": "According to IUCN, the lake has 17 native fish species, 10 of which are endemic."
+      },
+      {
+        "mk": "Харингата (Alosa fallax) порано доаѓала во езерото, но повеќе не се среќава бидејќи не може да ги помине браните на Црн Дрим.",
+        "en": "The twaite shad (Alosa fallax) used to reach the lake, but it no longer occurs because it cannot pass the dams on the Crn Drim."
       }
     ],
-    "closedSeasons": [
-      { "mk": "Пример: вид риба 1, од ДАТУМ до ДАТУМ", "en": "Example: fish species 1, from DATE to DATE" }
+    "sources": [
+      { "title": "Риболовна основа „Охридско Езеро“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/1.%20%D0%9E%D0%A5%D0%A0%D0%98%D0%94%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf" },
+      { "title": "IUCN World Heritage Outlook: Natural and Cultural Heritage of the Ohrid region", "url": "https://worldheritageoutlook.iucn.org/node/968" },
+      { "title": "Talevski, Talevska & Talevska Leshoska (2025): Endemic Fish Species in the Macedonian Fresh Water. IntechOpen", "url": "https://doi.org/10.5772/intechopen.1008520" },
+      { "title": "Trichkova et al.: Inventory of alien fish species in Lake Ohrid catchment in 2016 (ESENIAS)", "url": "https://www.esenias.org/files/News_Alien_CSI_2_Poster_Ohrid_fish.pdf" }
+    ]
+  },
+
+  "prespansko-ezero": {
+    "description": {
+      "mk": "Природно езеро на 853 m надморска височина, второ по големина во земјата. Површината е 274 km²: 177 km² во Северна Македонија, 49 km² во Албанија и 48 km² во Грција. Најголемата длабочина е 76 m, должината 28 km, а широчината 17 km. Нивото на водата многу варира.",
+      "en": "Natural lake at 853 m above sea level, the second largest in the country. It covers 274 km²: 177 km² in North Macedonia, 49 km² in Albania and 48 km² in Greece. Its greatest depth is 76 m, its length 28 km and its width 17 km. The water level varies a lot."
+    },
+    "fish": [
+      { "latin": "Alburnus belvica", "mk": "Белвица", "en": "Prespa bleak", "endemic": true },
+      { "latin": "Alburnoides prespensis", "mk": "Вардарка", "en": "Prespa spirlin", "endemic": true },
+      { "latin": "Chondrostoma prespense", "mk": "Скобуст", "en": "Prespa nase", "endemic": true },
+      { "latin": "Pelasgus prespensis", "mk": "Грунче", "en": "Prespa minnow", "endemic": true },
+      { "latin": "Squalius prespensis", "mk": "Клен", "endemic": true },
+      { "latin": "Cobitis meridionalis", "mk": "Штипалка", "en": "Prespa loach", "endemic": true },
+      { "latin": "Salmo peristericus", "mk": "Брајчинска пастрмка", "en": "Prespa trout", "endemic": true },
+      { "latin": "Barbus prespensis", "mk": "Црна мрена", "en": "Prespa barbel" },
+      { "latin": "Rutilus prespensis", "mk": "Грунец", "en": "Prespa roach" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench", "introduced": true },
+      { "latin": "Rhodeus amarus", "mk": "Платиче", "en": "Bitterling", "introduced": true },
+      { "latin": "Pseudorasbora parva", "mk": "Амурче", "en": "Topmouth gudgeon", "introduced": true },
+      { "latin": "Lepomis gibbosus", "mk": "Сончарка", "en": "Pumpkinseed", "introduced": true }
     ],
-    "catchLimits": { "mk": "Пример: најмногу X риби на ден", "en": "Example: at most X fish per day" },
-    "minimumSizes": [
-      { "fish": { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" }, "size": "XX cm" },
-      { "fish": { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" }, "size": "XX cm" }
+    "fishNote": {
+      "mk": "Видови уловени при научното истражување 2013–2015 (македонски и албански дел од езерото) кои ги наведува и официјалната риболовна основа (2023–2028). Ознаките „ендемит“ и „внесен вид“ се според истражувањето. Преспанскиот грунец во научната литература се води и како Leucos basak.",
+      "en": "Species caught in the 2013–2015 scientific survey (Macedonian and Albanian parts of the lake) that are also listed in the official fishery management plan (2023–2028). The “endemic” and “introduced” tags follow the survey. The Prespa roach is also known in scientific literature as Leucos basak."
+    },
+    "notes": [
+      {
+        "mk": "Македонскиот дел од езерото е Рамсарско подрачје (влажно подрачје од меѓународно значење) од 1995 година.",
+        "en": "The Macedonian part of the lake has been a Ramsar site (wetland of international importance) since 1995."
+      },
+      {
+        "mk": "Според истражувањето 2013–2015, внесените видови заедно бројно ги надминуваат домашните.",
+        "en": "According to the 2013–2015 survey, the introduced species together outnumber the native ones."
+      },
+      {
+        "mk": "Брајчинската (пелистерска) пастрмка повремено доаѓа во езерото од Брајчинска и Лева Река.",
+        "en": "The Prespa (Brajčino) trout occasionally comes into the lake from the Brajčinska and Leva rivers."
+      }
     ],
-    "protectedSpecies": [
-      { "mk": "Пример: заштитен вид", "en": "Example: protected species" }
-    ],
-    "noFishingZones": [
-      { "mk": "Пример: опис на зоната", "en": "Example: description of the zone" }
-    ],
-    "notes": { "mk": "Пример: други корисни информации.", "en": "Example: other useful information." }
+    "sources": [
+      { "title": "Риболовна основа „Преспанско Езеро“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/2.%20%D0%9F%D0%A0%D0%95%D0%A1%D0%9F%D0%90%D0%9D%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028%20.pdf" },
+      { "title": "Pietrock et al. (2022): The fish community of the ancient Prespa Lake: Non-indigenous species take over. Fisheries & Aquatic Life 30: 112–124", "url": "https://doi.org/10.2478/aopf-2022-0011" },
+      { "title": "Ramsar: North Macedonia designates second Ramsar site (Prespa 1995, Dojran)", "url": "https://ramsar.org/fr/news/fyr-macedonia-designates-second-ramsar-site" }
+    ]
   },
 
   "dojransko-ezero": {
-    "placeholder": true,
+    "description": {
+      "mk": "Плитко природно езеро на македонско-грчката граница, трето по големина во земјата. Околу три петтини од езерото се во Северна Македонија. Денешната површина е околу 31 km², а длабочината околу 6 m.",
+      "en": "Shallow natural lake on the border with Greece, the third largest in the country. About three fifths of the lake is in North Macedonia. Its present area is about 31 km² and its depth about 6 m."
+    },
     "fish": [
-      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" },
-      { "mk": "Пример: вид риба 2", "en": "Example: fish species 2" }
+      { "latin": "Alburnus macedonicus", "mk": "Белвица (дојранска плашица)", "endemic": true },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
+      { "latin": "Rhodeus meridionalis", "mk": "Платиче" },
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Cobitis vardarensis", "mk": "Вардарска штипалка" },
+      { "latin": "Carassius gibelio", "mk": "Сребрен карас", "en": "Prussian carp", "introduced": true },
+      { "latin": "Tinca tinca", "mk": "Лињак", "en": "Tench", "introduced": true }
     ],
-    "permits": [
+    "fishNote": {
+      "mk": "Видови потврдени со научното истражување 2021/2023 (вклучувајќи ги внесените видови со утврдени популации и крапот како главен вид во уловот) кои ги наведува и официјалната риболовна основа (2023–2028). Сомот и вардарската штипалка се ретки.",
+      "en": "Species confirmed by the 2021/2023 scientific survey (including introduced species with established populations, and carp as a main species in the catch) that are also listed in the official fishery management plan (2023–2028). Wels catfish and the Vardar spined loach are rare."
+    },
+    "notes": [
       {
-        "issuer": { "mk": "Пример: риболовно друштво", "en": "Example: angling club" },
-        "contact": { "mk": "Пример: телефон", "en": "Example: phone number" },
-        "price": { "mk": "Пример: цена", "en": "Example: price" }
+        "mk": "Според риболовната основа, најзастапени видови во езерото се црвеноперката, костреш, сребрениот карас и плашицата.",
+        "en": "According to the fishery management plan, the most common species in the lake are roach, perch, Prussian carp and bleak."
+      },
+      {
+        "mk": "Црната мрена, кркушката, кленот и златната штипалка многу ретко или воопшто не се среќаваат во езерото.",
+        "en": "Balkan barbel, gudgeon, chub and the golden loach are very rarely or no longer found in the lake."
+      },
+      {
+        "mk": "Рамсарско подрачје (влажно подрачје од меѓународно значење) од 2007 година; споменик на природата од 1977 година.",
+        "en": "Ramsar site (wetland of international importance) since 2007; Monument of Nature since 1977."
+      },
+      {
+        "mk": "Познато е по традиционалниот риболов со „мандри“ (заградени простори во езерото). Според Рамсарскиот информативен лист, ова е единственото познато место во светот каде се користи овој метод.",
+        "en": "Known for traditional fishing with “mandras” (enclosed areas in the lake). According to the Ramsar Information Sheet, it is the only known place in the world where this method is used."
       }
     ],
-    "notes": { "mk": "Пример: белешка за езерото.", "en": "Example: a note about the lake." }
+    "sources": [
+      { "title": "Риболовна основа „Дојранско Езеро“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/3.%20%D0%94%D0%9E%D0%88%D0%A0%D0%90%D0%9D%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf" },
+      { "title": "Shumka et al. (2025): Fish Fauna, Ecological Quality and Conservation Challenges in the Balkan Transboundary Lake Dojran. Fishes 10(6): 272", "url": "https://doi.org/10.3390/fishes10060272" },
+      { "title": "Ramsar Information Sheet: Dojran Lake (site no. 1735)", "url": "https://rsis.ramsar.org/ris/1735" }
+    ]
   },
 
-  "vardar": {
-    "placeholder": true,
+  "sateska-reka": {
+    "description": {
+      "mk": "Најголемата притока во сливот на Охридското Езеро. Извира во планинскиот дел на Дебарца, а средниот и долниот тек се во Охридско-струшкото поле. Во 1961 година реката е пренасочена од Црн Дрим кон Охридското Езеро: од изворите до регулационата брана кај Волино е долга 26 km, а каналот до езерото околу 6 km.",
+      "en": "The largest tributary in the Lake Ohrid catchment. It rises in the mountains of Debarca; its middle and lower course run through the Ohrid–Struga plain. In 1961 the river was diverted from the Crn Drim into Lake Ohrid: it is 26 km long from its springs to the regulating dam near Volino, and the canal to the lake is about 6 km."
+    },
     "fish": [
-      { "mk": "Пример: вид риба 1", "en": "Example: fish species 1" }
+      { "latin": "Salmo farioides", "mk": "Речна пастрмка" },
+      { "latin": "Barbus rebeli", "mk": "Црна мрена", "en": "Western Balkan barbel" },
+      { "latin": "Alburnoides ohridanus", "mk": "Вардарка", "en": "Ohrid spirlin" },
+      { "latin": "Barbatula sturanyi", "mk": "Охридска вретенушка", "en": "Ohrid stone loach" },
+      { "latin": "Eudontomyzon stankokaramani", "mk": "Змиорка" }
     ],
-    "notes": { "mk": "Пример: белешка за реката.", "en": "Example: a note about the river." }
+    "fishNote": {
+      "mk": "Видови утврдени со теренско истражување во мај и јуни 2025 година (студија за враќање на Сатеска во природното корито, УНДП). Змиорката е потврдена за Сатеска и во риболовната основа за Охридско Езеро.",
+      "en": "Species found in a field survey in May and June 2025 (study for returning the Sateska to its natural riverbed, UNDP). The lamprey is also confirmed for the Sateska in the Lake Ohrid fishery management plan."
+    },
+    "sources": [
+      { "title": "UNDP (2025): Biodiversity study for the restoration of Sateska river in its natural riverbed", "url": "https://www.undp.org/sites/g/files/zskgke326/files/2026-04/biodiversity_study_for_the_restoration_of_sateska_river_in_its_natural_riverbed-final_.pdf" },
+      { "title": "Риболовна основа „Охридско Езеро“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/1.%20%D0%9E%D0%A5%D0%A0%D0%98%D0%94%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf" }
+    ]
+  },
+
+  "zajaska-reka": {
+    "fish": [
+      { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
+      { "latin": "Phoxinus phoxinus", "mk": "Пиор" },
+      { "latin": "Alburnoides bipunctatus", "mk": "Вардарка" },
+      { "latin": "Barbus balcanicus", "mk": "Црна мрена" },
+      { "latin": "Gobio bulgaricus", "mk": "Кркушка", "en": "Aegean gudgeon" }
+    ],
+    "fishNote": {
+      "mk": "Видови уловени со електроизлов на 22 октомври 2020 година кај мостовите на патот Кичево–Букојчани (студија за влијание врз животната средина).",
+      "en": "Species caught by electrofishing on 22 October 2020 at the bridges of the Kičevo–Bukojčani road (environmental impact study)."
+    },
+    "sources": [
+      { "title": "Karadelev, Kostov & Manevska (2020): ESIA Kicevo–Bukojcani, Appendix 15.2 Fisheries Assessment", "url": "https://roads.org.mk/wp-content/uploads/2023/03/ESIA-Appendix-15_2-Fisheries-Assessment.pdf" }
+    ]
   }
 }
