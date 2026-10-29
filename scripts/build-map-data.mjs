@@ -4,11 +4,14 @@
 //      - the border of North Macedonia
 //      - named rivers (waterway=river)
 //      - named lakes and reservoirs (natural=water + water=lake|reservoir)
+//      - cities and towns (place=city|town)
+//      - municipality borders (admin_level=7)
 // 2. Merges river segments that have the same name AND touch each other,
 //    so one click selects the whole river.
 // 3. Gives every river and lake a readable, stable id (e.g. "vardar").
 // 4. Clips everything to the border and simplifies it with mapshaper.
-// 5. Writes ../data/map/{border,rivers,lakes}.geojson and ../data/map/report.md
+// 5. Writes ../data/map/{border,rivers,lakes,municipalities,cities}.geojson
+//    and ../data/map/report.md
 //
 // Usage (from this folder):
 //   npm ci
@@ -50,6 +53,9 @@ const SIMPLIFY_METRES = 20;
 // Coordinate precision in degrees (0.00001° is about 1 metre).
 const PRECISION = 0.00001;
 
+// In OpenStreetMap, the municipalities (општини) of North Macedonia use this admin_level.
+const MUNICIPALITY_LEVEL = '7';
+
 // The country relation of North Macedonia.
 const COUNTRY = 'relation["boundary"="administrative"]["admin_level"="2"]["ISO3166-1"="MK"]';
 
@@ -70,6 +76,16 @@ const QUERIES = {
       way["natural"="water"]["water"~"^(lake|reservoir)$"]["name"](area.mk);
       relation["natural"="water"]["water"~"^(lake|reservoir)$"]["name"](area.mk);
     );
+    out body; >; out skel qt;`,
+  cities: `
+    [out:json][timeout:120];
+    ${COUNTRY}; map_to_area->.mk;
+    node["place"~"^(city|town)$"]["name"](area.mk);
+    out body;`,
+  municipalities: `
+    [out:json][timeout:300];
+    ${COUNTRY}; map_to_area->.mk;
+    relation["boundary"="administrative"]["admin_level"="${MUNICIPALITY_LEVEL}"](area.mk);
     out body; >; out skel qt;`,
 };
 
@@ -101,10 +117,14 @@ async function main() {
   const { rivers, joins } = buildRivers(raw.rivers);
   const lakes = buildLakes(raw.lakes);
   assignIds([...lakes, ...rivers]);
+  const cities = buildCities(raw.cities);
+  const municipalities = buildMunicipalities(raw.municipalities);
 
   await writeGeoJSON(path.join(TMP_DIR, 'border.geojson'), [border]);
   await writeGeoJSON(path.join(TMP_DIR, 'rivers.geojson'), rivers);
   await writeGeoJSON(path.join(TMP_DIR, 'lakes.geojson'), lakes);
+  await writeGeoJSON(path.join(TMP_DIR, 'cities.geojson'), cities);
+  await writeGeoJSON(path.join(TMP_DIR, 'municipalities.geojson'), municipalities);
 
   // 3. Clip to the border and simplify (all layers together, so the lake
   //    edges along the border stay exactly on the border line)
@@ -114,7 +134,15 @@ async function main() {
   const final = {
     rivers: await readFeatures(path.join(OUT_DIR, 'rivers.geojson')),
     lakes: await readFeatures(path.join(OUT_DIR, 'lakes.geojson')),
+    cities: await readFeatures(path.join(OUT_DIR, 'cities.geojson')),
+    municipalities: await readFeatures(path.join(TMP_DIR, 'municipality-areas.geojson')),
   };
+  // North Macedonia has 80 municipalities (+ the City of Skopje). If far fewer are
+  // found, OpenStreetMap probably uses another admin_level for them.
+  if (final.municipalities.length < 60 || final.municipalities.length > 100) {
+    throw new Error(`Expected about 80 municipalities at admin_level=${MUNICIPALITY_LEVEL}, `
+      + `found ${final.municipalities.length}.`);
+  }
   const report = makeReport({ osmDate, rivers, lakes, final, joins });
   await fs.writeFile(path.join(OUT_DIR, 'report.md'), report);
   console.log('\n' + report);
@@ -337,6 +365,46 @@ function buildLakes(osm) {
 }
 
 // ---------------------------------------------------------------------------
+// Cities and towns
+// ---------------------------------------------------------------------------
+
+function buildCities(osm) {
+  return osm.elements
+    .filter((el) => el.type === 'node' && macedonianName(el.tags || {}))
+    .map((el) => ({
+      type: 'Feature',
+      properties: {
+        id: slugify(macedonianName(el.tags)),
+        name: macedonianName(el.tags),
+        'name:en': el.tags['name:en'] || null,
+        place: el.tags.place, // "city" or "town"
+        population: parseInt(String(el.tags.population || '').replace(/\D/g, ''), 10) || null,
+      },
+      geometry: { type: 'Point', coordinates: [el.lon, el.lat] },
+    }))
+    // Biggest first, so the map can give them label priority.
+    .sort((a, b) => placeRank(a) - placeRank(b)
+      || (b.properties.population || 0) - (a.properties.population || 0));
+}
+
+const placeRank = (f) => (f.properties.place === 'city' ? 0 : 1);
+
+// ---------------------------------------------------------------------------
+// Municipalities (only their borders end up on the map)
+// ---------------------------------------------------------------------------
+
+function buildMunicipalities(osm) {
+  return osmtogeojson(osm).features
+    .filter((f) => f.properties.id?.startsWith('relation/') && isPolygon(f)
+      && f.properties.admin_level === MUNICIPALITY_LEVEL)
+    .map((f) => ({
+      type: 'Feature',
+      properties: { name: macedonianName(f.properties) },
+      geometry: f.geometry,
+    }));
+}
+
+// ---------------------------------------------------------------------------
 // Ids
 // ---------------------------------------------------------------------------
 
@@ -373,7 +441,7 @@ function slugify(text) {
     .map((ch) => TRANSLIT[ch] ?? ch)
     .join('')
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // remove accents (ë -> e, ç -> c)
+    .replace(/[\u0300-\u036f]/g, '') // remove accents (ë -> e, ç -> c)
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
@@ -384,14 +452,21 @@ function slugify(text) {
 
 async function runMapshaper() {
   const tmp = (name) => `"${path.join(TMP_DIR, name)}"`;
+  const layers = ['border', 'rivers', 'lakes', 'municipalities', 'cities'];
   await mapshaper.runCommands([
     '-quiet',
-    `-i ${tmp('border.geojson')} ${tmp('rivers.geojson')} ${tmp('lakes.geojson')} combine-files`,
+    `-i ${layers.map((name) => tmp(`${name}.geojson`)).join(' ')} combine-files`,
     '-clip border target=rivers',
     '-clip border target=lakes remove-slivers',
-    '-filter true remove-empty target=rivers,lakes',
+    '-clip border target=municipalities remove-slivers',
+    '-clip border target=cities',
+    '-filter true remove-empty target=rivers,lakes,municipalities,cities',
     `-simplify interval=${SIMPLIFY_METRES} keep-shapes`,
-    `-o "${OUT_DIR}/" format=geojson extension=geojson precision=${PRECISION} target=border,rivers,lakes`,
+    // Keep the municipality areas (for the report), then turn them into the lines
+    // between neighbouring municipalities (the outer edge is the country border).
+    `-o ${tmp('municipality-areas.geojson')} format=geojson target=municipalities`,
+    '-innerlines target=municipalities name=municipalities',
+    `-o "${OUT_DIR}/" format=geojson geojson-type=FeatureCollection extension=geojson precision=${PRECISION} target=${layers.join(',')}`,
   ].join(' '));
 }
 
@@ -406,6 +481,8 @@ function makeReport({ osmDate, rivers, lakes, final, joins }) {
   lines.push(`- OpenStreetMap data as of: ${osmDate}`);
   lines.push(`- Rivers: ${final.rivers.length}`);
   lines.push(`- Lakes and reservoirs: ${final.lakes.length}`);
+  lines.push(`- Cities and towns: ${final.cities.length}`);
+  lines.push(`- Municipalities: ${final.municipalities.length}`);
   lines.push('');
 
   const all = [...final.lakes, ...final.rivers].map((f) => f.properties);
@@ -444,6 +521,14 @@ function makeReport({ osmDate, rivers, lakes, final, joins }) {
     lines.push('## Outside the border (not on the map)', '');
     lines.push(removed.map((f) => `\`${f.properties.id}\``).join(', '), '');
   }
+
+  // Cities and municipalities
+  lines.push('## Cities and towns', '');
+  lines.push(final.cities.map((f) => `${f.properties.name}${f.properties.place === 'city' ? ' (city)' : ''}`)
+    .join(', '), '');
+  lines.push('## Municipalities', '');
+  lines.push(final.municipalities.map((f) => f.properties.name).sort((a, b) => a.localeCompare(b, 'mk'))
+    .join(', '), '');
 
   // Full list
   lines.push('## All waters', '');
