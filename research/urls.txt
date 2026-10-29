@@ -1,6 +1,6 @@
 # Sources to download for the fishing information research.
 # "links:<page>" = download every PDF that the page links to (after following redirects).
 
-# Macedonian Fishing Federation: "Риболовни основи 2024" part 1 and part 2 (reservoirs)
-links:https://www.mrf1952.mk/informacii/osnovi/%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B8-2024?task=weblink.go&id=699
-links:https://www.mrf1952.mk/informacii/osnovi/%D1%80%D0%B8%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B8-2024?task=weblink.go&id=725
+# Official Gazette issues with all fishery management plans (linked from mrf1952.mk "Риболовни основи 2024")
+https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf
+https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf
