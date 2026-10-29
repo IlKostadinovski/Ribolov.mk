@@ -79,7 +79,8 @@ How it is built (implemented):
   **Ids are what `data/waters.json` links to — don't change the id rules lightly**, and
   check `report.md` for renamed ids after each data update.
 - `report.md`: counts, same-name groups, gap joins, and the full id list (the owner uses
-  it to find ids). First download: 194 rivers, 80 lakes/reservoirs, ~765 KB GeoJSON.
+  it to find ids). Current data: 177 rivers, 80 lakes/reservoirs, ~760 KB GeoJSON. "Lepenc" (Albanian-only
+  name in OSM) is still separate from "Лепенец"; fix in OSM or add an alias rule later.
 - Some odd names come straight from OSM (a river named "4.", "X Канал",
   "Srebreno ezero 2.182 masl"); fixing them in OSM fixes them here on the next run.
 
