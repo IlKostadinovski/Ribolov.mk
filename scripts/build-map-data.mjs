@@ -6,12 +6,13 @@
 //      - named lakes and reservoirs (natural=water + water=lake|reservoir)
 //      - municipality borders (admin_level=7)
 //      - the biggest place in each municipality, and its built-up area
-//        (landuse=residential|commercial|retail around it)
+//        (landuse=residential|commercial|retail around it; where that is missing
+//        or too small, also buildings and residential streets)
 // 2. Merges river segments that have the same name AND touch each other,
 //    so one click selects the whole river.
 // 3. Gives every river and lake a readable, stable id (e.g. "vardar").
 // 4. Clips everything to the border and simplifies it with mapshaper.
-// 5. Writes ../data/map/{border,rivers,lakes,municipalities,cities}.geojson
+// 5. Writes ../data/map/{border,rivers,lakes,cities}.geojson and municipalities.topojson
 //    and ../data/map/report.md
 //
 // Usage (from this folder):
@@ -55,6 +56,8 @@ const SIMPLIFY_METRES = 20;
 const PRECISION = 0.00001;
 // Municipality lines and city areas need less detail (0.0001° is about 10 metres).
 const PRECISION_LIGHT = 0.0001;
+// TopoJSON grid for the municipalities: 100000 steps across the country (about 3 metres).
+const TOPO_QUANTIZATION = 100000;
 
 // In OpenStreetMap, the municipalities (општини) of North Macedonia use this admin_level.
 const MUNICIPALITY_LEVEL = '7';
@@ -134,7 +137,8 @@ async function main() {
   // Cities: the biggest place in each municipality, drawn as its built-up area.
   const seats = findSeats(raw.places, municipalities, border);
   raw.urban = await load('urban', urbanQuery(seats), useCache);
-  const cities = await buildCityAreas(seats, raw.urban);
+  const cities = await buildCityAreas(seats, raw.urban,
+    (query) => load('urban-detail', query, useCache));
 
   await writeGeoJSON(path.join(TMP_DIR, 'border.geojson'), [border]);
   await writeGeoJSON(path.join(TMP_DIR, 'rivers.geojson'), rivers);
@@ -391,9 +395,20 @@ const PLACE_RANK = { city: 0, town: 1, village: 2 };
 const URBAN_SEARCH_RADIUS = { city: 7000, town: 3000, village: 1200 };
 // Built-up pieces closer than twice this are merged into one area (metres).
 const URBAN_MERGE_METRES = 60;
-// A built-up area counts as the place's own if it is this close to it (metres).
-const URBAN_NEAR_METRES = 400;
-// If a place has no built-up area in OpenStreetMap, it gets a circle this big (metres).
+// A place's area is the biggest built-up area within this distance of it (metres).
+// (The centre of a town is sometimes in a tiny separate piece, e.g. a shop area.)
+const URBAN_NEAR_METRES = { city: 1500, town: 800, village: 400 };
+// If the land-use area of a place is smaller than this (km²), land use is not mapped
+// well enough there in OpenStreetMap. Its area is then built from buildings and
+// residential streets as well (Štip, Kriva Palanka, Berovo, …).
+const URBAN_MIN_KM2 = { city: 4, town: 0.5, village: 0.1 };
+// For those places: how far around them to look for buildings and streets (metres),
+const DETAIL_SEARCH_RADIUS = { city: 4000, town: 2000, village: 1200 };
+// how much land on each side of a residential street counts as built-up (metres),
+const STREET_HALF_WIDTH = 25;
+// and buildings/streets closer than twice this are merged into one area (metres).
+const DETAIL_MERGE_METRES = 40;
+// If a place has no built-up area at all, it gets a circle this big (metres).
 const CIRCLE_RADIUS = { city: 1200, town: 600, village: 250 };
 
 // Finds the main place of each municipality: its biggest city or town
@@ -421,7 +436,7 @@ function findSeats(osm, municipalities, border) {
     inside.sort(byPlaceSize);
     const seat = inside[0].place !== 'village' ? inside[0]
       : inside.find((p) => p.osmId === m.properties.seat) || inside[0];
-    seats.push({ ...seat, municipality: m.properties.name });
+    seats.push({ ...seat, municipality: m.properties.fullName });
   }
   return seats.sort(byPlaceSize);
 }
@@ -429,41 +444,69 @@ function findSeats(osm, municipalities, border) {
 const byPlaceSize = (a, b) => PLACE_RANK[a.place] - PLACE_RANK[b.place]
   || (b.population || 0) - (a.population || 0);
 
+// A bounding box "south,west,north,east" for Overpass: a square around a point.
+function squareAround([lon, lat], metres) {
+  const dLat = metres / 110540;
+  const dLon = metres / (111320 * Math.cos((lat * Math.PI) / 180));
+  return [lat - dLat, lon - dLon, lat + dLat, lon + dLon].map((v) => v.toFixed(5)).join(',');
+}
+
 // Overpass query for the residential/commercial/retail land in a square around
 // each seat (squares are much faster for Overpass than circles).
 function urbanQuery(seats) {
   const landuse = '["landuse"~"^(residential|commercial|retail)$"]';
-  const parts = seats.flatMap(({ place, coordinates: [lon, lat] }) => {
-    const r = URBAN_SEARCH_RADIUS[place];
-    const dLat = r / 110540;
-    const dLon = r / (111320 * Math.cos((lat * Math.PI) / 180));
-    const box = [lat - dLat, lon - dLon, lat + dLat, lon + dLon].map((v) => v.toFixed(5)).join(',');
+  const parts = seats.flatMap(({ place, coordinates }) => {
+    const box = squareAround(coordinates, URBAN_SEARCH_RADIUS[place]);
     return [`  way${landuse}(${box});`, `  relation${landuse}(${box});`];
   });
   return `[out:json][timeout:300];\n(\n${parts.join('\n')}\n);\nout body; >; out skel qt;`;
 }
 
-// Merges the land-use pieces into built-up areas and gives each seat its area.
-async function buildCityAreas(seats, urbanOsm) {
-  const pieces = osmtogeojson(urbanOsm).features
+// Overpass query for buildings and residential streets around the seats whose
+// land use is missing or too small.
+function detailQuery(seats) {
+  const parts = seats.flatMap(({ place, coordinates }) => {
+    const box = squareAround(coordinates, DETAIL_SEARCH_RADIUS[place]);
+    return [`  way["building"](${box});`, `  way["highway"~"^(residential|living_street|pedestrian)$"](${box});`];
+  });
+  return `[out:json][timeout:600];\n(\n${parts.join('\n')}\n);\nout body; >; out skel qt;`;
+}
+
+// Gives each seat its built-up area: first from land use; where that is missing or
+// too small, from land use + buildings + residential streets (loadDetail downloads
+// those only for the seats that need them); otherwise a small circle.
+async function buildCityAreas(seats, urbanOsm, loadDetail) {
+  const landuse = osmtogeojson(urbanOsm).features
     .filter((f) => isPolygon(f) && /^(residential|commercial|retail)$/.test(f.properties.landuse || ''))
     .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
-  await writeGeoJSON(path.join(TMP_DIR, 'urban-pieces.geojson'), pieces);
+  const landuseAreas = await mergePieces('urban', landuse, [], URBAN_MERGE_METRES);
 
-  // Grow every piece a little, merge the ones that now touch, shrink back almost to
-  // the original size, then split into separate areas.
-  const piecesFile = `"${path.join(TMP_DIR, 'urban-pieces.geojson')}"`;
-  const areasFile = path.join(TMP_DIR, 'urban-areas.geojson');
-  await mapshaper.runCommands(`-quiet -i ${piecesFile} -buffer ${URBAN_MERGE_METRES} -dissolve `
-    + `-buffer radius=-${URBAN_MERGE_METRES - 10} -explode `
-    + `-o "${areasFile}" format=geojson geojson-type=FeatureCollection`);
-  const areas = (await readFeatures(areasFile)).map((f) => ({ ...f, box: geometryBbox(f.geometry) }));
+  const choice = new Map();
+  for (const seat of seats) {
+    const area = pickArea(seat, landuseAreas);
+    choice.set(seat, { area, shape: area ? 'land use' : 'circle' });
+  }
+
+  const weak = seats.filter((seat) => (choice.get(seat).area?.km2 || 0) < URBAN_MIN_KM2[seat.place]);
+  if (weak.length) {
+    const detail = osmtogeojson(await loadDetail(detailQuery(weak))).features;
+    const buildings = detail.filter((f) => isPolygon(f) && f.properties.building)
+      .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
+    const streets = detail.filter((f) => /LineString/.test(f.geometry.type) && f.properties.highway)
+      .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
+    const detailAreas = await mergePieces('detail', [...landuse, ...buildings], streets, DETAIL_MERGE_METRES);
+    for (const seat of weak) {
+      const area = pickArea(seat, detailAreas);
+      if (area && area.km2 > (choice.get(seat).area?.km2 || 0)) {
+        choice.set(seat, { area, shape: 'buildings and streets' });
+      }
+    }
+  }
 
   const used = new Set();
   const cities = [];
   for (const seat of seats) { // biggest first, so a shared area gets the biggest name
-    const area = areas.find((a) => inBbox(seat.coordinates, a.box) && pointInGeometry(seat.coordinates, a.geometry))
-      || nearestArea(seat.coordinates, areas);
+    const { area, shape } = choice.get(seat);
     if (area && used.has(area)) continue; // e.g. several Skopje municipalities share one city
     if (area) used.add(area);
     cities.push({
@@ -475,7 +518,8 @@ async function buildCityAreas(seats, urbanOsm) {
         place: seat.place,
         population: seat.population,
         municipality: seat.municipality,
-        shape: area ? 'built-up area' : 'circle',
+        shape,
+        km2: area ? Math.round(area.km2 * 100) / 100 : null,
       },
       geometry: area ? area.geometry : circle(seat.coordinates, CIRCLE_RADIUS[seat.place]),
     });
@@ -483,17 +527,51 @@ async function buildCityAreas(seats, urbanOsm) {
   return cities;
 }
 
-function nearestArea(point, areas) {
+// Grows every piece a little, merges the ones that now touch, shrinks them back
+// almost to the original size and splits the result into separate areas.
+// Streets (lines) first become strips STREET_HALF_WIDTH wide on each side.
+async function mergePieces(name, polygons, lines, mergeMetres) {
+  if (!polygons.length && !lines.length) return [];
+  const asGeoJSON = 'format=geojson geojson-type=FeatureCollection';
+  const inputs = [];
+  if (polygons.length) {
+    const file = path.join(TMP_DIR, `${name}-pieces.geojson`);
+    await writeGeoJSON(file, polygons);
+    inputs.push(`"${file}"`);
+  }
+  if (lines.length) {
+    const file = path.join(TMP_DIR, `${name}-streets.geojson`);
+    const strips = path.join(TMP_DIR, `${name}-street-strips.geojson`);
+    await writeGeoJSON(file, lines);
+    await mapshaper.runCommands(`-quiet -i "${file}" -buffer ${STREET_HALF_WIDTH} -o "${strips}" ${asGeoJSON}`);
+    inputs.push(`"${strips}"`);
+  }
+  const out = path.join(TMP_DIR, `${name}-areas.geojson`);
+  await mapshaper.runCommands(`-quiet -i ${inputs.join(' ')} combine-files -merge-layers force `
+    + `-buffer ${mergeMetres} -dissolve -buffer radius=-${mergeMetres - 10} -explode `
+    + `-each "km2 = this.area / 1e6" -o "${out}" ${asGeoJSON}`);
+  return (await readFeatures(out))
+    .map((f) => ({ ...f, km2: f.properties.km2 || 0, box: geometryBbox(f.geometry) }));
+}
+
+// The biggest area that contains the place or is within URBAN_NEAR_METRES of it.
+function pickArea(seat, areas) {
+  const point = seat.coordinates;
+  const near = URBAN_NEAR_METRES[seat.place];
   let best = null;
-  let bestDistance = URBAN_NEAR_METRES;
   for (const area of areas) {
-    if (bboxDistance([...point, ...point], area.box) > bestDistance) continue;
-    for (const ring of polygonsOf(area.geometry).flat()) {
-      for (const vertex of ring) {
-        const d = distance(point, vertex);
-        if (d < bestDistance) { bestDistance = d; best = area; }
-      }
-    }
+    if (best && area.km2 <= best.km2) continue;
+    if (bboxDistance([...point, ...point], area.box) > near) continue;
+    if (pointInGeometry(point, area.geometry) || distanceToArea(point, area) <= near) best = area;
+  }
+  return best;
+}
+
+// Distance (metres) from a point to the nearest corner of an area's outline.
+function distanceToArea(point, area) {
+  let best = Infinity;
+  for (const ring of polygonsOf(area.geometry).flat()) {
+    for (const vertex of ring) best = Math.min(best, distance(point, vertex));
   }
   return best;
 }
@@ -548,7 +626,7 @@ function pointInRing([x, y], ring) {
 }
 
 // ---------------------------------------------------------------------------
-// Municipalities (only their borders end up on the map)
+// Municipalities (for the lines between them and the municipality filter)
 // ---------------------------------------------------------------------------
 
 function buildMunicipalities(osm) {
@@ -562,11 +640,29 @@ function buildMunicipalities(osm) {
   return osmtogeojson(osm).features
     .filter((f) => f.properties.id?.startsWith('relation/') && isPolygon(f)
       && f.properties.admin_level === MUNICIPALITY_LEVEL)
-    .map((f) => ({
-      type: 'Feature',
-      properties: { name: macedonianName(f.properties), seat: seatOf.get(f.properties.id) || null },
-      geometry: f.geometry,
-    }));
+    .map((f) => {
+      const fullName = macedonianName(f.properties);
+      const name = shortMunicipalityName(fullName);
+      return {
+        type: 'Feature',
+        properties: {
+          id: slugify(name),
+          name,
+          'name:en': shortMunicipalityName(f.properties['name:en'] || '') || null,
+          fullName,
+          seat: seatOf.get(f.properties.id) || null,
+        },
+        geometry: f.geometry,
+      };
+    });
+}
+
+// "Општина Штип" -> "Штип", "Municipality of Štip" / "Štip Municipality" -> "Štip".
+function shortMunicipalityName(name) {
+  return name
+    .replace(/^\s*(општина|opština|opstina|komuna e|municipality of)\s+/i, '')
+    .replace(/\s+(municipality|општина)\s*$/i, '')
+    .trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -628,12 +724,15 @@ async function runMapshaper() {
     '-clip border target=cities',
     '-filter true remove-empty target=rivers,lakes,municipalities,cities',
     `-simplify interval=${SIMPLIFY_METRES} keep-shapes`,
-    // Keep the municipality areas (for the report), then turn them into the lines
-    // between neighbouring municipalities (the outer edge is the country border).
+    // Keep the municipality areas (for the report and checks).
     `-o ${tmp('municipality-areas.geojson')} format=geojson target=municipalities`,
-    '-innerlines target=municipalities name=municipalities',
+    // The municipalities go out as TopoJSON: every border between two municipalities
+    // is stored once, and the site gets both the areas (for the municipality filter)
+    // and the lines between them from the same file. Much smaller than GeoJSON.
+    '-filter-fields id,name,name:en target=municipalities',
+    `-o "${path.join(OUT_DIR, 'municipalities.topojson')}" format=topojson quantization=${TOPO_QUANTIZATION} target=municipalities`,
     `-o "${OUT_DIR}/" ${asGeoJSON} precision=${PRECISION} target=border,rivers,lakes`,
-    `-o "${OUT_DIR}/" ${asGeoJSON} precision=${PRECISION_LIGHT} target=municipalities,cities`,
+    `-o "${OUT_DIR}/" ${asGeoJSON} precision=${PRECISION_LIGHT} target=cities`,
   ].join(' '));
 }
 
@@ -692,10 +791,11 @@ function makeReport({ osmDate, rivers, lakes, final, joins }) {
   // Cities and municipalities
   lines.push('## Cities', '');
   lines.push('The biggest place in each municipality, drawn as its built-up area from');
-  lines.push('OpenStreetMap land use, or as a small circle where there is none.', '');
-  lines.push('| City | Municipality | Shape |', '|---|---|---|');
+  lines.push('OpenStreetMap land use; where that is missing or too small, from land use,');
+  lines.push('buildings and residential streets; a small circle where there is nothing.', '');
+  lines.push('| City | Municipality | Shape | km² |', '|---|---|---|---|');
   for (const { properties: p } of final.cities) {
-    lines.push(`| ${p.name} | ${p.municipality || '—'} | ${p.shape} |`);
+    lines.push(`| ${p.name} | ${p.municipality || '—'} | ${p.shape} | ${p.km2 ?? '—'} |`);
   }
   lines.push('');
   lines.push('## Municipalities', '');
