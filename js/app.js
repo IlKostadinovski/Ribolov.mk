@@ -20,6 +20,7 @@
     municipalities: 'data/map/municipalities.topojson',
     cities: 'data/map/cities.geojson',
     waters: 'data/waters.json',
+    fishSizes: 'data/fish-sizes.json',
   };
 
   // Map colours, read from the --map-* variables in css/style.css.
@@ -65,6 +66,7 @@
 
   let lang = loadLanguage();
   let waters = {};              // contents of data/waters.json
+  let fishSizes = {};           // Latin name -> maximum length in cm (data/fish-sizes.json)
   let watersError = false;      // true if data/waters.json could not be read
   let messageKey = null;        // error message currently shown, if any
   let selectedId = null;
@@ -134,6 +136,14 @@
       console.error(err);
       showMessage('mapLoadError');
     });
+
+  // Fish lists are shown biggest species first (fishermen look for the big ones).
+  getJSON(FILES.fishSizes)
+    .then((data) => {
+      fishSizes = data || {};
+      if (selectedId) renderPanel();
+    })
+    .catch(() => {}); // without it, fish keep the order of waters.json
 
   getJSON(FILES.waters)
     .then((data) => {
@@ -594,6 +604,16 @@
     return (lang === 'en' ? fish.en : fish.mk) || fish.latin;
   }
 
+  // Biggest species first (by maximum length); species without a size keep their
+  // order from waters.json, after the others.
+  function biggestFirst(list) {
+    const size = (item) => (item && typeof item === 'object' && Number(fishSizes[item.latin])) || 0;
+    return list
+      .map((item, index) => ({ item, index }))
+      .sort((a, b) => size(b.item) - size(a.item) || a.index - b.index)
+      .map(({ item }) => item);
+  }
+
   function renderFish(list, item) {
     const li = add(list, 'li');
     if (item && typeof item === 'object' && item.latin) {
@@ -646,7 +666,7 @@
 
       if (key === 'fish') {
         const ul = add(s, 'ul', { className: 'fish-list' });
-        for (const item of items) renderFish(ul, item);
+        for (const item of biggestFirst(items)) renderFish(ul, item);
         if (info.fishNote) add(s, 'p', { className: 'section-note', text: pick(info.fishNote) });
       } else if (key === 'permits') {
         for (const permit of items) {

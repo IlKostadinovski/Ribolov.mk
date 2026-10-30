@@ -720,16 +720,20 @@
     },
     "fish": [
       { "latin": "Cyprinus carpio", "mk": "Крап", "en": "Common carp" },
-      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" }
+      { "latin": "Silurus glanis", "mk": "Сом", "en": "Wels catfish" },
+      { "latin": "Rutilus rutilus", "mk": "Црвеноперка", "en": "Roach" },
+      { "latin": "Perca fluviatilis", "mk": "Костреш", "en": "European perch" },
+      { "latin": "Squalius vardarensis", "mk": "Клен" },
+      { "latin": "Alburnus thessalicus", "mk": "Белвица" }
     ],
     "fishNote": {
-      "mk": "Риболовната основа за Брегалница наведува дека во самото езеро и пред него се ловат поголеми количини крап и сом.",
-      "en": "The fishery management plan for the Bregalnica says that carp and wels catfish are caught in larger numbers in the lake itself and above it."
+      "mk": "Крапот и сомот: риболовната основа за Брегалница наведува дека во самото езеро и пред него се ловат во поголеми количини. Црвеноперката, кострешот, кленот и белвицата се додадени според уредникот на сајтот.",
+      "en": "Carp and wels catfish: the fishery management plan for the Bregalnica says they are caught in larger numbers in the lake itself and above it. Roach, perch, chub and bleak were added on the information of the site’s editor."
     },
     "notes": [
       {
-        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Калиманци“ (езерото и Брегалница од Митрашинци до езерото, со Каменичка Река) се и македонската пастрмка, скобустот, кленот, црвеноперката и лињакот; основата не наведува кои од нив живеат во самото езеро.",
-        "en": "According to the official fishery management plan (2025), other main species of the “Kalimanci” fishing area (the lake and the Bregalnica from Mitrašinci to the lake, with the Kamenička Reka) are Macedonian trout, nase, chub, roach and tench; the plan does not say which of them live in the lake itself."
+        "mk": "Според официјалната риболовна основа (2025), позначајни видови во риболовното подрачје „Калиманци“ (езерото и Брегалница од Митрашинци до езерото, со Каменичка Река) се и македонската пастрмка, скобустот и лињакот; основата не наведува кои од нив живеат во самото езеро.",
+        "en": "According to the official fishery management plan (2025), other main species of the “Kalimanci” fishing area (the lake and the Bregalnica from Mitrašinci to the lake, with the Kamenička Reka) are Macedonian trout, nase and tench; the plan does not say which of them live in the lake itself."
       }
     ],
     "sources": [

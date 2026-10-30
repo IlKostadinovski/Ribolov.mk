@@ -199,6 +199,25 @@ Macedonian folk name, followed by a description of each species that inhabits th
   Fisheries Assessment. https://roads.org.mk/wp-content/uploads/2023/03/ESIA-Appendix-15_2-Fisheries-Assessment.pdf
   Used for: Zajaska Reka species caught by electrofishing on 22 October 2020.
 
+### Information from the site's editor
+
+- **Lake Kalimanci** (30 October 2026): roach, perch, chub and bleak live in the lake.
+  Added as given; the panel says so. Note: perch is not in the species table of the
+  official Kalimanci plan (Сл. весник 33/2025); the other three are.
+
+### Fish sizes (only used to sort the fish lists, not shown on the site)
+
+`data/fish-sizes.json` gives each species a maximum length in cm, so the lists can show
+the biggest fish first. Value = the bigger of:
+- the maximum length on the species' FishBase summary page (https://www.fishbase.se/summary/Genus-species.html,
+  read on 30 October 2026; standard length × 1.2 and fork length × 1.05 to compare with
+  total length), and
+- the maximum length given in the species description of the 2023–2028 fishery
+  management plans (these describe the species in general, e.g. chub "up to 80 cm").
+FishBase had no page for Chondrostoma ohridanus under that name; the Lake Ohrid plan
+gives 50 cm. The raw FishBase values are in the `research` branch
+(`research/fishbase/sizes.tsv`).
+
 ### International bodies
 
 - **IUCN World Heritage Outlook – Natural and Cultural Heritage of the Ohrid region.**

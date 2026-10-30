@@ -124,6 +124,10 @@ Write each fish with its scientific (Latin) name:
   the Latin name.
 - Optional tags: `"endemic": true` (lives only in this lake/region) and
   `"introduced": true` (brought in by people). Only add them if a source says so.
+- The site shows each fish list **biggest species first**, whatever order you write
+  them in. The sizes are in `data/fish-sizes.json` (Latin name → maximum length in cm).
+  When you add a species that is not there yet, add a line for it too, e.g.
+  `"Esox lucius": 150,`. A species without a size is shown at the end of the list.
 
 ### Sources
 
