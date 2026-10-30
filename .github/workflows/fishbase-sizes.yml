@@ -1,0 +1,45 @@
+# Research helper (only on the "research" branch): reads the maximum length of each
+# fish species from its FishBase summary page (used to sort the fish lists).
+name: FishBase sizes
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research]
+    paths:
+      - 'research/fishbase/species.txt'
+      - '.github/workflows/fishbase-sizes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sizes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - name: Download
+        run: |
+          mkdir -p research/fishbase/pages
+          out=research/fishbase/sizes.tsv
+          printf 'species\tmax_length\turl\n' > "$out"
+          while read -r genus species; do
+            [ -z "$genus" ] && continue
+            url="https://www.fishbase.se/summary/${genus}-${species}.html"
+            page="research/fishbase/pages/${genus}-${species}.txt"
+            curl -sSL --max-time 60 -A "Mozilla/5.0 (RibolovMK research)" "$url" \
+              | sed -e 's/<[^>]*>/ /g' -e 's/&nbsp;/ /g' | tr -s ' \t' ' ' > "$page" || true
+            line=$(grep -o -i 'Max length *: *[0-9.,]* *cm *[A-Z]*[^;]*' "$page" | head -1 | tr -s ' ')
+            printf '%s %s\t%s\t%s\n' "$genus" "$species" "$line" "$url" >> "$out"
+            sleep 2
+          done < research/fishbase/species.txt
+          echo "::notice::$(grep -c 'Max length' "$out") of $(($(wc -l < "$out") - 1)) species have a max length"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/fishbase/sizes.tsv
+          git diff --staged --quiet && exit 0
+          git commit -q -m "Research: FishBase maximum lengths"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 10; done
