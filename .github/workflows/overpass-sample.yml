@@ -1,0 +1,41 @@
+# Research helper (only on the "research" branch): downloads OpenStreetMap land use,
+# buildings and place areas around a few towns, to check how city shapes are built.
+name: Overpass samples
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research]
+    paths:
+      - 'research/overpass/towns.txt'
+      - '.github/workflows/overpass-sample.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - name: Download
+        run: |
+          grep -v '^\s*\(#\|$\)' research/overpass/towns.txt | while read -r name lat lon r; do
+            box=$(python3 -c "import math;la,lo,r=$lat,$lon,$r;d=r/110540;e=r/(111320*math.cos(math.radians(la)));print(f'{la-d:.5f},{lo-e:.5f},{la+d:.5f},{lo+e:.5f}')")
+            q="[out:json][timeout:120];(way[\"landuse\"]($box);relation[\"landuse\"]($box);way[\"place\"]($box);relation[\"place\"]($box);relation[\"boundary\"=\"administrative\"][\"admin_level\"~\"^(8|9|10)$\"]($box););out geom qt;"
+            curl -sS --max-time 180 -A "RibolovMK research" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o "research/overpass/$name-landuse.json" || echo "::warning::landuse failed $name"
+            sleep 5
+            q="[out:json][timeout:120];way[\"building\"]($box);out geom qt;"
+            curl -sS --max-time 180 -A "RibolovMK research" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o "research/overpass/$name-buildings.json" || echo "::warning::buildings failed $name"
+            echo "::notice::$name $(python3 -c "import json;print(len(json.load(open('research/overpass/$name-landuse.json'))['elements']), len(json.load(open('research/overpass/$name-buildings.json'))['elements']))" 2>&1)"
+            sleep 5
+          done
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/overpass
+          git diff --staged --quiet && exit 0
+          git commit -q -m "Research: Overpass samples around towns"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 10; done

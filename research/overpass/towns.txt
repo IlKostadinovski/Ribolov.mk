@@ -1,0 +1,8 @@
+# name lat lon radius_m  (sample areas for checking city shapes)
+shtip 41.737 22.193 2500
+berovo 41.706 22.853 1500
+pehchevo 41.763 22.888 1500
+bogdanci 41.202 22.577 1500
+kriva-palanka 42.203 22.333 1500
+bogovinje 41.925 20.914 1200
+kochani 41.917 22.413 2000
