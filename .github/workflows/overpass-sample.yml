@@ -21,15 +21,26 @@ jobs:
       - uses: actions/checkout@v6
       - name: Download
         run: |
+          get() {  # get <query> <file>: retries on busy servers, alternating servers
+            for i in 1 2 3 4 5 6; do
+              for server in https://overpass-api.de/api/interpreter https://overpass.private.coffee/api/interpreter https://overpass.kumi.systems/api/interpreter; do
+                if curl -sS --max-time 180 -A "RibolovMK research" --data-urlencode "data=$1" "$server" -o "$2.tmp" \
+                   && python3 -c "import json,sys; json.load(open(sys.argv[1]))['elements']" "$2.tmp" 2>/dev/null; then
+                  mv "$2.tmp" "$2"; return 0
+                fi
+                sleep $((i * 10))
+              done
+            done
+            echo "::warning::failed $2"; rm -f "$2.tmp"
+          }
           grep -v '^\s*\(#\|$\)' research/overpass/towns.txt | while read -r name lat lon r; do
             box=$(python3 -c "import math;la,lo,r=$lat,$lon,$r;d=r/110540;e=r/(111320*math.cos(math.radians(la)));print(f'{la-d:.5f},{lo-e:.5f},{la+d:.5f},{lo+e:.5f}')")
-            q="[out:json][timeout:120];(way[\"landuse\"]($box);relation[\"landuse\"]($box);way[\"place\"]($box);relation[\"place\"]($box);relation[\"boundary\"=\"administrative\"][\"admin_level\"~\"^(8|9|10)$\"]($box););out geom qt;"
-            curl -sS --max-time 180 -A "RibolovMK research" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o "research/overpass/$name-landuse.json" || echo "::warning::landuse failed $name"
-            sleep 5
-            q="[out:json][timeout:120];way[\"building\"]($box);out geom qt;"
-            curl -sS --max-time 180 -A "RibolovMK research" --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o "research/overpass/$name-buildings.json" || echo "::warning::buildings failed $name"
-            echo "::notice::$name $(python3 -c "import json;print(len(json.load(open('research/overpass/$name-landuse.json'))['elements']), len(json.load(open('research/overpass/$name-buildings.json'))['elements']))" 2>&1)"
-            sleep 5
+            [ -s "research/overpass/$name-landuse.json" ] && grep -q '"elements"' "research/overpass/$name-landuse.json" || \
+              get "[out:json][timeout:120];(way[\"landuse\"]($box);relation[\"landuse\"]($box);way[\"place\"]($box);relation[\"place\"]($box););out geom qt;" "research/overpass/$name-landuse.json"
+            [ -s "research/overpass/$name-buildings.json" ] && grep -q '"elements"' "research/overpass/$name-buildings.json" || \
+              get "[out:json][timeout:120];way[\"building\"]($box);out geom qt;" "research/overpass/$name-buildings.json"
+            get "[out:json][timeout:120];way[\"highway\"~\"^(residential|living_street|pedestrian|tertiary|unclassified|service)$\"]($box);out geom qt;" "research/overpass/$name-streets.json"
+            echo "::notice::$name done"
           done
       - name: Commit
         run: |
