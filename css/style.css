@@ -23,6 +23,7 @@
   --map-reservoir: #2466ad;
   --map-lake-hover: #4b97e3;
   --map-selected: #ff4b3e;      /* fishing-float red */
+  --map-dim: #000000;           /* covers the map outside a chosen municipality */
 
   /* Notes */
   --note-bg: #3a3012;
@@ -329,20 +330,31 @@ button {
   border-top: 1.5px dashed rgba(255, 255, 255, 0.6);
 }
 
-.filter-species {
+/* The dimmed map outside a chosen municipality: above the water layers, below
+   the tooltips, and it lets taps through to the waters underneath. */
+.leaflet-pane.dim-pane {
+  z-index: 450;
+  pointer-events: none;
+}
+
+.leaflet-pane.dim-pane canvas {
+  pointer-events: none;
+}
+
+.filter-pick {
   margin-top: 6px;
   padding: 10px 10px 6px;
   border-top: 1px solid var(--rule);
 }
 
-.filter-species-label {
+.filter-pick-label {
   display: block;
   margin-bottom: 6px;
   font-weight: 600;
   font-size: 0.9375rem;
 }
 
-.filter-species select {
+.filter-pick select {
   width: 100%;
   max-width: 300px;
   height: 40px;

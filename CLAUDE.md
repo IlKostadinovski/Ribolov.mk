@@ -90,19 +90,35 @@ How it is built (implemented):
   the rest with 1 m. Download times appear as `::notice::` annotations on the run (read
   them with `gh api repos/IlKostadinovski/ribolov.mk/check-runs/<job id>/annotations`;
   the sandbox can't download Action logs).
-- **Municipalities** (`municipalities.geojson`): `admin_level=7` relations (`MUNICIPALITY_LEVEL`),
-  clipped, simplified with the border, then `-innerlines` → only the lines between
-  neighbouring municipalities (no attributes). The build fails if the count isn't 60–100.
+- **Municipalities** (`municipalities.topojson`): `admin_level=7` relations
+  (`MUNICIPALITY_LEVEL`), clipped, simplified with the border, written as **TopoJSON**
+  (object `municipalities`, properties `id`, `name`, `name:en`; short names without
+  "Општина"; quantization 100000 ≈ 3 m). Shared borders are stored once, so the file is
+  ~half the size of the old lines-only GeoJSON. The site gets the lines between
+  municipalities with `topojson.mesh(…, (a, b) => a !== b)` and the areas (for the
+  municipality filter) with `topojson.feature`. The build fails if the count isn't 60–100.
 - **Cities** (`cities.geojson`, owner's spec): only the main place of each municipality,
   drawn as a white built-up area, no labels; the name shows on hover (tap on phones).
   Main place = the biggest city/town (city > town, then `population`); if there is none,
   the municipality's seat (`admin_centre` member) — village populations are often missing
-  in OSM; else the biggest village. The area = OSM `landuse=residential|commercial|retail`
-  in a square around the place (second Overpass query, one bbox per place; bboxes are much
-  faster than `around`, which took ~30 min), grown 60 m, dissolved, shrunk 50 m, exploded;
-  the piece containing (or within 400 m of) the place is used. No land use → small circle. Several seats sharing
-  one area (Skopje's municipalities) → one feature, named after the biggest. Properties:
-  `id`, `name`, `name:en`, `place`, `population`, `municipality`, `shape`.
+  in OSM; else the biggest village. Area:
+  1. OSM `landuse=residential|commercial|retail` in a square around each place (one
+     bbox per place; bboxes are much faster than `around`), grown 60 m, dissolved, shrunk
+     50 m, exploded; the place gets the **biggest** area containing it or within
+     `URBAN_NEAR_METRES` (city 1.5 km, town 800 m, village 400 m). (Štip's centre node was
+     in a 0.001 km² shop area, so "the area containing the point" made Štip invisible.)
+  2. If that is missing or smaller than `URBAN_MIN_KM2` (city 4, town 0.5, village
+     0.1 km²) — land use is badly mapped around Štip, Kriva Palanka, Berovo, Pehčevo,
+     Bogdanci, … — a third Overpass query (`urban-detail`) gets **buildings and
+     residential/living_street/pedestrian streets** around just those places; streets
+     become 25 m strips each side, everything is merged (grow 40 m, dissolve, shrink 30 m)
+     and the biggest nearby area is used if it is bigger.
+  3. Nothing at all → a small circle.
+  Several seats sharing one area (Skopje's municipalities) → one feature, named after the
+  biggest. Properties: `id`, `name`, `name:en`, `place`, `population`, `municipality`,
+  `shape` (`land use` / `buildings and streets` / `circle`), `km2`. The report lists them.
+- To try the city code on OSM samples: the `research` branch has `research/overpass/`
+  (samples downloaded by the `overpass-sample.yml` Action) — see `git log` there.
 
 ## Decisions
 
@@ -123,8 +139,9 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
 
 ## The site (how it works)
 
-- `index.html` loads Leaflet from unpkg (pinned 1.9.4 with SRI hashes), Golos Text from
-  Google Fonts (has full Macedonian Cyrillic), then `js/i18n.js` and `js/app.js`.
+- `index.html` loads Leaflet from unpkg (pinned 1.9.4 with SRI hashes), topojson-client
+  3.1.0 (unpkg, SRI; reads the municipality TopoJSON), Golos Text from Google Fonts (has
+  full Macedonian Cyrillic), then `js/i18n.js` and `js/app.js`.
   No build step; plain scripts (top-level consts in i18n.js are shared globals).
 - `js/i18n.js`: `DEFAULT_LANG`, `LANGUAGES`, `TEXT.mk` / `TEXT.en`. Every visible string.
 - `js/app.js`:
@@ -139,6 +156,16 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
     borders, all on by default (not remembered). `applyFilters()` removes all groups and
     re-adds the ticked ones in `DRAW_ORDER`, so order and tap priority never change. If the
     selected water gets hidden, the panel closes. Zoom buttons are bottom right.
+    Under the layer list: the **municipality** dropdown, then the **fish** dropdown (fixed
+    order via `slots`; each is filled when its data has loaded).
+  - **Municipality filter** (owner's request, Oct 2026): choosing one fits it on the
+    screen (`fitPadding()` keeps it clear of the open filter box and the info panel; on
+    phones the filter box closes first) and dims the rest of the map: a world rectangle
+    with the municipality as holes (evenodd fill), black at `DIM_OPACITY` 0.4, plus a
+    white outline, in the `dim` pane (z-index 450, above the water, below tooltips,
+    `pointer-events: none` so taps still reach the waters). Zooming in keeps it; zooming
+    out below the zoom it was fitted at (`municipalityZoom`) clears it (`zoomend`,
+    ignored while the fit itself is animating). "All municipalities" clears it too.
   - River width depends on length (computed in JS) and zoom.
   - States: normal / hover (darker blue) / selected (red, `--map-selected`).
     Hover tooltips with the name only on devices that can hover. Cities: hover tooltip on
@@ -214,7 +241,7 @@ data/waters.json        fishing content (edited by the owner)
 data/map/border.geojson generated by the Action, don't edit by hand
 data/map/rivers.geojson generated
 data/map/lakes.geojson  generated
-data/map/municipalities.geojson  generated (lines between municipalities)
+data/map/municipalities.topojson  generated (municipality areas + names, TopoJSON)
 data/map/cities.geojson generated (built-up areas, one per municipality)
 data/map/report.md      generated: id list, duplicate names, gap joins
 scripts/                download + processing of the OSM data

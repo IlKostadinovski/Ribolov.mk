@@ -1,7 +1,8 @@
 // RibolovMK – the map, the filter and the info panel.
 //
 // Data it reads (all relative paths, so it works on GitHub Pages):
-//   data/map/*.geojson   border, rivers, lakes, municipalities, cities (generated, see scripts/)
+//   data/map/*.geojson   border, rivers, lakes, cities (generated, see scripts/)
+//   data/map/municipalities.topojson   municipality areas (generated)
 //   data/waters.json     fishing info, edited by hand
 // All visible text comes from js/i18n.js. Colours come from css/style.css.
 
@@ -16,7 +17,7 @@
     border: 'data/map/border.geojson',
     rivers: 'data/map/rivers.geojson',
     lakes: 'data/map/lakes.geojson',
-    municipalities: 'data/map/municipalities.geojson',
+    municipalities: 'data/map/municipalities.topojson',
     cities: 'data/map/cities.geojson',
     waters: 'data/waters.json',
   };
@@ -35,7 +36,11 @@
     reservoir: cssVar('--map-reservoir'),
     lakeHover: cssVar('--map-lake-hover'),
     selected: cssVar('--map-selected'),
+    dim: cssVar('--map-dim'),
   };
+
+  // How dark the rest of the map gets while a municipality is chosen (0 = not at all).
+  const DIM_OPACITY = 0.4;
 
   // What the filter can show or hide, in the order of the filter list.
   const FILTERS = ['rivers', 'lakes', 'reservoirs', 'cities', 'municipalities'];
@@ -69,6 +74,12 @@
   const species = new Map();    // Latin name -> { latin, mk, en, waters: Set of water ids }
   const layersById = new Map(); // water id -> visible map layer
   const groups = {};            // filter name -> map layer group
+  const slots = {};             // boxes in the filter for the municipality and fish lists
+  const municipalities = new Map(); // municipality id -> GeoJSON area (from the TopoJSON file)
+  let municipalityId = null;    // municipality chosen in the filter, or null
+  let municipalityLayer = null; // the dimmed rest of the map + the municipality outline
+  let municipalityZoom = null;  // zoom after fitting the municipality; zooming out further clears it
+  let fitting = false;          // true while the map moves to a chosen municipality
   const visible = Object.fromEntries(FILTERS.map((key) => [key, true]));
 
   const el = {
@@ -98,6 +109,9 @@
     wheelPxPerZoomLevel: 90,
   });
   const zoomControl = L.control.zoom({ position: 'bottomright' }).addTo(map);
+  // The dimmed rest of the map sits above the water but lets taps through (see CSS).
+  map.createPane('dim').classList.add('dim-pane');
+  const dimRenderer = L.canvas({ pane: 'dim', padding: 0.5 });
   map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
   map.attributionControl.addAttribution(
     '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -162,10 +176,18 @@
         onEachFeature: (f, layer) => { remember(f, layer); listenForTaps(f, layer); },
       });
     }
-    groups.municipalities = L.geoJSON(data.municipalities, {
-      interactive: false,
-      style: { color: COLORS.municipality, weight: 0.8, opacity: 0.4, dashArray: '4 4' },
-    });
+    // Municipalities come as TopoJSON: the lines between them for the map, and
+    // the areas for the municipality filter (needs the topojson-client library).
+    const topo = data.municipalities;
+    if (topo && window.topojson) {
+      const object = topo.objects.municipalities;
+      groups.municipalities = L.geoJSON(topojson.mesh(topo, object, (a, b) => a !== b), {
+        interactive: false,
+        style: { color: COLORS.municipality, weight: 0.8, opacity: 0.4, dashArray: '4 4' },
+      });
+      for (const f of topojson.feature(topo, object).features) municipalities.set(f.properties.id, f);
+      buildMunicipalityFilter();
+    }
     groups.cities = L.geoJSON(data.cities, {
       style: { stroke: false, fillColor: COLORS.city, fillOpacity: 0.9 },
       onEachFeature: setUpCity,
@@ -174,6 +196,7 @@
     borderLayer.addTo(map);
     applyFilters();
     map.on('zoomend', restyleAll);
+    map.on('zoomend', clearMunicipalityOnZoomOut);
   }
 
   // Clicks, taps and hover on a water's tap area (for lakes, the lake itself).
@@ -236,11 +259,18 @@
       add(item, 'span', { className: `legend legend--${key}` });
       add(item, 'span', { className: 'filter-text' }).dataset.text = key;
     }
-    el.filterToggle.addEventListener('click', () => {
-      const open = el.filterList.hidden;
-      el.filterList.hidden = !open;
-      el.filterToggle.setAttribute('aria-expanded', String(open));
-    });
+    // Filled in when the data has loaded (always in this order).
+    slots.municipality = add(el.filterList, 'div', { className: 'filter-pick' });
+    slots.species = add(el.filterList, 'div', { className: 'filter-pick' });
+    slots.municipality.hidden = true;
+    slots.species.hidden = true;
+
+    el.filterToggle.addEventListener('click', () => setFilterOpen(el.filterList.hidden));
+  }
+
+  function setFilterOpen(open) {
+    el.filterList.hidden = !open;
+    el.filterToggle.setAttribute('aria-expanded', String(open));
   }
 
   // Shows the layers that are ticked in the filter. Layers are re-added in
@@ -276,8 +306,9 @@
     }
     if (!species.size) return;
 
-    const box = add(el.filterList, 'div', { className: 'filter-species' });
-    const label = add(box, 'label', { className: 'filter-species-label' });
+    const box = slots.species;
+    box.hidden = false;
+    const label = add(box, 'label', { className: 'filter-pick-label' });
     label.htmlFor = 'species-select';
     label.dataset.text = 'fishFilter';
     label.textContent = t('fishFilter');
@@ -315,6 +346,102 @@
     const n = speciesFilter ? species.get(speciesFilter)?.waters.size || 0 : null;
     count.textContent = n === null ? t('speciesHint')
       : (n === 1 ? t('speciesCountOne') : t('speciesCount').replace('{n}', n));
+  }
+
+  // Municipality filter: choosing one fits it on the screen and dims the rest of
+  // the map. Zooming in keeps it; zooming out past that view clears it.
+  function buildMunicipalityFilter() {
+    const box = slots.municipality;
+    box.hidden = false;
+    const label = add(box, 'label', { className: 'filter-pick-label' });
+    label.htmlFor = 'municipality-select';
+    label.dataset.text = 'municipalityFilter';
+    label.textContent = t('municipalityFilter');
+    const select = add(box, 'select', { id: 'municipality-select' });
+    add(box, 'p', { className: 'filter-hint', text: t('municipalityHint') }).dataset.text = 'municipalityHint';
+    select.addEventListener('change', () => {
+      if (select.value) showMunicipality(select.value);
+      else clearMunicipality();
+    });
+    fillMunicipalityOptions();
+  }
+
+  function municipalityName(props) {
+    return (lang === 'en' && props['name:en']) || props.name;
+  }
+
+  // (Re)writes the municipality list in the current language, sorted by name.
+  function fillMunicipalityOptions() {
+    const select = document.getElementById('municipality-select');
+    if (!select) return;
+    select.replaceChildren();
+    add(select, 'option', { text: t('allMunicipalities') }).value = '';
+    const sorted = [...municipalities.values()]
+      .sort((a, b) => municipalityName(a.properties).localeCompare(municipalityName(b.properties), lang));
+    for (const f of sorted) add(select, 'option', { text: municipalityName(f.properties) }).value = f.properties.id;
+    select.value = municipalityId || '';
+  }
+
+  function showMunicipality(id) {
+    const feature = municipalities.get(id);
+    if (!feature) return;
+    if (municipalityLayer) map.removeLayer(municipalityLayer);
+    municipalityId = id;
+
+    // A rectangle over the whole world with the municipality cut out of it
+    // ("evenodd" filling also cuts out any islands of the municipality).
+    const world = [[-85, -180], [-85, 180], [85, 180], [85, -180]];
+    const holes = polygonsOf(feature.geometry).flat().map((ring) => ring.map(([lon, lat]) => [lat, lon]));
+    const onTop = { pane: 'dim', renderer: dimRenderer, interactive: false };
+    municipalityLayer = L.layerGroup([
+      L.polygon([world, ...holes], { ...onTop, stroke: false, fillColor: COLORS.dim, fillOpacity: DIM_OPACITY }),
+      L.geoJSON(feature, { ...onTop, style: { color: COLORS.border, weight: 2, opacity: 0.9, fill: false } }),
+    ]).addTo(map);
+
+    // On phones the filter covers the map, so close it first.
+    if (el.map.clientWidth <= 640) setFilterOpen(false);
+
+    fitting = true;
+    const done = () => {
+      if (!fitting) return;
+      fitting = false;
+      municipalityZoom = map.getZoom();
+    };
+    map.once('moveend', done);
+    setTimeout(done, 1500); // in case the map did not need to move
+    map.fitBounds(L.geoJSON(feature).getBounds(), fitPadding());
+  }
+
+  function clearMunicipality() {
+    if (municipalityLayer) map.removeLayer(municipalityLayer);
+    municipalityLayer = null;
+    municipalityId = null;
+    municipalityZoom = null;
+    const select = document.getElementById('municipality-select');
+    if (select) select.value = '';
+  }
+
+  function clearMunicipalityOnZoomOut() {
+    if (municipalityId && !fitting && municipalityZoom !== null && map.getZoom() < municipalityZoom - 0.01) {
+      clearMunicipality();
+    }
+  }
+
+  // Room around a fitted municipality, so the filter box and the info panel
+  // don't cover it.
+  function fitPadding() {
+    const mapBox = el.map.getBoundingClientRect();
+    const pad = { top: 24, right: 24, bottom: 24, left: 24 };
+    if (!el.filterList.hidden) {
+      const filterRight = el.filterList.getBoundingClientRect().right - mapBox.left;
+      if (filterRight < mapBox.width * 0.45) pad.left += filterRight;
+    }
+    if (!el.panel.hidden) {
+      const panelBox = el.panel.getBoundingClientRect();
+      if (panelBox.width >= mapBox.width - 1) pad.bottom += Math.max(0, mapBox.bottom - panelBox.top);
+      else pad.right += Math.max(0, mapBox.right - panelBox.left);
+    }
+    return { paddingTopLeft: [pad.left, pad.top], paddingBottomRight: [pad.right, pad.bottom] };
   }
 
   // ---------------------------------------------------------------------------
@@ -608,6 +735,7 @@
     el.filterList.setAttribute('aria-label', t('filterLabel'));
     for (const span of el.filterList.querySelectorAll('[data-text]')) span.textContent = t(span.dataset.text);
     fillSpeciesOptions();
+    fillMunicipalityOptions();
     const zoom = zoomControl.getContainer();
     zoom.querySelector('.leaflet-control-zoom-in').title = t('zoomIn');
     zoom.querySelector('.leaflet-control-zoom-out').title = t('zoomOut');
@@ -626,6 +754,13 @@
   // ---------------------------------------------------------------------------
   // Helpers
   // ---------------------------------------------------------------------------
+
+  // The polygons of a Polygon or MultiPolygon, as a list of [outer ring, holes...].
+  function polygonsOf(geometry) {
+    if (geometry.type === 'Polygon') return [geometry.coordinates];
+    if (geometry.type === 'MultiPolygon') return geometry.coordinates;
+    return [];
+  }
 
   function getJSON(url) {
     return fetch(url).then((res) => {
