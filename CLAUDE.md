@@ -89,7 +89,9 @@ How it is built (implemented):
 - Municipality lines and city areas are written with 10 m precision (`PRECISION_LIGHT`),
   the rest with 1 m. Download times appear as `::notice::` annotations on the run (read
   them with `gh api repos/IlKostadinovski/ribolov.mk/check-runs/<job id>/annotations`;
-  the sandbox can't download Action logs).
+  the sandbox can't download Action logs). **These notes only appear when the job ends**,
+  so a run with no notes after 30+ minutes is not necessarily stuck: Overpass can take
+  10–15 minutes per query when it is busy. Don't cancel it; the job limit is 120 min.
 - **Municipalities** (`municipalities.topojson`): `admin_level=7` relations
   (`MUNICIPALITY_LEVEL`), clipped, simplified with the border, written as **TopoJSON**
   (object `municipalities`, properties `id`, `name`, `name:en`; short names without
@@ -111,8 +113,10 @@ How it is built (implemented):
      0.1 km²) — land use is badly mapped around Štip, Kriva Palanka, Berovo, Pehčevo,
      Bogdanci, … — a third Overpass query (`urban-detail`) gets **buildings and
      residential/living_street/pedestrian streets** around just those places; streets
-     become 25 m strips each side, everything is merged (grow 40 m, dissolve, shrink 30 m)
-     and the biggest nearby area is used if it is bigger.
+     become 25 m strips each side, everything is merged (grow 40 m, dissolve, shrink 30 m),
+     cleaned up (holes narrower than 150 m filled with `-filter-slivers`, parts narrower
+     than 100 m cut off by shrinking 50 m and growing back, so single streets leading out
+     of town don't show as "tentacles"), and the biggest nearby area is used if it is bigger.
   3. Nothing at all → a small circle.
   Several seats sharing one area (Skopje's municipalities) → one feature, named after the
   biggest. Properties: `id`, `name`, `name:en`, `place`, `population`, `municipality`,

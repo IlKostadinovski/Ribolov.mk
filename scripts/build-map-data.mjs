@@ -409,6 +409,11 @@ const DETAIL_SEARCH_RADIUS = { city: 4000, town: 2000, village: 1200 };
 const STREET_HALF_WIDTH = 25;
 // and buildings/streets closer than twice this are merged into one area (metres).
 const DETAIL_MERGE_METRES = 40;
+// Clean-up of those areas: holes narrower than DETAIL_FILL_METRES (blocks without
+// mapped buildings) are filled, and parts narrower than twice DETAIL_OPEN_METRES
+// (single streets leading out of town) are cut off.
+const DETAIL_FILL_METRES = 150;
+const DETAIL_OPEN_METRES = 50;
 // If a place has no built-up area at all, it gets a circle this big (metres).
 const CIRCLE_RADIUS = { city: 1200, town: 600, village: 250 };
 
@@ -495,7 +500,8 @@ async function buildCityAreas(seats, urbanOsm, loadDetail) {
       .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
     const streets = detail.filter((f) => /LineString/.test(f.geometry.type) && f.properties.highway)
       .map((f) => ({ type: 'Feature', properties: {}, geometry: f.geometry }));
-    const detailAreas = await mergePieces('detail', [...landuse, ...buildings], streets, DETAIL_MERGE_METRES);
+    const detailAreas = await mergePieces('detail', [...landuse, ...buildings], streets, DETAIL_MERGE_METRES,
+      { fillMetres: DETAIL_FILL_METRES, openMetres: DETAIL_OPEN_METRES });
     for (const seat of weak) {
       const area = pickArea(seat, detailAreas);
       if (area && area.km2 > (choice.get(seat).area?.km2 || 0)) {
@@ -531,7 +537,9 @@ async function buildCityAreas(seats, urbanOsm, loadDetail) {
 // Grows every piece a little, merges the ones that now touch, shrinks them back
 // almost to the original size and splits the result into separate areas.
 // Streets (lines) first become strips STREET_HALF_WIDTH wide on each side.
-async function mergePieces(name, polygons, lines, mergeMetres) {
+// Optional clean-up: fill small holes, then cut off thin parts (shrink, drop the
+// crumbs, grow back).
+async function mergePieces(name, polygons, lines, mergeMetres, { fillMetres, openMetres } = {}) {
   if (!polygons.length && !lines.length) return [];
   const asGeoJSON = 'format=geojson geojson-type=FeatureCollection';
   const inputs = [];
@@ -548,8 +556,12 @@ async function mergePieces(name, polygons, lines, mergeMetres) {
     inputs.push(`"${strips}"`);
   }
   const out = path.join(TMP_DIR, `${name}-areas.geojson`);
+  const cleanUp = [
+    fillMetres ? `-filter-slivers gap-width=${fillMetres}m` : '',
+    openMetres ? `-buffer radius=-${openMetres} -explode -filter "this.area > 2000" -buffer ${openMetres} -explode` : '',
+  ].join(' ');
   await mapshaper.runCommands(`-quiet -i ${inputs.join(' ')} combine-files -merge-layers force `
-    + `-buffer ${mergeMetres} -dissolve -buffer radius=-${mergeMetres - 10} -explode `
+    + `-buffer ${mergeMetres} -dissolve -buffer radius=-${mergeMetres - 10} -explode ${cleanUp} `
     + `-each "km2 = this.area / 1e6" -o "${out}" ${asGeoJSON}`);
   return (await readFeatures(out))
     .map((f) => ({ ...f, km2: f.properties.km2 || 0, box: geometryBbox(f.geometry) }));
