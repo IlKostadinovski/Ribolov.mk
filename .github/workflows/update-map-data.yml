@@ -24,7 +24,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120  # the public Overpass servers are sometimes very busy
     steps:
       - uses: actions/checkout@v6
 
