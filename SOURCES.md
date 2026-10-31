@@ -60,7 +60,7 @@ Macedonian folk name, followed by a description of each species that inhabits th
 
 - **Охридско Езеро** – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/1.%20%D0%9E%D0%A5%D0%A0%D0%98%D0%94%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028.pdf
   Used for: Lake Ohrid species (table 3 + species descriptions), Macedonian names, lake
-  facts (693.17 m, 358.18 km², 238.79 km² in North Macedonia, max depth 288.7 m, mean
+  facts (693.17 m, 358.18 km², 238.79 km² in Macedonia, max depth 288.7 m, mean
   163.1 m, fed by sublacustrine springs, outflow Crn Drim at Struga), shad no longer reaching
   the lake (dams on the Drim); Sateska facts (diverted into the lake in 1961, 26 km to the
   regulating dam near Volino, canal ~6 km, lamprey lives in the Sateska).
@@ -78,7 +78,7 @@ Macedonian folk name, followed by a description of each species that inhabits th
   Used for: cross-check of the Dojran species, Macedonian names, most common species
   (roach, perch, Prussian carp, bleak), species now very rare or absent (Balkan barbel,
   gudgeon, chub, golden loach; river blenny not caught for over 40 years), "third largest
-  natural lake", ~3/5 of the lake in North Macedonia, present area ~31 km².
+  natural lake", ~3/5 of the lake in Macedonia, present area ~31 km².
 
 - **Акумулација Стрежево** (plan no. 4) – http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf
   Used for: reservoir facts (dam on the Šemnica built 1982, 76 m, 1 km below Streževo,
@@ -189,7 +189,7 @@ Macedonian folk name, followed by a description of each species that inhabits th
   (ESENIAS poster). https://www.esenias.org/files/News_Alien_CSI_2_Poster_Ohrid_fish.pdf
   Used for: no alien species found in Lake Ohrid itself in May 2016; Carassius gibelio
   recorded in 2013.
-- **UNDP North Macedonia (2025).** Biodiversity study for the restoration of Sateska river
+- **UNDP (2025).** Biodiversity study for the restoration of Sateska river
   in its natural riverbed (team leader V. Slavevska Stamenkovic).
   https://www.undp.org/sites/g/files/zskgke326/files/2026-04/biodiversity_study_for_the_restoration_of_sateska_river_in_its_natural_riverbed-final_.pdf
   Used for: Sateska species found in the May–June 2025 field survey; river facts (largest
@@ -228,7 +228,7 @@ gives 50 cm. The raw FishBase values are in the `research` branch
   and the RIS document https://rsisd10.unepgrid.ch/RISapp/files/RISrep/MK1735RIS.pdf
   Used for: designated 2007, depth about 6 m, Monument of Nature since 1977, traditional
   fishing with "mandras" (the only known place in the world using this method).
-- **Ramsar – North Macedonia designates second Ramsar site.**
+- **Ramsar – news item on the second Ramsar site (Prespa, 1995).**
   https://ramsar.org/fr/news/fyr-macedonia-designates-second-ramsar-site
   Used for: Macedonian part of Lake Prespa designated in 1995.
 
@@ -236,7 +236,7 @@ gives 50 cm. The raw FishBase values are in the `research` branch
 
 The plans as adopted by the Minister of Agriculture, Forestry and Water Economy under the
 new Law on Fisheries and Aquaculture (Сл. весник 64/24), published in the Official Gazette
-(Службен весник на РСМ). Each one has: basic data on the fishing area, the species table
+(Службен весник). Each one has: basic data on the fishing area, the species table
 (section 2.1), daily catch limits, the spawning table of "the more important species" of
 the area (section 4), stocking, guards and protected zones. The PDFs are scans; their text
 was read with OCR (in the `research` branch, `research/text/…ocr.txt`) and every species

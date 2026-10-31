@@ -7,12 +7,12 @@ const LANGUAGES = ['mk', 'en'];
 
 const TEXT = {
   mk: {
-    pageTitle: 'РиболовМК – мапа за риболов во Северна Македонија',
+    pageTitle: 'РиболовМК – мапа за риболов во Македонија',
     siteTitle: 'РиболовМК',
-    siteSubtitle: 'Мапа за риболов во Северна Македонија',
+    siteSubtitle: 'Мапа за риболов во Македонија',
     switchLanguage: 'EN',
     switchLanguageLabel: 'Switch to English',
-    mapLabel: 'Мапа на реките и езерата во Северна Македонија',
+    mapLabel: 'Мапа на реките и езерата во Македонија',
     hint: 'Изберете река или езеро',
     close: 'Затвори',
 
@@ -60,12 +60,12 @@ const TEXT = {
   },
 
   en: {
-    pageTitle: 'RibolovMK – fishing map of North Macedonia',
+    pageTitle: 'RibolovMK – fishing map of Macedonia',
     siteTitle: 'RibolovMK',
-    siteSubtitle: 'Fishing map of North Macedonia',
+    siteSubtitle: 'Fishing map of Macedonia',
     switchLanguage: 'МК',
     switchLanguageLabel: 'Префрли на македонски',
-    mapLabel: 'Map of the rivers and lakes of North Macedonia',
+    mapLabel: 'Map of the rivers and lakes of Macedonia',
     hint: 'Select a river or lake',
     close: 'Close',
 

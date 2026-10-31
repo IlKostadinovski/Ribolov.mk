@@ -1,6 +1,6 @@
 # RibolovMK
 
-Interactive fishing map of North Macedonia: rivers, lakes and reservoirs, with fishing
+Interactive fishing map of Macedonia: rivers, lakes and reservoirs, with fishing
 information for each one.
 
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) (ODbL).

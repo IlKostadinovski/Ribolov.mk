@@ -1,8 +1,8 @@
 {
   "ohridsko-ezero": {
     "description": {
-      "mk": "Природно езеро на 693 m надморска височина, со површина од 358 km², од кои околу две третини (239 km²) се во Северна Македонија, а една третина во Албанија. Најголемата длабочина е 288,7 m, а просечната 163 m. Езерото главно се полни од подводни извори; единствениот истек е реката Црн Дрим кај Струга.",
-      "en": "Natural lake at 693 m above sea level, 358 km² in area, of which about two thirds (239 km²) is in North Macedonia and one third in Albania. Its greatest depth is 288.7 m and its average depth 163 m. The lake is fed mainly by underwater springs; its only outflow is the Crn Drim river at Struga."
+      "mk": "Природно езеро на 693 m надморска височина, со површина од 358 km², од кои околу две третини (239 km²) се во Македонија, а една третина во Албанија. Најголемата длабочина е 288,7 m, а просечната 163 m. Езерото главно се полни од подводни извори; единствениот истек е реката Црн Дрим кај Струга.",
+      "en": "Natural lake at 693 m above sea level, 358 km² in area, of which about two thirds (239 km²) is in Macedonia and one third in Albania. Its greatest depth is 288.7 m and its average depth 163 m. The lake is fed mainly by underwater springs; its only outflow is the Crn Drim river at Struga."
     },
     "fish": [
       { "latin": "Salmo letnica", "mk": "Охридска пастрмка", "en": "Ohrid trout", "endemic": true },
@@ -52,8 +52,8 @@
 
   "prespansko-ezero": {
     "description": {
-      "mk": "Природно езеро на 853 m надморска височина, второ по големина во земјата. Површината е 274 km²: 177 km² во Северна Македонија, 49 km² во Албанија и 48 km² во Грција. Најголемата длабочина е 76 m, должината 28 km, а широчината 17 km. Нивото на водата многу варира.",
-      "en": "Natural lake at 853 m above sea level, the second largest in the country. It covers 274 km²: 177 km² in North Macedonia, 49 km² in Albania and 48 km² in Greece. Its greatest depth is 76 m, its length 28 km and its width 17 km. The water level varies a lot."
+      "mk": "Природно езеро на 853 m надморска височина, второ по големина во земјата. Површината е 274 km²: 177 km² во Македонија, 49 km² во Албанија и 48 km² во Грција. Најголемата длабочина е 76 m, должината 28 km, а широчината 17 km. Нивото на водата многу варира.",
+      "en": "Natural lake at 853 m above sea level, the second largest in the country. It covers 274 km²: 177 km² in Macedonia, 49 km² in Albania and 48 km² in Greece. Its greatest depth is 76 m, its length 28 km and its width 17 km. The water level varies a lot."
     },
     "fish": [
       { "latin": "Alburnus belvica", "mk": "Белвица", "en": "Prespa bleak", "endemic": true },
@@ -93,14 +93,14 @@
     "sources": [
       { "title": "Риболовна основа „Преспанско Езеро“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/2.%20%D0%9F%D0%A0%D0%95%D0%A1%D0%9F%D0%90%D0%9D%D0%A1%D0%9A%D0%9E%20%D0%95%D0%97%D0%95%D0%A0%D0%9E%202023-2028%20.pdf" },
       { "title": "Pietrock et al. (2022): The fish community of the ancient Prespa Lake: Non-indigenous species take over. Fisheries & Aquatic Life 30: 112–124", "url": "https://doi.org/10.2478/aopf-2022-0011" },
-      { "title": "Ramsar: North Macedonia designates second Ramsar site (Prespa 1995, Dojran)", "url": "https://ramsar.org/fr/news/fyr-macedonia-designates-second-ramsar-site" }
+      { "title": "Ramsar: Macedonia designates second Ramsar site (Prespa 1995, Dojran)", "url": "https://ramsar.org/fr/news/fyr-macedonia-designates-second-ramsar-site" }
     ]
   },
 
   "dojransko-ezero": {
     "description": {
-      "mk": "Плитко природно езеро на македонско-грчката граница, трето по големина во земјата. Околу три петтини од езерото се во Северна Македонија. Денешната површина е околу 31 km², а длабочината околу 6 m.",
-      "en": "Shallow natural lake on the border with Greece, the third largest in the country. About three fifths of the lake is in North Macedonia. Its present area is about 31 km² and its depth about 6 m."
+      "mk": "Плитко природно езеро на македонско-грчката граница, трето по големина во земјата. Околу три петтини од езерото се во Македонија. Денешната површина е околу 31 km², а длабочината околу 6 m.",
+      "en": "Shallow natural lake on the border with Greece, the third largest in the country. About three fifths of the lake is in Macedonia. Its present area is about 31 km² and its depth about 6 m."
     },
     "fish": [
       { "latin": "Alburnus macedonicus", "mk": "Белвица (дојранска плашица)", "endemic": true },
@@ -183,8 +183,8 @@
 
   "crna-reka": {
     "description": {
-      "mk": "Најголемата десна притока на Вардар. Извира од врелото Црна Дупка над селото Железнец (Демир Хисар), на 760 m надморска височина. Тече низ Пелагонија, потоа низ Скочивирската Клисура и Мариово, каде е брза планинска река, и низ акумулацијата Тиквеш, а во Вардар се влива кај Стоби. Сливот зафаќа околу 5.890 km², од кои 5.130 km² во Северна Македонија.",
-      "en": "The largest right-hand tributary of the Vardar. It rises from the Crna Dupka spring above the village of Železnec (Demir Hisar), at 760 m above sea level. It flows through the Pelagonia plain, then through the Skočivir gorge and Mariovo, where it is a fast mountain river, and through the Tikveš reservoir, and joins the Vardar near Stobi. Its basin covers about 5,890 km², of which 5,130 km² is in North Macedonia."
+      "mk": "Најголемата десна притока на Вардар. Извира од врелото Црна Дупка над селото Железнец (Демир Хисар), на 760 m надморска височина. Тече низ Пелагонија, потоа низ Скочивирската Клисура и Мариово, каде е брза планинска река, и низ акумулацијата Тиквеш, а во Вардар се влива кај Стоби. Сливот зафаќа околу 5.890 km², од кои 5.130 km² во Македонија.",
+      "en": "The largest right-hand tributary of the Vardar. It rises from the Crna Dupka spring above the village of Železnec (Demir Hisar), at 760 m above sea level. It flows through the Pelagonia plain, then through the Skočivir gorge and Mariovo, where it is a fast mountain river, and through the Tikveš reservoir, and joins the Vardar near Stobi. Its basin covers about 5,890 km², of which 5,130 km² is in Macedonia."
     },
     "fish": [
       { "latin": "Salmo pelagonicus", "mk": "Пелагониска пастрмка" },
@@ -224,7 +224,7 @@
     ],
     "sources": [
       { "title": "Kostov, Ristovska, Prelić & Slavevska-Stamenković (2011): Assessment of the ecological status of the Crna River based on the fish fauna. Macedonian Journal of Animal Science 1(1): 261–270", "url": "https://mjas.ukim.edu.mk/mjas-old/files/MJAS-01-01-_2011_-047_Kostov.pdf" },
-      { "title": "Риболовна основа „Црна Река“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Црна Река“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -298,8 +298,8 @@
     },
     "notes": [
       {
-        "mk": "Смуѓот е внесуван во земјата повеќе пати во 1970-тите години, но се одомаќинил само во оваа акумулација. Според риболовната основа, денес во Северна Македонија се среќава само тука.",
-        "en": "Zander was brought into the country several times in the 1970s but settled only in this reservoir. According to the fishery management plan, today it is found only here in North Macedonia."
+        "mk": "Смуѓот е внесуван во земјата повеќе пати во 1970-тите години, но се одомаќинил само во оваа акумулација. Според риболовната основа, денес во Македонија се среќава само тука.",
+        "en": "Zander was brought into the country several times in the 1970s but settled only in this reservoir. According to the fishery management plan, today it is found only here in Macedonia."
       },
       {
         "mk": "Најчесто се ловат крап, црвеноперка и клен.",
@@ -308,7 +308,7 @@
     ],
     "sources": [
       { "title": "Риболовна основа „Акумулација Младост“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" },
-      { "title": "Риболовна основа „Младост“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Младост“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -346,14 +346,14 @@
     ],
     "sources": [
       { "title": "Риболовна основа „Акумулација Стрежево“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/4.%20%D0%A1%D0%A2%D0%A0%D0%95%D0%96%D0%95%D0%92%D0%9E%2023%20%D0%B4%D0%BE%2028.pdf" },
-      { "title": "Риболовна основа „Стрежево“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Стрежево“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
   "vardar": {
     "description": {
-      "mk": "Најголемата и најзначајната река во земјата. Извира од карстен извор кај селото Вруток, во подножјето на Шар Планина, на 683 m надморска височина. Земјата ја напушта кај Гевгелија (43 m), а потоа низ Грција се влева во Егејското Море. Долга е 388 km, од кои 301 km во Северна Македонија. Сливот зафаќа 28.588 km², од кои 20.535 km² во Северна Македонија. Низ земјата тече низ пет котлини и четири клисури.",
-      "en": "The largest and most important river in the country. It rises from a karst spring at the village of Vrutok, at the foot of Šar Planina, at 683 m above sea level. It leaves the country at Gevgelija (43 m) and flows through Greece into the Aegean Sea. It is 388 km long, 301 km of it in North Macedonia. Its basin covers 28,588 km², of which 20,535 km² is in North Macedonia. In the country it runs through five basins and four gorges."
+      "mk": "Најголемата и најзначајната река во земјата. Извира од карстен извор кај селото Вруток, во подножјето на Шар Планина, на 683 m надморска височина. Земјата ја напушта кај Гевгелија (43 m), а потоа низ Грција се влева во Егејското Море. Долга е 388 km, од кои 301 km во Македонија. Сливот зафаќа 28.588 km², од кои 20.535 km² во Македонија. Низ земјата тече низ пет котлини и четири клисури.",
+      "en": "The largest and most important river in the country. It rises from a karst spring at the village of Vrutok, at the foot of Šar Planina, at 683 m above sea level. It leaves the country at Gevgelija (43 m) and flows through Greece into the Aegean Sea. It is 388 km long, 301 km of it in Macedonia. Its basin covers 28,588 km², of which 20,535 km² is in Macedonia. In the country it runs through five basins and four gorges."
     },
     "fish": [
       { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
@@ -384,8 +384,8 @@
     "sources": [
       { "title": "Риболовна основа „Слив на река Вардар – горно течение“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/24.%20%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D1%80%20%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%202023%20-%202028.pdf" },
       { "title": "Georgiev, S. (2000): Stanje ihtiofaune rijeke Vardara u razdoblju od 1996. do 1999. (State of the Vardar River ichthyofauna 1996–1999). Ribarstvo 58(3): 85–100", "url": "https://hrcak.srce.hr/file/7019" },
-      { "title": "Риболовна основа „Вардар – средно течение“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" },
-      { "title": "Риболовна основа „Вардар – долно течение“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Вардар – средно течение“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" },
+      { "title": "Риболовна основа „Вардар – долно течение“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -417,14 +417,14 @@
     ],
     "sources": [
       { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" },
-      { "title": "Риболовна основа „Брегалница“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Брегалница“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
   "pchinja": {
     "description": {
-      "mk": "По должина втора лева притока на Вардар. Извира во Србија, под врвот Бела Вода на планината Дукат (1.664 m), а во Вардар се влива во Таорската Клисура (191 m). Долга е 135 km, од кои 76 km во Северна Македонија. Сливот зафаќа 2.840 km², од кои 2.317 km² во Северна Македонија. Главни притоки се Крива Река и Кумановска Река.",
-      "en": "The second longest left-hand tributary of the Vardar. It rises in Serbia, below the peak Bela Voda on Dukat mountain (1,664 m), and joins the Vardar in the Taor gorge (191 m). It is 135 km long, 76 km of it in North Macedonia. Its basin covers 2,840 km², of which 2,317 km² is in North Macedonia. Its main tributaries are the Kriva Reka and the Kumanovska Reka."
+      "mk": "По должина втора лева притока на Вардар. Извира во Србија, под врвот Бела Вода на планината Дукат (1.664 m), а во Вардар се влива во Таорската Клисура (191 m). Долга е 135 km, од кои 76 km во Македонија. Сливот зафаќа 2.840 km², од кои 2.317 km² во Македонија. Главни притоки се Крива Река и Кумановска Река.",
+      "en": "The second longest left-hand tributary of the Vardar. It rises in Serbia, below the peak Bela Voda on Dukat mountain (1,664 m), and joins the Vardar in the Taor gorge (191 m). It is 135 km long, 76 km of it in Macedonia. Its basin covers 2,840 km², of which 2,317 km² is in Macedonia. Its main tributaries are the Kriva Reka and the Kumanovska Reka."
     },
     "fish": [
       { "latin": "Salmo macedonicus", "mk": "Македонска пастрмка", "en": "Macedonian trout" },
@@ -440,7 +440,7 @@
     },
     "sources": [
       { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" },
-      { "title": "Риболовна основа „Пчиња“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Пчиња“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -462,7 +462,7 @@
       "en": "The main species that the official fishery management plan (2024) gives for the fishing area “Treska” (the Treska from its source to the Tažewska Reka, with its tributaries and the Oslomej reservoir), which are also in its species list. The plan lists 21 species in total."
     },
     "sources": [
-      { "title": "Риболовна основа „Треска“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Треска“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -494,15 +494,15 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Козјак“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
+      { "title": "Риболовна основа „Козјак“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
       { "title": "Риболовна основа „Акумулација Младост“ 2023–2028, опис на штуката (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
     ]
   },
 
   "crn-drim": {
     "description": {
-      "mk": "Истекува од Охридското Езеро во Струга и тече низ Струшкото Поле до селото Ташмаруништа, каде почнува акумулацијата Глобочица. Припаѓа на Јадранскиот слив. Неговиот слив во Северна Македонија, заедно со Охридското и Преспанското Езеро, зафаќа 3.350 km² и е втор по големина во земјата.",
-      "en": "It flows out of Lake Ohrid at Struga and runs through the Struga plain to the village of Tašmaruništa, where the Globočica reservoir begins. It belongs to the Adriatic basin. Its basin in North Macedonia, including Lakes Ohrid and Prespa, covers 3,350 km² and is the second largest in the country."
+      "mk": "Истекува од Охридското Езеро во Струга и тече низ Струшкото Поле до селото Ташмаруништа, каде почнува акумулацијата Глобочица. Припаѓа на Јадранскиот слив. Неговиот слив во Македонија, заедно со Охридското и Преспанското Езеро, зафаќа 3.350 km² и е втор по големина во земјата.",
+      "en": "It flows out of Lake Ohrid at Struga and runs through the Struga plain to the village of Tašmaruništa, where the Globočica reservoir begins. It belongs to the Adriatic basin. Its basin in Macedonia, including Lakes Ohrid and Prespa, covers 3,350 km² and is the second largest in the country."
     },
     "fish": [
       { "latin": "Squalius squalus", "mk": "Клен" },
@@ -521,7 +521,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Црн Дрим“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Црн Дрим“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -543,7 +543,7 @@
       "en": "Species that the official fishery management plan (2025) lists for the recreational zone “Radika” (the Radika with its tributaries in Mavrovo National Park, down to the Garska Reka), which are also among the main species of the area."
     },
     "sources": [
-      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -571,7 +571,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Национален парк Маврово“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -595,7 +595,7 @@
       "en": "The main species that the official fishery management plan (2024) gives for the Mavrovica reservoir, which are also in its species list. The plan lists 16 species in total."
     },
     "sources": [
-      { "title": "Риболовна основа „Мавровица“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Мавровица“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -620,7 +620,7 @@
       "en": "The main species that the official fishery management plan (2025) gives for the Mantovo reservoir, which are also in its species list. The plan lists 14 species in total."
     },
     "sources": [
-      { "title": "Риболовна основа „Мантово“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Мантово“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -641,7 +641,7 @@
       "en": "The main species that the official fishery management plan (2025) gives for the Turija reservoir, which are also in its species list (8 in total). The white barbel is not listed, because the plans for neighbouring waters in the Strumica basin give it different Latin names."
     },
     "sources": [
-      { "title": "Риболовна основа „Турија“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Турија“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -663,14 +663,14 @@
       "en": "The main species that the official fishery management plan (2025) gives for the Vodoča reservoir, which are also in its species list (11 in total). Not listed: the bleak (not identified to species) and the white barbel (the plans for the Strumica basin give it different Latin names)."
     },
     "sources": [
-      { "title": "Риболовна основа „Водоча“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Водоча“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
   "strumica": {
     "description": {
-      "mk": "Река во југоисточниот дел на земјата, притока на Струма. Се смета дека извира како Радовишка Река на Плачковица, на 1.540 m надморска височина; во Радовишкото Поле се спојува со Ораовичка Река и се вика Стара Река, а во Струмичката Котлина – Струмица. Под Ново Село тече низ клисура меѓу Огражден и Беласица, на 186 m ја преминува границата со Бугарија и се влева во Струма. Во Северна Македонија е долга 75,1 km, а сливот зафаќа 1.520 km².",
-      "en": "River in the south-east of the country, a tributary of the Struma. Its source is taken to be the Radoviška Reka on Plačkovica, at 1,540 m above sea level; in the Radoviš plain it joins the Oraovička Reka and is called Stara Reka, and in the Strumica basin, Strumica. Below Novo Selo it runs through a gorge between Ogražden and Belasica, crosses into Bulgaria at 186 m and flows into the Struma. In North Macedonia it is 75.1 km long, with a basin of 1,520 km²."
+      "mk": "Река во југоисточниот дел на земјата, притока на Струма. Се смета дека извира како Радовишка Река на Плачковица, на 1.540 m надморска височина; во Радовишкото Поле се спојува со Ораовичка Река и се вика Стара Река, а во Струмичката Котлина – Струмица. Под Ново Село тече низ клисура меѓу Огражден и Беласица, на 186 m ја преминува границата со Бугарија и се влева во Струма. Во Македонија е долга 75,1 km, а сливот зафаќа 1.520 km².",
+      "en": "River in the south-east of the country, a tributary of the Struma. Its source is taken to be the Radoviška Reka on Plačkovica, at 1,540 m above sea level; in the Radoviš plain it joins the Oraovička Reka and is called Stara Reka, and in the Strumica basin, Strumica. Below Novo Selo it runs through a gorge between Ogražden and Belasica, crosses into Bulgaria at 186 m and flows into the Struma. In Macedonia it is 75.1 km long, with a basin of 1,520 km²."
     },
     "fish": [
       { "latin": "Squalius orpheus", "mk": "Клен" },
@@ -688,7 +688,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Струмица“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
+      { "title": "Риболовна основа „Струмица“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" },
       { "title": "Риболовна основа „Акумулација Младост“ 2023–2028, опис на штуката (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/5.%20%D0%9C%D0%9B%D0%90%D0%94%D0%9E%D0%A1%D0%A2%202023%20%D0%B4%D0%BE%202028.pdf" }
     ]
   },
@@ -709,7 +709,7 @@
       "en": "The main species that the official fishery management plan (2025) gives for the Glažnja reservoir, which are also in its species list. The plan lists 7 species in total."
     },
     "sources": [
-      { "title": "Риболовна основа „Глажња“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Глажња“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -738,7 +738,7 @@
     ],
     "sources": [
       { "title": "Риболовна основа „Слив на река Брегалница“ 2023–2028 (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/27.%20%D0%91%D1%80%D0%B5%D0%B3%D0%B0%D0%BB%D0%BD%D0%B8%D1%86%D0%B0%202023-2028.pdf" },
-      { "title": "Риболовна основа „Калиманци“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Калиманци“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -762,7 +762,7 @@
     ],
     "sources": [
       { "title": "Риболовна основа „Слив на река Пчиња“ 2023–2028, опис на македонската пастрмка (Институт за сточарство, УКИМ)", "url": "http://istoc.ukim.edu.mk/wp-content/uploads/2022/11/istoc/23.%20%D0%9F%D1%87%D0%B8%D1%9A%D0%B0%202023-2028.pdf" },
-      { "title": "Риболовна основа „Ратево – Беровско Езеро“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Ратево – Беровско Езеро“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -778,7 +778,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Шпилје“, Службен весник на РСМ бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
+      { "title": "Риболовна основа „Шпилје“, Службен весник бр. 222/2024 (31 октомври 2024)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-222.pdf" }
     ]
   },
 
@@ -794,7 +794,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Липково“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Липково“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   },
 
@@ -810,7 +810,7 @@
       }
     ],
     "sources": [
-      { "title": "Риболовна основа „Градче“, Службен весник на РСМ бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
+      { "title": "Риболовна основа „Градче“, Службен весник бр. 33/2025 (14 февруари 2025)", "url": "https://www.mrf1952.mk/images/documents/ribolovni-osnovi-2024/Ribolovni-osnovi_Sl-vesnik-RM-33.pdf" }
     ]
   }
 }

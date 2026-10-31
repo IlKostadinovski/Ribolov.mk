@@ -5,7 +5,7 @@ Read this first in every new session. Keep it updated whenever a decision is mad
 ## Project
 
 **RibolovMK** (repo `IlKostadinovski/Ribolov.mk`) is a static website with an interactive
-fishing map of North Macedonia. The map shows ONLY:
+fishing map of Macedonia. The map shows ONLY:
 
 - the country's border outline
 - rivers
@@ -134,6 +134,9 @@ Decided:
   https://ilkostadinovski.github.io/Ribolov.mk/
 - **Leaflet 1.9.4** without a tile layer (owner OK'd; may revisit later).
 - **Default language Macedonian**, with an EN/МК switch (choice saved in localStorage).
+- **Country name** (owner, Oct 2026): the site says only "Македонија" / "Macedonia",
+  never "Северна Македонија" / "North Macedonia" (texts, descriptions, notes, link titles).
+  Gazette citations are written "Службен весник бр. N/ГГГГ".
 
 Implemented, owner hasn't objected (treat as decided unless they say otherwise):
 - **Merge rivers by name + connectivity + 7 km gap rule** (see "Map data"), so different
