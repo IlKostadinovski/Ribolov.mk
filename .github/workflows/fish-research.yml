@@ -9,6 +9,7 @@ on:
     branches: [research]
     paths:
       - 'research/tools/fish-research.mjs'
+      - 'research/fish/retry.txt'
       - '.github/workflows/fish-research.yml'
 
 permissions:
@@ -29,7 +30,19 @@ jobs:
         with:
           node-version: 22
 
+      # First pass: all species (skipped once its results are in the repo).
       - name: Collect
+        if: hashFiles('research/fish/wikidata.json') == ''
+        run: node research/tools/fish-research.mjs
+
+      # Second pass: a wider picture search for the species in research/fish/retry.txt.
+      - name: Wider picture search
+        if: hashFiles('research/fish/retry.txt') != ''
+        env:
+          SPECIES: research/fish/retry.txt
+          MIN_WIDTH: '300'
+          WIDE: '1'
+          PREVIEWS: candidates2
         run: node research/tools/fish-research.mjs
 
       - name: Commit

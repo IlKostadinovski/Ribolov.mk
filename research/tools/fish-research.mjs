@@ -16,8 +16,15 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 
 const UA = 'RibolovMK-research/1.0 (https://github.com/IlKostadinovski/Ribolov.mk)';
+// A second pass for species without a good picture can use another species list,
+// a smaller minimum width, a wider search, and its own preview folder:
+//   SPECIES=research/fish/retry.txt MIN_WIDTH=300 WIDE=1 PREVIEWS=candidates2 node …
 const OUT = 'research/fish';
-const PER_SPECIES = 12; // previews per species
+const SPECIES_FILE = process.env.SPECIES || 'research/fishbase/species.txt';
+const MIN_WIDTH = Number(process.env.MIN_WIDTH || 500);
+const WIDE = Boolean(process.env.WIDE);
+const PREVIEWS = process.env.PREVIEWS || 'candidates';
+const PER_SPECIES = WIDE ? 16 : 12; // previews per species
 const FREE = /^(public domain|pd|cc0|cc[- ]by(-sa)?[- ]?\d|cc[- ]by(-sa)?$)/i;
 const SKIP_TITLE = /map|distribution|range|verbreitung|areal|stamp|briefmarke|marke|skeleton|otolith|scale|\.svg$|\.tiff?$|\.pdf$|\.djvu$|\.gif$|coat of arms|wappen|logo|chart|diagram/i;
 
@@ -106,10 +113,19 @@ async function categoryFiles(category) {
   return (data.query?.categorymembers || []).map((m) => m.title);
 }
 
-async function searchFiles(text) {
+async function subcategories(category) {
+  const params = new URLSearchParams({
+    action: 'query', format: 'json', formatversion: '2', list: 'categorymembers',
+    cmtitle: 'Category:' + category, cmtype: 'subcat', cmlimit: '20',
+  });
+  const data = await get('https://commons.wikimedia.org/w/api.php?' + params);
+  return (data.query?.categorymembers || []).map((m) => m.title.replace(/^Category:/, ''));
+}
+
+async function searchFiles(text, exact = true) {
   const params = new URLSearchParams({
     action: 'query', format: 'json', formatversion: '2', list: 'search',
-    srsearch: `"${text}"`, srnamespace: '6', srlimit: '30',
+    srsearch: exact ? `"${text}"` : text, srnamespace: '6', srlimit: '30',
   });
   const data = await get('https://commons.wikimedia.org/w/api.php?' + params);
   return (data.query?.search || []).map((s) => s.title);
@@ -124,13 +140,13 @@ async function wikiText(lang, title) {
   return data.query?.pages?.[0]?.extract || '';
 }
 
-const species = (await readFile('research/fishbase/species.txt', 'utf8'))
+const species = (await readFile(SPECIES_FILE, 'utf8'))
   .split('\n').map((s) => s.trim()).filter(Boolean);
 
-for (const dir of ['candidates', 'fishbase', 'wiki-en', 'wiki-mk']) await mkdir(`${OUT}/${dir}`, { recursive: true });
+for (const dir of [PREVIEWS, 'fishbase', 'wiki-en', 'wiki-mk']) await mkdir(`${OUT}/${dir}`, { recursive: true });
 
 const wd = await wikidata(species);
-await writeFile(`${OUT}/wikidata.json`, JSON.stringify(wd, null, 2) + '\n');
+if (!WIDE) await writeFile(`${OUT}/wikidata.json`, JSON.stringify(wd, null, 2) + '\n');
 console.log(`::notice::Wikidata: ${Object.keys(wd).length} of ${species.length} species found`);
 
 const tsv = ['species\tn\tfile\tlicence\tauthor\tsize\tsource'];
@@ -142,23 +158,36 @@ for (const latin of species) {
     const titles = [...e.images.map((f) => 'File:' + f)];
     const fromCat = await categoryFiles(e.category || latin).catch(() => []);
     for (const t of fromCat) if (!titles.includes(t)) titles.push(t);
+    if (WIDE) {
+      for (const sub of await subcategories(e.category || latin).catch(() => [])) {
+        for (const t of await categoryFiles(sub).catch(() => [])) if (!titles.includes(t)) titles.push(t);
+      }
+    }
     if (titles.length < PER_SPECIES * 2) {
       for (const t of await searchFiles(latin).catch(() => [])) if (!titles.includes(t)) titles.push(t);
     }
-    const usable = titles.filter((t) => !SKIP_TITLE.test(t)).slice(0, 50);
-    const infos = usable.length ? await imageInfo(usable) : [];
+    if (WIDE) {
+      const [genus, epithet] = latin.split(' ');
+      for (const q of [`${genus} ${epithet}`, e.en && e.en !== latin ? e.en : null, `intitle:${epithet}`]) {
+        if (!q) continue;
+        for (const t of await searchFiles(q, false).catch(() => [])) if (!titles.includes(t)) titles.push(t);
+      }
+    }
+    const usable = titles.filter((t) => !SKIP_TITLE.test(t)).slice(0, WIDE ? 100 : 50);
+    const infos = [];
+    for (let i = 0; i < usable.length; i += 50) infos.push(...await imageInfo(usable.slice(i, i + 50)));
     const byTitle = new Map(infos.map((i) => [i.title, i]));
     let n = 0;
     for (const title of usable) {
       const info = byTitle.get(title);
-      if (!info || !/image\/(jpeg|png|webp)/.test(info.mime) || info.width < 500) continue;
+      if (!info || !/image\/(jpeg|png|webp)/.test(info.mime) || info.width < MIN_WIDTH) continue;
       const licence = stripHtml(info.extmetadata?.LicenseShortName?.value);
       if (!FREE.test(licence)) continue;
       n++;
       const name = String(n).padStart(2, '0');
       const img = await get(info.thumburl, 'buffer').catch(() => null);
-      if (img) await mkdir(`${OUT}/candidates/${slug(latin)}`, { recursive: true }).then(() =>
-        writeFile(`${OUT}/candidates/${slug(latin)}/${name}.jpg`, img));
+      if (img) await mkdir(`${OUT}/${PREVIEWS}/${slug(latin)}`, { recursive: true }).then(() =>
+        writeFile(`${OUT}/${PREVIEWS}/${slug(latin)}/${name}.jpg`, img));
       tsv.push([latin, name, title.replace(/^File:/, ''), licence,
         stripHtml(info.extmetadata?.Artist?.value).slice(0, 120), `${info.width}x${info.height}`,
         e.images.includes(title.replace(/^File:/, '')) ? 'wikidata' : 'commons'].join('\t'));
@@ -169,6 +198,8 @@ for (const latin of species) {
   } catch (err) {
     console.log(`::warning::${latin} pictures: ${err.message}`);
   }
+
+  if (WIDE) { await sleep(500); continue; } // texts were saved in the first pass
 
   // FishBase summary page as text.
   try {
@@ -189,5 +220,5 @@ for (const latin of species) {
   }
   await sleep(1500);
 }
-await writeFile(`${OUT}/candidates.tsv`, tsv.join('\n') + '\n');
+await writeFile(`${OUT}/${PREVIEWS}.tsv`, tsv.join('\n') + '\n');
 console.log(`::notice::${previews} picture previews for ${species.length} species`);
