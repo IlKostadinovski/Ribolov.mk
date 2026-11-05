@@ -1,0 +1,42 @@
+# Research helper (only on the "research" branch, not part of the website):
+# collects picture candidates from Wikimedia Commons and the FishBase / Wikipedia text
+# for every species in research/fishbase/species.txt (see research/tools/fish-research.mjs).
+name: Fish research
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [research]
+    paths:
+      - 'research/tools/fish-research.mjs'
+      - '.github/workflows/fish-research.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fish-research
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Collect
+        run: node research/tools/fish-research.mjs
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/fish
+          git diff --staged --quiet && { echo "Nothing new."; exit 0; }
+          git commit -q -m "Research: fish pictures (candidates), FishBase and Wikipedia text"
+          for i in 1 2 3; do git pull -q --rebase && git push -q && break; sleep 10; done
