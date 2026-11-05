@@ -32,8 +32,11 @@ If GitHub Pages is ever turned off: repository **Settings → Pages**, set **Sou
 | `index.html` | The page |
 | `css/style.css` | Colours and layout (map colours are the `--map-…` values at the top) |
 | `js/i18n.js` | All texts on the site, in Macedonian and English |
-| `js/app.js` | The map and the info panel |
-| `data/waters.json` | Fishing information (see below) |
+| `js/app.js` | The map, the search and the info panel |
+| `js/search.js` | How the search matches names (Cyrillic / Latin / English) |
+| `data/waters.json` | Fishing information per river and lake (see below) |
+| `data/fish.json` | The fish pages: tips, baits, fun facts, picture (see below) |
+| `data/fish-images.json`, `images/fish/` | Fish pictures and their credits (made by the "Update fish pictures" Action, don't edit by hand) |
 | `data/map/` | Rivers, lakes and border (generated, don't edit by hand) |
 | `scripts/` | The script that downloads the map data from OpenStreetMap |
 
@@ -43,6 +46,16 @@ rivers, lakes, reservoirs, cities and municipality borders.
 
 The map shows the main city of each municipality as a white area; its name appears when
 you hover over it (or tap it on a phone).
+
+The **search bar** at the top finds municipalities, towns, rivers, lakes, reservoirs and
+fish. It understands Cyrillic, Latin with or without č/š/ž (also ch/sh/zh) and English,
+and forgives small typos: "Delcevo", "Делчево" and "Delchevo" all find Делчево; "Krap",
+"Крап" and "Carp" all find the carp. Suggestions appear while typing.
+
+Choosing a fish (in the search or in the filter) colours the waters where it lives **red**.
+While a fish is shown in red, the river or lake you tap turns **yellow**, so you can tell
+it apart. Tapping a fish in a water's list opens the **fish's page** (picture, how to catch
+it, baits, fun facts and where it lives), with a **Назад / Back** button.
 
 ## Editing the fishing information
 
@@ -175,6 +188,57 @@ They are **not** real fishing information. Replace them with real data and delet
   or an entry `{ }`.
 - If the info panel stops working after an edit, the file probably has a typo.
   Paste it into [jsonlint.com](https://jsonlint.com) to find the exact line.
+
+## Editing the fish pages
+
+Each fish has a page that opens from a water's fish list or from the search. Its content
+is in **`data/fish.json`**, one entry per fish, under its Latin name (the same as in
+`waters.json`):
+
+```json
+{
+  "Cyprinus carpio": {
+    "image": "Cyprinus carpio.jpeg",
+    "tips": [
+      { "mk": "Најактивен е во самрак и во зори.", "en": "Most active at dusk and dawn." }
+    ],
+    "baits": [ { "mk": "Пченка, бојли, тесто.", "en": "Sweet corn, boilies, dough." } ],
+    "funFacts": [ { "mk": "Може да живее до 38 години.", "en": "It can live up to 38 years." } ],
+    "sources": [ { "title": "FishBase: Cyprinus carpio", "url": "https://www.fishbase.se/summary/Cyprinus-carpio.html" } ]
+  }
+}
+```
+
+| Field | What to write |
+|---|---|
+| `tips` | How to catch it (shown as "Како се лови / How to catch it") |
+| `baits` | Baits and lures |
+| `funFacts` | Fun facts (shown as "Интересно / Fun facts") |
+| `sources` | Where the facts come from, shown as links |
+| `image` | The picture: the name of a file on Wikimedia Commons (see below) |
+| `en`, `mk` | Only if the fish needs a name that `waters.json` doesn't give it |
+| `otherNames` | Extra names the search should find, e.g. `["шаран"]` (not shown) |
+
+Every field is optional. A fish with nothing filled in shows "No tips or information for
+this fish yet". The list "Where it lives on the map" is made automatically from
+`waters.json`. The same JSON rules apply as for `waters.json` (see "Common mistakes").
+
+### Changing a fish picture
+
+Pictures come from **Wikimedia Commons** (free pictures; the author and licence are shown
+under each picture, as the licences require).
+
+1. Find a clear picture of the fish on https://commons.wikimedia.org (search for its
+   Latin name). Use only pictures marked public domain, CC0, CC BY or CC BY-SA.
+2. Copy the file name without "File:", e.g. `Cyprinus carpio.jpeg`.
+3. Put it in the fish's `"image"` in `data/fish.json` and save.
+4. The **Update fish pictures** Action (Actions tab) downloads it by itself within a
+   minute or two and the site updates. If it can't use the file (not found, or a licence
+   that isn't free), its run shows a yellow warning.
+
+If the author's name on Commons is long or messy, write it yourself:
+`"image": { "file": "Silurus glanis 02.jpg", "author": "Dieter Florian" }`.
+To remove a picture, delete the `"image"` line.
 
 ## Updating the map data
 

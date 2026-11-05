@@ -65,6 +65,7 @@ const TEXT = {
     introduced: 'внесен вид',
 
     fish_tips: 'Како се лови',
+    fishTipsNote: 'Општи совети за овој вид риба, исти каде и да живее.',
     fish_baits: 'Мамки',
     fish_funFacts: 'Интересно',
     fishWaters: 'Каде ја има на мапата',
@@ -138,6 +139,7 @@ const TEXT = {
     introduced: 'introduced',
 
     fish_tips: 'How to catch it',
+    fishTipsNote: 'General advice for this fish, wherever it lives.',
     fish_baits: 'Baits and lures',
     fish_funFacts: 'Fun facts',
     fishWaters: 'Where it lives on the map',

@@ -37,7 +37,8 @@ code must stay simple, readable and easy to extend.
 - Show "© OpenStreetMap contributors" on the map (required by the ODbL).
 - All UI text in one place, so the site can be in Macedonian and English.
 - Fishing content lives only in `data/waters.json`, linked to the map by water id.
-  Water bodies without content show "No information yet".
+  Water bodies without content show "No information yet". Fish pages (tips, baits, fun
+  facts, picture) live in `data/fish.json`, by Latin name (see "Fish pages").
 - Must work well on phones: zoom/pan, wider invisible tap area for thin rivers,
   hover and selected highlight.
 - Ask the owner before big decisions. Suggest improvements, but don't build extra
@@ -148,7 +149,7 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
 
 - `index.html` loads Leaflet from unpkg (pinned 1.9.4 with SRI hashes), topojson-client
   3.1.0 (unpkg, SRI; reads the municipality TopoJSON), Golos Text from Google Fonts (has
-  full Macedonian Cyrillic), then `js/i18n.js` and `js/app.js`.
+  full Macedonian Cyrillic), then `js/i18n.js`, `js/search.js` and `js/app.js`.
   No build step; plain scripts (top-level consts in i18n.js are shared globals).
 - `js/i18n.js`: `DEFAULT_LANG`, `LANGUAGES`, `TEXT.mk` / `TEXT.en`. Every visible string.
 - `js/app.js`:
@@ -185,9 +186,35 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   - If `data/waters.json` fails to parse, the panel says so (helps the owner find typos).
   - **Fish filter** (in the filter box, under the layer list, `buildSpeciesFilter()`): a
     dropdown of every species in `waters.json` (by `latin`), sorted by name in the current
-    language. Choosing one fades the waters that don't have it (rivers opacity 0.18, lakes
-    0.25) and highlights the fish in the panel (`li.is-match`). Built after waters.json
-    loads; names re-filled on language switch.
+    language. Owner (Nov 2026): choosing one colours the waters **with** that fish red
+    (`--map-fish`, rivers +1 px) and does **not** fade the others. While a fish is red, the
+    selected water is yellow (`--map-selected-with-fish`; `body.has-fish` switches the panel
+    swatch too). The fish is also highlighted in water panels (`li.is-match`).
+    `highlightFish(latin, { chosen })`: a fish chosen in the filter or search (`chosenFish`)
+    stays red when the panel closes; one opened from a water's fish list is red only while
+    its page is open (closing the panel, tapping a water or going back restores it).
+  - **Search** (header, owner's request Nov 2026): one box for municipalities, towns
+    (cities named differently from their municipality, e.g. Скопје, Стар Дојран), rivers,
+    lakes, reservoirs and fish. `js/search.js`: `searchFold()` turns names and input into
+    plain Latin (Cyrillic → Latin, č/š/ž → c/s/z, ch/sh/zh/gj/kj/dj/ts → c/s/z/g/k/g/c,
+    y → j), `searchScore()` ranks exact > starts with > word starts > inside > typo
+    (edit distance 1 for 4+ letters, 2 for 7+). `getSearchIndex()` in app.js builds the
+    entries lazily (reset in `dataArrived()`); names in all languages are matched, labels
+    shown in the current one. Ties: municipality, town, lake, reservoir, river, fish, then
+    bigger/more common. Waters sharing a name show their municipality (`municipalityAt()`
+    on a middle point). Up to 8 suggestions while typing, arrow keys/Enter/Esc, ARIA
+    combobox. Choosing: municipality → `showMunicipality()`; town → zoom + name label;
+    water → its page + zoom; fish → fish page + its waters red + zoom to all of them. A
+    hidden layer is switched back on. × clears the box and undoes its fish/municipality.
+    On phones the subtitle is hidden and the box takes the whole header while typing.
+  - **Panel pages**: `view` = `{ type: 'water', id }` or `{ type: 'fish', latin }`;
+    `showPage(page, { fromPage })` pushes the current page on `backStack` (with the
+    highlighted fish) so a **Назад / Back** button appears; any other page clears it.
+    Water page fish lists are buttons that open the fish page; the fish page lists the
+    waters (from waters.json) as buttons that open and zoom to them.
+  - **Fish page** (`renderFishPage()`): name, Latin, other-language name, picture with
+    credit (author · licence link · Wikimedia Commons link), then `tips` (with the note
+    "general advice"), `baits`, `funFacts`, "Where it lives on the map", sources.
   - Fish names: `fishName()` = Macedonian (`mk`) or English (`en`) name, else the Latin
     name (English never falls back to Cyrillic). Tags "endemic" / "introduced" per water.
   - Fish lists in the panel are sorted **biggest species first** (`biggestFirst()`, sizes
@@ -198,6 +225,32 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
     catch limits, minimum sizes, protected species, no-fishing zones (all empty for now)
     → notes → sources.
 - Colours live in `css/style.css` (`--map-*` variables, read by app.js).
+
+## Fish pages (`data/fish.json`, Nov 2026)
+
+- One entry per Latin name: `image` (Commons file name, or `{ file, author }`), `tips`,
+  `baits`, `funFacts`, `sources`, optional `en`/`mk` (names waters.json lacks) and
+  `otherNames` (extra search words). All 66 species of waters.json have an entry.
+- Content rules (owner): common fish are the same everywhere, so general tips are fine;
+  endemic fish only from reliable sources, else blank; no seasons/limits/sizes. Applied:
+  fun facts only from each species' FishBase page; tips/baits only for angled species
+  that are not IUCN VU/EN/CR (plus none for Barbus prespensis); IUCN category mentioned
+  only for VU/EN/CR. Details and the full list in `SOURCES.md` ("Fish pages").
+- **Pictures**: `tools/fetch-fish-images.mjs` (Node 22, no packages) run by the Action
+  **"Update fish pictures"** (`.github/workflows/update-fish-images.yml`, on changes to
+  `data/fish.json` or the tool, or by hand). Accepts only PD/CC0/CC BY/CC BY-SA, saves
+  ≤ 640 px copies to `images/fish/<latin-slug>.<ext>` (small originals not enlarged),
+  writes `data/fish-images.json` (src, file, page, author, licence, licenceUrl, width,
+  height), keeps unchanged files, deletes unused ones. The sandbox can't reach Wikimedia.
+- Picture choice: looked at every candidate (contact sheets); clear whole-fish photos
+  only; no drawings, stamps (the Wikidata images for Barbus macedonicus, Squalius
+  vardarensis, Cobitis vardarensis and Alburnus macedonicus are Macedonian Post stamps),
+  blurry shots or doubtful IDs. 35 species have a picture.
+- `research` branch: `research/tools/fish-research.mjs` + Action "Fish research" saved
+  Wikidata info, Commons picture candidates (`research/fish/candidates*`, previews +
+  `.tsv` with licence/author), FishBase summary pages as text (`research/fish/fishbase/`)
+  and Wikipedia text (leads only). A second, wider picture search runs for the species in
+  `research/fish/retry.txt`; it mostly found unrelated files.
 - Design (owner's request): **black outside the country, gray country (`#44494e`), white
   country border, blue water, white cities**, municipality lines white at 40% opacity,
   dashed. Header and panels dark to match. Fishing-float red for the selection, Golos
@@ -234,6 +287,12 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
   `python3 -m http.server` and Playwright (Chromium in `/opt/pw-browsers`, set
   `PLAYWRIGHT_BROWSERS_PATH`) with `page.route()` serving Leaflet from `npm pack leaflet@1.9.4`
   and aborting the font request. Capture the map via an init script that wraps `L.map`.
+  topojson-client is served the same way (`npm pack topojson-client@3.1.0`). If the npm
+  Playwright wants a newer browser than `/opt/pw-browsers` has, pass
+  `executablePath` = `/opt/pw-browsers/chromium_headless_shell-<n>/*/chrome-headless-shell`.
+- Search/fish checks: "Delcevo" → Делчево first, "Krap"/"Carp"/"Крап" → Крап first,
+  Enter on a fish opens its page with its waters red, back button returns to the water,
+  × clears the red, phone layout (box fills the header while typing).
 - Check: river click a few px off the line, lake centre on phone, language switch,
   panel close (×, Esc, tap on empty map), broken waters.json message, no console errors.
 - Test taps: zoom in to the spot first (at country zoom on a phone, tap areas of nearby
@@ -247,9 +306,14 @@ Implemented, owner hasn't objected (treat as decided unless they say otherwise):
 index.html
 css/style.css
 js/i18n.js              all UI text (mk + en)
-js/app.js               map + info panel
+js/search.js            search text matching (Cyrillic/Latin/English, typos)
+js/app.js               map, search, info panel (water and fish pages)
 data/waters.json        fishing content (edited by the owner)
 data/fish-sizes.json    max length (cm) per species, only to sort fish lists biggest first
+data/fish.json          fish pages: tips, baits, fun facts, picture choice (edited by the owner)
+data/fish-images.json   generated by the "Update fish pictures" Action: picture credits
+images/fish/            generated: the fish pictures
+tools/fetch-fish-images.mjs  downloads the fish pictures (run by the Action)
 data/map/border.geojson generated by the Action, don't edit by hand
 data/map/rivers.geojson generated
 data/map/lakes.geojson  generated
@@ -258,6 +322,7 @@ data/map/cities.geojson generated (built-up areas, one per municipality)
 data/map/report.md      generated: id list, duplicate names, gap joins
 scripts/                download + processing of the OSM data
 .github/workflows/update-map-data.yml   runs the script on GitHub
+.github/workflows/update-fish-images.yml   downloads the fish pictures on GitHub
 .nojekyll
 ```
 
@@ -275,9 +340,13 @@ Second step (owner's request, Oct 2026): real fish species, short descriptions a
 facts from reliable sources, a fish filter, and `SOURCES.md`. In progress, see "Fishing
 content research".
 
-Ideas to suggest later (not built, ask first): link to a selected water (`#vardar` in the
-URL), search by name, fishing spots, photos, seasons view, merging "Lepenc" into
-"Лепенец" with an alias list.
+Third step (owner's request, Nov 2026): search bar with suggestions, fish pages with a
+back button, pictures, tips, baits and fun facts, fish waters shown in red. Done.
+
+Ideas to suggest later (not built, ask first): link to a selected water or fish
+(`#vardar` in the URL), fishing spots, photos of waters, seasons view, merging "Lepenc"
+into "Лепенец" with an alias list, pictures for the 31 fish still without one (owner's
+own photos, with permission), fun facts for the 3 blank endemic species.
 
 ## Working environment notes
 

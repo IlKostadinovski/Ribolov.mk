@@ -2,9 +2,10 @@
 //
 // In data/fish.json a fish's "image" is the name of a file on Wikimedia Commons,
 // e.g. "Cyprinus carpio.jpeg" (or { "file": "…", "author": "…" } to write the author's
-// name more simply than Commons does). This script saves a copy, 800 pixels wide, in
+// name more simply than Commons does). This script saves a copy in
 // images/fish/ and writes data/fish-images.json with the author and licence of each
-// picture, which the site shows under it.
+// picture, which the site shows under it. Pictures are at most 640 pixels wide
+// (smaller originals are not enlarged).
 //
 // Only free pictures are used: public domain, CC0, CC BY and CC BY-SA.
 // It runs on GitHub (Actions → "Update fish pictures"), because the Claude sandbox
@@ -13,7 +14,7 @@
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 
 const UA = 'RibolovMK/1.0 (https://github.com/IlKostadinovski/Ribolov.mk)';
-const WIDTH = 800;
+const WIDTH = 640;
 const FOLDER = 'images/fish';
 const FREE = /^(public domain|pd\b|cc0|cc[- ]by(-sa)?\b)/i;
 
@@ -49,7 +50,7 @@ for (const [latin, page] of Object.entries(fish)) {
   try {
     // Same file as last time: keep the copy we have.
     const before = old[latin];
-    if (before?.file === file) {
+    if (before?.file === file && before.width <= WIDTH) {
       try {
         await readFile(before.src);
         result[latin] = { ...before, ...(choice.author ? { author: choice.author } : {}) };
@@ -68,7 +69,8 @@ for (const [latin, page] of Object.entries(fish)) {
     const licence = strip(meta.LicenseShortName?.value);
     if (!FREE.test(licence)) throw new Error(`licence "${licence}" is not free enough`);
 
-    const url = info.thumburl || info.url;
+    const small = info.width <= WIDTH; // use the original, don't enlarge it
+    const url = small ? info.url : info.thumburl || info.url;
     const ext = (url.split('?')[0].match(/\.(jpe?g|png|webp)$/i)?.[1] || 'jpg').toLowerCase().replace('jpeg', 'jpg');
     const name = `${slug(latin)}.${ext}`;
     await writeFile(`${FOLDER}/${name}`, await get(url, 'buffer'));
@@ -80,8 +82,8 @@ for (const [latin, page] of Object.entries(fish)) {
       author: choice.author || strip(meta.Artist?.value) || strip(meta.Credit?.value) || null,
       licence,
       licenceUrl: meta.LicenseUrl?.value || null,
-      width: info.thumbwidth || info.width,
-      height: info.thumbheight || info.height,
+      width: small ? info.width : info.thumbwidth,
+      height: small ? info.height : info.thumbheight,
     };
     console.log(`${latin}: ${file} (${licence})`);
     await new Promise((r) => setTimeout(r, 500));

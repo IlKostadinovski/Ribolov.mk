@@ -1,125 +1,1831 @@
 {
   "Abramis brama": {
-    "image": "Abramis brama Prague Vltava 1 (cropped).jpg"
+    "image": "Abramis brama Prague Vltava 1 (cropped).jpg",
+    "tips": [
+      {
+        "mk": "Живее во јата во мирна и бавна вода: каде што ќе фатите една, обично има уште.",
+        "en": "It lives in shoals in still and slow water: where you catch one, there are usually more."
+      },
+      {
+        "mk": "Ловете на дно, со фидер или со пловка, на место каде што сте ставиле прихрана.",
+        "en": "Fish on the bottom, with a feeder or a float, over a spot you have baited."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, глисти, пченка, тесто, леб.",
+        "en": "Maggots, worms, sweet corn, dough, bread."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 82 cm и 6 kg, и да живее до 23 години.",
+        "en": "It can grow to 82 cm and 6 kg, and live up to 23 years."
+      },
+      {
+        "mk": "Се храни со ларви на инсекти, ситни ракчиња, мекотели и растенија; поголемите јадат и мала риба.",
+        "en": "It feeds on insect larvae, small crustaceans, molluscs and plants; bigger ones also eat small fish."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Abramis brama",
+        "url": "https://www.fishbase.se/summary/Abramis-brama.html"
+      }
+    ]
   },
   "Alburnoides bipunctatus": {
-    "image": "Alburnoides bipunctatus (cropped).jpg"
+    "image": "Alburnoides bipunctatus (cropped).jpg",
+    "funFacts": [
+      {
+        "mk": "Сака брза вода, богата со кислород, во подножјето на планините.",
+        "en": "It likes fast, oxygen-rich water in the foothills."
+      },
+      {
+        "mk": "Икрите ги полага длабоко во чакалот, во брза струја.",
+        "en": "It lays its eggs deep in the gravel, in a fast current."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnoides bipunctatus",
+        "url": "https://www.fishbase.se/summary/Alburnoides-bipunctatus.html"
+      }
+    ]
+  },
+  "Alburnoides ohridanus": {
+    "funFacts": [
+      {
+        "mk": "Живее само во Охридското Езеро, покрај брегот каде што се кршат брановите.",
+        "en": "It lives only in Lake Ohrid, along the shore where the waves break."
+      },
+      {
+        "mk": "Пораснува до околу 9 cm.",
+        "en": "It grows to about 9 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnoides ohridanus",
+        "url": "https://www.fishbase.se/summary/Alburnoides-ohridanus.html"
+      }
+    ]
+  },
+  "Alburnoides prespensis": {
+    "funFacts": [
+      {
+        "mk": "Живее само во Преспанските Езера, покрај брегот каде што се кршат брановите.",
+        "en": "It lives only in the Prespa lakes, along the shore where the waves break."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnoides prespensis",
+        "url": "https://www.fishbase.se/summary/Alburnoides-prespensis.html"
+      }
+    ]
+  },
+  "Alburnus belvica": {
+    "funFacts": [
+      {
+        "mk": "Живее само во Преспанските Езера.",
+        "en": "It lives only in the Prespa lakes."
+      },
+      {
+        "mk": "Таа е главната храна на кадрестиот пеликан додека ги одгледува младите.",
+        "en": "It is the main food of breeding Dalmatian pelicans."
+      },
+      {
+        "mk": "Кон мрестилиштата во притоките мигрира ноќе.",
+        "en": "It migrates to its spawning sites in the tributaries at night."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnus belvica",
+        "url": "https://www.fishbase.se/summary/Alburnus-belvica.html"
+      }
+    ]
   },
   "Alburnus macedonicus": {
-    "image": "Alburnus macedonicus.jpg"
+    "funFacts": [
+      {
+        "mk": "Живее само во Дојранското Езеро.",
+        "en": "It lives only in Lake Dojran."
+      },
+      {
+        "mk": "Се мрести во плитката вода покрај брегот, каде што се кршат брановите.",
+        "en": "It spawns in the shallows along the shore, where the waves break."
+      },
+      {
+        "mk": "Црпењето вода за наводнување по 1990 година го спушти нивото на езерото за најмалку 4 m и ја уништи подводната вегетација.",
+        "en": "Pumping water for irrigation after 1990 lowered the lake by at least 4 m and destroyed its underwater vegetation."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnus macedonicus",
+        "url": "https://www.fishbase.se/summary/Alburnus-macedonicus.html"
+      }
+    ]
   },
   "Alburnus scoranza": {
-    "image": "Alburnus scoranza 314320499.jpg"
+    "image": "Alburnus scoranza 314320499.jpg",
+    "tips": [
+      {
+        "mk": "Живее во јата близу површината: ловете со лесна пловка, плитко, со многу мала јадица.",
+        "en": "Lives in shoals near the surface: fish shallow with a light float and a very small hook."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, тесто, леб.",
+        "en": "Maggots, dough, bread."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во големи јата и се храни главно со ситни ракчиња од планктонот.",
+        "en": "It lives in large shoals and feeds mainly on tiny planktonic crustaceans."
+      },
+      {
+        "mk": "Икрите ги полага во плитка вода, на околу 30 cm длабочина; се изведуваат за околу 4 дена.",
+        "en": "It lays its eggs in shallow water, about 30 cm deep; they hatch in about 4 days."
+      },
+      {
+        "mk": "Таа е главната храна на охридската пастрмка.",
+        "en": "It is the main food of the Ohrid trout."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnus scoranza",
+        "url": "https://www.fishbase.se/summary/Alburnus-scoranza.html"
+      },
+      {
+        "title": "FishBase: Salmo letnica",
+        "url": "https://www.fishbase.se/summary/Salmo-letnica.html"
+      }
+    ]
+  },
+  "Alburnus thessalicus": {
+    "tips": [
+      {
+        "mk": "Живее во јата близу површината: ловете со лесна пловка, плитко, со многу мала јадица.",
+        "en": "Lives in shoals near the surface: fish shallow with a light float and a very small hook."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, тесто, леб.",
+        "en": "Maggots, dough, bread."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во отворена вода на средни и големи реки и се храни близу површината.",
+        "en": "It lives in open water in medium and large rivers and feeds near the surface."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Alburnus thessalicus",
+        "url": "https://www.fishbase.se/summary/Alburnus-thessalicus.html"
+      }
+    ]
   },
   "Ameiurus nebulosus": {
-    "image": "Ameiurus nebulosus (S0036) (12679096283).jpg"
+    "image": "Ameiurus nebulosus (S0036) (12679096283).jpg",
+    "tips": [
+      {
+        "mk": "Каснува навечер и ноќе, на дно, во мирна вода со меко дно.",
+        "en": "It bites in the evening and at night, on the bottom, in still water with a soft bottom."
+      },
+      {
+        "mk": "Внимавајте на бодлите на перките кога го вадите од јадицата.",
+        "en": "Watch out for the spines in its fins when unhooking it."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, парчиња риба, џигер.",
+        "en": "Worms, pieces of fish, liver."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Поднесува многу малку кислород и вода потопла од 31 °C, а е отпорен и на загадување.",
+        "en": "It tolerates very low oxygen and water warmer than 31 °C, and it is resistant to pollution."
+      },
+      {
+        "mk": "Може да се закопа во тињата за да ги преживее лошите услови.",
+        "en": "It can bury itself in the mud to survive bad conditions."
+      },
+      {
+        "mk": "Пред мрестењето мажјакот и женката се галат со мустаќите, а потоа родителите ги чуваат икрите.",
+        "en": "Before spawning the male and female caress each other with their barbels, and the parents then guard the eggs."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Ameiurus nebulosus",
+        "url": "https://www.fishbase.se/summary/Ameiurus-nebulosus.html"
+      }
+    ]
   },
   "Anguilla anguilla": {
-    "image": "Anguilla anguilla France (cropped).jpg"
+    "image": "Anguilla anguilla France (cropped).jpg",
+    "funFacts": [
+      {
+        "mk": "За мрестење патува илјадници километри, до Саргасовото Море во Атлантскиот Океан.",
+        "en": "To spawn it travels thousands of kilometres, to the Sargasso Sea in the Atlantic Ocean."
+      },
+      {
+        "mk": "Ларвите се проѕирни и личат на лента; Голфската струја ги носи до бреговите на Европа.",
+        "en": "Its larvae are transparent and ribbon-like; the Gulf Stream carries them to the coasts of Europe."
+      },
+      {
+        "mk": "Расте 6–12 години (мажјаците) или 9–20 години (женките), а потоа се враќа во морето да се мрести.",
+        "en": "It grows for 6–12 years (males) or 9–20 years (females), then returns to the sea to spawn."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „критично загрозен“ (CR).",
+        "en": "On the IUCN Red List the species is “critically endangered” (CR)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Anguilla anguilla",
+        "url": "https://www.fishbase.se/summary/Anguilla-anguilla.html"
+      }
+    ]
   },
   "Barbatula barbatula": {
-    "image": "Barbatula barbatula.jpg"
+    "en": "Stone loach",
+    "image": "Barbatula barbatula.jpg",
+    "funFacts": [
+      {
+        "mk": "Чувствителна е на загадување и на малку кислород, па ако ја има во реката, водата обично е чиста.",
+        "en": "It is sensitive to pollution and low oxygen, so if it lives in a river, the water is usually clean."
+      },
+      {
+        "mk": "Може да дише и воздух.",
+        "en": "It can also breathe air."
+      },
+      {
+        "mk": "Ловува ракчиња и ларви на инсекти по дното.",
+        "en": "It hunts small crustaceans and insect larvae on the bottom."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbatula barbatula",
+        "url": "https://www.fishbase.se/summary/Barbatula-barbatula.html"
+      }
+    ]
+  },
+  "Barbatula sturanyi": {
+    "funFacts": [
+      {
+        "mk": "Живее во изворите покрај брегот на Охридското Езеро и во потоци со камено дно.",
+        "en": "It lives in springs along the shore of Lake Ohrid and in streams with a stony bottom."
+      },
+      {
+        "mk": "Ја има само во басенот на Охридското Езеро и во горниот тек на Дрим.",
+        "en": "It lives only in the Lake Ohrid basin and the upper Drin."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbatula sturanyi",
+        "url": "https://www.fishbase.se/summary/Barbatula-sturanyi.html"
+      }
+    ]
   },
   "Barbus balcanicus": {
-    "image": "Barbus balcanicus.jpg"
+    "image": "Barbus balcanicus.jpg",
+    "tips": [
+      {
+        "mk": "Мала мрена од бистрите реки и потоци: се лови со тенок прибор на дно, во брзаците.",
+        "en": "A small barbel of clear rivers and streams: fish on the bottom in riffles, with light tackle."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња.",
+        "en": "Worms, maggots."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во брзи планински и подпланински потоци со чакалесто дно; преку ден ја има најмногу во брзаците.",
+        "en": "It lives in fast mountain and foothill streams with a gravel bottom; by day it is most common in riffles."
+      },
+      {
+        "mk": "Пораснува до околу 17,5 cm.",
+        "en": "It grows to about 17.5 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbus balcanicus",
+        "url": "https://www.fishbase.se/summary/Barbus-balcanicus.html"
+      }
+    ]
   },
   "Barbus macedonicus": {
-    "image": "Barbel Species (Barbus macedonicus).jpg"
+    "tips": [
+      {
+        "mk": "Се држи на дното во брза вода, над камења и чакал: ловете на дно, со тежина што ќе ја задржи мамката во струјата.",
+        "en": "It keeps to the bottom in fast water over stones and gravel: fish on the bottom, with a weight that holds the bait in the current."
+      },
+      {
+        "mk": "Најактивна е навечер и ноќе.",
+        "en": "It is most active in the evening and at night."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња, сирење, пченка, тесто.",
+        "en": "Worms, maggots, cheese, sweet corn, dough."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во главните реки, на делови со брза струја и камено и чакалесто дно.",
+        "en": "It lives in the main rivers, in stretches with a fast current and a stone and gravel bottom."
+      },
+      {
+        "mk": "Пораснува до околу 65 cm.",
+        "en": "It grows to about 65 cm."
+      },
+      {
+        "mk": "Ја има само во сливовите на Вардар, Бистрица (Алјакмон) и Пиниос, во Македонија и Грција.",
+        "en": "It lives only in the Vardar, Aliakmon and Pinios basins, in Macedonia and Greece."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbus macedonicus",
+        "url": "https://www.fishbase.se/summary/Barbus-macedonicus.html"
+      }
+    ]
+  },
+  "Barbus prespensis": {
+    "funFacts": [
+      {
+        "mk": "Живее само во басенот на Преспанските Езера.",
+        "en": "It lives only in the Prespa lakes basin."
+      },
+      {
+        "mk": "Во езерото се храни главно со ситни ракчиња (Gammarus), а во потоците со инсекти.",
+        "en": "In the lake it feeds mainly on small crustaceans (Gammarus), in streams on insects."
+      },
+      {
+        "mk": "Се мрести во притоките или на чакалестите плажи на езерото, особено покрај подводни извори.",
+        "en": "It spawns in tributaries or on gravel beaches in the lake, especially near underwater springs."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbus prespensis",
+        "url": "https://www.fishbase.se/summary/Barbus-prespensis.html"
+      }
+    ]
+  },
+  "Barbus rebeli": {
+    "tips": [
+      {
+        "mk": "Мала мрена од бистрите реки и потоци: се лови со тенок прибор на дно, во брзаците.",
+        "en": "A small barbel of clear rivers and streams: fish on the bottom in riffles, with light tackle."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња.",
+        "en": "Worms, maggots."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Сака бистра вода и брзаци; ја има и во Охридското Езеро.",
+        "en": "It likes clear water and riffles, and also lives in Lake Ohrid."
+      },
+      {
+        "mk": "Популациите се многу расцепкани, а многу мали потоци каде што живее пресушуваат лете.",
+        "en": "Its populations are badly fragmented, and many of the small streams where it lives dry up in summer."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbus rebeli",
+        "url": "https://www.fishbase.se/summary/Barbus-rebeli.html"
+      }
+    ]
+  },
+  "Barbus strumicae": {
+    "tips": [
+      {
+        "mk": "Мала мрена од бистрите реки и потоци: се лови со тенок прибор на дно, во брзаците.",
+        "en": "A small barbel of clear rivers and streams: fish on the bottom in riffles, with light tackle."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња.",
+        "en": "Worms, maggots."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во потоци и реки со бистра вода и брзаци.",
+        "en": "It lives in streams and rivers with clear water and riffles."
+      },
+      {
+        "mk": "Полова зрелост достигнува на 2 години.",
+        "en": "It becomes mature at 2 years old."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Barbus strumicae",
+        "url": "https://www.fishbase.se/summary/Barbus-strumicae.html"
+      }
+    ]
   },
   "Carassius carassius": {
-    "image": "CarassiusCarassius8 (cropped).JPG"
+    "image": "CarassiusCarassius8 (cropped).JPG",
+    "tips": [
+      {
+        "mk": "Ловете со пловка во мирна вода полна со растенија.",
+        "en": "Fish with a float in still water full of plants."
+      },
+      {
+        "mk": "Каснувањето е нежно, па користете тенок најлон, мала јадица и чувствителна пловка.",
+        "en": "Bites are delicate, so use a thin line, a small hook and a sensitive float."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, глисти, тесто, леб.",
+        "en": "Maggots, worms, dough, bread."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Преживува многу топла вода, а и многу малку кислород, и лете и под мраз.",
+        "en": "It survives very warm water and very low oxygen, both in summer and under ice."
+      },
+      {
+        "mk": "Во сушни периоди и во зима се закопува во тињата.",
+        "en": "In droughts and in winter it burrows into the mud."
+      },
+      {
+        "mk": "Може да порасне до 64 cm и 3 kg и да живее до 10 години.",
+        "en": "It can grow to 64 cm and 3 kg and live up to 10 years."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Carassius carassius",
+        "url": "https://www.fishbase.se/summary/Carassius-carassius.html"
+      }
+    ]
   },
   "Carassius gibelio": {
-    "image": "Carassius gibelio 2008 G1.jpg"
+    "image": "Carassius gibelio 2008 G1.jpg",
+    "tips": [
+      {
+        "mk": "Лесно се лови со пловка, во мирна вода покрај трска и растенија.",
+        "en": "Easy to catch with a float in still water near reeds and plants."
+      },
+      {
+        "mk": "Има мала уста, па користете мала јадица.",
+        "en": "It has a small mouth, so use a small hook."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, глисти, тесто, леб, пченка.",
+        "en": "Maggots, worms, dough, bread, sweet corn."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да се размножува од неоплодени икри (гиногенеза).",
+        "en": "It can reproduce from unfertilised eggs (gynogenesis)."
+      },
+      {
+        "mk": "Поднесува многу малку кислород и загадена вода.",
+        "en": "It tolerates very low oxygen and polluted water."
+      },
+      {
+        "mk": "Тоа е дивата, источноевропска форма на златната рипка.",
+        "en": "It is the wild, Eastern European form of the goldfish."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Carassius gibelio",
+        "url": "https://www.fishbase.se/summary/Carassius-gibelio.html"
+      }
+    ]
+  },
+  "Chondrostoma ohridanus": {},
+  "Chondrostoma prespense": {
+    "funFacts": [
+      {
+        "mk": "Живее во Преспанското Езеро, а за мрестење влегува во притоките.",
+        "en": "It lives in Lake Prespa and enters the tributaries to spawn."
+      },
+      {
+        "mk": "Мигрира исклучиво ноќе.",
+        "en": "It migrates only at night."
+      },
+      {
+        "mk": "Се храни со водни растенија, безрбетници и алги.",
+        "en": "It feeds on water plants, invertebrates and algae."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Chondrostoma prespense",
+        "url": "https://www.fishbase.se/summary/Chondrostoma-prespense.html"
+      }
+    ]
+  },
+  "Chondrostoma vardarense": {
+    "tips": [
+      {
+        "mk": "Се држи во брза вода над камено дно: ловете на дно или со пловка што ја носи струјата.",
+        "en": "It keeps to fast water over a stony bottom: fish on the bottom or with a float drifting in the current."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, глисти, леб, тесто.",
+        "en": "Maggots, worms, bread, dough."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во реки и потоци со камено дно и брза до силна струја.",
+        "en": "It lives in rivers and streams with a stony bottom and a fast to strong current."
+      },
+      {
+        "mk": "За мрестење оди во притоките, во брзаци меѓу камења.",
+        "en": "To spawn it moves into tributaries, to riffles among stones."
+      },
+      {
+        "mk": "Пораснува до околу 35 cm.",
+        "en": "It grows to about 35 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Chondrostoma vardarense",
+        "url": "https://www.fishbase.se/summary/Chondrostoma-vardarense.html"
+      }
+    ]
+  },
+  "Cobitis meridionalis": {
+    "funFacts": [
+      {
+        "mk": "Живее само во Преспанското Езеро.",
+        "en": "It lives only in Lake Prespa."
+      },
+      {
+        "mk": "При мрестењето мажјакот се обвиткува како прстен околу телото на женката.",
+        "en": "When spawning, the male wraps itself in a ring around the female's body."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Cobitis meridionalis",
+        "url": "https://www.fishbase.se/summary/Cobitis-meridionalis.html"
+      }
+    ]
+  },
+  "Cobitis ohridana": {
+    "funFacts": [
+      {
+        "mk": "Живее во реки и езера, на ситен до тињест песок и меѓу алги.",
+        "en": "It lives in rivers and lakes, on fine to muddy sand and among algae."
+      },
+      {
+        "mk": "Пораснува до околу 7 cm.",
+        "en": "It grows to about 7 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Cobitis ohridana",
+        "url": "https://www.fishbase.se/summary/Cobitis-ohridana.html"
+      }
+    ]
   },
   "Cobitis vardarensis": {
-    "image": "Loach (Cobitis vardarensis).jpg"
+    "en": "Vardar spined loach",
+    "funFacts": [
+      {
+        "mk": "Живее во мирни води, на тињесто дно: езера, ракави и мочуришта.",
+        "en": "It lives in still waters with a muddy bottom: lakes, oxbows and marshes."
+      },
+      {
+        "mk": "На терен не може да се разликува од некои сродни видови; разликата се гледа само во хромозомите.",
+        "en": "In the field it can't be told apart from some related species; the difference shows only in its chromosomes."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Cobitis vardarensis",
+        "url": "https://www.fishbase.se/summary/Cobitis-vardarensis.html"
+      }
+    ]
   },
   "Ctenopharyngodon idella": {
-    "image": "Ctenopharyngodon idella 2.jpg"
+    "image": "Ctenopharyngodon idella 2.jpg",
+    "tips": [
+      {
+        "mk": "Се храни со растенија, па се држи покрај подводната вегетација.",
+        "en": "It eats plants, so it stays near underwater vegetation."
+      },
+      {
+        "mk": "Претпазлив е и многу силен: ловете тивко и со цврст прибор.",
+        "en": "It is wary and very strong: fish quietly and with sturdy tackle."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Пченка, леб, тесто, бојли, свежи лисја или трева.",
+        "en": "Sweet corn, bread, dough, boilies, fresh leaves or grass."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Се храни главно со водни растенија, па се користи за чистење на канали, рибници и акумулации од вегетација.",
+        "en": "It feeds mainly on water plants, so it is used to clear vegetation from canals, fish ponds and reservoirs."
+      },
+      {
+        "mk": "Може да порасне до 150 cm и 45 kg.",
+        "en": "It can grow to 150 cm and 45 kg."
+      },
+      {
+        "mk": "Икрите пловат низводно додека се развиваат и се изведуваат за 2–3 дена.",
+        "en": "Its eggs drift downstream as they develop and hatch in 2–3 days."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Ctenopharyngodon idella",
+        "url": "https://www.fishbase.se/summary/Ctenopharyngodon-idella.html"
+      }
+    ]
   },
   "Cyprinus carpio": {
-    "image": "Cyprinus carpio.jpeg"
+    "image": "Cyprinus carpio.jpeg",
+    "tips": [
+      {
+        "mk": "Најактивен е во самрак и во зори. Барајте го во топла, мирна вода со растенија и меко дно.",
+        "en": "Most active at dusk and dawn. Look for it in warm, still water with plants and a soft bottom."
+      },
+      {
+        "mk": "Претпазлив е: ставете прихрана на едно место и ловете тивко, на дно или со пловка.",
+        "en": "It is cautious: bait one spot and fish quietly, on the bottom or with a float."
+      },
+      {
+        "mk": "Крупниот крап е многу силен: користете цврст прибор и дајте му линија кога бега.",
+        "en": "Big carp are very strong: use sturdy tackle and give line when it runs."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Пченка, бојли, тесто, глисти, леб; прихрана со пченка или пелети.",
+        "en": "Sweet corn, boilies, dough, worms, bread; groundbait with corn or pellets."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 129 cm и над 40 kg, и да живее до 38 години.",
+        "en": "It can grow to 129 cm and over 40 kg, and live up to 38 years."
+      },
+      {
+        "mk": "Понекогаш цица инсекти од површината на водата.",
+        "en": "It sometimes sucks in insects from the water surface."
+      },
+      {
+        "mk": "Дивите популации се намалуваат поради регулацијата на реките и мешањето со одгледуван крап.",
+        "en": "Wild populations are declining because of river regulation and interbreeding with farmed carp."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Cyprinus carpio",
+        "url": "https://www.fishbase.se/summary/Cyprinus-carpio.html"
+      }
+    ]
   },
   "Esox lucius": {
-    "image": "Esox Lucius.JPG"
+    "image": "Esox Lucius.JPG",
+    "tips": [
+      {
+        "mk": "Чека во заседа покрај трска, водни растенија и потопени гранки, во бистра вода.",
+        "en": "It waits in ambush next to reeds, water plants and sunken branches, in clear water."
+      },
+      {
+        "mk": "Има остри заби: ставете челична сајла (предводник) пред мамката.",
+        "en": "It has sharp teeth: put a steel leader in front of the lure."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Блинкери, воблери, силиконски мамки, мала жива или мртва риба.",
+        "en": "Spoons and spinners, wobblers, soft plastic lures, small live or dead fish."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 137 cm и 28,4 kg и да живее до 30 години.",
+        "en": "It can grow to 137 cm and 28.4 kg and live up to 30 years."
+      },
+      {
+        "mk": "Другите риби го избегнуваат изметот на штуката, бидејќи содржи мириси што ги предупредуваат на опасност. Затоа штуката го остава подалеку од местата каде што ловува.",
+        "en": "Other fish avoid pike droppings, because they carry alarm scents. So the pike leaves them away from where it hunts."
+      },
+      {
+        "mk": "Големите штуки често јадат и помали штуки.",
+        "en": "Big pike often eat smaller pike."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Esox lucius",
+        "url": "https://www.fishbase.se/summary/Esox-lucius.html"
+      }
+    ]
   },
   "Eudontomyzon stankokaramani": {
-    "image": "Eudontomyzon stankokaramani ammocoete.jpg"
+    "en": "Drin brook lamprey",
+    "image": "Eudontomyzon stankokaramani ammocoete.jpg",
+    "funFacts": [
+      {
+        "mk": "Змиорките немаат вилици. Овој вид, за разлика од некои други змиорки, не е паразит.",
+        "en": "Lampreys have no jaws. Unlike some other lampreys, this species is not a parasite."
+      },
+      {
+        "mk": "Ларвите живеат во песок или глина богати со органски остатоци, а возрасните во бистри потоци богати со кислород.",
+        "en": "Its larvae live in sand or clay rich in organic debris; the adults live in clear, oxygen-rich brooks."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Eudontomyzon stankokaramani",
+        "url": "https://www.fishbase.se/summary/Eudontomyzon-stankokaramani.html"
+      }
+    ]
+  },
+  "Gobio bulgaricus": {
+    "funFacts": [
+      {
+        "mk": "Живее во потоци и реки со умерена струја, најчесто на песокливо дно.",
+        "en": "It lives in streams and rivers with a moderate current, usually on a sandy bottom."
+      },
+      {
+        "mk": "Пораснува до околу 9 cm.",
+        "en": "It grows to about 9 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Gobio bulgaricus",
+        "url": "https://www.fishbase.se/summary/Gobio-bulgaricus.html"
+      }
+    ]
+  },
+  "Gobio ohridanus": {
+    "funFacts": [
+      {
+        "mk": "Живее во групи во Охридското Езеро, на песокливо до каменесто дно.",
+        "en": "It lives in groups in Lake Ohrid, on sandy to pebbly bottoms."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Gobio ohridanus",
+        "url": "https://www.fishbase.se/summary/Gobio-ohridanus.html"
+      }
+    ]
   },
   "Gymnocephalus cernua": {
-    "image": "Gymnocephalus cernuus Pärnu River Estonia 2010-01-06.jpg"
+    "image": "Gymnocephalus cernuus Pärnu River Estonia 2010-01-06.jpg",
+    "tips": [
+      {
+        "mk": "Живее на дното, во групи: ловете на дно, со парче глиста.",
+        "en": "It lives on the bottom, in groups: fish on the bottom with a piece of worm."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња.",
+        "en": "Worms, maggots."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да се храни и во целосна темнина, бидејќи со каналите на главата многу точно ги чувствува движењата во водата.",
+        "en": "It can feed even in total darkness, because the canals on its head sense movement in the water very precisely."
+      },
+      {
+        "mk": "Пораснува до 29 cm и живее до 10 години.",
+        "en": "It grows to 29 cm and lives up to 10 years."
+      },
+      {
+        "mk": "Во повеќе земји каде што е внесен, им штети на другите видови.",
+        "en": "In several countries where it was introduced, it harms other species."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Gymnocephalus cernua",
+        "url": "https://www.fishbase.se/summary/Gymnocephalus-cernua.html"
+      }
+    ]
   },
   "Hypophthalmichthys molitrix": {
-    "image": "Silver Carp Adult (Hypophthalmichthys molitrix).jpg"
+    "image": "Silver Carp Adult (Hypophthalmichthys molitrix).jpg",
+    "tips": [
+      {
+        "mk": "Се храни со планктон што го филтрира од водата, па ретко зема обични мамки.",
+        "en": "It filters plankton from the water, so it rarely takes ordinary baits."
+      },
+      {
+        "mk": "Риболовците користат ситна прихрана што прави облак во водата, со мали јадици во неа, на средна длабочина или под површината.",
+        "en": "Anglers use a fine groundbait that clouds the water, with small hooks in it, at mid-depth or just under the surface."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Ситни смеси за толстолобик што се распаѓаат во облак.",
+        "en": "Fine silver/bighead carp mixes that break up into a cloud."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да скокне над препреки високи до 1 m.",
+        "en": "It can leap over obstacles up to 1 m high."
+      },
+      {
+        "mk": "Возрасните се хранат само со фитопланктон (ситни алги) што го филтрираат од водата.",
+        "en": "Adults feed only on phytoplankton (tiny algae) that they filter from the water."
+      },
+      {
+        "mk": "Може да порасне до 120 cm и 50 kg.",
+        "en": "It can grow to 120 cm and 50 kg."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Hypophthalmichthys molitrix",
+        "url": "https://www.fishbase.se/summary/Hypophthalmichthys-molitrix.html"
+      }
+    ]
+  },
+  "Hypophthalmichthys nobilis": {
+    "tips": [
+      {
+        "mk": "Се храни со планктон што го филтрира од водата, па ретко зема обични мамки.",
+        "en": "It filters plankton from the water, so it rarely takes ordinary baits."
+      },
+      {
+        "mk": "Риболовците користат ситна прихрана што прави облак во водата, со мали јадици во неа, на средна длабочина или под површината.",
+        "en": "Anglers use a fine groundbait that clouds the water, with small hooks in it, at mid-depth or just under the surface."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Ситни смеси за толстолобик што се распаѓаат во облак.",
+        "en": "Fine silver/bighead carp mixes that break up into a cloud."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Цел живот се храни со зоопланктон и алги.",
+        "en": "It feeds on zooplankton and algae all its life."
+      },
+      {
+        "mk": "Се мрести во длабока, матна и топла вода со силна струја, за време на поплави.",
+        "en": "It spawns in deep, muddy, warm water with a strong current, during floods."
+      },
+      {
+        "mk": "Може да порасне до 146 cm и 40 kg.",
+        "en": "It can grow to 146 cm and 40 kg."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Hypophthalmichthys nobilis",
+        "url": "https://www.fishbase.se/summary/Hypophthalmichthys-nobilis.html"
+      }
+    ]
   },
   "Lepomis gibbosus": {
-    "image": "Lepomis gibbosus PAQ.jpg"
+    "image": "Lepomis gibbosus PAQ.jpg",
+    "tips": [
+      {
+        "mk": "Лесно каснува, па е добра риба за деца и почетници: пловка, мала јадица, плитко покрај брегот.",
+        "en": "It bites readily, so it is a good fish for children and beginners: a float, a small hook, shallow water near the bank."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Парче глиста, црвчиња, мали вештачки мамки.",
+        "en": "A piece of worm, maggots, small lures."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Во Европа е внесен вид.",
+        "en": "It is an introduced species in Europe."
+      },
+      {
+        "mk": "Возрасните ретко се во јата: живеат во парови или во групи од 3–4.",
+        "en": "Adults rarely form shoals: they live in pairs or in groups of 3–4."
+      },
+      {
+        "mk": "Јаде и икри од други риби.",
+        "en": "It also eats the eggs of other fish."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Lepomis gibbosus",
+        "url": "https://www.fishbase.se/summary/Lepomis-gibbosus.html"
+      }
+    ]
+  },
+  "Pachychilon macedonicum": {
+    "funFacts": [
+      {
+        "mk": "Живее во мочуришта, езера и бавни води во рамнините.",
+        "en": "It lives in marshes, lakes and slow lowland waters."
+      },
+      {
+        "mk": "Ја има само во Македонија и Грција.",
+        "en": "It lives only in Macedonia and Greece."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Pachychilon macedonicum",
+        "url": "https://www.fishbase.se/summary/Pachychilon-macedonicum.html"
+      }
+    ]
   },
   "Pachychilon pictum": {
-    "image": "Pachychilon pictum.jpg"
+    "image": "Pachychilon pictum.jpg",
+    "tips": [
+      {
+        "mk": "Живее во јата покрај брегот: ловете со лесна пловка и мала јадица.",
+        "en": "It lives in shoals near the shore: fish with a light float and a small hook."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, леб, тесто.",
+        "en": "Maggots, bread, dough."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во јата покрај бреговите на езерата и во бавните делови на реките.",
+        "en": "It lives in shoals along lake shores and in slow stretches of rivers."
+      },
+      {
+        "mk": "Се храни со мала риба, безрбетници, ларви на инсекти и обраст.",
+        "en": "It feeds on small fish, invertebrates, insect larvae and periphyton."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Pachychilon pictum",
+        "url": "https://www.fishbase.se/summary/Pachychilon-pictum.html"
+      }
+    ]
+  },
+  "Pelasgus minutus": {
+    "funFacts": [
+      {
+        "mk": "Пораснува до околу 5 cm, а може да живее до 6 години.",
+        "en": "It grows to about 5 cm and can live up to 6 years."
+      },
+      {
+        "mk": "Живее во плитка, мирна вода во езера и потоци.",
+        "en": "It lives in shallow, still water in lakes and brooks."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „ранлив“ (VU).",
+        "en": "On the IUCN Red List the species is “vulnerable” (VU)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Pelasgus minutus",
+        "url": "https://www.fishbase.se/summary/Pelasgus-minutus.html"
+      }
+    ]
+  },
+  "Pelasgus prespensis": {
+    "funFacts": [
+      {
+        "mk": "Живее во мирна вода покрај брегот на Преспанските Езера, меѓу водни растенија.",
+        "en": "It lives in still water along the shores of the Prespa lakes, among water plants."
+      },
+      {
+        "mk": "Бројноста ѝ опадна поради внесените туѓи видови, како амурчето и платичето.",
+        "en": "Its numbers have fallen because of introduced species such as the topmouth gudgeon and the bitterling."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Pelasgus prespensis",
+        "url": "https://www.fishbase.se/summary/Pelasgus-prespensis.html"
+      }
+    ]
   },
   "Perca fluviatilis": {
-    "image": "Perca fluviatilis 2008 G1.jpg"
+    "image": "Perca fluviatilis 2008 G1.jpg",
+    "tips": [
+      {
+        "mk": "Живее во јата: каде што ќе фатите еден, обично има повеќе.",
+        "en": "It lives in shoals: where you catch one, there are usually more."
+      },
+      {
+        "mk": "Ловува преку ден, а најмногу при изгрејсонце и зајдисонце.",
+        "en": "It hunts by day, most of all at sunrise and sunset."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња, мали блинкери и силиконски мамки, мала риба.",
+        "en": "Worms, maggots, small spinners and soft plastic lures, small fish."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Икрите ги несе во долги бели ленти, долги и до 1 m, закачени за потопени предмети.",
+        "en": "It lays its eggs in long white ribbons, up to 1 m long, draped over sunken objects."
+      },
+      {
+        "mk": "Може да порасне до 60 cm и 4,8 kg и да живее до 22 години.",
+        "en": "It can grow to 60 cm and 4.8 kg and live up to 22 years."
+      },
+      {
+        "mk": "Месото е одлично и нема многу коски.",
+        "en": "Its meat is excellent and not very bony."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Perca fluviatilis",
+        "url": "https://www.fishbase.se/summary/Perca-fluviatilis.html"
+      }
+    ]
   },
   "Phoxinus lumaireul": {
-    "image": "Phoxinus lumaireul (cropped).jpg"
+    "image": "Phoxinus lumaireul (cropped).jpg",
+    "funFacts": [
+      {
+        "mk": "Живее во студена вода богата со кислород, најчесто заедно со пастрмки.",
+        "en": "It lives in cold, oxygen-rich water, usually together with trout."
+      },
+      {
+        "mk": "Важна лабораториска риба за истражување на сетилата кај рибите.",
+        "en": "An important laboratory fish for research on the senses of fish."
+      },
+      {
+        "mk": "Мажјаците и женките се во одделни јата и на мрестилиштето пристигнуваат во различно време.",
+        "en": "Males and females form separate shoals and arrive at the spawning site at different times."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Phoxinus lumaireul",
+        "url": "https://www.fishbase.se/summary/Phoxinus-lumaireul.html"
+      }
+    ]
   },
   "Phoxinus phoxinus": {
-    "image": "Vairon WIKI800px (cropped).JPG"
+    "en": "Eurasian minnow",
+    "image": "Vairon WIKI800px (cropped).JPG",
+    "funFacts": [
+      {
+        "mk": "Живее во студена вода богата со кислород, најчесто заедно со пастрмки.",
+        "en": "It lives in cold, oxygen-rich water, usually together with trout."
+      },
+      {
+        "mk": "Важна лабораториска риба за истражување на сетилата кај рибите.",
+        "en": "An important laboratory fish for research on the senses of fish."
+      },
+      {
+        "mk": "Мажјаците и женките се во одделни јата и на мрестилиштето пристигнуваат во различно време.",
+        "en": "Males and females form separate shoals and arrive at the spawning site at different times."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Phoxinus phoxinus",
+        "url": "https://www.fishbase.se/summary/Phoxinus-phoxinus.html"
+      }
+    ]
   },
   "Pseudorasbora parva": {
-    "image": "Pseudorasbora parva.jpg"
+    "image": "Pseudorasbora parva.jpg",
+    "funFacts": [
+      {
+        "mk": "Потекнува од Источна Азија; во Европа е внесен вид кој им конкурира на младите од домашните риби.",
+        "en": "It comes from East Asia; in Europe it is an introduced species that competes with the young of native fish."
+      },
+      {
+        "mk": "Мажјакот го чисти местото за мрестење и ги чува икрите.",
+        "en": "The male cleans the spawning site and guards the eggs."
+      },
+      {
+        "mk": "Женките се мрестат по 3–4 пати годишно.",
+        "en": "Females spawn 3–4 times a year."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Pseudorasbora parva",
+        "url": "https://www.fishbase.se/summary/Pseudorasbora-parva.html"
+      }
+    ]
   },
   "Rhodeus amarus": {
-    "image": "Rhodeus amarus 2008 G1.jpg"
+    "image": "Rhodeus amarus 2008 G1.jpg",
+    "funFacts": [
+      {
+        "mk": "Женката ги несе икрите во школка, а мажјакот ги оплодува со млечот што школката го вовлекува со водата.",
+        "en": "The female lays her eggs inside a freshwater mussel, and the male fertilises them with milt that the mussel draws in with the water."
+      },
+      {
+        "mk": "Порано се користело за тестови за бременост.",
+        "en": "It was once used for pregnancy tests."
+      },
+      {
+        "mk": "Повеќето живеат само до првото мрестење.",
+        "en": "Most live only until they first spawn."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Rhodeus amarus",
+        "url": "https://www.fishbase.se/summary/Rhodeus-amarus.html"
+      }
+    ]
   },
+  "Rhodeus meridionalis": {
+    "funFacts": [
+      {
+        "mk": "Живее во средни и големи реки и во мирни води: езерца, езера и канали.",
+        "en": "It lives in medium and large rivers and in still waters: ponds, lakes and canals."
+      },
+      {
+        "mk": "Ја има само во реките на Егејскиот слив, од Вардар до Пиниос.",
+        "en": "It lives only in the Aegean basin, from the Vardar to the Pinios."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Rhodeus meridionalis",
+        "url": "https://www.fishbase.se/summary/Rhodeus-meridionalis.html"
+      }
+    ]
+  },
+  "Romanogobio elimeius": {
+    "funFacts": [
+      {
+        "mk": "Живее во главните текови на големите реки, во подлабока вода со песокливо дно, близу брзаци.",
+        "en": "It lives in the main channels of large rivers, in fairly deep water with a sandy bottom, near riffles."
+      },
+      {
+        "mk": "Ја има само во Македонија и Грција, од Вардар до Пиниос.",
+        "en": "It lives only in Macedonia and Greece, from the Vardar to the Pinios."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Romanogobio elimeius",
+        "url": "https://www.fishbase.se/summary/Romanogobio-elimeius.html"
+      }
+    ]
+  },
+  "Rutilus ohridanus": {},
+  "Rutilus prespensis": {},
   "Rutilus rutilus": {
     "image": {
       "file": "Rutilus rutilus by Algirdas cropped.jpg",
       "author": "Algirdas, George Chernilevsky"
-    }
+    },
+    "tips": [
+      {
+        "mk": "Живее во јата: ловете со пловка, тенок најлон и мала јадица.",
+        "en": "It lives in shoals: fish with a float, a thin line and a small hook."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, леб, тесто, пченка, глисти.",
+        "en": "Maggots, bread, dough, sweet corn, worms."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 50 cm и 1,8 kg и да живее до 14 години.",
+        "en": "It can grow to 50 cm and 1.8 kg and live up to 14 years."
+      },
+      {
+        "mk": "Кога е потребно, се префрла од храна на дното на планктон, на пример за да избегне грабливи риби.",
+        "en": "When needed it switches from food on the bottom to plankton, for example to avoid predators."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Rutilus rutilus",
+        "url": "https://www.fishbase.se/summary/Rutilus-rutilus.html"
+      }
+    ]
+  },
+  "Sabanejewia balcanica": {
+    "en": "Balkan spined loach",
+    "funFacts": [
+      {
+        "mk": "Преку ден се закопува во песок, понекогаш во чакал.",
+        "en": "By day it burrows into sand, sometimes into gravel."
+      },
+      {
+        "mk": "Сака бистри потоци во ридските предели.",
+        "en": "It likes clear streams in hilly country."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Sabanejewia balcanica",
+        "url": "https://www.fishbase.se/summary/Sabanejewia-balcanica.html"
+      }
+    ]
   },
   "Salmo farioides": {
-    "image": "Salmo farioides DSC 0215.jpg"
+    "image": "Salmo farioides DSC 0215.jpg",
+    "tips": [
+      {
+        "mk": "Многу е плашлива: доаѓајте тивко, по можност низводно, и не фрлајте сенка врз водата.",
+        "en": "Very shy: approach quietly, ideally from downstream, and don't let your shadow fall on the water."
+      },
+      {
+        "mk": "Барајте ја во брзаци, под мали водопади и во вирови зад камења.",
+        "en": "Look for it in rapids, below small waterfalls and in pools behind rocks."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Вештачки мушички (мушичарење), мали блинкери и воблери, глисти.",
+        "en": "Artificial flies (fly fishing), small spinners and wobblers, worms."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Сака брза, бистра и студена вода, брзаци и мали водопади.",
+        "en": "It likes fast, clear, cold water, rapids and small waterfalls."
+      },
+      {
+        "mk": "Пораснува до најмалку 30 cm.",
+        "en": "It grows to at least 30 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo farioides",
+        "url": "https://www.fishbase.se/summary/Salmo-farioides.html"
+      }
+    ]
   },
   "Salmo letnica": {
-    "image": "Ohridforelle 1.jpg"
+    "image": "Ohridforelle 1.jpg",
+    "funFacts": [
+      {
+        "mk": "Возрасните се хранат со зоопланктон и со риба, главно со плашица.",
+        "en": "Adults feed on zooplankton and fish, mainly the Ohrid bleak (плашица)."
+      },
+      {
+        "mk": "Полова зрелост достигнува дури на 5–6 години.",
+        "en": "It only becomes mature at 5–6 years old."
+      },
+      {
+        "mk": "Може да порасне до 76 cm и 6,5 kg.",
+        "en": "It can grow to 76 cm and 6.5 kg."
+      },
+      {
+        "mk": "Ја загрозуваат уништувањето на живеалиштата, прекумерниот улов и внесувањето нови видови.",
+        "en": "It is threatened by habitat destruction, overfishing and the introduction of new species."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo letnica",
+        "url": "https://www.fishbase.se/summary/Salmo-letnica.html"
+      }
+    ]
   },
   "Salmo macedonicus": {
-    "image": "Salmo macedonicus.jpg"
+    "image": "Salmo macedonicus.jpg",
+    "tips": [
+      {
+        "mk": "Многу е плашлива: доаѓајте тивко, по можност низводно, и не фрлајте сенка врз водата.",
+        "en": "Very shy: approach quietly, ideally from downstream, and don't let your shadow fall on the water."
+      },
+      {
+        "mk": "Барајте ја во брзаци, под мали водопади и во вирови зад камења.",
+        "en": "Look for it in rapids, below small waterfalls and in pools behind rocks."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Вештачки мушички (мушичарење), мали блинкери и воблери, глисти.",
+        "en": "Artificial flies (fly fishing), small spinners and wobblers, worms."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Ја има само во Македонија, во горниот слив на Вардар (без сливот на Црна Река).",
+        "en": "It lives only in Macedonia, in the upper Vardar basin (except the Crna Reka system)."
+      },
+      {
+        "mk": "Сака делови со брза вода, брзаци и мали водопади.",
+        "en": "It likes stretches with fast water, rapids and small waterfalls."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo macedonicus",
+        "url": "https://www.fishbase.se/summary/Salmo-macedonicus.html"
+      }
+    ]
   },
   "Salmo ohridanus": {
-    "image": "Belvica - panoramio.jpg"
+    "image": "Belvica - panoramio.jpg",
+    "funFacts": [
+      {
+        "mk": "Ја има само во Охридското Езеро.",
+        "en": "It lives only in Lake Ohrid."
+      },
+      {
+        "mk": "Лете живее од површината до околу 20 m длабочина, а зиме покрај брегот.",
+        "en": "In summer it lives from the surface down to about 20 m, in winter near the shore."
+      },
+      {
+        "mk": "Икрите се изведуваат за 45–55 дена, на 10 °C.",
+        "en": "Its eggs hatch in 45–55 days at 10 °C."
+      },
+      {
+        "mk": "Може да живее до 12 години.",
+        "en": "It can live up to 12 years."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo ohridanus",
+        "url": "https://www.fishbase.se/summary/Salmo-ohridanus.html"
+      }
+    ]
   },
   "Salmo pelagonicus": {
-    "image": "Salmo pelagonicus.jpg"
+    "image": "Salmo pelagonicus.jpg",
+    "tips": [
+      {
+        "mk": "Многу е плашлива: доаѓајте тивко, по можност низводно, и не фрлајте сенка врз водата.",
+        "en": "Very shy: approach quietly, ideally from downstream, and don't let your shadow fall on the water."
+      },
+      {
+        "mk": "Барајте ја во брзаци, под мали водопади и во вирови зад камења.",
+        "en": "Look for it in rapids, below small waterfalls and in pools behind rocks."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Вештачки мушички (мушичарење), мали блинкери и воблери, глисти.",
+        "en": "Artificial flies (fly fishing), small spinners and wobblers, worms."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во планински потоци во сливот на Црна Река и во горниот слив на Бистрица (Алјакмон), во Македонија и Грција.",
+        "en": "It lives in mountain streams of the Crna Reka system and the upper Aliakmon basin, in Macedonia and Greece."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo pelagonicus",
+        "url": "https://www.fishbase.se/summary/Salmo-pelagonicus.html"
+      }
+    ]
   },
   "Salmo peristericus": {
-    "image": "Salmo peristericus 53643693 (cropped).jpg"
+    "image": "Salmo peristericus 53643693 (cropped).jpg",
+    "funFacts": [
+      {
+        "mk": "Живее во потоците на басенот на Преспанското Езеро. Се смета дека порано живеела во езерото, а во потоците влегувала само за мрестење.",
+        "en": "It lives in the streams of the Lake Prespa basin. It is thought to have once lived in the lake, entering the streams only to spawn."
+      },
+      {
+        "mk": "Поради промените на коритата и зафаќањето вода, денес ја има само во горните текови, можеби само во два потока.",
+        "en": "Because of changes to the stream beds and water abstraction, it now lives only in the upper reaches, perhaps in just two streams."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Salmo peristericus",
+        "url": "https://www.fishbase.se/summary/Salmo-peristericus.html"
+      }
+    ]
   },
   "Sander lucioperca": {
-    "image": "Sander lucioperca 1.jpg"
+    "image": "Sander lucioperca 1.jpg",
+    "tips": [
+      {
+        "mk": "Сака матна вода во големи реки и езера; често ловува во самрак и ноќе.",
+        "en": "It likes murky water in big rivers and lakes and often hunts at dusk and at night."
+      },
+      {
+        "mk": "Водете ја мамката бавно, близу дното.",
+        "en": "Work the lure slowly, close to the bottom."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Силиконски мамки на џиг-глава, воблери, мала жива или мртва риба.",
+        "en": "Soft plastic lures on a jig head, wobblers, small live or dead fish."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 100 cm и 20 kg.",
+        "en": "It can grow to 100 cm and 20 kg."
+      },
+      {
+        "mk": "Добро ги памети местата: се враќа на истите мрестилишта, а забележани се преселби и до 250 km.",
+        "en": "It has a strong homing instinct, returning to the same spawning grounds; migrations of up to 250 km have been recorded."
+      },
+      {
+        "mk": "Се мрести во парови, во зори или ноќе.",
+        "en": "It spawns in pairs, at dawn or at night."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Sander lucioperca",
+        "url": "https://www.fishbase.se/summary/Sander-lucioperca.html"
+      }
+    ]
   },
   "Scardinius erythrophthalmus": {
-    "image": "Scardinius erythropthalmus 2009 G1.jpg"
+    "image": "Scardinius erythropthalmus 2009 G1.jpg",
+    "tips": [
+      {
+        "mk": "Често се храни близу површината: ловете плитко, со пловка, покрај трска.",
+        "en": "It often feeds near the surface: fish shallow with a float, next to reeds."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Леб, пченка, црвчиња, инсекти.",
+        "en": "Bread, sweet corn, maggots, insects."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Јаде инсекти што паѓаат во водата, планктон и растенија.",
+        "en": "It eats insects that fall into the water, plankton and plants."
+      },
+      {
+        "mk": "Може да живее до 19 години.",
+        "en": "It can live up to 19 years."
+      },
+      {
+        "mk": "Мажјаците ги бркаат женките во густите растенија, често со многу прскање, за да се мрестат.",
+        "en": "Males chase the females into dense plants to spawn, often with a lot of splashing."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Scardinius erythrophthalmus",
+        "url": "https://www.fishbase.se/summary/Scardinius-erythrophthalmus.html"
+      }
+    ]
+  },
+  "Scardinius knezevici": {
+    "funFacts": [
+      {
+        "mk": "Живее во длабоки вирови и канали во мочуриштата покрај езерата.",
+        "en": "It lives in deep pools and channels in the marshes along the lakes."
+      },
+      {
+        "mk": "Ја има само во Охридското и во Скадарското Езеро.",
+        "en": "It lives only in Lake Ohrid and Lake Skadar."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „ранлив“ (VU).",
+        "en": "On the IUCN Red List the species is “vulnerable” (VU)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Scardinius knezevici",
+        "url": "https://www.fishbase.se/summary/Scardinius-knezevici.html"
+      }
+    ]
   },
   "Silurus glanis": {
     "image": {
       "file": "Silurus glanis 02.jpg",
       "author": "Dieter Florian"
-    }
+    },
+    "tips": [
+      {
+        "mk": "Ноќен ловец е: најдобро каснува навечер и ноќе, во длабоки вирови, под брегови и покрај потопени дрва.",
+        "en": "A night hunter: it bites best in the evening and at night, in deep pools, under banks and near sunken wood."
+      },
+      {
+        "mk": "Користете цврст прибор и јака јадица, бидејќи крупниот сом е многу силен.",
+        "en": "Use strong tackle and a strong hook, because big catfish are very powerful."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Куп глисти, мала жива или мртва риба, парчиња џигер, силиконски мамки за сом.",
+        "en": "A bunch of worms, small live or dead fish, pieces of liver, soft plastic catfish lures."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Долго се пишувало дека пораснува до 5 m и 306 kg, но тоа биле грешки. Докажаните рекорди се 2,73 m и 130 kg.",
+        "en": "For a long time it was said to reach 5 m and 306 kg, but those were mistakes. The proven records are 2.73 m and 130 kg."
+      },
+      {
+        "mk": "Може да живее до 80 години.",
+        "en": "It can live up to 80 years."
+      },
+      {
+        "mk": "Ловува ноќе, близу дното и во средината на водата; возрасните јадат риба и други водни животни.",
+        "en": "It hunts at night, near the bottom and in mid-water; adults eat fish and other water animals."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Silurus glanis",
+        "url": "https://www.fishbase.se/summary/Silurus-glanis.html"
+      }
+    ]
+  },
+  "Squalius orpheus": {
+    "en": "Orpheus dace",
+    "tips": [
+      {
+        "mk": "Многу е претпазлив: пристапувајте тивко и не фрлајте сенка врз водата.",
+        "en": "Very wary: approach quietly and keep your shadow off the water."
+      },
+      {
+        "mk": "Ловете со пловка што ја носи струјата, или со мали воблери и блинкери.",
+        "en": "Fish with a float drifting in the current, or with small wobblers and spinners."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Леб, сирење, црвчиња, глисти, скакулци и други инсекти.",
+        "en": "Bread, cheese, maggots, worms, grasshoppers and other insects."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Најчесто го има во вирови.",
+        "en": "It is found mostly in pools."
+      },
+      {
+        "mk": "Се храни и на површината, со инсекти што паѓаат во водата, но инаку јаде речиси сè.",
+        "en": "It also feeds at the surface on insects that fall into the water, but otherwise eats almost anything."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Squalius orpheus",
+        "url": "https://www.fishbase.se/summary/Squalius-orpheus.html"
+      }
+    ]
+  },
+  "Squalius prespensis": {
+    "funFacts": [
+      {
+        "mk": "Живее само во басенот на Преспанското Езеро, покрај бреговите.",
+        "en": "It lives only in the Lake Prespa basin, along the shores."
+      },
+      {
+        "mk": "На Црвениот список на IUCN видот е „загрозен“ (EN).",
+        "en": "On the IUCN Red List the species is “endangered” (EN)."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Squalius prespensis",
+        "url": "https://www.fishbase.se/summary/Squalius-prespensis.html"
+      }
+    ]
   },
   "Squalius squalus": {
-    "image": "Squalius squalus Natural History Museum University of Pisa.jpg"
+    "image": "Squalius squalus Natural History Museum University of Pisa.jpg",
+    "tips": [
+      {
+        "mk": "Многу е претпазлив: пристапувајте тивко и не фрлајте сенка врз водата.",
+        "en": "Very wary: approach quietly and keep your shadow off the water."
+      },
+      {
+        "mk": "Ловете со пловка што ја носи струјата, или со мали воблери и блинкери.",
+        "en": "Fish with a float drifting in the current, or with small wobblers and spinners."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Леб, сирење, црвчиња, глисти, скакулци и други инсекти.",
+        "en": "Bread, cheese, maggots, worms, grasshoppers and other insects."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Може да порасне до 60 cm и да живее до 15 години.",
+        "en": "It can grow to 60 cm and live up to 15 years."
+      },
+      {
+        "mk": "Младите живеат во јата, а возрасните повеќе сами.",
+        "en": "Young fish live in shoals, adults more on their own."
+      },
+      {
+        "mk": "Поголемите примероци се хранат главно со риба.",
+        "en": "Bigger fish feed mainly on other fish."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Squalius squalus",
+        "url": "https://www.fishbase.se/summary/Squalius-squalus.html"
+      }
+    ]
   },
   "Squalius vardarensis": {
-    "image": "Vardar chub (Squalius vardarensis).jpg"
+    "tips": [
+      {
+        "mk": "Многу е претпазлив: пристапувајте тивко и не фрлајте сенка врз водата.",
+        "en": "Very wary: approach quietly and keep your shadow off the water."
+      },
+      {
+        "mk": "Ловете со пловка што ја носи струјата, или со мали воблери и блинкери.",
+        "en": "Fish with a float drifting in the current, or with small wobblers and spinners."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Леб, сирење, црвчиња, глисти, скакулци и други инсекти.",
+        "en": "Bread, cheese, maggots, worms, grasshoppers and other insects."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Живее во потоци со бистра вода што тече.",
+        "en": "It lives in streams with clear, flowing water."
+      },
+      {
+        "mk": "Пораснува до околу 16 cm.",
+        "en": "It grows to about 16 cm."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Squalius vardarensis",
+        "url": "https://www.fishbase.se/summary/Squalius-vardarensis.html"
+      }
+    ]
   },
   "Tinca tinca": {
-    "image": "FemaleTench1 (cropped).JPG"
+    "image": "FemaleTench1 (cropped).JPG",
+    "tips": [
+      {
+        "mk": "Се држи во плитка вода полна со растенија, над тињесто дно: ловете покрај трска и водни растенија.",
+        "en": "It keeps to shallow, weedy water over a muddy bottom: fish next to reeds and water plants."
+      },
+      {
+        "mk": "Ловете со пловка, со мамката на дното.",
+        "en": "Fish with a float, with the bait on the bottom."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Глисти, црвчиња, пченка, тесто.",
+        "en": "Worms, maggots, sweet corn, dough."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Поднесува многу малку кислород, а зимата често ја поминува закопан во тињата.",
+        "en": "It tolerates very low oxygen and often spends the winter buried in the mud."
+      },
+      {
+        "mk": "Возрасните често се хранат главно со полжави и школки.",
+        "en": "Adults often feed mainly on snails and mussels."
+      },
+      {
+        "mk": "Може да порасне до 84 cm и 7,5 kg.",
+        "en": "It can grow to 84 cm and 7.5 kg."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Tinca tinca",
+        "url": "https://www.fishbase.se/summary/Tinca-tinca.html"
+      }
+    ]
   },
   "Vimba melanops": {
-    "image": "Vimba melanops.jpg"
+    "en": "Macedonian vimba",
+    "image": "Vimba melanops.jpg",
+    "tips": [
+      {
+        "mk": "Се држи во реки со побрза струја: ловете на дно со лесна тежина, или со пловка што ја носи струјата.",
+        "en": "It keeps to rivers with a fairly fast current: fish on the bottom with a light weight, or with a drifting float."
+      }
+    ],
+    "baits": [
+      {
+        "mk": "Црвчиња, глисти.",
+        "en": "Maggots, worms."
+      }
+    ],
+    "funFacts": [
+      {
+        "mk": "Се мрести меѓу камења во големите реки.",
+        "en": "It spawns among stones in large rivers."
+      },
+      {
+        "mk": "Се храни со безрбетници и растенија.",
+        "en": "It feeds on invertebrates and plants."
+      },
+      {
+        "mk": "Ја загрозуваат уништувањето на живеалиштата, риболовот и зафаќањето вода.",
+        "en": "It is threatened by habitat destruction, angling and water abstraction."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FishBase: Vimba melanops",
+        "url": "https://www.fishbase.se/summary/Vimba-melanops.html"
+      }
+    ]
   }
 }

@@ -785,6 +785,7 @@
       shown++;
       const s = addSection(box, `fish_${key}`);
       addTextList(s, items);
+      if (key === 'tips') add(s, 'p', { className: 'section-note', text: t('fishTipsNote') });
     }
     if (!shown && !fishError) add(box, 'p', { className: 'no-info', text: t('fishNoInfo') });
 

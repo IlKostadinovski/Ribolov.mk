@@ -299,3 +299,40 @@ Used for (per water):
 - **Pčinja**: carp and wels catfish were removed from the fish list (the area also includes
   the Badar ponds and the Otošnica reservoir).
 - Not used: **Konče** (the reservoirs are not on the map).
+
+## Fish pages (`data/fish.json`), added November 2026
+
+The owner asked for a page per fish with a picture, fishing tips, baits and lures, and
+fun facts. The owner's rule: fish such as carp are the same in Macedonia as elsewhere, so
+general information is fine; for fish endemic to Macedonian waters, use reliable sources
+and leave the field blank when nothing is found. No closed seasons, catch limits or sizes.
+
+- **Fun facts**: only facts stated on the species' **FishBase** summary page
+  (https://www.fishbase.se, which cites Kottelat & Freyhof 2007, *Handbook of European
+  freshwater fishes*, for most of these species). Each fish lists its FishBase page under
+  "Sources". The IUCN Red List category is the one FishBase shows (Version 2025-2) and is
+  mentioned only for threatened species (vulnerable, endangered, critically endangered).
+  Wikipedia was read only to find leads, never used as a source.
+- **How to catch it / Baits and lures**: general angling advice for the species, not tied
+  to any water, as the owner asked. The site marks it "General advice for this fish,
+  wherever it lives". It is given **only** for species people fish for. It is **left out**
+  for species that are threatened on the IUCN Red List (European eel, Ohrid trout, Ohrid
+  belvica, Prespa trout, Prespa nase, Prespa chub, Prespa and Dojran bleak, Prespa spirlin,
+  Prespa loach, Ohrid gudgeon, Ohrid minnow, Prespa minnow, Scardinius knezevici), for
+  Barbus prespensis (lives only in the Prespa basin; FishBase lists overfishing as a
+  threat), and for small fish nobody fishes for (loaches, minnows, gudgeons, bitterlings,
+  spirlins, the lamprey).
+- **Left blank** (no reliable source found): Chondrostoma ohridanus (not on FishBase),
+  Rutilus ohridanus and Rutilus prespensis (their FishBase pages describe a range that
+  doesn't include Macedonia, so they were not used).
+- **English names** added in `fish.json` only where FishBase gives one and `waters.json`
+  doesn't: Drin brook lamprey, Eurasian minnow, Macedonian vimba, Orpheus dace, Stone
+  loach, Vardar spined loach, Balkan spined loach (FishBase spells it "Balcan").
+- **Pictures**: from Wikimedia Commons, only public domain, CC0, CC BY or CC BY-SA files;
+  author, licence and a link to the file page are shown under each picture
+  (`data/fish-images.json`). Chosen by looking at each candidate: a clear picture of the
+  whole fish, identified as that species on Commons. Drawings, postage stamps, blurry or
+  unclear photos and files whose species was doubtful were not used, so 31 species have no
+  picture yet (mostly small endemic fish with no free photo on Commons).
+  The candidates are on the `research` branch (`research/fish/candidates*`).
+
