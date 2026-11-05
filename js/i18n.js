@@ -15,6 +15,17 @@ const TEXT = {
     mapLabel: 'Мапа на реките и езерата во Македонија',
     hint: 'Изберете река или езеро',
     close: 'Затвори',
+    back: 'Назад',
+
+    search: 'Пребарај',
+    searchPlaceholder: 'Пребарај општина, град, река, езеро или риба…',
+    searchPlaceholderShort: 'Пребарај…',
+    searchClear: 'Избриши го пребарувањето',
+    searchResults: 'Предлози',
+    searchNoResults: 'Нема резултати',
+    typeMunicipality: 'Општина',
+    typeCity: 'Град',
+    typeFish: 'Риба',
 
     filter: 'Филтер',
     filterLabel: 'Прикажи на мапата',
@@ -30,8 +41,8 @@ const TEXT = {
     municipalityHint: 'Ја приближува општината. Одзумирајте за да се вратите на целата мапа.',
     fishFilter: 'Риба',
     allSpecies: 'Сите видови',
-    speciesCount: 'Ја има во {n} води',
-    speciesCountOne: 'Ја има во 1 вода',
+    speciesCount: 'Ја има во {n} води, обоени со црвено.',
+    speciesCountOne: 'Ја има во 1 вода, обоена со црвено.',
     speciesHint: 'Само води со проверени податоци за рибите.',
 
     river: 'Река',
@@ -53,10 +64,19 @@ const TEXT = {
     endemic: 'ендемит',
     introduced: 'внесен вид',
 
+    fish_tips: 'Како се лови',
+    fish_baits: 'Мамки',
+    fish_funFacts: 'Интересно',
+    fishWaters: 'Каде ја има на мапата',
+    fishNoInfo: 'Сè уште нема совети и информации за оваа риба.',
+    photo: 'Фотографија',
+    unknownAuthor: 'непознат автор',
+
     noInfo: 'Сè уште нема информации за оваа вода.',
     placeholder: 'Пример: ова не се вистински податоци. Не користете ги за риболов.',
     mapLoadError: 'Мапата не може да се вчита. Освежете ја страницата.',
     watersLoadError: 'Податоците за риболов не можат да се вчитаат. Датотеката data/waters.json веројатно има грешка во форматот.',
+    fishLoadError: 'Податоците за рибите не можат да се вчитаат. Датотеката data/fish.json веројатно има грешка во форматот.',
   },
 
   en: {
@@ -68,6 +88,17 @@ const TEXT = {
     mapLabel: 'Map of the rivers and lakes of Macedonia',
     hint: 'Select a river or lake',
     close: 'Close',
+    back: 'Back',
+
+    search: 'Search',
+    searchPlaceholder: 'Search a municipality, town, river, lake or fish…',
+    searchPlaceholderShort: 'Search…',
+    searchClear: 'Clear the search',
+    searchResults: 'Suggestions',
+    searchNoResults: 'No results',
+    typeMunicipality: 'Municipality',
+    typeCity: 'Town',
+    typeFish: 'Fish',
 
     filter: 'Filter',
     filterLabel: 'Show on the map',
@@ -83,8 +114,8 @@ const TEXT = {
     municipalityHint: 'Zooms to the municipality. Zoom out to go back to the whole map.',
     fishFilter: 'Fish',
     allSpecies: 'All species',
-    speciesCount: 'Found in {n} waters',
-    speciesCountOne: 'Found in 1 water',
+    speciesCount: 'Found in {n} waters, shown in red.',
+    speciesCountOne: 'Found in 1 water, shown in red.',
     speciesHint: 'Only waters with checked fish data.',
 
     river: 'River',
@@ -106,9 +137,18 @@ const TEXT = {
     endemic: 'endemic',
     introduced: 'introduced',
 
+    fish_tips: 'How to catch it',
+    fish_baits: 'Baits and lures',
+    fish_funFacts: 'Fun facts',
+    fishWaters: 'Where it lives on the map',
+    fishNoInfo: 'No tips or information for this fish yet.',
+    photo: 'Photo',
+    unknownAuthor: 'unknown author',
+
     noInfo: 'No information yet for this water.',
     placeholder: 'Example only: this is not real information. Do not use it for fishing.',
     mapLoadError: 'The map could not be loaded. Reload the page.',
     watersLoadError: 'The fishing information could not be loaded. The file data/waters.json probably has a formatting error.',
+    fishLoadError: 'The fish information could not be loaded. The file data/fish.json probably has a formatting error.',
   },
 };

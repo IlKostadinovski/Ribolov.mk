@@ -1,0 +1,50 @@
+# Downloads the fish pictures named in data/fish.json from Wikimedia Commons and saves
+# them in images/fish/, with their authors and licences in data/fish-images.json
+# (see tools/fetch-fish-images.mjs).
+#
+# It runs on GitHub's servers:
+#   - automatically, when data/fish.json (or the script, or this file) changes
+#   - by hand: GitHub → Actions → "Update fish pictures" → Run workflow
+name: Update fish pictures
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/fish.json'
+      - 'tools/fetch-fish-images.mjs'
+      - '.github/workflows/update-fish-images.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-fish-images
+  cancel-in-progress: false
+
+jobs:
+  pictures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Download the pictures
+        run: node tools/fetch-fish-images.mjs
+
+      - name: Save them in the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A images/fish data/fish-images.json
+          if git diff --staged --quiet; then
+            echo "Pictures unchanged."
+          else
+            git commit -m "Update fish pictures from Wikimedia Commons"
+            for i in 1 2 3; do git pull --rebase && git push && break; sleep 10; done
+          fi

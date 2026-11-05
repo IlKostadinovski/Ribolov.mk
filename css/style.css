@@ -23,6 +23,9 @@
   --map-reservoir: #2466ad;
   --map-lake-hover: #4b97e3;
   --map-selected: #ff4b3e;      /* fishing-float red */
+  --map-fish: #ff4b3e;          /* waters where the chosen fish lives */
+  --map-fish-hover: #ff9a92;
+  --map-selected-with-fish: #ffd23f; /* selected water while a fish is shown in red */
   --map-dim: #000000;           /* covers the map outside a chosen municipality */
 
   /* Notes */
@@ -43,6 +46,16 @@
 
 [hidden] {
   display: none !important;
+}
+
+/* Read by screen readers, not shown */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 html,
@@ -85,6 +98,11 @@ button {
   background: #000;
   border-bottom: 1px solid var(--rule);
   z-index: 1000;
+  position: relative; /* the search suggestions are placed under it on phones */
+}
+
+.brand {
+  flex: none;
 }
 
 .brand h1 {
@@ -118,6 +136,175 @@ button {
 .lang-switch:hover {
   background: var(--ink);
   color: #000;
+}
+
+/* ---------------------------------------------------------------- Search */
+
+.search {
+  position: relative;
+  flex: 1 1 320px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.search-glass {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+.search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 40px 0 38px;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9375rem;
+  text-overflow: ellipsis;
+}
+
+.search input::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: var(--map-water);
+  background: var(--surface-hover);
+}
+
+.search-clear {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.search-clear:hover {
+  background: var(--rule);
+  color: var(--ink);
+}
+
+.search-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  max-height: min(60vh, 440px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+}
+
+.search-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-option:hover,
+.search-option[aria-selected='true'] {
+  background: var(--surface-hover);
+}
+
+.search-text {
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.search-name {
+  display: block;
+  font-weight: 500;
+}
+
+.search-meta {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+.search-meta i::before {
+  content: ' · ';
+  font-style: normal;
+}
+
+.search-empty {
+  padding: 10px 12px;
+  color: var(--ink-soft);
+}
+
+/* Small symbols for each kind of result, like on the map */
+.search-icon {
+  flex: none;
+  width: 22px;
+  display: inline-block;
+}
+
+.search-icon--municipality {
+  height: 16px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.75);
+  border-radius: 3px;
+}
+
+.search-icon--city {
+  height: 14px;
+  border-radius: 4px;
+  background: var(--map-city);
+}
+
+.search-icon--river {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--map-water);
+}
+
+.search-icon--lake,
+.search-icon--reservoir {
+  height: 14px;
+  border: 1px solid var(--map-water);
+  border-radius: 7px;
+  background: var(--map-lake);
+}
+
+.search-icon--reservoir {
+  background: var(--map-reservoir);
+}
+
+.search-icon--fish,
+.swatch--fish {
+  height: 14px;
+  background: var(--map-fish);
+  -webkit-mask: var(--fish-shape) center / contain no-repeat;
+  mask: var(--fish-shape) center / contain no-repeat;
+}
+
+:root {
+  --fish-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16'%3E%3Cpath d='M1.5 8C4.5 3 10.5 2 15.5 5.2L21.5 1.5v13l-6-3.7C10.5 14 4.5 13 1.5 8z'/%3E%3C/svg%3E");
 }
 
 /* ---------------------------------------------------------------- Map */
@@ -459,6 +646,76 @@ button {
   background: var(--map-lake);
 }
 
+.swatch--fish {
+  width: 22px;
+}
+
+/* While a fish is shown in red, the selected water has another colour (as on the map). */
+.has-fish .kind .swatch--river {
+  background: var(--map-selected-with-fish);
+}
+
+.has-fish .kind .swatch--lake {
+  border-color: var(--map-selected-with-fish);
+}
+
+/* Waters on a fish's page are red, like on the map. */
+.swatch--fish-water.swatch--river {
+  background: var(--map-fish);
+}
+
+.swatch--fish-water.swatch--lake {
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: var(--map-fish);
+}
+
+.panel-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 34px;
+  margin: 0 0 12px -4px;
+  padding: 0 14px 0 6px;
+  border: 1px solid var(--rule);
+  border-radius: 17px;
+  background: transparent;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.panel-back:hover {
+  background: var(--surface-hover);
+}
+
+.fish-photo {
+  margin: 16px 0 0;
+}
+
+.fish-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #0b0d0f;
+}
+
+.fish-photo figcaption {
+  margin-top: 6px;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.fish-photo a {
+  color: var(--map-water-hover);
+}
+
 .alt-name {
   margin: 2px 0 0;
   color: var(--ink-soft);
@@ -490,19 +747,60 @@ button {
   padding-left: 0 !important;
 }
 
-.fish-list li {
+.fish-list li + li,
+.water-list li + li {
+  margin-top: 0;
+}
+
+.water-list {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+/* A fish in a water's list (opens the fish's page) and a water on a fish's page */
+.fish-link,
+.water-link {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 2px 8px;
-  padding: 3px 0;
+  width: calc(100% + 16px);
+  min-height: 36px;
+  margin: 0 -8px;
+  padding: 5px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
 }
 
-.fish-list li.is-match {
-  margin: 0 -8px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  background: rgba(74, 163, 245, 0.18);
+.fish-link:hover,
+.water-link:hover {
+  background: var(--surface-hover);
+}
+
+.fish-list li.is-match .fish-link {
+  background: rgba(255, 75, 62, 0.18);
+}
+
+.fish-link-arrow {
+  align-self: center;
+  margin-left: auto;
+  color: var(--ink-soft);
+}
+
+.water-link {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.water-link-kind {
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
 }
 
 .fish-latin {
@@ -617,7 +915,39 @@ button {
   }
 
   .brand p {
-    font-size: 0.8125rem;
+    display: none;
+  }
+
+  .site-header {
+    gap: 8px;
+  }
+
+  /* The search box gets the whole width while typing. */
+  .site-header:has(.search:focus-within) .brand {
+    display: none;
+  }
+
+  .search {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* While typing the box fills the header up to the language button, so the
+     suggestions can also reach under that button. */
+  .search-list {
+    left: -4px;
+    right: -60px;
+    top: calc(100% + 10px);
+    max-height: 60vh;
+  }
+
+  .fish-photo img {
+    max-height: 170px;
+  }
+
+  .fish-link,
+  .water-link {
+    min-height: 42px;
   }
 
   /* The panel becomes a sheet at the bottom of the screen. */
