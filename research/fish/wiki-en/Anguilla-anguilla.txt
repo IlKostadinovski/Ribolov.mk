@@ -1,0 +1,60 @@
+The European eel (Anguilla anguilla) is a species of eel. Their life history was a mystery for thousands of years, and mating in the wild has not yet been observed. The five stages of their development were originally thought to be different species. They are critically endangered due to hydroelectric dams, overfishing by fisheries on coasts for human consumption, and parasites.
+
+
+== Description ==
+European eels undergo five stages of development in their lifecycle: larva (leptocephalus), glass eel, elver, yellow eel, and silver eel. Adults in the yellow phase are typically around 45–65 centimetres (18–26 in) and rarely reach more than 1.0 metre (3 ft 3 in), but they can reach a length of up to 1.33 metres (4 ft 4 in) in exceptional cases. They have 110 to 120 vertebrae. They tend to live approximately 15–20 years in the wild, although some captive specimens have lived for over 80 years. One such specimen known as "the Brantevik Eel" lived for 155 years in the well of a family home in Brantevik, a fishing village in southern Sweden.
+
+
+=== Ecology ===
+Eels tend to range 0–700 metres (0–2,297 ft) underwater. After spawning in the Sargasso Sea, they disperse northwards throughout the Atlantic Ocean, its coasts, and the rivers that empty into it. Feeding occurs mainly at night via scent, with prey consisting of worms, fish (including ones too big to eat without biting off chunks), mollusks such as slugs, crustaceans such as crayfish, and occasionally plankton, when available in large quantities. European eels are preyed upon by larger eels, herons, cormorants, and pike. Seagulls also prey on elvers. Eels usually find and compete for shelter by hiding in plants or in tube-shaped crevices in rocks. They also hide in muddy fields when inland.
+
+
+== Conservation status ==
+
+The European eel is a critically endangered species. Numbers of eels reaching Europe is thought to have declined by around 90% (possibly even 98%) since the 1970s. Contributing factors include overfishing, parasites such as Anguillicola crassus, barriers to migration such as hydroelectric dams, and natural changes in the North Atlantic oscillation, Gulf Stream, and North Atlantic drift. Recent work suggests that polychlorinated biphenyl (PCB) pollution may be a factor in the decline. The TRAFFIC program is introducing traceability and legality systems throughout trade change to control and reverse the decline of the species. The species is listed in Appendix II of the CITES Convention. Hydroelectric dams have been shown to have a significant negative impact on eel populations. Over an 80 year period, waters with large dams have experienced almost twice the reduction of eel numbers as dam-free waters.
+
+
+=== Consumption ===
+Eels have been important sources of food both as adults and as glass eels. Glass-eel fishing using basket traps has been of significant economic value in many river estuaries on the western seaboard of Europe. In addition, the United States imports 11 million pounds of eel every year to support its sushi industry, including European eels. In 2010, Greenpeace International added the European eel to its "seafood red list", and the Sustainable Eel Group launched the Sustainable Eel Standard.
+Historic evidence of human consumption of European eels dates to the Middle Pleistocene. Eels at the migratory "silver eel" stage are among the primary fish species recovered at Gruta da Figueira Brava, Portugal, a site inhabited by Neanderthals during the Last Interglacial.
+
+
+=== Breeding projects ===
+As the European eel population has been declining for some time, several projects have been initiated. In 1997, Innovatie Netwerk in the Netherlands began a project in which they attempted to get European eels to breed in captivity by using a swimming machine to simulate the 6,500 km (4,000 mi) journey from Europe to the Sargasso Sea.
+The first to achieve some success was DTU Aqua, a part of the Technical University of Denmark. Through a combination of fresh and salt water, as well as hormones, they were able to breed it in captivity in 2006 and make the larvae survive for 4.5 days after hatching. By 2007, DTU Aqua scientists were able to set a new record where the larvae survived for 12 days by feeding the mother eel with a special arginine-enriched diet. At this age the content of the larval yolk sac has been used, the mouth and digestive channel have developed, and it requires feeding. Attempts with various substances failed. Deep water sampling of the presumed habitat of larval European eel in the Sargasso Sea was performed by the Galathea 3 expedition in 2006–07, in the hope of revealing the likely feeding preference at the early stage. Their results indicated that they feed on various planktonic organisms, but especially microscopic jellyfish. A follow-up expedition was performed by DTU's own research ship to the Sargasso Sea region in 2014.
+To further the research, the PRO-EEL project, led by DTU Aqua and involving several research institutes elsewhere in Denmark (University of Copenhagen and others), Norway (Norwegian Institute of Fisheries and Food Research and others), the Netherlands (Leiden University and others), Belgium (Ghent University), France (French National Center for Scientific Research and others), Spain (ICTA at Polytechnic University of Valencia) and Tunisia (National Institute of Marine Sciences and Technologies), was started in 2010. By 2014, the eel larvae at their facilities typically survived 20–22 days, and by 2022 they were surviving up to around 140 days, well into the leptocephalus stage (the stage just before glass eel), but the full life cycle has still not been completed in captivity.
+
+
+== Life history ==
+
+Much of the European eel life history was shrouded in mystery for centuries, as fishermen never caught anything they could identify as a juvenile eel. Unlike many other migratory fish, eels begin their life cycle in the ocean, spending most of their lives in fresh inland water, or brackish coastal water before returning to the ocean to spawn and then die. In the early 1900s, Danish researcher Johannes Schmidt identified the Sargasso Sea as the most likely spawning grounds for European eels. The larvae (leptocephali) drift towards Europe in a 300-day migration.
+When approaching the European coast, the larvae metamorphose into a transparent larval stage called "glass eel", enter estuaries, and many start migrating upstream. After entering their continental habitat, the glass eels metamorphose into elvers, miniature versions of the adult eels. As the eel grows, it becomes known as a "yellow eel" due to the brownish-yellow colour of their sides and belly. After 5–20 years in fresh or brackish water, the eels become sexually mature, their eyes grow larger, their flanks become silver, and their bellies white in colour. In this stage, the eels are known as "silver eels", and they begin their migration back to the Sargasso Sea to spawn. Silvering is important in an eel's development because it allows for increased levels of the steroid hormone cortisol, which is needed for their migration from fresh water back to the sea. Cortisol plays a role in the long migration because it allows for the mobilisation of energy during migration. Also playing a key role in silvering is the production of the steroid 11-Ketotestosterone (11-KT), which prepares the eel for structural changes to the skin to endure the migration from fresh water to saltwater.
+Sometimes eels will never enter freshwater and will remain in a marine environment throughout their life. Others grow up in brackish water, or migrate between saltwater, brackish water and freshwater several times during their lifetime.
+Magnetoreception has also been reported in the European eel by at least one study, and may be used for navigation.
+
+
+== Commercial fisheries ==
+
+
+=== Production ===
+The eel farming industry uses recirculating pools to raise glass eels taken from the wild for 8 months to 2 years until they mature enough for sale. Valliculture on coasts through the use of weirs is also used instead of recirculating pools for eel farming. New eels are quarantined to prevent disease spread and eels are sorted by size every couple weeks to prevent cannibalism and remove dead animals. A range of 23°C to 28°C is optimal for growth and protein based pellets and pastes are used as food sources for the eels after an initial few days of cod roe for the small glass ones. European eels typically have a feed conversion ratio (FCR) in the range of 1.8-2.5, although European fisheries are typically in the 1.6-1.7 range. Filters are essential for eliminating waste and ensuring the eels have clean water to live in. Eels are typically transported via road in tanks with water or via air in styrofoam boxes with a beaker of ice. The beakers keep condensation on the outside and ice on inside to keep the environment moist enough for the 1–3kg of eels to survive and also keep the temperature low enough.
+
+
+=== Diseases/parasites in fisheries ===
+Diseases can be spread rapidly in the highly populated environments of fisheries if quarantine measures are not taken immediately upon arrival of new eels. Some common bacterial infections observed in eel fisheries are red fin and red eel pest. When an eel has a red fin infection, its tail and fins start rotting, and a salt solution should be utilised to treat it. Antibiotics can be used to treat red eel pest which is characterised by ulcerated lesions, swelling, and spots of red on the skin of the eel. In addition, Aeromonas sobria and Streptococcus spp. are other more rare bacteria to infect European eels but have been observed in necropsies and are likely the result of other stresses increasing the eel's susceptibility to disease, but can be treated with antimicrobials. Parasites such as from the genus Dactylogyrus have also been observed in necropsies, and some symptoms of parasitic infections in European eels are white spots, mucus increase, fin fraying, rubbing infected spots against the enclosure, respiratory distress, and lethargy. These parasites are best treated with salt solutions or formaldehyde solutions. Viral infections such as red head have also been observed; symptoms include red hemorrhaging spreading from the head to the rest of the eel and can be treated with vaccinations at a young age, salt solutions, or decreased temperature of water within the enclosure. Salt solutions also can treat fungal infections that cause swelling of gills and brown or white skin patches.
+
+
+=== Industry ===
+The exportation of European Eels has been restricted since 2010, yet on average 44% of eel sales in the United States consists of these eels. Eel aquaculture is most prominent in Japan, yet China, Scandinavia, Europe, Australia, Morocco, and Taiwan also participate in this practice. Eel breeding programs initiated by humans have been unsuccessful thus far and therefore the entire industry is dependent on the number of eels spawning in the wild, leaving it unsustainable and vulnerable to the factors causing European Eels to be critically endangered.
+
+
+== See also ==
+Eel life history
+The Gospel of the Eels
+
+
+== References ==
+
+
+== External links ==
+ Media related to Anguilla anguilla at Wikimedia Commons

@@ -1,0 +1,1166 @@
+{
+  "Anguilla anguilla": {
+    "items": [
+      "http://www.wikidata.org/entity/Q26387"
+    ],
+    "images": [
+      "Anguillidae Anguilla anguilla 1.jpg",
+      "Anguilla anguilla France 1.jpg",
+      "Anguilla anguilla Belgium 1.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "eel",
+        "European eel",
+        "European Eel"
+      ],
+      "mk": []
+    },
+    "category": "Anguilla anguilla",
+    "en": "European eel",
+    "mk": "европска јагула",
+    "enwiki": "European eel",
+    "mkwiki": "Европска јагула",
+    "iucn": "critically endangered"
+  },
+  "Pelasgus minutus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q1384950"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Pelasgus minutus",
+    "mk": "Охридско грунче",
+    "enwiki": "Ohrid minnow",
+    "mkwiki": "Охридско грунче",
+    "iucn": "vulnerable"
+  },
+  "Scardinius knezevici": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5633710"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [
+        "Skadar Rudd"
+      ],
+      "mk": []
+    },
+    "en": "Scardinius knezevici",
+    "mk": "Scardinius knezevici",
+    "enwiki": "Scardinius knezevici",
+    "mkwiki": "Scardinius knezevici",
+    "iucn": "vulnerable"
+  },
+  "Rutilus prespensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q63075"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Rutilus prespensis",
+    "mk": "Преспански грунец",
+    "enwiki": "Rutilus prespensis",
+    "mkwiki": "Преспански грунец",
+    "iucn": "vulnerable"
+  },
+  "Ctenopharyngodon idella": {
+    "items": [
+      "http://www.wikidata.org/entity/Q76098",
+      "http://www.wikidata.org/entity/Q119166741"
+    ],
+    "images": [
+      "Grass carp portrait.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "grass carp"
+      ],
+      "mk": []
+    },
+    "category": "Ctenopharyngodon idella",
+    "en": "Grass Carp",
+    "mk": "Бел амур",
+    "enwiki": "Grass carp",
+    "mkwiki": "Бел амур",
+    "iucn": "least concern"
+  },
+  "Tinca tinca": {
+    "items": [
+      "http://www.wikidata.org/entity/Q76280"
+    ],
+    "images": [
+      "Tinca tinca Natural History Museum University of Pisa.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "tench",
+        "Tench"
+      ],
+      "mk": []
+    },
+    "category": "Tinca tinca",
+    "en": "tench",
+    "mk": "лињак",
+    "enwiki": "Tench",
+    "mkwiki": "Лињак",
+    "iucn": "least concern"
+  },
+  "Cyprinus carpio": {
+    "items": [
+      "http://www.wikidata.org/entity/Q81110"
+    ],
+    "images": [
+      "Six koi.jpg",
+      "Bettelnder Karpfen.JPG",
+      "Cyprinus carpio.jpeg"
+    ],
+    "commonNames": {
+      "en": [
+        "common carp",
+        "Common carp",
+        "Wild Common Carp"
+      ],
+      "mk": []
+    },
+    "category": "Cyprinus carpio",
+    "en": "Cyprinus carpio",
+    "mk": "крап",
+    "enwiki": "Common carp",
+    "mkwiki": "Крап",
+    "iucn": "least concern"
+  },
+  "Abramis brama": {
+    "items": [
+      "http://www.wikidata.org/entity/Q144534"
+    ],
+    "images": [
+      "Carp bream.jpg",
+      "Braxen, Iduns kokbok.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "bream",
+        "Bream",
+        "Carp bream",
+        "Common bream"
+      ],
+      "mk": []
+    },
+    "category": "Abramis brama",
+    "en": "common bream",
+    "mk": "деверика",
+    "enwiki": "Common bream",
+    "mkwiki": "Деверика",
+    "iucn": "least concern"
+  },
+  "Sander lucioperca": {
+    "items": [
+      "http://www.wikidata.org/entity/Q146641"
+    ],
+    "images": [
+      "Sander lucioperca 1.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Sander lucioperca",
+    "en": "zander",
+    "mk": "смуѓ",
+    "enwiki": "Zander",
+    "mkwiki": "Смуѓ",
+    "iucn": "least concern"
+  },
+  "Silurus glanis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q159323",
+      "http://www.wikidata.org/entity/L1370990-S1"
+    ],
+    "images": [
+      "Silurus glanis 02.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Wels Catfish"
+      ],
+      "mk": []
+    },
+    "category": "Silurus glanis",
+    "en": "wels catfish",
+    "enwiki": "Wels catfish",
+    "iucn": "least concern"
+  },
+  "Esox lucius": {
+    "items": [
+      "http://www.wikidata.org/entity/Q165278"
+    ],
+    "images": [
+      "Hecht.jpg",
+      "Esox Lucius.JPG"
+    ],
+    "commonNames": {
+      "en": [
+        "pike",
+        "Pike",
+        "Northern Pike"
+      ],
+      "mk": []
+    },
+    "category": "Esox lucius",
+    "en": "pike",
+    "mk": "Штука (риба)",
+    "enwiki": "Northern pike",
+    "mkwiki": "Штука (риба)",
+    "iucn": "least concern"
+  },
+  "Perca fluviatilis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q166812"
+    ],
+    "images": [
+      "Perca fluviatilis 2008 G1.jpg",
+      "Abborre, Iduns kokbok.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "perch",
+        "Perch",
+        "English perch"
+      ],
+      "mk": []
+    },
+    "category": "Perca fluviatilis",
+    "en": "European perch",
+    "mk": "костреш",
+    "enwiki": "European perch",
+    "mkwiki": "Костреш",
+    "iucn": "least concern"
+  },
+  "Rutilus rutilus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q182976"
+    ],
+    "images": [
+      "Rutilus rutilus by Algirdas cropped.jpg",
+      "Blausteinsee Tierwelt 03.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "roach",
+        "Roach"
+      ],
+      "mk": []
+    },
+    "category": "Rutilus rutilus",
+    "en": "Rutilus rutilus",
+    "mk": "Црвеноперка",
+    "enwiki": "Common roach",
+    "mkwiki": "Црвеноперка",
+    "iucn": "least concern"
+  },
+  "Gymnocephalus cernua": {
+    "items": [
+      "http://www.wikidata.org/entity/Q187981"
+    ],
+    "images": [
+      "Gymnocephalus cernuus Pärnu River Estonia 2010-01-06.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Ruffe"
+      ],
+      "mk": []
+    },
+    "category": "Gymnocephalus cernuus",
+    "en": "ruffe",
+    "mk": "лигле",
+    "enwiki": "Ruffe",
+    "iucn": "least concern"
+  },
+  "Carassius carassius": {
+    "items": [
+      "http://www.wikidata.org/entity/Q194031"
+    ],
+    "images": [
+      "Carassius carassius - Swedish Museum of Natural History - Stockholm, Sweden - DSC00594.JPG"
+    ],
+    "commonNames": {
+      "en": [
+        "crucian carp",
+        "Crucian Carp"
+      ],
+      "mk": []
+    },
+    "category": "Carassius carassius",
+    "en": "Crucian carp",
+    "mk": "караш",
+    "enwiki": "Crucian carp",
+    "mkwiki": "Златен караш",
+    "iucn": "least concern"
+  },
+  "Scardinius erythrophthalmus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q200594"
+    ],
+    "images": [
+      "Scardinius erythropthalmus 2009 G1.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "rudd",
+        "Rudd"
+      ],
+      "mk": []
+    },
+    "category": "Scardinius erythrophthalmus",
+    "en": "common rudd",
+    "mk": "Писа",
+    "enwiki": "Common rudd",
+    "mkwiki": "Писа",
+    "iucn": "least concern"
+  },
+  "Salmo macedonicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q206148"
+    ],
+    "images": [
+      "Salmo macedonicus.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Salmo macedonicus",
+    "mk": "Македонска пастрмка",
+    "enwiki": "Salmo macedonicus",
+    "mkwiki": "Македонска пастрмка",
+    "iucn": "least concern"
+  },
+  "Phoxinus phoxinus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q214278"
+    ],
+    "images": [
+      "Vairon WIKI800px (cropped).JPG"
+    ],
+    "commonNames": {
+      "en": [
+        "minnow",
+        "Minnow"
+      ],
+      "mk": []
+    },
+    "category": "Phoxinus phoxinus",
+    "en": "common minnow",
+    "mk": "пиор",
+    "enwiki": "Phoxinus phoxinus",
+    "mkwiki": "Пиор",
+    "iucn": "least concern"
+  },
+  "Salmo pelagonicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q309824"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [
+        "Pelagos trout"
+      ],
+      "mk": []
+    },
+    "en": "Salmo pelagonicus",
+    "iucn": "least concern"
+  },
+  "Barbatula barbatula": {
+    "items": [
+      "http://www.wikidata.org/entity/Q502228"
+    ],
+    "images": [
+      "Barbatula barbatula.jpg",
+      "Barbatula barbatula by MdE.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Stone loach",
+        "Stone Loach"
+      ],
+      "mk": []
+    },
+    "category": "Barbatula barbatula",
+    "en": "stone loach",
+    "mk": "Европска мрена",
+    "enwiki": "Stone loach",
+    "mkwiki": "Европска мрена",
+    "iucn": "least concern"
+  },
+  "Pseudorasbora parva": {
+    "items": [
+      "http://www.wikidata.org/entity/Q583540"
+    ],
+    "images": [
+      "Pseudorasbora parva.jpg",
+      "Pseudorasbora parva(edited version).jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "topmouth gudgeon",
+        "Topmouth gudgeon"
+      ],
+      "mk": []
+    },
+    "category": "Pseudorasbora parva",
+    "en": "Pseudorasbora parva",
+    "mk": "Амурче",
+    "enwiki": "Stone moroko",
+    "mkwiki": "Амурче",
+    "iucn": "least concern"
+  },
+  "Vimba melanops": {
+    "items": [
+      "http://www.wikidata.org/entity/Q669762"
+    ],
+    "images": [
+      "Vimba melanops.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Malamída",
+        "MalamÌda"
+      ],
+      "mk": []
+    },
+    "category": "Vimba melanops",
+    "en": "Macedonian vimba",
+    "mk": "Попадика",
+    "enwiki": "Macedonian vimba",
+    "mkwiki": "Попадика",
+    "iucn": "least concern"
+  },
+  "Pachychilon macedonicum": {
+    "items": [
+      "http://www.wikidata.org/entity/Q738626"
+    ],
+    "images": [
+      "Macedonian Roach (Rutilus macedonicus).jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Pachychilon macedonicum",
+    "en": "Pachychilon macedonicum",
+    "mk": "мергур",
+    "enwiki": "Pachychilon macedonicum",
+    "mkwiki": "Мергур",
+    "iucn": "least concern"
+  },
+  "Sabanejewia balcanica": {
+    "items": [
+      "http://www.wikidata.org/entity/Q789387"
+    ],
+    "images": [
+      "Balkan Golden Loach, 080 01 Haniska, Slovensko iNaturalist.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Sabanejewia balcanica",
+    "iucn": "least concern"
+  },
+  "Lepomis gibbosus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q826713"
+    ],
+    "images": [
+      "Lepomis gibbosus PAQ.jpg",
+      "Lepomis gibbosus 314893214.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "pumpkinseed",
+        "Pumpkinseed"
+      ],
+      "mk": []
+    },
+    "category": "Lepomis gibbosus",
+    "en": "pumpkinseed",
+    "mk": "сончарка",
+    "enwiki": "Pumpkinseed",
+    "mkwiki": "Сончарка (риба)",
+    "iucn": "least concern"
+  },
+  "Ameiurus nebulosus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q833957"
+    ],
+    "images": [
+      "Ictalurus nebulosus GLERL 1.jpg",
+      "Ameiurus nebulosus.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "brown bullhead"
+      ],
+      "mk": []
+    },
+    "category": "Ameiurus nebulosus",
+    "en": "brown bullhead",
+    "mk": "Американско сомче",
+    "enwiki": "Brown bullhead",
+    "mkwiki": "Американско сомче",
+    "iucn": "least concern"
+  },
+  "Barbus balcanicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q1107155"
+    ],
+    "images": [
+      "Pesaak.JPG"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Barbus balcanicus",
+    "en": "Large-spot Barbel",
+    "mk": "Балканска мрена",
+    "enwiki": "Danube barbel",
+    "mkwiki": "Балканска мрена",
+    "iucn": "least concern"
+  },
+  "Rhodeus amarus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q1402074"
+    ],
+    "images": [
+      "RhodeusSericeusBitterlingMaleSpawningColors.jpg",
+      "Rhodeus amarus 2008 G1.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "bitterling"
+      ],
+      "mk": []
+    },
+    "category": "Rhodeus amarus",
+    "en": "European bitterling",
+    "mk": "Платиче",
+    "enwiki": "European bitterling",
+    "iucn": "least concern"
+  },
+  "Barbus macedonicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q2004762"
+    ],
+    "images": [
+      "Barbel Species (Barbus macedonicus).jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Barbus macedonicus",
+    "en": "Barbus macedonicus",
+    "mk": "Македонска мрена",
+    "enwiki": "Barbus macedonicus",
+    "mkwiki": "Македонска мрена",
+    "iucn": "least concern"
+  },
+  "Chondrostoma vardarense": {
+    "items": [
+      "http://www.wikidata.org/entity/Q2246915"
+    ],
+    "images": [
+      "Carp Species (Chondrostoma vardarense).jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Chondrostoma vardarense",
+    "en": "Chondrostoma vardarense",
+    "mk": "Вардарски скобуст",
+    "enwiki": "Chondrostoma vardarense",
+    "mkwiki": "Вардарски скобуст",
+    "iucn": "least concern"
+  },
+  "Rutilus ohridanus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q2246927"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Rutilus ohridanus",
+    "mk": "Охридски грунец",
+    "enwiki": "Rutilus ohridanus",
+    "mkwiki": "Охридски грунец",
+    "iucn": "least concern"
+  },
+  "Cobitis vardarensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q3319963"
+    ],
+    "images": [
+      "Loach (Cobitis vardarensis).jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Cobitis vardarensis",
+    "en": "Cobitis vardarensis",
+    "mk": "Вардарска штипалка",
+    "enwiki": "Cobitis vardarensis",
+    "mkwiki": "Вардарска штипалка",
+    "iucn": "least concern"
+  },
+  "Squalius squalus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q3967431"
+    ],
+    "images": [
+      "Squalius squalus Natural History Museum University of Pisa.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Squalius squalus",
+    "en": "Squalius squalus",
+    "mk": "Охридски клен",
+    "enwiki": "Squalius squalus",
+    "mkwiki": "Охридски клен",
+    "iucn": "least concern"
+  },
+  "Squalius orpheus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5563477"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Squalius orpheus",
+    "enwiki": "Squalius orpheus",
+    "iucn": "least concern"
+  },
+  "Phoxinus lumaireul": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5898505"
+    ],
+    "images": [
+      "Phoxinus lumaireul Italy.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Phoxinus lumaireul",
+    "enwiki": "Phoxinus lumaireul",
+    "iucn": "least concern"
+  },
+  "Gobio bulgaricus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5947113"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Gobio bulgaricus",
+    "mk": "Кркушка",
+    "enwiki": "Gobio bulgaricus",
+    "mkwiki": "Кркушка",
+    "iucn": "least concern"
+  },
+  "Squalius vardarensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q6407255"
+    ],
+    "images": [
+      "Vardar chub (Squalius vardarensis).jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Squalius vardarensis",
+    "en": "Squalius vardarensis",
+    "enwiki": "Squalius vardarensis",
+    "iucn": "least concern"
+  },
+  "Rhodeus meridionalis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q6421205"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Rhodeus meridionalis",
+    "mk": "Вардарско платиче",
+    "enwiki": "Rhodeus meridionalis",
+    "mkwiki": "Вардарско платиче",
+    "iucn": "least concern"
+  },
+  "Alburnus thessalicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q8193756"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Alburnus thessalicus",
+    "enwiki": "Alburnus thessalicus",
+    "iucn": "least concern"
+  },
+  "Hypophthalmichthys nobilis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q754164"
+    ],
+    "images": [
+      "Bighead carp b.gif",
+      "Bighead carp.gif"
+    ],
+    "commonNames": {
+      "en": [
+        "bighead",
+        "Bighead Carp"
+      ],
+      "mk": []
+    },
+    "category": "Hypophthalmichthys nobilis",
+    "en": "bighead carp",
+    "enwiki": "Bighead carp",
+    "iucn": "Data Deficient"
+  },
+  "Hypophthalmichthys molitrix": {
+    "items": [
+      "http://www.wikidata.org/entity/Q76115"
+    ],
+    "images": [
+      "Silver Carp Adult (Hypophthalmichthys molitrix).jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "silver carp"
+      ],
+      "mk": []
+    },
+    "category": "Hypophthalmichthys molitrix",
+    "en": "silver carp",
+    "mk": "Сребрен крап",
+    "enwiki": "Silver carp",
+    "mkwiki": "Сребрен крап",
+    "iucn": "near threatened"
+  },
+  "Alburnoides ohridanus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q129596"
+    ],
+    "images": [
+      "Alburnoides ohridanus 314268103.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Alburnoides ohridanus",
+    "en": "Ohrid spirlin",
+    "mk": "Охридска гомнушка",
+    "enwiki": "Alburnoides ohridanus",
+    "mkwiki": "Охридска гомнушка",
+    "iucn": "near threatened"
+  },
+  "Romanogobio elimeius": {
+    "items": [
+      "http://www.wikidata.org/entity/Q284052"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Romanogobio elimeius",
+    "enwiki": "Romanogobio elimeius",
+    "iucn": "near threatened"
+  },
+  "Barbus prespensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q303393"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [
+        "Briána"
+      ],
+      "mk": []
+    },
+    "en": "Briána",
+    "mk": "Преспанска мрена",
+    "enwiki": "Briána",
+    "mkwiki": "Преспанска мрена",
+    "iucn": "near threatened"
+  },
+  "Pachychilon pictum": {
+    "items": [
+      "http://www.wikidata.org/entity/Q581310"
+    ],
+    "images": [
+      "Pachychilon pictum.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Albanian Roach"
+      ],
+      "mk": []
+    },
+    "category": "Pachychilon pictum",
+    "en": "Pachychilon pictum",
+    "mk": "Моранец",
+    "enwiki": "Pachychilon pictum",
+    "mkwiki": "Моранец",
+    "iucn": "near threatened"
+  },
+  "Barbus strumicae": {
+    "items": [
+      "http://www.wikidata.org/entity/Q1106840"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Strumica Barbel",
+    "enwiki": "Barbus strumicae",
+    "iucn": "near threatened"
+  },
+  "Barbus rebeli": {
+    "items": [
+      "http://www.wikidata.org/entity/Q2690657"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [
+        "Western Balkan Barbel"
+      ],
+      "mk": []
+    },
+    "en": "Barbus rebeli",
+    "mk": "Охридска мрена ( Црна мрена)",
+    "enwiki": "Western Balkan barbel",
+    "mkwiki": "Охридска мрена",
+    "iucn": "near threatened"
+  },
+  "Eudontomyzon stankokaramani": {
+    "items": [
+      "http://www.wikidata.org/entity/Q4500960"
+    ],
+    "images": [
+      "Eudontomyzon stankokaramani ammocoete.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Eudontomyzon stankokaramani",
+    "en": "Drin Brook Lamprey",
+    "enwiki": "Eudontomyzon stankokaramani",
+    "iucn": "near threatened"
+  },
+  "Alburnus scoranza": {
+    "items": [
+      "http://www.wikidata.org/entity/Q4712846"
+    ],
+    "images": [
+      "Alburnus scoranza 314320499.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Alburnus scoranza",
+    "en": "Alburnus scoranza",
+    "mk": "Охридска плашица",
+    "enwiki": "Alburnus scoranza",
+    "mkwiki": "Охридска плашица",
+    "iucn": "near threatened"
+  },
+  "Barbatula sturanyi": {
+    "items": [
+      "http://www.wikidata.org/entity/Q4859527"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Barbatula sturanyi",
+    "mk": "Охридски камнар",
+    "enwiki": "Barbatula sturanyi",
+    "mkwiki": "Охридски камнар",
+    "iucn": "near threatened"
+  },
+  "Cobitis ohridana": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5138918"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Cobitis ohridana",
+    "mk": "Охридска штипалка",
+    "enwiki": "Cobitis ohridana",
+    "mkwiki": "Охридска штипалка",
+    "iucn": "near threatened"
+  },
+  "Salmo farioides": {
+    "items": [
+      "http://www.wikidata.org/entity/Q310782"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Salmo farioides",
+    "mk": "Радичка пастрмка",
+    "enwiki": "Salmo farioides",
+    "mkwiki": "Радичка пастрмка"
+  },
+  "Alburnoides bipunctatus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q550170"
+    ],
+    "images": [
+      "Alburnoides bipunctatus sujtásos küsz.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "spirlin"
+      ],
+      "mk": []
+    },
+    "category": "Alburnoides bipunctatus",
+    "en": "Alburnoides bipunctatus",
+    "mk": "Гомнушка",
+    "enwiki": "Alburnoides bipunctatus",
+    "mkwiki": "Гомнушка"
+  },
+  "Carassius gibelio": {
+    "items": [
+      "http://www.wikidata.org/entity/Q725983"
+    ],
+    "images": [
+      "Carassius gibelio 2008 G1.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Carassius gibelio",
+    "en": "Carassius gibelio",
+    "mk": "бабушка",
+    "enwiki": "Prussian carp",
+    "mkwiki": "Пруски крап"
+  },
+  "Alburnoides prespensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q129748"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Prespa spirlin",
+    "mk": "Преспанска гомнушка",
+    "enwiki": "Alburnoides prespensis",
+    "mkwiki": "Преспанска гомнушка",
+    "iucn": "endangered"
+  },
+  "Salmo ohridanus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q134339"
+    ],
+    "images": [
+      "Belvica (Salmo ohridanus).jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Salmon"
+      ],
+      "mk": []
+    },
+    "category": "Salmo ohridanus",
+    "en": "Salmo ohridanus",
+    "mk": "белвица",
+    "enwiki": "Salmo ohridanus",
+    "mkwiki": "Белвица",
+    "iucn": "endangered"
+  },
+  "Chondrostoma prespense": {
+    "items": [
+      "http://www.wikidata.org/entity/Q307116"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Chondrostoma prespense",
+    "enwiki": "Chondrostoma prespense",
+    "iucn": "endangered"
+  },
+  "Salmo peristericus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q310789"
+    ],
+    "images": [
+      "Salmo peristericus 53643693 (cropped).jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Salmon"
+      ],
+      "mk": []
+    },
+    "category": "Salmo peristericus",
+    "en": "Salmo peristericus",
+    "mk": "преспанска пастрмка",
+    "enwiki": "Salmo peristericus",
+    "mkwiki": "Преспанска пастрмка",
+    "iucn": "endangered"
+  },
+  "Salmo letnica": {
+    "items": [
+      "http://www.wikidata.org/entity/Q567918"
+    ],
+    "images": [
+      "Ohridforelle 1.jpg"
+    ],
+    "commonNames": {
+      "en": [
+        "Ohrid Trout"
+      ],
+      "mk": []
+    },
+    "category": "Salmo letnica",
+    "en": "Ohrid trout",
+    "mk": "Охридска пастрмка",
+    "enwiki": "Ohrid trout",
+    "mkwiki": "Охридска пастрмка",
+    "iucn": "endangered"
+  },
+  "Alburnus belvica": {
+    "items": [
+      "http://www.wikidata.org/entity/Q580966"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Alburnus belvica",
+    "mk": "Белвица (Преспанска)",
+    "enwiki": "Alburnus belvica",
+    "mkwiki": "Преспанска белвица",
+    "iucn": "endangered"
+  },
+  "Alburnus macedonicus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q581001"
+    ],
+    "images": [
+      "Alburnus macedonicus.jpg"
+    ],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "category": "Alburnus macedonicus",
+    "en": "Alburnus macedonicus",
+    "mk": "Дојранска плашица",
+    "enwiki": "Alburnus macedonicus",
+    "mkwiki": "Дојранска плашица",
+    "iucn": "endangered"
+  },
+  "Squalius prespensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q1940089"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Squalius prespensis",
+    "mk": "преспански клен",
+    "enwiki": "Squalius prespensis",
+    "mkwiki": "Преспански клен",
+    "iucn": "endangered"
+  },
+  "Cobitis meridionalis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q2698856"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Cobitis meridionalis",
+    "mk": "Преспанска штипалка",
+    "enwiki": "Cobitis meridionalis",
+    "mkwiki": "Преспанска штипалка",
+    "iucn": "endangered"
+  },
+  "Pelasgus prespensis": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5475269"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Pelasgus prespensis",
+    "mk": "Преспанско мало грунче",
+    "enwiki": "Prespa minnow",
+    "mkwiki": "Преспанско мало грунче",
+    "iucn": "endangered"
+  },
+  "Gobio ohridanus": {
+    "items": [
+      "http://www.wikidata.org/entity/Q5608840"
+    ],
+    "images": [],
+    "commonNames": {
+      "en": [],
+      "mk": []
+    },
+    "en": "Gobio ohridanus",
+    "mk": "Охридски мренец",
+    "enwiki": "Ohrid gudgeon",
+    "mkwiki": "Охридски мренец",
+    "iucn": "endangered"
+  }
+}

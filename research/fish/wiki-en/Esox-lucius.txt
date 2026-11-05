@@ -1,0 +1,124 @@
+The northern pike (Esox lucius), also known as jack, northern or simply pike, is a species of carnivorous fish of the genus Esox (pikes). It is commonly found in fresh waters of the Northern Hemisphere (i.e. it has a holarctic distribution). 
+Pike can grow to a relatively large size. Their average length is about 40–55 cm (16–22 in), with maximum recorded lengths of up to 150 cm (59 in) and maximum weights of 28.4 kg (63 lb). The IGFA currently recognises a 25 kg (55 lb) pike caught by Lothar Louis on Greffern Lake, Germany, on 16 October 1986, as the all-tackle world-record holding northern pike. Northern pike grow to larger sizes in Eurasia than in North America, and in coastal Eurasian regions than inland ones.
+
+
+== Etymology ==
+The northern pike gets its common name from its resemblance to the pole-weapon known as the pike (from the Middle English for 'pointed'). Names such as pike, pickerel, Lakes pike, great northern pike, jackfish, jack, slough shark snake, slimer, slough snake, gator, and hammer handle are used around the globe. Other names incorporating things such as "pointy nose" and "long head" are common as well. The name "Northern" is very popular in the Midwest (in the U.S. Upper Midwest and in the Canadian provinces of Alberta and Manitoba. Numerous other names are or have been in use. Its earlier common name, the luci (now lucy) or luce when fully grown, was used to form its taxonomic name (Esox lucius) and is used in heraldry.
+
+
+== Description ==
+
+Northern pike are most often olive green, shading from yellow to white along the belly. The flank is marked with short, light bar-like spots and a few to many dark spots on the fins. Sometimes, the fins are reddish. Younger pike have yellow stripes along a green body; later, the stripes divide into light spots and the body turns from green to olive green. The lower half of the gill cover lacks scales, and it has large sensory pores on its head and on the underside of its lower jaw which are part of the lateral line system. Unlike the similar-looking and closely related muskellunge, the northern pike has light markings on a dark body background and fewer than six sensory pores on the underside of each side of the lower jaw.
+A hybrid between northern pike and muskellunge is known as a tiger muskellunge (Esox masquinongy × lucius or Esox lucius × masquinongy, depending on the sex of each of the contributing species). In the hybrids, the males are invariably sterile, while females are often fertile, and may back-cross with the parent species. Another form of northern pike, the silver pike, is not a subspecies but rather a mutation that occurs in scattered populations. Silver pike, sometimes called silver muskellunge, lack the rows of spots and appear silver, white, or silvery-blue in color. When ill, silver pike have been known to display a somewhat purplish hue; long illness is also the most common cause of male sterility.
+In Italy, the newly identified species Esox cisalpinus ("southern pike") was long thought to be a color variation of the northern pike, but was in 2011 announced to be a species of its own.
+
+
+=== Length and weight ===
+Northern pike in North America seldom reach the size of their European counterparts; one of the largest specimens known was a 21 kg (46 lb) specimen from New York. It was caught in Great Sacandaga Lake on 15 September 1940 by Peter Dubuc. Reports of far larger pike have been made, but these are either misidentifications of the pike's larger relative, the muskellunge, or simply have not been properly documented and belong in the realm of legend. Northern Pike are capable of reaching a length of 140 centimeters and a weight of 25 kilograms. The largest Northern Pike on video was caught in the Netherlands, measuring 138 cm in length and over 23 kg in weight.
+
+As northern pike grow longer, they increase in weight, and the relationship between length and weight is not linear. The relationship between total length (L, in inches) and total weight (W, in pounds) for nearly all species of fish can be expressed by an equation of the form
+
+W=cLb.
+Invariably, b is close to 3.0 for all species, and c is a constant that varies among species. For northern pike, b = 3.096 and c = 0.000180 (c = 7.089 enables one to put length in meters and weight in kilograms). The relationship described in this section suggests a 50-centimetre (20 in) northern pike will weigh about 0.9 kg (2 lb), while a 65-centimetre (26 in) northern pike will weigh about 1.8 kg (4 lb).
+
+
+=== Age ===
+Northern Pike typically live to 10–15 years, but sometimes up to 25 years.
+
+
+== Habitat ==
+
+Pike are found in sluggish streams and shallow, weedy places in lakes and reservoirs, as well as in cold, clear, rocky waters. They are typical ambush predators; they lie in wait for prey, holding perfectly still for long periods, and then exhibit remarkable acceleration as they strike. They inhabit any water body that contains fish, but suitable places for spawning are also essential. Because of their cannibalistic nature, young pike need places where they can take shelter between plants so they are not eaten. In both cases, rich submerged vegetation is needed. Pike are seldom found in brackish water, except for the Baltic Sea area, here they can be found spending time both in the mouths of rivers and in the open brackish waters of the Baltic Sea. It is normal for pike to return to fresh water after a period in these brackish waters. They seem to prefer water with less turbidity, but that is likely related to their dependence on the presence of vegetation.
+
+
+=== Geographic distribution ===
+
+Esox lucius is found in fresh water throughout the Northern Hemisphere, including Russia, Europe, and North America. It has also been introduced to lakes in Morocco, and is even found in brackish water of the Baltic Sea, but they are confined to the low-salinity water at the surface of the sea, and are seldom seen in brackish water elsewhere.. 
+
+
+==== Europe and Russia ====
+Esox lucius is a major predatory fish in European freshwaters. It has significant reach across the continent. It is able to cros the arctic circle in Norway, Sweden, Finland, and Russia. In Norway it is present in northern and southern Norway, but not in central Norway. In Sweden and Finland it reaches all areas except some lakes of mountaenous regions according academic and hobbyist sources. The European Commission defines a narrower reach excluding northernmost Lapland and much of western Sweden. 
+The reach of Northern pike then continues southwards where it is present on the British Isles as well as in Central and Eastern Europe, Balkan countries, and parts of Northeastern Spain. It is not found in Portugal, Italy, and most of Spain.
+
+
+==== North America ====
+Within the United States northern pike populations are found in Maine, New Hampshire, Vermont, Massachusetts, Rhode Island, Connecticut, New York, New Jersey, Pennsylvania, Maryland, West Virginia, Ohio, Michigan, Indiana, Illinois, Wisconsin, Minnesota, Iowa, Missouri, North Dakota, South Dakota, Nebraska, Kansas, Montana, Idaho, Utah, Colorado, Oklahoma, northern Texas, northern New Mexico, northern Arizona and Alaska. Watersheds in which pike are found include the Ohio Valley, the upper Mississippi River and its tributaries, and the Great Lakes Basin. They are also stocked in, or have been introduced to, some western lakes and reservoirs for sport fishing, although some fisheries managers believe this practice often threatens other species of fish such as bass, trout, and salmon, causing government agencies to attempt to exterminate the pike by poisoning lakes, such as Stormy Lake, Alaska. E. lucius is a severe invasive predator in Box Canyon Reservoir on the Pend Oreille River in northeastern Washington.
+Northern pike can also be found in Canada. There it is present in rivers and lakes through Quebec,Ontario, Alberta, Saskatchewan, Manitoba, in the northwestern corner of British Columbia as well as Yukon, Nunavut, and Northwestern territories. The species is in some areas considered a valuable commercial sports fish, but other areas consider it a nuisance. It is generally native to Canada but is in very limited areas invasive.
+
+
+== Behaviour ==
+
+
+=== Aggression ===
+The northern pike is a relatively aggressive species, especially with regard to feeding. For example, when food sources are scarce, cannibalism develops, starting around five weeks in a small percentage of populations. This cannibalism occurs when the ratio of predator to prey is two to one. One can expect this because when food is scarce, Northern pike fight for survival, such as turning on smaller pike to feed; this is seen in other species such as tiger salamanders. Usually, pike tend to feed on smaller fish, such as the banded killifish. However, when pike exceed 700 mm (28 in) long, they feed on larger fish.
+Because of cannibalism when food is short, pike suffer a fairly high young mortality rate. Cannibalism is more prevalent in cool summers, as the upcoming pike have slow growth rates in that season and might not be able to reach a size to deter the larger pike. Cannibalism is likely to arise in low growth and low food conditions. Pike do not discriminate siblings well, so cannibalism between siblings is likely.
+Aggression also arises from a need for space. Young pike tend to have their food stolen by larger pike. Pike are aggressive if not given enough space because they are territorial. They use a form of foraging known as ambush foraging. Unlike species such as perch, pike undergo bursts of energy instead of actively chasing down prey. As such, a fair amount of inactive time occurs until they find prey. Hunting efficiency decreases with competition; the larger the pike, the larger the area controlled by that particular pike. An inverse relation to vegetation density and pike size exists, which is due to the possibility of cannibalism from the largest pike. This makes sense, as the smaller pike need more vegetation to avoid being eaten. Large pike do not have this worry and can afford the advantage of a large line of sight. They prefer a tree structure habitat.
+There has been at least one instance of a pike attacking a dog. Attacks on humans are exceptionally rare but not unheard of. In Summer 2026 a child in Finland had their foot bitten by what was identified as a pike.
+Pike are occasionally preyed upon by otters.
+
+
+=== Physical behavioural traits ===
+Pike are capable of "fast start" movements, which are sudden high-energy bursts of unsteady swimming. Many other fish exhibit this movement as well. Most fish use this mechanism to avoid life-threatening situations. For the pike, however, it is a tool used to capture prey from their sedentary positions. They flash out in such bursts and capture their prey. These fast starts terminate when the pike has reached maximum velocity. During such motions, pike make "S" conformations while swimming at high rates. To decelerate, they, simply make a "C" conformation, exponentially slowing down their speed so that they can "stop". An interesting behavioural trait that pike have is that they have short digestion times and long feeding periods. They can undergo many of these fast bursts to collect as much prey as they can. Pike are least active during the night.
+
+
+=== Reproduction ===
+
+Pike have a strong homing behaviour; they inhabit certain areas by nature. During the summer, they tend to group closer to vegetation than during the winter. The exact reason is not clear, but likely is a result of foraging or possibly reproductive needs to safeguard young. Pike diel rhythm changes significantly over the year. On sunny days, pike stay closer to the shallow shore. On windy days, they are further from shore. When close to the shore, pike have a preference for shallow, vegetated areas. Pike are more stationary in reservoirs than lakes. A possibility is that lakes have more prey to feed upon, or possibly in reservoirs prey will ultimately cross paths with the pike. As such, this could be a form of energy conservation. Pike breed in the spring.
+Pike are physically capable of breeding at an age of about two years, spawning in spring when the water temperature first reaches about 9 °C (48 °F). They have a tendency to lay a large number of eggs. A likely explanation for such actions is to produce as many surviving offspring as possible, as many most likely die early in life. In females, the gonads enlarge when it is time to shed her eggs. However, after they are shed, these eggs will not hatch if the water is below 6 °C (43 °F). Male pike arrive at the breeding grounds before females do, preceding them by a few weeks. In addition, the males stay after the spawning is finished. Parental stock is vital for pike success. Egg survival has been shown to be positively correlated with number of eggs laid. For breeding, the more stable the water, the greater the fitness of the pike. Mortality results from toxic concentrations of iron or rapid temperature changes, and adult abundance and the strength of the resulting year classes are not related. It is based upon two points of development: one during embryo stage between fertilization and closure of the blastopore, and the second between hatching and the termination of the alevin stage.
+The colour of the sticky eggs is yellow to orange; the diameter is 2.5 to 3 mm (0.098 to 0.118 in). The embryos are 7.5 to 10 mm (0.30 to 0.39 in) in length and able to swim after hatching, but stay on the bottom for some time. The embryonic stage is five to 16 days, dependent on water temperature (at 19 °C (66 °F) and 10 °C (50 °F), respectively). Under natural circumstances, the survival from free-swimming larva to 75-mm pike is around 5%.
+
+
+== Diet ==
+
+The young, free-swimming pike feed on small invertebrates starting with Daphnia, and quickly move on to bigger prey, such as Asellus and Gammarus. When the body length is 4 to 8 cm (1.6 to 3.1 in), they start feeding on small fish.
+A pike has a very typical hunting behaviour; it is able to remain stationary in the water by moving the last fin rays of the dorsal fins and the pectoral fins. Before striking, it bends its body and darts out to the prey using the large surface of its caudal fin, dorsal fin, and anal fin to propel itself. The fish has a distinctive habit of catching its prey sideways in the mouth, immobilising it with its sharp, backward-pointing teeth, and then turning the prey headfirst to swallow it. It eats mainly fish and frogs, but also small mammals and birds fall prey to pike. Young pike have been found dead from choking on a pike of a similar size, an observation referred to by the English poet Ted Hughes in his poem "Pike". Northern pike also feed on insects, crayfish, and leeches. They are not very particular and eat spiny fish like perch, and will even take fish as small as sticklebacks if they are the only available prey.
+Pike are known to occasionally hunt and consume larger water birds, such as an incident in 2016 when an individual was observed trying to drown and eat a great crested grebe, an incident in which a pike choked to death after killing and attempting to eat a tufted duck, as well as an incident in 2015 where an attack by a large pike between three and four feet long was implicated as a possible cause for the injury and death of an adult mute swan on Lower Lough Erne, Northern Ireland, but it is generally believed that such attacks are only rare occurrences.
+The northern pike is a largely solitary predator. It migrates during a spawning season, and it follows prey fish like common roaches to their deeper winter quarters. Sometimes, divers observe groups of similar-sized pike that cooperate some to start hunting at the same time, so "wolfpack" theories are given. Large pike can be caught on dead immobile fish, so these pike are thought to move about in a rather large territory to find food. Large pike are also known to cruise large water bodies at a few metres deep, probably pursuing schools of prey fish. Smaller pike are more likely to be ambush predators, probably because of their vulnerability to cannibalism. Pike are often found near the exit of culverts, which can be attributed to the presence of schools of prey fish and the opportunity for ambush. Being potamodromous, all esocids tend to display limited migration, although some local movement may be of key significance for population dynamics. In the Baltic, they are known to follow herring schools, so have some seasonal migration.
+
+
+== Importance to humans ==
+
+Although it is generally known as a "sporting" quarry, some anglers release pike they have caught because the flesh is considered bony, especially due to the substantial (epipleural) "Y-bones". The white and mild-tasting flesh of pikes nonetheless has a long and distinguished history in cuisine and is popular fare in Europe and parts of North America. Among fishing communities where pike is popular fare, the ability of a filleter to effectively remove the bones from the fillets while minimizing the amount of flesh lost in the process (known as "de-boning") is a highly valued skill. There are methods for filleting pike and leaving the "y-bones" in the fish's body; this does leave some flesh on the fish but avoids the sometimes difficult process of "de-boning". Larger fish are more easily filleted (and much easier to de-bone), while smaller ones are often processed as forcemeat to eliminate their many small bones, and then used in preparations such as quenelles and fish mousses. Historical references to cooking pike go as far back as the Romans. Fishing for pike is said to be very exciting with their aggressive hits and aerial acrobatics. Pike are among the largest North American freshwater game fish.
+Because of their prolific and predatory nature, laws have been enacted in some places to help stop the spread of northern pike outside of their native range. For instance, in California, anglers are required by law to remove the head from a pike once it has been caught. In Alaska, pike are native north and west of the Alaska Range, but have been illegally introduced to south-central Alaska by game fishermen. In south-central Alaska, no limit is imposed in most areas. Pike are seen as a threat to native wild stocks of salmon by some fishery managers.
+Notably in Britain and Ireland, pike are greatly admired as a sporting fish and they are returned alive to the water to safeguard future sport and maintain the balance of a fishery. The Pike Anglers Club has campaigned to preserve pike since 1977, arguing that the removal of pike from waters can lead to an explosion of smaller fish, and to ensure pike removal stops, which is damaging to both the sport fishery and the environment.
+
+
+=== Sport fishing ===
+
+Pike angling is becoming an increasingly popular pastime in Europe. Effective methods for catching include dead baits, lure fishing, and jerk baiting. They are prized as game fish for their large size and aggressive nature.
+Lake fishing for pike from the shore is especially effective during spring, when the big pike move into the shallows to spawn in weedy areas, and later many remain there to feed on other spawning coarse fish species to regain their condition after spawning. Smaller jack pike often remain in the shallows for their own protection, and for the small fish food available there. For the hot summer and during inactive phases, the larger female pike tend to retire to deeper water and/or places with better cover. This gives the boat angler good fishing during the summer and winter seasons. Trolling (towing a fairy or bait behind a moving boat) is a popular technique.
+The use of float tubes is another method of fishing for pike on small to medium-sized still waters. Fly fishing for pike is another eligible way of catching these fish, and the float tube is now recognized as an especially suitable water craft for pike fly-fishing. Also they have been caught this way by using patterns that imitate small fry or invertebrates.
+In recent decades, more pike are released back to the water after catching (catch and release), but they can easily be damaged when handled. Handling those fish with dry hands can easily damage their mucus-covered skin and possibly lead to their deaths from infections.
+Since they have very sharp and numerous teeth, care is required in unhooking a pike. Barbless trebles are recommended when angling for this species, as they simplify unhooking. This is undertaken using long forceps, with 30-cm artery clamps the ideal tool. When holding the pike from below on the lower jaw, it will open its mouth. It should be kept out of the water for the minimum amount of time possible, and should be given extra time to recover if being weighed and photographed before release. It's also recommended that anglers use an unhooking mat to prevent it from harm. If practicing live release, calling the fish "caught" when it is alongside a boat is recommended. Remove the hook by grabbing it with needle-nosed pliers while the fish is still submerged and giving it a flip in the direction that turns the hook out of the mouth. This avoids damage to the fish and the stress of being out of water.
+In Finland, catching a kymppihauki, a pike weighing at least 10 kg (22 lb), is considered the qualification as a master fisherman.
+Many countries have banned the use of live fish for bait, but pike can be caught with dead fish, which they locate by smell. For this technique, fat marine fish like herring, sardines and mackerel are often used. Compared to other fish like the eel, the pike does not have a good sense of smell, but it is still more than adequate to find the baitfish. Baitfish can be used as groundbait, but also below a float carried by the wind. This method is often used in wintertime and best done in lakes near schools of preyfish or at the deeper parts of shallow water bodies, where pike and preyfish tend to gather in great numbers.
+Pike make use of the lateral line system to follow the vortices produced by the perceived prey, and the whirling movement of the spinner is probably a good way to imitate or exaggerate these. Jerkbaits are also effective and can produce spectacular bites with pike attacking these erratic-moving lures at full speed. For trolling, big plugs or softbaits can be used. Spoons with mirror finishes are very effective when the sun is at a sharp angle to the water in the mornings or evenings because they generate the vibrations previously discussed and cause a glint of reflective sunlight that mimics the flash of white-bellied prey.
+When fishing in shallow water for smaller pike, lighter and smaller lures are frequently used. The 'woolly bugger' fly is a favourite lure among fly fisherman of the southern hemisphere. Fly fishing for pike is an established aspect of the sport and there are now numerous dedicated products to use specifically to target these fish.
+
+
+=== In mythology ===
+In the Finnish national epic, Kalevala, the great sage Väinämöinen creates a magical kantele (a string instrument) from the jawbone of a giant pike.
+
+
+== See also ==
+Northern snakehead
+
+
+== References ==
+
+
+== Further reading ==
+"Esox lucius". Integrated Taxonomic Information System. Retrieved 8 December 2004.
+Froese, Rainer; Pauly, Daniel (eds.). "Esox lucius". FishBase. October 2004 version.
+Broughton, Bruno. "A Review of the Scientific Basis for Pike Culls". N.p., 2000.
+Craig, John F. ed. Pike: Biology and Exploitation. Chapman & Hall, London. 1996 pp. 1.
+Eddy S, Surber T. Northern Game Fishes Univ. of Michigan Press, 1943.
+La Monte Fancesca. North American Game Fishes Doubleday & Company, Inc. 1950 pp. 126.
+Weed Alfred C. Pike, Pickerel, and Muskellunge. Field Museum of Natural History, Chicago, Dept. of Zoology, Leaflet No. 9, 52 pp., 8 plates.
+
+
+== External links ==
+
+New Jersey fact sheet on tiger musky
+NAS – USGS fact sheet on tiger musky
+Froese, Rainer; Pauly, Daniel (eds.). "Esox lucius". FishBase. July 2009 version.
